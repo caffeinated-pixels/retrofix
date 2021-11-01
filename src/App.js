@@ -1,23 +1,24 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { Home, Browse, Signin, Signup, Profile } from './pages'
 
 function App() {
   return (
     <Router>
       <Switch>
         <Route exact path='/'>
-          <h1>I am the Home Page</h1>
+          <Home />
         </Route>
         <Route path='/browse'>
-          <h1>I am the Browse Page</h1>
+          <Browse />
         </Route>
         <Route path='/signin'>
-          <h1>I am the Signin Page</h1>
+          <Signin />
         </Route>
         <Route path='/signup'>
-          <h1>I am the Signup Page</h1>
+          <Signup />
         </Route>
         <Route path='/profile'>
-          <h1>I am the Profile Page</h1>
+          <Profile />
         </Route>
       </Switch>
     </Router>
