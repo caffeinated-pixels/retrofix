@@ -1,11 +1,10 @@
-import Header from '../parts/Header.js'
-import Navbar from '../parts/Navbar.js'
+import { Navbar, StoryCards } from '../parts/'
 
 export default function Home() {
   return (
     <>
       <Navbar />
-      <Header />
+      <StoryCards />
     </>
   )
 }
