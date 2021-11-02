@@ -1,10 +1,10 @@
+import styled from 'styled-components'
+
+const HeaderContainer = styled.header``
+
 export default function Header() {
   return (
-    <header>
-      <nav className='nav-bar'>
-        <img src='./images/misc/logo.svg' alt='Netflix logo' />
-        <button>Sign In</button>
-      </nav>
+    <HeaderContainer>
       <div className='call-to-action'>
         <h1>Unlimited movies, TV shows, and more.</h1>
         <h2>Watch anywhere. Cancel anytime.</h2>
@@ -19,7 +19,7 @@ export default function Header() {
           </div>
         </form>
       </div>
-    </header>
+    </HeaderContainer>
   )
 }
 
