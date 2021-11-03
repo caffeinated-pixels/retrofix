@@ -69,7 +69,7 @@ export default function GetStartedForm() {
       </FormText>
       <EmailForm>
         <EmailInput id='email-input' type='email' placeholder='Email address' />
-        <EmailLabel for='email-input'>Email address</EmailLabel>
+        <EmailLabel htmlFor='email-input'>Email address</EmailLabel>
         <EmailSubmit>
           Get Started
           <ChevronIcon className='fas fa-chevron-right' />
