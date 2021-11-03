@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { colors } from '../styles/style-constants'
+import storyContentData from '../fixtures/storycard-content.json'
 
 const StoryCardsContainer = styled.div``
 
@@ -8,10 +8,7 @@ const StoryCard = styled.section`
   max-width: 950px;
   padding: 50px 5%;
   border-bottom: 8px solid #222;
-  background-image: url('../images/misc/home-bg.jpg');
 `
-
-/* top left / cover no-repeat; */
 
 const TextWrapper = styled.div`
   text-align: center;
@@ -33,67 +30,22 @@ const Subtitle = styled.h2`
   margin: 1rem auto;
 `
 
-const Form = styled.form`
-  display: flex;
-  flex-direction: column;
-`
-
-const FormText = styled.h3`
-  padding: 0 5%;
-  max-width: 450px;
+const StoryImage = styled.img`
   margin: 0 auto;
-  font-weight: 400;
-  font-size: 1.2rem;
-  line-height: 1.25;
-`
-
-const EmailForm = styled.div`
-  display: flex;
-  flex-direction: column;
-`
-const EmailInput = styled.input`
-  margin: 10px auto;
-  width: 100%;
-  max-width: 500px;
-  padding: 10px;
-  border: 1px solid #8c8c8c;
-  font-size: 0.875rem;
-`
-
-const EmailSubmit = styled.button`
-  background-color: ${colors.netflixRed};
-  color: #fff;
-  border: 0;
-  margin: 0.25em auto;
-  padding: 0 1em;
-  min-height: 40px;
-  min-width: 74px;
-  letter-spacing: 0.1px;
-  line-height: initial;
-  cursor: pointer;
 `
 
 export default function StoryCards() {
-  return (
-    <StoryCardsContainer>
-      <StoryCard>
-        <TextWrapper>
-          <Title>Unlimited movies, TV shows, and more.</Title>
-          <Subtitle>Watch anywhere. Cancel anytime.</Subtitle>
-          <Form>
-            <FormText>
-              Ready to watch? Enter your email to create or restart your
-              membership.
-            </FormText>
-            <EmailForm>
-              <EmailInput type='email' placeholder='Email address' />
-              <EmailSubmit>Get Started</EmailSubmit>
-            </EmailForm>
-          </Form>
-        </TextWrapper>
-      </StoryCard>
-    </StoryCardsContainer>
-  )
+  const storyContent = storyContentData.map((item) => (
+    <StoryCard key={item.id}>
+      <TextWrapper>
+        <Title>{item.title}</Title>
+        <Subtitle>{item.subtitle}</Subtitle>
+      </TextWrapper>
+      <StoryImage src={item.image} alt={item.alt} />
+    </StoryCard>
+  ))
+
+  return <StoryCardsContainer>{storyContent}</StoryCardsContainer>
 }
 
 /* 
