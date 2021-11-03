@@ -21,7 +21,7 @@ const NavContainer = styled.nav`
 
 const FeatureWrapper = styled.div`
   text-align: center;
-  padding: 50px 5%;
+  padding: 65px 5%;
 `
 
 const Title = styled.h1`
