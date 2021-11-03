@@ -44,6 +44,10 @@ const EmailSubmit = styled.button`
   cursor: pointer;
 `
 
+const ChevronIcon = styled.i`
+  margin-left: 0.5em;
+`
+
 export default function GetStartedForm() {
   return (
     <Form>
@@ -53,7 +57,10 @@ export default function GetStartedForm() {
       <EmailForm>
         <EmailInput id='email-input' type='email' placeholder='Email address' />
         <EmailLabel for='email-input'>Email address</EmailLabel>
-        <EmailSubmit>Get Started</EmailSubmit>
+        <EmailSubmit>
+          Get Started
+          <ChevronIcon className='fas fa-chevron-right' />
+        </EmailSubmit>
       </EmailForm>
     </Form>
   )
