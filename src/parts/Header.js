@@ -1,10 +1,11 @@
 import styled from 'styled-components'
 import { LinkButton, SiteLogo, GetStartedForm } from '../components'
+import { cardBorderBottom } from '../styles/style-constants'
 
 const HeaderContainer = styled.section`
   width: 100%;
   max-width: 950px;
-  border-bottom: 8px solid #222;
+  border-bottom: ${cardBorderBottom};
   background-image: url('../images/misc/home-bg.jpg');
   background-repeat: no-repeat;
   background-size: cover;
