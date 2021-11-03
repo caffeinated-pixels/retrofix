@@ -1,5 +1,8 @@
 export const colors = {
-  netflixRed: `#e50914`,
+  netflixRed: `hsl(357, 92%, 47%)`,
+  netflixRedFocus: `hsl(357, 92%, 52%)`,
 }
 
 export const cardBorderBottom = '8px solid #222'
+
+export const focusOutline = '2px solid yellow'

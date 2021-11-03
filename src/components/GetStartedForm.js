@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { colors } from '../styles/style-constants'
+import { colors, focusOutline } from '../styles/style-constants'
 
 const Form = styled.form`
   display: flex;
@@ -26,6 +26,10 @@ const EmailInput = styled.input`
   padding: 10px;
   border: 1px solid #8c8c8c;
   font-size: 0.875rem;
+
+  &:focus-visible {
+    outline: ${focusOutline};
+  }
 `
 const EmailLabel = styled.label`
   height: 0;
@@ -42,6 +46,15 @@ const EmailSubmit = styled.button`
   letter-spacing: 0.1px;
   line-height: initial;
   cursor: pointer;
+
+  &:hover,
+  &:focus-visible {
+    background-color: ${colors.netflixRedFocus};
+  }
+
+  &:focus-visible {
+    outline: ${focusOutline};
+  }
 `
 
 const ChevronIcon = styled.i`
