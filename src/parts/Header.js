@@ -1,21 +1,28 @@
 import styled from 'styled-components'
 import colors from '../styles/colors'
+import { LinkButton, SiteLogo } from '../components'
 
-const StoryCardsContainer = styled.div``
-
-const StoryCard = styled.section`
+const HeaderContainer = styled.section`
   width: 100%;
   max-width: 950px;
-  padding: 50px 5%;
   border-bottom: 8px solid #222;
   background-image: url('../images/misc/home-bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top left;
 `
 
-/* top left / cover no-repeat; */
+const NavContainer = styled.nav`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1.75em;
+  margin: 0 5%;
+`
 
-const TextWrapper = styled.div`
+const FeatureWrapper = styled.div`
   text-align: center;
-  padding: 15px 0;
+  padding: 50px 5%;
 `
 
 const Title = styled.h1`
@@ -72,36 +79,27 @@ const EmailSubmit = styled.button`
   line-height: initial;
   cursor: pointer;
 `
-
-export default function StoryCards() {
+export default function Header() {
   return (
-    <StoryCardsContainer>
-      <StoryCard>
-        <TextWrapper>
-          <Title>Unlimited movies, TV shows, and more.</Title>
-          <Subtitle>Watch anywhere. Cancel anytime.</Subtitle>
-          <Form>
-            <FormText>
-              Ready to watch? Enter your email to create or restart your
-              membership.
-            </FormText>
-            <EmailForm>
-              <EmailInput type='email' placeholder='Email address' />
-              <EmailSubmit>Get Started</EmailSubmit>
-            </EmailForm>
-          </Form>
-        </TextWrapper>
-      </StoryCard>
-    </StoryCardsContainer>
+    <HeaderContainer>
+      <NavContainer>
+        <SiteLogo src='./images/misc/logo.svg' alt='Netflix logo' />
+        <LinkButton href='/signin'>Sign In</LinkButton>
+      </NavContainer>
+      <FeatureWrapper>
+        <Title>Unlimited movies, TV shows, and more.</Title>
+        <Subtitle>Watch anywhere. Cancel anytime.</Subtitle>
+        <Form>
+          <FormText>
+            Ready to watch? Enter your email to create or restart your
+            membership.
+          </FormText>
+          <EmailForm>
+            <EmailInput type='email' placeholder='Email address' />
+            <EmailSubmit>Get Started</EmailSubmit>
+          </EmailForm>
+        </Form>
+      </FeatureWrapper>
+    </HeaderContainer>
   )
 }
-
-/* 
-StoryCardsContainer (div)
-    header-card (section)
-    watch-on-tv (section)
-    download (section)
-    watch-everywhere (section)
-    kids-profiles (section)
-    faqs
-*/
