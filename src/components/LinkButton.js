@@ -1,8 +1,9 @@
 import styled from 'styled-components'
+import colors from '../styles/colors'
 
 const Button = styled.a`
   text-decoration: none;
-  background-color: ${({ bgcolor }) => (bgcolor ? bgcolor : '#F42F34')};
+  background-color: ${({ bgcolor }) => (bgcolor ? bgcolor : colors.netflixRed)};
   color: #fff;
   font-size: 0.9rem;
   padding: 0.25rem 0.5rem;

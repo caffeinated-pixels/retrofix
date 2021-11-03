@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import colors from '../styles/colors'
 
 const StoryCardsContainer = styled.div``
 
@@ -56,7 +57,7 @@ const EmailInput = styled.input`
 `
 
 const EmailSubmit = styled.button`
-  background-color: #e50914;
+  background-color: ${colors.netflixRed};
   color: #fff;
   border: 0;
   margin: 0.25em auto;
