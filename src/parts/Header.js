@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import Navbar from './Navbar'
 import { LinkButton, SiteLogo, GetStartedForm } from '../components'
 import { cardBorderBottom } from '../styles/style-constants'
 
@@ -11,15 +12,6 @@ const HeaderContainer = styled.section`
   background-size: cover;
   background-position: top left;
 `
-
-const NavContainer = styled.nav`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 1.75em;
-  margin: 0 5%;
-`
-
 const FeatureWrapper = styled.div`
   text-align: center;
   padding: 65px 5%;
@@ -43,10 +35,10 @@ const Subtitle = styled.h2`
 export default function Header() {
   return (
     <HeaderContainer>
-      <NavContainer>
+      <Navbar>
         <SiteLogo src='./images/misc/logo.svg' alt='Netflix logo' />
         <LinkButton href='/signin'>Sign In</LinkButton>
-      </NavContainer>
+      </Navbar>
       <FeatureWrapper>
         <Title>Unlimited movies, TV shows, and more.</Title>
         <Subtitle>Watch anywhere. Cancel anytime.</Subtitle>
