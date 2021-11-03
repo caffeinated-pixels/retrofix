@@ -66,6 +66,9 @@ const EmailInput = styled.input`
   border: 1px solid #8c8c8c;
   font-size: 0.875rem;
 `
+const EmailLabel = styled.label`
+  height: 0;
+`
 
 const EmailSubmit = styled.button`
   background-color: ${colors.netflixRed};
@@ -95,7 +98,12 @@ export default function Header() {
             membership.
           </FormText>
           <EmailForm>
-            <EmailInput type='email' placeholder='Email address' />
+            <EmailInput
+              id='email-input'
+              type='email'
+              placeholder='Email address'
+            />
+            <EmailLabel for='email-input'>Email address</EmailLabel>
             <EmailSubmit>Get Started</EmailSubmit>
           </EmailForm>
         </Form>
