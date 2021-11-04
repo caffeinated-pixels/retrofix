@@ -6,7 +6,7 @@ const Form = styled.form`
   flex-direction: column;
 `
 
-const FormText = styled.h3`
+const FormText = styled.p`
   padding: 0 5%;
   max-width: 450px;
   margin: 0 auto;

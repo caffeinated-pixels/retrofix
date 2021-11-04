@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import storyContentData from '../fixtures/storycard-content.json'
 
-const StoryCardsContainer = styled.div``
+const StoryCardsContainer = styled.main``
 
 const StoryCard = styled.section`
   width: 100%;
@@ -15,7 +15,7 @@ const TextWrapper = styled.div`
   padding: 15px 0;
 `
 
-const Title = styled.h1`
+const Title = styled.h2`
   font-size: 1.75rem;
   font-weight: 700;
   max-width: 640px;
@@ -23,7 +23,7 @@ const Title = styled.h1`
   line-height: 1.1;
 `
 
-const Subtitle = styled.h2`
+const Subtitle = styled.p`
   font-size: 1.2rem;
   font-weight: 400;
   max-width: 640px;

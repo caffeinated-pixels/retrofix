@@ -3,7 +3,7 @@ import Navbar from './Navbar'
 import { LinkButton, SiteLogo, GetStartedForm } from '../components'
 import { cardBorderBottom } from '../styles/style-constants'
 
-const HeaderContainer = styled.section`
+const HeaderContainer = styled.header`
   width: 100%;
   max-width: 950px;
   border-bottom: ${cardBorderBottom};
@@ -25,7 +25,7 @@ const Title = styled.h1`
   line-height: 1.1;
 `
 
-const Subtitle = styled.h2`
+const Subtitle = styled.p`
   font-size: 1.2rem;
   font-weight: 400;
   max-width: 640px;
