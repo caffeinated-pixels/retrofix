@@ -1,4 +1,4 @@
-import { Header, StoryCards, Footer } from '../parts/'
+import { Header, StoryCards, FaqSection, Footer } from '../parts/'
 import { footerHomeContent } from '../fixtures/footer-content'
 
 export default function Home() {
@@ -6,19 +6,10 @@ export default function Home() {
     <>
       <Header />
       <StoryCards />
+      <FaqSection />
       <Footer footerContent={footerHomeContent} />
     </>
   )
 }
 
-/* 
-nav bar
-story-cards-container
-  header-card
-  watch-on-tv
-  download
-  watch-everywher
-  kids-profiles
-  faqs
-footer 
-*/
+// TODO: faq section should probably be part of <main>
