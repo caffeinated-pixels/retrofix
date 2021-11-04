@@ -1,10 +1,12 @@
-import { Header, StoryCards } from '../parts/'
+import { Header, StoryCards, Footer } from '../parts/'
+import { footerHomeContent } from '../fixtures/footer-content'
 
 export default function Home() {
   return (
     <>
       <Header />
       <StoryCards />
+      <Footer footerContent={footerHomeContent} />
     </>
   )
 }
