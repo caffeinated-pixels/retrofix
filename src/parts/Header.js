@@ -14,7 +14,7 @@ const HeaderContainer = styled.header`
 `
 const FeatureWrapper = styled.div`
   text-align: center;
-  padding: 65px 5%;
+  padding: 65px 0;
 `
 
 const Title = styled.h1`

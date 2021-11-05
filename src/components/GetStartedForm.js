@@ -4,15 +4,17 @@ import { colors, focusOutline } from '../styles/style-constants'
 const Form = styled.form`
   display: flex;
   flex-direction: column;
+  padding: 0 5%;
 `
 
 const FormText = styled.p`
-  padding: 0 5%;
   max-width: 450px;
+  padding: 0 5%;
   margin: 0 auto;
   font-weight: 400;
   font-size: 1.2rem;
   line-height: 1.25;
+  text-align: center;
 `
 
 const EmailForm = styled.div`
@@ -33,6 +35,7 @@ const EmailInput = styled.input`
 `
 const EmailLabel = styled.label`
   height: 0;
+  opacity: 0;
 `
 
 const EmailSubmit = styled.button`
