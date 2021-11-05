@@ -16,8 +16,14 @@ const HeaderButton = styled.button`
   border: none;
   background-color: ${colors.accordionGrey};
   color: #fff;
-  padding: 0.8em 2.2em 0.8em 1.2em;
+  padding: 0.8em 1.2em;
   margin-bottom: 1px;
+  display: flex;
+  justify-content: space-between;
+`
+
+const OpenIcon = styled.i`
+  /* transform: rotate(45deg); */
 `
 
 const AnswerPanel = styled.div`
@@ -39,7 +45,10 @@ export default function AccordionItem({
   return (
     <>
       <QuestionHeader>
-        <HeaderButton>{question}</HeaderButton>
+        <HeaderButton>
+          {question}
+          <OpenIcon className='fas fa-plus'></OpenIcon>
+        </HeaderButton>
       </QuestionHeader>
       <AnswerPanel>{answer}</AnswerPanel>
     </>
