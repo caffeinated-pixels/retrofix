@@ -1,4 +1,6 @@
+import { useContext } from 'react'
 import styled from 'styled-components'
+import { AccordionContext } from '../context/AccordionContext'
 import { colors } from '../styles/style-constants'
 
 import React from 'react'
@@ -33,24 +35,23 @@ const AnswerPanel = styled.div`
   margin-bottom: 8px;
   font-size: 1.125rem;
   line-height: normal;
+  overflow: hidden;
 `
 
-export default function AccordionItem({
-  children,
-  answer,
-  question,
-  ...restProps
-}) {
-  console.log(answer)
+export default function AccordionItem({ answer, question }) {
+  const { activeAccordionItem, setToggle } = useContext(AccordionContext)
+
   return (
     <>
       <QuestionHeader>
-        <HeaderButton>
+        <HeaderButton onClick={() => setToggle(question)}>
           {question}
           <OpenIcon className='fas fa-plus'></OpenIcon>
         </HeaderButton>
       </QuestionHeader>
-      <AnswerPanel>{answer}</AnswerPanel>
+      <AnswerPanel hidden={activeAccordionItem !== question}>
+        {answer}
+      </AnswerPanel>
     </>
   )
 }

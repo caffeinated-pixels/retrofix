@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import AccordionItem from '../components/AccordionItem'
 import { cardBorderBottom } from '../styles/style-constants'
 import faqContentData from '../fixtures/faq-content.json'
+import { AccordionContextProvider } from '../context/AccordionContext'
 
 const FaqContainer = styled.section`
   padding: 50px 0;
@@ -18,6 +19,7 @@ const Title = styled.h2`
 const AccordionWrapper = styled.div`
   margin: 1.25em auto;
   max-width: 815px;
+  transition: max-height 1s cubic-bezier(0.5, 0, 0.1, 1);
 `
 
 export default function FaqSection() {
@@ -30,7 +32,9 @@ export default function FaqSection() {
   return (
     <FaqContainer>
       <Title>Frequently Asked Questions</Title>
-      <AccordionWrapper>{accordionItems}</AccordionWrapper>
+      <AccordionContextProvider>
+        <AccordionWrapper>{accordionItems}</AccordionWrapper>
+      </AccordionContextProvider>
     </FaqContainer>
   )
 }
