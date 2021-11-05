@@ -5,6 +5,10 @@ import { colors } from '../styles/style-constants'
 
 import React from 'react'
 
+const AccordionItemWrapper = styled.div`
+  margin-bottom: 8px;
+`
+
 const QuestionHeader = styled.h3`
   font-weight: 400;
   line-height: normal;
@@ -42,7 +46,7 @@ export default function AccordionItem({ answer, question }) {
   const { activeAccordionItem, setToggle } = useContext(AccordionContext)
 
   return (
-    <>
+    <AccordionItemWrapper>
       <QuestionHeader>
         <HeaderButton onClick={() => setToggle(question)}>
           {question}
@@ -52,6 +56,6 @@ export default function AccordionItem({ answer, question }) {
       <AnswerPanel hidden={activeAccordionItem !== question}>
         {answer}
       </AnswerPanel>
-    </>
+    </AccordionItemWrapper>
   )
 }
