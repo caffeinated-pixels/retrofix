@@ -29,7 +29,7 @@ const HeaderButton = styled.button`
 `
 
 const OpenIcon = styled.i`
-  /* transform: rotate(45deg); */
+  transform: ${({ isActive }) => (isActive ? 'rotate(45deg)' : null)};
 `
 
 const AnswerPanel = styled.div`
@@ -50,7 +50,10 @@ export default function AccordionItem({ answer, question }) {
       <QuestionHeader>
         <HeaderButton onClick={() => setToggle(question)}>
           {question}
-          <OpenIcon className='fas fa-plus'></OpenIcon>
+          <OpenIcon
+            className='fas fa-plus'
+            isActive={activeAccordionItem === question}
+          ></OpenIcon>
         </HeaderButton>
       </QuestionHeader>
       <AnswerPanel hidden={activeAccordionItem !== question}>
