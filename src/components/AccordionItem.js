@@ -26,6 +26,12 @@ const HeaderButton = styled.button`
   margin-bottom: 1px;
   display: flex;
   justify-content: space-between;
+  cursor: pointer;
+
+  &:hover,
+  &:focus-visible {
+    filter: brightness(1.3);
+  }
 `
 
 const OpenIcon = styled.i`
@@ -42,13 +48,19 @@ const AnswerPanel = styled.div`
   overflow: hidden;
 `
 
-export default function AccordionItem({ answer, question }) {
+export default function AccordionItem({ id, answer, question }) {
   const { activeAccordionItem, setToggle } = useContext(AccordionContext)
 
   return (
     <AccordionItemWrapper>
       <QuestionHeader>
-        <HeaderButton onClick={() => setToggle(question)}>
+        <HeaderButton
+          aria-disabled='false'
+          aria-expanded={activeAccordionItem === question}
+          aria-controls={`answer-${id}`}
+          id={`question-${id}`}
+          onClick={() => setToggle(question)}
+        >
           {question}
           <OpenIcon
             className='fas fa-plus'
@@ -56,9 +68,16 @@ export default function AccordionItem({ answer, question }) {
           ></OpenIcon>
         </HeaderButton>
       </QuestionHeader>
-      <AnswerPanel hidden={activeAccordionItem !== question}>
+      <AnswerPanel
+        id={`answer-${id}`}
+        role='region'
+        aria-labelledby={`question-${id}`}
+        hidden={activeAccordionItem !== question}
+      >
         {answer}
       </AnswerPanel>
     </AccordionItemWrapper>
   )
 }
+
+// aria attributes based on https://www.w3.org/TR/wai-aria-practices-1.1/examples/accordion/accordion.html

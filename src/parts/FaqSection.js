@@ -24,7 +24,7 @@ const AccordionWrapper = styled.div`
 
 export default function FaqSection() {
   const accordionItems = faqContentData.map(({ id, question, answer }) => (
-    <AccordionItem key={id} question={question} answer={answer}>
+    <AccordionItem key={id} id={id} question={question} answer={answer}>
       Dave${id}
     </AccordionItem>
   ))
