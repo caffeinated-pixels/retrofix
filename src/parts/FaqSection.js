@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import AccordionItem from '../components/AccordionItem'
+import { AccordionItem, GetStartedForm } from '../components/'
 import { cardBorderBottom } from '../styles/style-constants'
 import faqContentData from '../fixtures/faq-content.json'
 import { AccordionContextProvider } from '../context/AccordionContext'
@@ -35,6 +35,7 @@ export default function FaqSection() {
       <AccordionContextProvider>
         <AccordionWrapper>{accordionItems}</AccordionWrapper>
       </AccordionContextProvider>
+      <GetStartedForm />
     </FaqContainer>
   )
 }
