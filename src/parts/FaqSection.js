@@ -34,6 +34,10 @@ const AccordionWrapper = styled.div`
   }
 `
 
+const FormWrapper = styled.div`
+  padding: 0 5%;
+`
+
 export default function FaqSection() {
   const accordionItems = faqContentData.map(({ id, question, answer }) => (
     <AccordionItem key={id} id={id} question={question} answer={answer}>
@@ -47,7 +51,9 @@ export default function FaqSection() {
       <AccordionContextProvider>
         <AccordionWrapper>{accordionItems}</AccordionWrapper>
       </AccordionContextProvider>
-      <GetStartedForm />
+      <FormWrapper>
+        <GetStartedForm />
+      </FormWrapper>
     </FaqContainer>
   )
 }
