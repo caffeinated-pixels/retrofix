@@ -9,6 +9,11 @@ const Button = styled.a`
   padding: 0.25rem 0.5rem;
   border-radius: 3px;
 
+  @media (min-width: 550px) {
+    font-size: 1rem;
+    padding: 0.44rem 1.06rem;
+  }
+
   &:hover,
   &:focus-visible {
     background-color: ${colors.netflixRedFocus};

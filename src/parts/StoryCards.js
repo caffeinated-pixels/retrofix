@@ -5,7 +5,7 @@ const StoryCardsContainer = styled.div``
 
 const StoryCard = styled.section`
   width: 100%;
-  max-width: 950px;
+  /* max-width: 950px; */
   padding: 50px 5%;
   border-bottom: 8px solid #222;
 `

@@ -5,7 +5,7 @@ import { cardBorderBottom } from '../styles/style-constants'
 
 const HeaderContainer = styled.header`
   width: 100%;
-  max-width: 950px;
+
   border-bottom: ${cardBorderBottom};
   background-image: url('../images/misc/home-bg.jpg');
   background-repeat: no-repeat;
@@ -15,6 +15,11 @@ const HeaderContainer = styled.header`
 const FeatureWrapper = styled.div`
   text-align: center;
   padding: 65px 0;
+  max-width: 950px;
+
+  @media (min-width: 550px) {
+    padding: 75px 0;
+  }
 `
 
 const Title = styled.h1`
@@ -23,6 +28,10 @@ const Title = styled.h1`
   max-width: 640px;
   margin: 0 auto;
   line-height: 1.1;
+
+  @media (min-width: 550px) {
+    font-size: 3.125rem;
+  }
 `
 
 const Subtitle = styled.p`
