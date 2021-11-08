@@ -8,6 +8,10 @@ const StoryCard = styled.section`
   /* max-width: 950px; */
   padding: 50px 5%;
   border-bottom: 8px solid #222;
+
+  @media (min-width: 550px) {
+    padding: 70px 45px;
+  }
 `
 
 const TextWrapper = styled.div`
@@ -21,6 +25,10 @@ const Title = styled.h2`
   max-width: 640px;
   margin: 0 auto;
   line-height: 1.1;
+
+  @media (min-width: 550px) {
+    font-size: 2.5rem;
+  }
 `
 
 const Subtitle = styled.p`
@@ -28,10 +36,17 @@ const Subtitle = styled.p`
   font-weight: 400;
   max-width: 640px;
   margin: 1rem auto;
-`
 
+  @media (min-width: 550px) {
+    font-size: 1.3rem;
+  }
+`
+// some images need a negative margin-top to reduce white space
 const StoryImage = styled.img`
-  margin: 0 auto;
+  margin: ${({ useNegativeMargin }) =>
+    useNegativeMargin ? '-10% auto 0' : '0 auto'};
+  position: relative;
+  z-index: -1;
 `
 
 export default function StoryCards() {
@@ -41,7 +56,11 @@ export default function StoryCards() {
         <Title>{item.title}</Title>
         <Subtitle>{item.subtitle}</Subtitle>
       </TextWrapper>
-      <StoryImage src={item.image} alt={item.alt} />
+      <StoryImage
+        src={item.image}
+        alt={item.alt}
+        useNegativeMargin={item.useNegativeMargin}
+      />
     </StoryCard>
   ))
 
