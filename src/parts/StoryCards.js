@@ -38,7 +38,7 @@ const Subtitle = styled.p`
   margin: 1rem auto;
 
   @media (min-width: 550px) {
-    font-size: 1.3rem;
+    font-size: 1.25rem;
   }
 `
 // some images need a negative margin-top to reduce white space
