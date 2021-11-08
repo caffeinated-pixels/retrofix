@@ -7,6 +7,10 @@ import { AccordionContextProvider } from '../context/AccordionContext'
 const FaqContainer = styled.section`
   padding: 50px 0;
   border-bottom: ${cardBorderBottom};
+
+  @media (min-width: 550px) {
+    padding: 70px 45px;
+  }
 `
 
 const Title = styled.h2`
@@ -23,7 +27,11 @@ const Title = styled.h2`
 const AccordionWrapper = styled.div`
   margin: 1.25em auto;
   max-width: 815px;
-  transition: max-height 1s cubic-bezier(0.5, 0, 0.1, 1);
+
+  @media (min-width: 550px) {
+    width: 90%;
+    margin: 1.5em auto;
+  }
 `
 
 export default function FaqSection() {
