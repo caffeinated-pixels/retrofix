@@ -14,6 +14,10 @@ const Title = styled.h2`
   font-size: 1.625rem;
   line-height: 1.15;
   padding: 0 5%;
+
+  @media (min-width: 550px) {
+    font-size: 2.5rem;
+  }
 `
 
 const AccordionWrapper = styled.div`
