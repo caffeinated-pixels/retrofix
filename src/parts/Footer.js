@@ -21,14 +21,26 @@ const UnorderedList = styled.ul`
   margin: 0;
   max-width: 1000px;
   font-size: 13px;
-  columns: 2;
-  column-width: 50%;
+  /* columns: 2;
+  column-width: 50%; */
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  @media (min-width: 500px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (min-width: 740px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
 `
 
 const ListItem = styled.li`
   list-style: none;
   margin-bottom: 16px;
   min-width: 100px;
+  padding-right: 12px;
 `
 
 const Link = styled.a`
