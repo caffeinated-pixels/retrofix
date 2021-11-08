@@ -5,7 +5,6 @@ import { cardBorderBottom } from '../styles/style-constants'
 
 const HeaderContainer = styled.header`
   width: 100%;
-
   border-bottom: ${cardBorderBottom};
   background-image: url('../images/misc/home-bg.jpg');
   background-repeat: no-repeat;
@@ -14,7 +13,7 @@ const HeaderContainer = styled.header`
 `
 const FeatureWrapper = styled.div`
   text-align: center;
-  padding: 65px 0;
+  padding: 65px 5%;
   max-width: 950px;
 
   @media (min-width: 550px) {
