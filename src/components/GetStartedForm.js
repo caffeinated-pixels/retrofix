@@ -4,7 +4,6 @@ import { colors, focusOutline } from '../styles/style-constants'
 const Form = styled.form`
   display: flex;
   flex-direction: column;
-  padding: 0 5%;
 `
 
 const FormText = styled.p`
