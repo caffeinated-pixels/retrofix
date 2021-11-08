@@ -1,15 +1,17 @@
 import { Header, StoryCards, FaqSection, Footer } from '../parts/'
+import MainContainer from '../parts/MainContainer'
 import { footerHomeContent } from '../fixtures/footer-content'
 
 export default function Home() {
   return (
     <>
       <Header />
-      <StoryCards />
-      <FaqSection />
+      <MainContainer>
+        <StoryCards />
+        <FaqSection />
+      </MainContainer>
+
       <Footer footerContent={footerHomeContent} />
     </>
   )
 }
-
-// TODO: faq section should probably be part of <main>

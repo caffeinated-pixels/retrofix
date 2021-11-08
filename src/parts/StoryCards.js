@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import storyContentData from '../fixtures/storycard-content.json'
 
-const StoryCardsContainer = styled.main``
+const StoryCardsContainer = styled.div``
 
 const StoryCard = styled.section`
   width: 100%;
