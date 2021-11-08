@@ -18,7 +18,7 @@ const FeatureWrapper = styled.div`
   max-width: 950px;
 
   @media (min-width: 550px) {
-    padding: 75px 0;
+    padding: 145px 45px; // 75px + 70px on Netflix
   }
 `
 
@@ -39,6 +39,10 @@ const Subtitle = styled.p`
   font-weight: 400;
   max-width: 640px;
   margin: 1rem auto;
+
+  @media (min-width: 550px) {
+    font-size: 1.625rem;
+  }
 `
 
 export default function Header() {
