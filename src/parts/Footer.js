@@ -5,6 +5,12 @@ const FooterContainer = styled.footer`
   color: ${colors.textMedGrey};
   padding: 50px 5%;
   line-height: normal;
+  /* max-width: 1000px;
+  margin: 0 auto; */
+
+  @media (min-width: 550px) {
+    padding: 75px 45px;
+  }
 `
 
 const ContentWrapper = styled.div`
@@ -21,8 +27,6 @@ const UnorderedList = styled.ul`
   margin: 0;
   max-width: 1000px;
   font-size: 13px;
-  /* columns: 2;
-  column-width: 50%; */
 
   display: grid;
   grid-template-columns: repeat(2, 1fr);
