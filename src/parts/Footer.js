@@ -5,12 +5,14 @@ const FooterContainer = styled.footer`
   color: ${colors.textMedGrey};
   padding: 50px 5%;
   line-height: normal;
-  /* max-width: 1000px;
-  margin: 0 auto; */
 
   @media (min-width: 550px) {
     padding: 75px 45px;
   }
+`
+const FooterWrapper = styled.div`
+  max-width: 1000px;
+  margin: 0 auto;
 `
 
 const ContentWrapper = styled.div`
@@ -70,11 +72,13 @@ export default function Footer({ footerContent }) {
 
   return (
     <FooterContainer>
-      <ContentWrapper>
-        <TopText>{footerContent.title}</TopText>
-        <UnorderedList>{listItems}</UnorderedList>
-        <BottomText>Netflix Canada</BottomText>
-      </ContentWrapper>
+      <FooterWrapper>
+        <ContentWrapper>
+          <TopText>{footerContent.title}</TopText>
+          <UnorderedList>{listItems}</UnorderedList>
+          <BottomText>Netflix Canada</BottomText>
+        </ContentWrapper>
+      </FooterWrapper>
     </FooterContainer>
   )
 }
