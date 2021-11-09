@@ -20,6 +20,10 @@ const FeatureWrapper = styled.div`
   @media (min-width: 550px) {
     padding: 145px 45px; // 75px + 70px on Netflix
   }
+
+  @media (min-width: 950px) {
+    padding: 145px 0;
+  }
 `
 
 const Title = styled.h1`
