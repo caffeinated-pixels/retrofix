@@ -4,6 +4,7 @@ import { colors, focusOutline } from '../styles/style-constants'
 const Form = styled.form`
   display: flex;
   flex-direction: column;
+  max-width: 950px;
 `
 
 const FormText = styled.p`
@@ -19,6 +20,12 @@ const FormText = styled.p`
   @media (min-width: 740px) {
     font-size: 1.44rem;
   }
+
+  @media (min-width: 950px) {
+    font-size: 1.2rem;
+    padding-bottom: 10px;
+    max-width: none;
+  }
 `
 
 const EmailForm = styled.div`
@@ -27,9 +34,11 @@ const EmailForm = styled.div`
   align-items: center;
   margin: 10px auto;
   width: 100%;
+  max-width: 664px;
 
   @media (min-width: 950px) {
     flex-direction: row;
+    align-items: stretch;
   }
 `
 const EmailInput = styled.input`
@@ -40,13 +49,19 @@ const EmailInput = styled.input`
   border: 1px solid #8c8c8c;
   font-size: 0.875rem;
 
-  &:focus-visible {
-    outline: ${focusOutline};
-  }
-
   @media (min-width: 740px) {
     font-size: 1rem;
     padding: 15px 10px;
+  }
+
+  @media (min-width: 950px) {
+    /* flex: 1 0 auto; */
+    margin: 0;
+    max-width: 450px;
+  }
+
+  &:focus-visible {
+    outline: ${focusOutline};
   }
 `
 const EmailLabel = styled.label`
@@ -65,6 +80,12 @@ const EmailSubmit = styled.button`
   letter-spacing: 0.1px;
   line-height: initial;
   cursor: pointer;
+
+  @media (min-width: 950px) {
+    font-size: 1.625rem;
+    /* flex: 1 0 auto; */
+    margin: 0;
+  }
 
   &:hover,
   &:focus-visible {
