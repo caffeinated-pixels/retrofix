@@ -36,6 +36,10 @@ const AccordionWrapper = styled.div`
 
 const FormWrapper = styled.div`
   padding: 0 5%;
+
+  @media (min-width: 550px) {
+    padding: 0;
+  }
 `
 
 export default function FaqSection() {
