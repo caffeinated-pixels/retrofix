@@ -12,11 +12,20 @@ const StoryCard = styled.section`
   @media (min-width: 550px) {
     padding: 70px 45px;
   }
+
+  @media (min-width: 950px) {
+    display: flex;
+    flex-direction: ${(props) => props.direction};
+  }
 `
 
 const TextWrapper = styled.div`
   text-align: center;
   padding: 15px 0;
+
+  @media (min-width: 950px) {
+    width: 52%;
+  }
 `
 
 const Title = styled.h2`
@@ -47,11 +56,15 @@ const StoryImage = styled.img`
     useNegativeMargin ? '-10% auto 0' : '0 auto'};
   position: relative;
   z-index: -1;
+
+  @media (min-width: 950px) {
+    width: 48%;
+  }
 `
 
 export default function StoryCards() {
   const storyContent = storyContentData.map((item) => (
-    <StoryCard key={item.id}>
+    <StoryCard key={item.id} direction={item.direction}>
       <TextWrapper>
         <Title>{item.title}</Title>
         <Subtitle>{item.subtitle}</Subtitle>
@@ -66,13 +79,3 @@ export default function StoryCards() {
 
   return <StoryCardsContainer>{storyContent}</StoryCardsContainer>
 }
-
-/* 
-StoryCardsContainer (div)
-    header-card (section)
-    watch-on-tv (section)
-    download (section)
-    watch-everywhere (section)
-    kids-profiles (section)
-    faqs
-*/
