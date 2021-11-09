@@ -15,6 +15,7 @@ const FeatureWrapper = styled.div`
   text-align: center;
   padding: 65px 5%;
   max-width: 950px;
+  margin: 0 auto;
 
   @media (min-width: 550px) {
     padding: 145px 45px; // 75px + 70px on Netflix
