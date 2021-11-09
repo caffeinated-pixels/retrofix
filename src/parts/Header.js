@@ -6,11 +6,21 @@ import { cardBorderBottom } from '../styles/style-constants'
 const HeaderContainer = styled.header`
   width: 100%;
   border-bottom: ${cardBorderBottom};
-  background-image: url('../images/misc/home-bg.jpg');
+  background-image: url('../images/misc/home-bg-large.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: top left;
+  background-position: center;
 `
+const ImageGradient = styled.div`
+  background: rgba(0, 0, 0, 0.4);
+  background-image: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.8) 0,
+    rgba(0, 0, 0, 0) 60%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
+`
+
 const FeatureWrapper = styled.div`
   text-align: center;
   padding: 65px 5%;
@@ -52,15 +62,17 @@ const Subtitle = styled.p`
 export default function Header() {
   return (
     <HeaderContainer>
-      <Navbar>
-        <SiteLogo src='./images/misc/logo.svg' alt='Netflix logo' />
-        <LinkButton href='/signin'>Sign In</LinkButton>
-      </Navbar>
-      <FeatureWrapper>
-        <Title>Unlimited movies, TV shows, and more.</Title>
-        <Subtitle>Watch anywhere. Cancel anytime.</Subtitle>
-        <GetStartedForm />
-      </FeatureWrapper>
+      <ImageGradient>
+        <Navbar>
+          <SiteLogo src='./images/misc/logo.svg' alt='Netflix logo' />
+          <LinkButton href='/signin'>Sign In</LinkButton>
+        </Navbar>
+        <FeatureWrapper>
+          <Title>Unlimited movies, TV shows, and more.</Title>
+          <Subtitle>Watch anywhere. Cancel anytime.</Subtitle>
+          <GetStartedForm />
+        </FeatureWrapper>
+      </ImageGradient>
     </HeaderContainer>
   )
 }
