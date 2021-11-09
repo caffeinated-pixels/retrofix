@@ -7,6 +7,7 @@ const Form = styled.form`
 `
 
 const FormText = styled.p`
+  box-sizing: content-box;
   max-width: 450px;
   padding: 0 5%;
   margin: 0 auto;
@@ -14,6 +15,10 @@ const FormText = styled.p`
   font-size: 1.2rem;
   line-height: 1.25;
   text-align: center;
+
+  @media (min-width: 740px) {
+    font-size: 1.44rem;
+  }
 `
 
 const EmailForm = styled.div`
@@ -30,6 +35,11 @@ const EmailInput = styled.input`
 
   &:focus-visible {
     outline: ${focusOutline};
+  }
+
+  @media (min-width: 740px) {
+    font-size: 1rem;
+    padding: 15px 10px;
   }
 `
 const EmailLabel = styled.label`
