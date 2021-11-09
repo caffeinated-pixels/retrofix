@@ -15,7 +15,8 @@ const StoryCard = styled.section`
 
   @media (min-width: 950px) {
     display: flex;
-    flex-direction: ${(props) => props.direction};
+    flex-direction: ${({ direction }) => direction};
+    align-items: center;
   }
 `
 
@@ -25,6 +26,10 @@ const TextWrapper = styled.div`
 
   @media (min-width: 950px) {
     width: 52%;
+    text-align: left;
+    padding: ${({ direction }) =>
+      direction === 'row' ? '0 3rem 0 0' : '0 0 0 3rem'};
+    /* margin: -5% 0; */
   }
 `
 
@@ -38,6 +43,10 @@ const Title = styled.h2`
   @media (min-width: 550px) {
     font-size: 2.5rem;
   }
+
+  @media (min-width: 950px) {
+    font-size: 3.125rem;
+  }
 `
 
 const Subtitle = styled.p`
@@ -49,6 +58,10 @@ const Subtitle = styled.p`
   @media (min-width: 550px) {
     font-size: 1.25rem;
   }
+
+  @media (min-width: 950px) {
+    font-size: 1.625rem;
+  }
 `
 // some images need a negative margin-top to reduce white space
 const StoryImage = styled.img`
@@ -56,6 +69,7 @@ const StoryImage = styled.img`
     useNegativeMargin ? '-10% auto 0' : '0 auto'};
   position: relative;
   z-index: -1;
+  object-fit: cover;
 
   @media (min-width: 950px) {
     width: 48%;
@@ -65,7 +79,7 @@ const StoryImage = styled.img`
 export default function StoryCards() {
   const storyContent = storyContentData.map((item) => (
     <StoryCard key={item.id} direction={item.direction}>
-      <TextWrapper>
+      <TextWrapper direction={item.direction}>
         <Title>{item.title}</Title>
         <Subtitle>{item.subtitle}</Subtitle>
       </TextWrapper>
