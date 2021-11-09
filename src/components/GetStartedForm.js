@@ -64,9 +64,17 @@ const EmailInput = styled.input`
     outline: ${focusOutline};
   }
 `
+
+// label css based on https://www.w3.org/WAI/tutorials/forms/labels/#note-on-hiding-elements
 const EmailLabel = styled.label`
-  height: 0;
-  opacity: 0;
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
 `
 
 const EmailSubmit = styled.button`
@@ -109,7 +117,7 @@ export default function GetStartedForm() {
       </FormText>
       <EmailForm>
         <EmailInput id='email-input' type='email' placeholder='Email address' />
-        {/* <EmailLabel htmlFor='email-input'>Email address</EmailLabel> */}
+        <EmailLabel htmlFor='email-input'>Email address</EmailLabel>
         <EmailSubmit>
           Get Started
           <ChevronIcon className='fas fa-chevron-right' />
