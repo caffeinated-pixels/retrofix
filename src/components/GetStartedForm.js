@@ -24,12 +24,19 @@ const FormText = styled.p`
 const EmailForm = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
+  margin: 10px auto;
+  width: 100%;
+
+  @media (min-width: 950px) {
+    flex-direction: row;
+  }
 `
 const EmailInput = styled.input`
-  margin: 10px auto;
   width: 100%;
   max-width: 500px;
   padding: 10px;
+  margin-bottom: 10px;
   border: 1px solid #8c8c8c;
   font-size: 0.875rem;
 
@@ -51,7 +58,7 @@ const EmailSubmit = styled.button`
   background-color: ${colors.netflixRed};
   color: #fff;
   border: 0;
-  margin: 0.25em auto;
+  margin: 0.25em 0;
   padding: 0 1em;
   min-height: 40px;
   min-width: 74px;
@@ -81,7 +88,7 @@ export default function GetStartedForm() {
       </FormText>
       <EmailForm>
         <EmailInput id='email-input' type='email' placeholder='Email address' />
-        <EmailLabel htmlFor='email-input'>Email address</EmailLabel>
+        {/* <EmailLabel htmlFor='email-input'>Email address</EmailLabel> */}
         <EmailSubmit>
           Get Started
           <ChevronIcon className='fas fa-chevron-right' />
