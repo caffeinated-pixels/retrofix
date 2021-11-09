@@ -32,7 +32,7 @@
     "subtitle": "Send kids on adventures with their favorite characters in a space made just for them—free with your membership.",
     "image": "/images/misc/home-kids.jpg",
     "alt": "Kids profiles on Netflix",
-    "direction": "row-reverse",
+    "direction": "row",
     "useNegativeMargin": false
   }
 ]
