@@ -10,6 +10,7 @@ const StoryCard = styled.section`
 const ContentWrapper = styled.div`
   margin: 0 auto;
   padding: 50px 5%;
+  box-sizing: content-box;
 
   @media (min-width: 550px) {
     padding: 70px 45px;
