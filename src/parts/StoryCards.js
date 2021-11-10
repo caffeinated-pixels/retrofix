@@ -64,7 +64,7 @@ const Subtitle = styled.p`
   }
 `
 // some images need a negative margin-top to reduce white space
-const StoryImage = styled.img`
+const ImageWrapper = styled.div`
   margin: ${({ useNegativeMargin }) =>
     useNegativeMargin ? '-10% auto 0' : '0 auto'};
   position: relative;
@@ -77,6 +77,10 @@ const StoryImage = styled.img`
   }
 `
 
+const StoryImage = styled.img`
+  margin: 0 auto;
+`
+
 export default function StoryCards() {
   const storyContent = storyContentData.map((item) => (
     <StoryCard key={item.id} direction={item.direction}>
@@ -84,11 +88,9 @@ export default function StoryCards() {
         <Title>{item.title}</Title>
         <Subtitle>{item.subtitle}</Subtitle>
       </TextWrapper>
-      <StoryImage
-        src={item.image}
-        alt={item.alt}
-        useNegativeMargin={item.useNegativeMargin}
-      />
+      <ImageWrapper useNegativeMargin={item.useNegativeMargin}>
+        <StoryImage src={item.image} alt={item.alt} />
+      </ImageWrapper>
     </StoryCard>
   ))
 
