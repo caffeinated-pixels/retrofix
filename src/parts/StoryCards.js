@@ -4,10 +4,12 @@ import storyContentData from '../fixtures/storycard-content.json'
 const StoryCardsContainer = styled.div``
 
 const StoryCard = styled.section`
-  width: 100%;
-  /* max-width: 950px; */
-  padding: 50px 5%;
   border-bottom: 8px solid #222;
+`
+
+const ContentWrapper = styled.div`
+  margin: 0 auto;
+  padding: 50px 5%;
 
   @media (min-width: 550px) {
     padding: 70px 45px;
@@ -17,6 +19,7 @@ const StoryCard = styled.section`
     display: flex;
     flex-direction: ${({ direction }) => direction};
     align-items: center;
+    max-width: 1100px;
   }
 `
 
@@ -29,7 +32,6 @@ const TextWrapper = styled.div`
     text-align: left;
     padding: ${({ direction }) =>
       direction === 'row' ? '0 3rem 0 0' : '0 0 0 3rem'};
-    /* margin: -5% 0; */
   }
 `
 
@@ -83,13 +85,15 @@ const StoryImage = styled.img`
 export default function StoryCards() {
   const storyContent = storyContentData.map((item) => (
     <StoryCard key={item.id} direction={item.direction}>
-      <TextWrapper direction={item.direction}>
-        <Title>{item.title}</Title>
-        <Subtitle>{item.subtitle}</Subtitle>
-      </TextWrapper>
-      <ImageWrapper negativeMargin={item.negativeMargin}>
-        <StoryImage src={item.image} alt={item.alt} />
-      </ImageWrapper>
+      <ContentWrapper>
+        <TextWrapper direction={item.direction}>
+          <Title>{item.title}</Title>
+          <Subtitle>{item.subtitle}</Subtitle>
+        </TextWrapper>
+        <ImageWrapper negativeMargin={item.negativeMargin}>
+          <StoryImage src={item.image} alt={item.alt} />
+        </ImageWrapper>
+      </ContentWrapper>
     </StoryCard>
   ))
 
