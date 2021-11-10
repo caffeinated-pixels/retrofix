@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { Home, Browse, Signin, Signup, Profile } from './pages'
+import * as ROUTES from './constants/routes'
 
 function App() {
   return (
@@ -8,16 +9,16 @@ function App() {
         <Route exact path='/'>
           <Home />
         </Route>
-        <Route path='/browse'>
+        <Route path={ROUTES.BROWSE}>
           <Browse />
         </Route>
-        <Route path='/signin'>
+        <Route path={ROUTES.SIGN_IN}>
           <Signin />
         </Route>
-        <Route path='/signup'>
+        <Route path={ROUTES.SIGN_UP}>
           <Signup />
         </Route>
-        <Route path='/profile'>
+        <Route path={ROUTES.PROFILE}>
           <Profile />
         </Route>
       </Switch>
