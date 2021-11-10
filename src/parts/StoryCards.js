@@ -73,6 +73,7 @@ const StoryImage = styled.img`
 
   @media (min-width: 950px) {
     width: 48%;
+    margin: 0;
   }
 `
 
