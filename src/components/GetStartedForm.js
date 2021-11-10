@@ -5,6 +5,7 @@ const Form = styled.form`
   display: flex;
   flex-direction: column;
   max-width: 950px;
+  margin: 0 auto;
 `
 
 const FormText = styled.p`
