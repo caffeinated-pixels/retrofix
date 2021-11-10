@@ -6,7 +6,7 @@
     "image": "/images/misc/home-tv.jpg",
     "alt": "Watching Netflix on a TV",
     "direction": "row",
-    "useNegativeMargin": true
+    "negativeMargin": "-10% auto 0"
   },
   {
     "id": 2,
@@ -15,7 +15,7 @@
     "image": "/images/misc/home-mobile.jpg",
     "alt": "Downloading Stranger Things on mobile",
     "direction": "row-reverse",
-    "useNegativeMargin": false
+    "negativeMargin": "0 auto"
   },
   {
     "id": 3,
@@ -24,7 +24,7 @@
     "image": "/images/misc/home-imac.jpg",
     "alt": "Watching Netflix on any device type",
     "direction": "row",
-    "useNegativeMargin": true
+    "negativeMargin": "-5% auto 0"
   },
   {
     "id": 4,
@@ -33,6 +33,6 @@
     "image": "/images/misc/home-kids.jpg",
     "alt": "Kids profiles on Netflix",
     "direction": "row-reverse",
-    "useNegativeMargin": false
+    "negativeMargin": "0 auto"
   }
 ]
