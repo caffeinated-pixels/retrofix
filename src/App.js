@@ -5,6 +5,7 @@ import {
   Signin,
   Registration,
   RegForm,
+  PlanForm,
   Signup,
   Profile,
 } from './pages'
@@ -33,7 +34,7 @@ function App() {
           <RegForm />
         </Route>
         <Route path={ROUTES.PLAN_FORM}>
-          <Signup />
+          <PlanForm />
         </Route>
         <Route path={ROUTES.PROFILE}>
           <Profile />
