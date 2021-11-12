@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { useHistory } from 'react-router-dom'
 import { colors, focusOutline } from '../styles/style-constants'
-import { SIGN_IN } from '../constants/routes'
+import { REGISTRATION } from '../constants/routes'
 
 const Form = styled.form`
   display: flex;
@@ -114,9 +114,9 @@ const ChevronIcon = styled.i`
 export default function GetStartedForm() {
   const history = useHistory()
 
-  const Signin = (e) => {
+  const Signup = (e) => {
     e.preventDefault()
-    history.push(SIGN_IN)
+    history.push(REGISTRATION)
   }
 
   return (
@@ -127,7 +127,7 @@ export default function GetStartedForm() {
       <EmailForm>
         <EmailInput id='email-input' type='email' placeholder='Email address' />
         <EmailLabel htmlFor='email-input'>Email address</EmailLabel>
-        <EmailSubmit onClick={Signin}>
+        <EmailSubmit onClick={Signup}>
           Get Started
           <ChevronIcon className='fas fa-chevron-right' />
         </EmailSubmit>
