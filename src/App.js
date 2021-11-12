@@ -1,5 +1,13 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import { Home, Browse, Signin, Registration, Signup, Profile } from './pages'
+import {
+  Home,
+  Browse,
+  Signin,
+  Registration,
+  RegForm,
+  Signup,
+  Profile,
+} from './pages'
 import * as ROUTES from './constants/routes'
 
 function App() {
@@ -22,7 +30,7 @@ function App() {
           <Registration />
         </Route>
         <Route path={ROUTES.REG_FORM}>
-          <Signup />
+          <RegForm />
         </Route>
         <Route path={ROUTES.PLAN_FORM}>
           <Signup />
