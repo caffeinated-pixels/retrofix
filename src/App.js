@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import { Home, Browse, Signin, Signup, Profile } from './pages'
+import { Home, Browse, Signin, Registration, Signup, Profile } from './pages'
 import * as ROUTES from './constants/routes'
 
 function App() {
@@ -15,11 +15,11 @@ function App() {
         <Route path={ROUTES.SIGN_IN}>
           <Signin />
         </Route>
-        <Route path={ROUTES.SIGN_UP}>
+        <Route exact path={ROUTES.SIGN_UP}>
           <Signup />
         </Route>
         <Route path={ROUTES.REGISTRATION}>
-          <Signup />
+          <Registration />
         </Route>
         <Route path={ROUTES.REG_FORM}>
           <Signup />
