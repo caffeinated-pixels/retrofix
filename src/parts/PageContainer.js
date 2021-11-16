@@ -1,9 +1,10 @@
 import styled from 'styled-components'
+import { colors } from '../styles/style-constants'
 
 const Container = styled.div`
-  background-color: ${({ bgColor }) => (bgColor ? bgColor : '#000000')};
+  background-color: ${({ bgColor }) => (bgColor ? bgColor : colors.bgBlack)};
   min-height: 100vh;
-  color: ${({ txtColor }) => (txtColor ? txtColor : '#fff')};
+  color: ${({ txtColor }) => (txtColor ? txtColor : colors.bgWhite)};
 `
 
 export default function PageContainer({
