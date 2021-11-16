@@ -8,6 +8,10 @@ const Form = styled.form`
   flex-direction: column;
   max-width: 950px;
   margin: 0 auto;
+
+  @media (min-width: 950px) {
+    padding-top: 0.85rem;
+  }
 `
 
 const FormText = styled.p`
