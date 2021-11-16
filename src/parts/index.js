@@ -1,4 +1,5 @@
 export { default as Header } from './Header'
+export { default as PageContainer } from './PageContainer'
 export { default as MainContainer } from './MainContainer'
 export { default as StoryCards } from './StoryCards'
 export { default as FaqSection } from './FaqSection'
