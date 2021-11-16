@@ -58,7 +58,7 @@ const EmailInput = styled.input`
   }
 
   @media (min-width: 950px) {
-    /* flex: 1 0 auto; */
+    padding: 20px 10px;
     margin: 0;
     max-width: 450px;
   }
