@@ -7,6 +7,11 @@ const Logo = styled.img`
     width: 6.75rem;
     height: 2rem;
   }
+
+  @media (min-width: 950px) {
+    width: 8.375rem;
+    height: 2.25rem;
+  }
 `
 
 export default function SiteLogo({ ...restProps }) {
