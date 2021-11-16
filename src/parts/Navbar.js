@@ -11,6 +11,10 @@ const NavContainer = styled.nav`
   @media (min-width: 550px) {
     margin: 0 45px;
   }
+
+  @media (min-width: 1920px) {
+    margin: 0 auto;
+  }
 `
 export default function Navbar({ children, ...restProps }) {
   return <NavContainer {...restProps}>{children}</NavContainer>
