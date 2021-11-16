@@ -64,7 +64,7 @@ export default function Header() {
     <HeaderContainer>
       <ImageGradient>
         <Navbar>
-          <SiteLogo src='./images/misc/logo.svg' alt='Netflix logo' />
+          <SiteLogo />
           <LinkButton href='/signin'>Sign In</LinkButton>
         </Navbar>
         <FeatureWrapper>
