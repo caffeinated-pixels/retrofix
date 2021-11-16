@@ -43,6 +43,10 @@ const EmailForm = styled.div`
     flex-direction: row;
     align-items: stretch;
   }
+
+  @media (min-width: 1450px) {
+    max-width: 746px;
+  }
 `
 const EmailInput = styled.input`
   width: 100%;
@@ -61,6 +65,11 @@ const EmailInput = styled.input`
     padding: 20px 10px;
     margin: 0;
     max-width: 450px;
+  }
+
+  @media (min-width: 1450px) {
+    padding: 25px 10px;
+    max-width: 500px;
   }
 
   &:focus-visible {
@@ -95,6 +104,10 @@ const EmailSubmit = styled.button`
   @media (min-width: 950px) {
     font-size: 1.625rem;
     margin: 0;
+  }
+
+  @media (min-width: 1450px) {
+    font-size: 1.875rem;
   }
 
   &:hover,
