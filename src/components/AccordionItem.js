@@ -10,13 +10,8 @@ const AccordionItemWrapper = styled.div`
 `
 
 const QuestionHeader = styled.h3`
-  font-weight: 400;
-  line-height: normal;
-  font-size: 1.125rem;
-
-  @media (min-width: 550px) {
-    font-size: 1.25rem;
-  }
+  font-weight: inherit;
+  font-size: inherit;
 `
 
 const HeaderButton = styled.button`
@@ -47,13 +42,7 @@ const AnswerPanel = styled.div`
   background-color: ${colors.accordionGrey};
   padding: 1.2em;
   margin-bottom: 8px;
-  font-size: 1.125rem;
-  line-height: normal;
   overflow: hidden;
-
-  @media (min-width: 550px) {
-    font-size: 1.25rem;
-  }
 `
 
 export default function AccordionItem({ id, answer, question }) {
