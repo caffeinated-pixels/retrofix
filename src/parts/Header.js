@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import Navbar from './Navbar'
+import { Navbar } from './'
 import { LinkButton, SiteLogo, GetStartedForm } from '../components'
 import { cardBorderBottom } from '../styles/style-constants'
 
