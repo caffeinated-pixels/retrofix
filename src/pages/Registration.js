@@ -1,10 +1,13 @@
-import { PageContainer } from '../parts'
+import { PageContainer, Navbar } from '../parts'
+import { SiteLogo } from '../components'
 import { colors } from '../styles/style-constants'
 
 export default function Registration() {
   return (
     <PageContainer bgColor={colors.bgWhite} txtColor={colors.textDarkGrey}>
-      <h1>Registration page!</h1>
+      <Navbar>
+        <SiteLogo />
+      </Navbar>
     </PageContainer>
   )
 }
