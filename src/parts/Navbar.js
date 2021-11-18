@@ -12,6 +12,10 @@ const NavContainer = styled.nav`
     margin: 0 45px;
   }
 
+  @media (min-width: 950px) {
+    margin: 0 3.5rem;
+  }
+
   @media (min-width: 1920px) {
     margin: 0 auto;
   }
