@@ -34,6 +34,10 @@ const FeatureWrapper = styled.div`
   @media (min-width: 950px) {
     padding: 145px 0;
   }
+
+  @media (min-width: 1450px) {
+    padding: 145px 0 70px;
+  }
 `
 
 const Title = styled.h1`
