@@ -46,6 +46,10 @@ const Title = styled.h1`
   @media (min-width: 550px) {
     font-size: 3.125rem;
   }
+
+  @media (min-width: 1450px) {
+    font-size: 4rem;
+  }
 `
 
 const Subtitle = styled.p`
