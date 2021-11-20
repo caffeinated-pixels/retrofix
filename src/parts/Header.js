@@ -21,6 +21,26 @@ const ImageGradient = styled.div`
   );
 `
 
+const LogoWrapper = styled.div`
+  width: 5.5rem;
+  height: 1.5rem;
+
+  @media (min-width: 550px) {
+    width: 6.75rem;
+    height: 2rem;
+  }
+
+  @media (min-width: 950px) {
+    width: 8.375rem;
+    height: 2.25rem;
+  }
+
+  @media (min-width: 1450px) {
+    width: 10.4375rem;
+    height: 2.8125rem;
+  }
+`
+
 const FeatureWrapper = styled.div`
   text-align: center;
   padding: 65px 5%;
@@ -72,9 +92,12 @@ export default function Header() {
     <HeaderContainer>
       <ImageGradient>
         <Navbar>
-          <SiteLogo />
+          <LogoWrapper>
+            <SiteLogo />
+          </LogoWrapper>
           <LinkButton href='/signin'>Sign In</LinkButton>
         </Navbar>
+
         <FeatureWrapper>
           <Title>Unlimited movies, TV shows, and more.</Title>
           <Subtitle>Watch anywhere. Cancel anytime.</Subtitle>
