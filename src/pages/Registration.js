@@ -26,7 +26,37 @@ const LogoWrapper = styled.div`
   } */
 `
 
-const SimpleContainer = styled.main``
+const SimpleContainer = styled.main`
+  flex-grow: 1;
+`
+const CenterContainer = styled.div``
+
+const RegContainer = styled.div``
+
+const StepLogoContainer = styled.div`
+  width: 260px;
+  height: 90px;
+
+  background-image: url('../images/misc/reg-devices.png');
+  background-repeat: no-repeat;
+  background-size: 50% 50%;
+  background-size: 260px;
+`
+
+const StepHeaderContainer = styled.div``
+
+const StepIndicator = styled.p`
+  text-transform: uppercase;
+`
+const StepTitle = styled.h1``
+
+const ContextBody = styled.p``
+
+const SubmitButtonContainer = styled.div``
+
+const SubmitButton = styled.button`
+  width: 100%;
+`
 
 export default function Registration() {
   return (
@@ -37,7 +67,24 @@ export default function Registration() {
         </LogoWrapper>
         <NavLink href={SIGN_IN}>Sign In</NavLink>
       </RegNavbar>
-      <SimpleContainer></SimpleContainer>
+      <SimpleContainer>
+        <CenterContainer>
+          <RegContainer>
+            <StepLogoContainer />
+            <StepHeaderContainer>
+              <StepIndicator>step 1 of 3</StepIndicator>
+              <StepTitle>Finish setting up your account</StepTitle>
+            </StepHeaderContainer>
+            <ContextBody>
+              Netflix is personalized for you. Create a password to watch on any
+              device at any time.
+            </ContextBody>
+          </RegContainer>
+          <SubmitButtonContainer>
+            <SubmitButton>Next</SubmitButton>
+          </SubmitButtonContainer>
+        </CenterContainer>
+      </SimpleContainer>
       <Footer footerContent={footerHomeRegistration} />
     </PageContainer>
   )
