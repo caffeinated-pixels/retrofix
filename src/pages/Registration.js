@@ -1,20 +1,9 @@
 import styled from 'styled-components'
 import { useHistory } from 'react-router-dom'
-import { PageContainer, RegNavbar, Footer } from '../parts'
+import { PageContainer, RegNavbar, RegContentContainer, Footer } from '../parts'
 import { footerHomeRegistration } from '../fixtures/footer-content'
 import { REG_FORM } from '../constants/routes'
 import { colors, focusOutline } from '../styles/style-constants'
-
-const SimpleContainer = styled.main`
-  flex-grow: 1;
-  overflow: hidden;
-  padding-bottom: 95px;
-`
-const CenterContainer = styled.div`
-  padding: 20px 32px 60px;
-  margin: 0 auto 15px;
-  max-width: 978px;
-`
 
 const RegContainer = styled.div`
   max-width: 340px;
@@ -97,26 +86,24 @@ export default function Registration() {
   return (
     <PageContainer bgColor={colors.bgWhite} txtColor={colors.textDarkGrey}>
       <RegNavbar />
-      <SimpleContainer>
-        <CenterContainer>
-          <RegContainer>
-            <StepLogoContainer />
-            <StepHeaderContainer>
-              <StepIndicator>
-                step <BoldText>1</BoldText> of <BoldText>3</BoldText>
-              </StepIndicator>
-              <StepTitle>Finish setting up your account</StepTitle>
-            </StepHeaderContainer>
-            <ContextBody>
-              Netflix is personalized for you. Create a password to watch on any
-              device at any time.
-            </ContextBody>
-          </RegContainer>
-          <SubmitButtonContainer>
-            <SubmitButton onClick={nextPage}>Next</SubmitButton>
-          </SubmitButtonContainer>
-        </CenterContainer>
-      </SimpleContainer>
+      <RegContentContainer>
+        <RegContainer>
+          <StepLogoContainer />
+          <StepHeaderContainer>
+            <StepIndicator>
+              step <BoldText>1</BoldText> of <BoldText>3</BoldText>
+            </StepIndicator>
+            <StepTitle>Finish setting up your account</StepTitle>
+          </StepHeaderContainer>
+          <ContextBody>
+            Netflix is personalized for you. Create a password to watch on any
+            device at any time.
+          </ContextBody>
+        </RegContainer>
+        <SubmitButtonContainer>
+          <SubmitButton onClick={nextPage}>Next</SubmitButton>
+        </SubmitButtonContainer>
+      </RegContentContainer>
       <Footer
         footerContent={footerHomeRegistration}
         bgColor={colors.bgLightGrey}
@@ -125,18 +112,3 @@ export default function Registration() {
     </PageContainer>
   )
 }
-
-/* 
-header
-  logo
-  Sign In link
-
-main
-  image
-  text
-  buttion
-
-footer
-
-
-*/
