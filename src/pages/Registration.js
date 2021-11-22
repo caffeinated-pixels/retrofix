@@ -10,6 +10,11 @@ const LogoWrapper = styled.div`
   height: 20px;
   margin-left: 3%;
 
+  @media (min-width: 500px) {
+    width: 167px;
+    height: 45px;
+  }
+
   /* @media (min-width: 550px) {
     width: 6.75rem;
     height: 2rem;
