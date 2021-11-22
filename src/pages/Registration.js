@@ -45,6 +45,10 @@ const CenterContainer = styled.div`
 const RegContainer = styled.div`
   max-width: 340px;
   margin: 0 auto 0;
+
+  @media (min-width: 600px) {
+    text-align: center;
+  }
 `
 
 const StepLogoContainer = styled.div`
@@ -75,6 +79,10 @@ const StepTitle = styled.h1`
 const ContextBody = styled.p`
   font-size: 1.0625rem;
   max-width: 300px;
+
+  @media (min-width: 600px) {
+    margin: 0 auto;
+  }
 `
 
 const SubmitButtonContainer = styled.div`
