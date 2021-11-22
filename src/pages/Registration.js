@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { PageContainer, RegNavbar, Footer } from '../parts'
 import { SiteLogo, NavLink } from '../components'
 import { footerHomeRegistration } from '../fixtures/footer-content'
-import { SIGN_IN } from '../constants/routes'
+import { HOME, SIGN_IN } from '../constants/routes'
 import { colors, focusOutline } from '../styles/style-constants'
 
 const LogoWrapper = styled.div`
@@ -30,6 +30,8 @@ const LogoWrapper = styled.div`
     height: 2.8125rem;
   } */
 `
+
+const LogoLink = styled.a``
 
 const SimpleContainer = styled.main`
   flex-grow: 1;
@@ -118,7 +120,9 @@ export default function Registration() {
     <PageContainer bgColor={colors.bgWhite} txtColor={colors.textDarkGrey}>
       <RegNavbar>
         <LogoWrapper>
-          <SiteLogo />
+          <LogoLink href={HOME}>
+            <SiteLogo />
+          </LogoLink>
         </LogoWrapper>
         <NavLink href={SIGN_IN}>Sign In</NavLink>
       </RegNavbar>
