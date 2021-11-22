@@ -7,11 +7,14 @@ const FooterContainer = styled.footer`
   border-top: ${({ borderTop }) =>
     borderTop ? `1px solid ${colors.borderLightGrey}` : null};
 
-  padding: 50px 5%;
+  padding: ${({ increasedPadding }) =>
+    increasedPadding ? '50px 5%' : '30px 0'};
   line-height: normal;
 
   @media (min-width: 550px) {
     padding: 75px 45px;
+    padding: ${({ increasedPadding }) =>
+      increasedPadding ? '75px 45px' : '30px 0'};
   }
 `
 const FooterWrapper = styled.div`
@@ -67,7 +70,12 @@ const BottomText = styled.p`
   margin-top: 24px;
 `
 
-export default function Footer({ footerContent, bgColor, borderTop }) {
+export default function Footer({
+  footerContent,
+  increasedPadding,
+  bgColor,
+  borderTop,
+}) {
   const listItems = footerContent.body.map((item, i) => (
     <ListItem key={i}>
       <Link href='#'>{item}</Link>
@@ -75,7 +83,11 @@ export default function Footer({ footerContent, bgColor, borderTop }) {
   ))
 
   return (
-    <FooterContainer bgColor={bgColor} borderTop={borderTop}>
+    <FooterContainer
+      increasedPadding={increasedPadding}
+      bgColor={bgColor}
+      borderTop={borderTop}
+    >
       <FooterWrapper>
         <ContentWrapper>
           <TopText>{footerContent.title}</TopText>

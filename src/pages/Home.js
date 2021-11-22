@@ -16,7 +16,7 @@ export default function Home() {
         <FaqSection />
       </MainContainer>
 
-      <Footer footerContent={footerHomeContent} />
+      <Footer footerContent={footerHomeContent} increasedPadding={true} />
     </>
   )
 }
