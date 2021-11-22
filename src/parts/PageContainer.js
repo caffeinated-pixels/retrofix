@@ -7,6 +7,7 @@ const Container = styled.div`
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  letter-spacing: 0.2px;
 `
 
 export default function PageContainer({

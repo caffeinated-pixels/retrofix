@@ -30,7 +30,6 @@ const SimpleContainer = styled.main`
   flex-grow: 1;
   overflow: hidden;
   padding-bottom: 95px;
-  letter-spacing: 0.2px;
 `
 const CenterContainer = styled.div`
   padding: 20px 32px 60px;
