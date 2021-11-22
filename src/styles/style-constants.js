@@ -3,6 +3,8 @@ export const colors = {
   netflixRedFocus: `hsl(357, 92%, 52%)`,
   bgWhite: `hsl(0, 0%, 100%)`,
   bgBlack: 'hsl(0, 0%, 0%)',
+  bgLightGrey: 'hsl(0, 0%, 95%)',
+  borderLightGrey: 'hsl(0, 0%, 90%)',
   textMedGrey: 'hsl(0, 0%, 46%)',
   textDarkGrey: 'hsl(0, 0%, 20%)',
   accordionGrey: 'hsl(0, 0%, 19%)',

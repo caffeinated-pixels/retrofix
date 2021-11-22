@@ -3,6 +3,10 @@ import { colors } from '../styles/style-constants'
 
 const FooterContainer = styled.footer`
   color: ${colors.textMedGrey};
+  background-color: ${({ bgColor }) => (bgColor ? bgColor : null)};
+  border-top: ${({ borderTop }) =>
+    borderTop ? `1px solid ${colors.borderLightGrey}` : null};
+
   padding: 50px 5%;
   line-height: normal;
 
@@ -63,7 +67,7 @@ const BottomText = styled.p`
   margin-top: 24px;
 `
 
-export default function Footer({ footerContent }) {
+export default function Footer({ footerContent, bgColor, borderTop }) {
   const listItems = footerContent.body.map((item, i) => (
     <ListItem key={i}>
       <Link href='#'>{item}</Link>
@@ -71,7 +75,7 @@ export default function Footer({ footerContent }) {
   ))
 
   return (
-    <FooterContainer>
+    <FooterContainer bgColor={bgColor} borderTop={borderTop}>
       <FooterWrapper>
         <ContentWrapper>
           <TopText>{footerContent.title}</TopText>

@@ -28,6 +28,9 @@ const LogoWrapper = styled.div`
 
 const SimpleContainer = styled.main`
   flex-grow: 1;
+  overflow: hidden;
+  padding-bottom: 95px;
+  border: 1px solid red;
 `
 const CenterContainer = styled.div``
 
@@ -85,7 +88,11 @@ export default function Registration() {
           </SubmitButtonContainer>
         </CenterContainer>
       </SimpleContainer>
-      <Footer footerContent={footerHomeRegistration} />
+      <Footer
+        footerContent={footerHomeRegistration}
+        bgColor={colors.bgLightGrey}
+        borderTop={true}
+      />
     </PageContainer>
   )
 }
