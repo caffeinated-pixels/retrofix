@@ -1,4 +1,6 @@
 import styled from 'styled-components'
+import { SiteLogo, NavLink } from '../components'
+import { HOME, SIGN_IN } from '../constants/routes'
 
 const NavContainer = styled.nav`
   display: flex;
@@ -15,6 +17,28 @@ const NavContainer = styled.nav`
     height: 90px;
   }
 `
-export default function Navbar({ children, ...restProps }) {
-  return <NavContainer {...restProps}>{children}</NavContainer>
+const LogoWrapper = styled.div`
+  width: 75px;
+  height: 20px;
+  margin-left: 3%;
+
+  @media (min-width: 500px) {
+    width: 167px;
+    height: 45px;
+  }
+`
+
+const LogoLink = styled.a``
+
+export default function Navbar() {
+  return (
+    <NavContainer>
+      <LogoWrapper>
+        <LogoLink href={HOME}>
+          <SiteLogo />
+        </LogoLink>
+      </LogoWrapper>
+      <NavLink href={SIGN_IN}>Sign In</NavLink>
+    </NavContainer>
+  )
 }

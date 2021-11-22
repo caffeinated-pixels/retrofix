@@ -1,23 +1,9 @@
 import styled from 'styled-components'
 import { useHistory } from 'react-router-dom'
 import { PageContainer, RegNavbar, Footer } from '../parts'
-import { SiteLogo, NavLink } from '../components'
 import { footerHomeRegistration } from '../fixtures/footer-content'
-import { HOME, SIGN_IN, REG_FORM } from '../constants/routes'
+import { REG_FORM } from '../constants/routes'
 import { colors, focusOutline } from '../styles/style-constants'
-
-const LogoWrapper = styled.div`
-  width: 75px;
-  height: 20px;
-  margin-left: 3%;
-
-  @media (min-width: 500px) {
-    width: 167px;
-    height: 45px;
-  }
-`
-
-const LogoLink = styled.a``
 
 const SimpleContainer = styled.main`
   flex-grow: 1;
@@ -110,14 +96,7 @@ export default function Registration() {
 
   return (
     <PageContainer bgColor={colors.bgWhite} txtColor={colors.textDarkGrey}>
-      <RegNavbar>
-        <LogoWrapper>
-          <LogoLink href={HOME}>
-            <SiteLogo />
-          </LogoLink>
-        </LogoWrapper>
-        <NavLink href={SIGN_IN}>Sign In</NavLink>
-      </RegNavbar>
+      <RegNavbar />
       <SimpleContainer>
         <CenterContainer>
           <RegContainer>
