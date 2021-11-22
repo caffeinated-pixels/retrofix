@@ -7,9 +7,9 @@ const NavContainer = styled.nav`
 
   border-bottom: 1px solid #e6e6e6;
 
-  /* @media (min-width: 550px) {
-    margin: 0 45px;
-  } */
+  @media (min-width: 500px) {
+    height: 75px;
+  }
 `
 export default function Navbar({ children, ...restProps }) {
   return <NavContainer {...restProps}>{children}</NavContainer>
