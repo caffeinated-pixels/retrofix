@@ -3,7 +3,7 @@ import { PageContainer, RegNavbar, Footer } from '../parts'
 import { SiteLogo, NavLink } from '../components'
 import { footerHomeRegistration } from '../fixtures/footer-content'
 import { SIGN_IN } from '../constants/routes'
-import { colors } from '../styles/style-constants'
+import { colors, focusOutline } from '../styles/style-constants'
 
 const LogoWrapper = styled.div`
   width: 75px;
@@ -30,19 +30,28 @@ const SimpleContainer = styled.main`
   flex-grow: 1;
   overflow: hidden;
   padding-bottom: 95px;
-  border: 1px solid red;
+  letter-spacing: 0.2px;
 `
-const CenterContainer = styled.div``
+const CenterContainer = styled.div`
+  padding: 20px 32px 60px;
+  margin: 0 auto 15px;
+  max-width: 978px;
+`
 
-const RegContainer = styled.div``
+const RegContainer = styled.div`
+  max-width: 340px;
+  margin: 0 auto 0;
+`
 
 const StepLogoContainer = styled.div`
   width: 260px;
   height: 90px;
+  margin: 30% auto 20px;
+  display: inline-block;
 
   background-image: url('../images/misc/reg-devices.png');
   background-repeat: no-repeat;
-  background-size: 50% 50%;
+  background-position: 50% 50%;
   background-size: 260px;
 `
 
@@ -50,15 +59,45 @@ const StepHeaderContainer = styled.div``
 
 const StepIndicator = styled.p`
   text-transform: uppercase;
+  font-size: 0.8125rem;
 `
-const StepTitle = styled.h1``
+const BoldText = styled.b``
 
-const ContextBody = styled.p``
+const StepTitle = styled.h1`
+  font-size: 1.4375rem;
+  margin: 0.2em 0 0.4em;
+`
 
-const SubmitButtonContainer = styled.div``
+const ContextBody = styled.p`
+  font-size: 1.0625rem;
+`
+
+const SubmitButtonContainer = styled.div`
+  max-width: 340px;
+  margin-top: 24px;
+`
 
 const SubmitButton = styled.button`
   width: 100%;
+  min-height: 48px;
+  background-color: ${colors.netflixRed};
+  border: none;
+  cursor: pointer;
+
+  color: #fff;
+  font-size: 1.0625rem;
+  letter-spacing: 0.025rem;
+
+  border-radius: 2px;
+
+  &:hover,
+  &:focus-visible {
+    background-color: ${colors.netflixRedFocus};
+  }
+
+  &:focus-visible {
+    outline: ${focusOutline};
+  }
 `
 
 export default function Registration() {
@@ -75,7 +114,9 @@ export default function Registration() {
           <RegContainer>
             <StepLogoContainer />
             <StepHeaderContainer>
-              <StepIndicator>step 1 of 3</StepIndicator>
+              <StepIndicator>
+                step <BoldText>1</BoldText> of <BoldText>3</BoldText>
+              </StepIndicator>
               <StepTitle>Finish setting up your account</StepTitle>
             </StepHeaderContainer>
             <ContextBody>
