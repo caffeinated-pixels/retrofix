@@ -3,8 +3,10 @@ import { colors } from '../styles/style-constants'
 
 const Container = styled.div`
   background-color: ${({ bgColor }) => (bgColor ? bgColor : colors.bgBlack)};
-  min-height: 100vh;
   color: ${({ txtColor }) => (txtColor ? txtColor : colors.bgWhite)};
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 `
 
 export default function PageContainer({
