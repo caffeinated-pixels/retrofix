@@ -13,6 +13,10 @@ const Link = styled.a`
     margin: 0 3%;
   }
 
+  @media (min-width: 740px) {
+    font-size: 1.1875rem;
+  }
+
   &:hover,
   &:focus-visible {
     text-decoration: underline;
