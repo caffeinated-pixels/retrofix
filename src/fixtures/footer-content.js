@@ -25,6 +25,18 @@ export const footerHomeContent = {
   ],
 }
 
+export const footerHomeRegistration = {
+  title: 'Questions? Call 1-555-123-4567',
+  body: [
+    'FAQ',
+    'Help Center',
+    'Terms of Use',
+    'Privacy',
+    'Cookie Preferences',
+    'Corporate Information',
+  ],
+}
+
 // export const footerHomeContent = {
 //   title: 'Questions? Call 1-555-123-4567',
 //   body: [
