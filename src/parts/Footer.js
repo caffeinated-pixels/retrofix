@@ -76,7 +76,9 @@ export default function Footer({ footerContent }) {
         <ContentWrapper>
           <TopText>{footerContent.title}</TopText>
           <UnorderedList>{listItems}</UnorderedList>
-          <BottomText>Netflix Canada</BottomText>
+          {footerContent.bottomText ? (
+            <BottomText>{footerContent.bottomText}</BottomText>
+          ) : null}
         </ContentWrapper>
       </FooterWrapper>
     </FooterContainer>

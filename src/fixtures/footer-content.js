@@ -23,6 +23,7 @@ export const footerHomeContent = {
 
     'Only on Netflix',
   ],
+  bottomText: 'Netflix Canada',
 }
 
 export const footerHomeRegistration = {
