@@ -1,8 +1,9 @@
 import styled from 'styled-components'
+import { useHistory } from 'react-router-dom'
 import { PageContainer, RegNavbar, Footer } from '../parts'
 import { SiteLogo, NavLink } from '../components'
 import { footerHomeRegistration } from '../fixtures/footer-content'
-import { HOME, SIGN_IN } from '../constants/routes'
+import { HOME, SIGN_IN, REG_FORM } from '../constants/routes'
 import { colors, focusOutline } from '../styles/style-constants'
 
 const LogoWrapper = styled.div`
@@ -116,6 +117,12 @@ const SubmitButton = styled.button`
 `
 
 export default function Registration() {
+  const history = useHistory()
+
+  const nextPage = () => {
+    history.push(REG_FORM)
+  }
+
   return (
     <PageContainer bgColor={colors.bgWhite} txtColor={colors.textDarkGrey}>
       <RegNavbar>
@@ -142,7 +149,7 @@ export default function Registration() {
             </ContextBody>
           </RegContainer>
           <SubmitButtonContainer>
-            <SubmitButton>Next</SubmitButton>
+            <SubmitButton onClick={nextPage}>Next</SubmitButton>
           </SubmitButtonContainer>
         </CenterContainer>
       </SimpleContainer>
