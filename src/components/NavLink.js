@@ -8,6 +8,11 @@ const Link = styled.a`
   line-height: 3.2;
   margin: 0 10px;
 
+  @media (min-width: 500px) {
+    font-size: 1rem;
+    margin: 0 3%;
+  }
+
   &:hover,
   &:focus-visible {
     text-decoration: underline;
