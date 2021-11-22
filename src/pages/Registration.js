@@ -73,7 +73,7 @@ const ContextBody = styled.p`
 
 const SubmitButtonContainer = styled.div`
   max-width: 340px;
-  margin-top: 24px;
+  margin: 24px auto 0;
 `
 
 const SubmitButton = styled.button`
