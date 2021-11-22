@@ -10,6 +10,10 @@ const NavContainer = styled.nav`
   @media (min-width: 500px) {
     height: 75px;
   }
+
+  @media (min-width: 740px) {
+    height: 90px;
+  }
 `
 export default function Navbar({ children, ...restProps }) {
   return <NavContainer {...restProps}>{children}</NavContainer>
