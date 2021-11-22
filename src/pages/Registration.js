@@ -74,6 +74,7 @@ const StepTitle = styled.h1`
 
 const ContextBody = styled.p`
   font-size: 1.0625rem;
+  max-width: 300px;
 `
 
 const SubmitButtonContainer = styled.div`
