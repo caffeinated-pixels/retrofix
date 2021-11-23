@@ -1,9 +1,9 @@
 import styled from 'styled-components'
-import { useNavigate } from 'react-router-dom'
 import { PageContainer, RegNavbar, RegContentContainer, Footer } from '../parts'
+import { SubmitButton } from '../components'
 import { footerHomeRegistration } from '../fixtures/footer-content'
 import { REG_FORM } from '../constants/routes'
-import { colors, focusOutline } from '../styles/style-constants'
+import { colors } from '../styles/style-constants'
 
 const RegContainer = styled.div`
   max-width: 340px;
@@ -48,41 +48,7 @@ const ContextBody = styled.p`
   }
 `
 
-const SubmitButtonContainer = styled.div`
-  max-width: 340px;
-  margin: 24px auto 0;
-`
-
-const SubmitButton = styled.button`
-  width: 100%;
-  min-height: 48px;
-  background-color: ${colors.netflixRed};
-  border: none;
-  cursor: pointer;
-
-  color: #fff;
-  font-size: 1.0625rem;
-  letter-spacing: 0.025rem;
-
-  border-radius: 2px;
-
-  &:hover,
-  &:focus-visible {
-    background-color: ${colors.netflixRedFocus};
-  }
-
-  &:focus-visible {
-    outline: ${focusOutline};
-  }
-`
-
 export default function Registration() {
-  const navigate = useNavigate()
-
-  const nextPage = () => {
-    navigate(REG_FORM)
-  }
-
   return (
     <PageContainer bgColor={colors.bgWhite} txtColor={colors.textDarkGrey}>
       <RegNavbar />
@@ -100,9 +66,8 @@ export default function Registration() {
             device at any time.
           </ContextBody>
         </RegContainer>
-        <SubmitButtonContainer>
-          <SubmitButton onClick={nextPage}>Next</SubmitButton>
-        </SubmitButtonContainer>
+
+        <SubmitButton route={REG_FORM}>Next</SubmitButton>
       </RegContentContainer>
       <Footer
         footerContent={footerHomeRegistration}
