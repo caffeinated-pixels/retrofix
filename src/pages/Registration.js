@@ -6,7 +6,12 @@ import {
   StepHeaderContainer,
   Footer,
 } from '../parts'
-import { StepIndicator, StepTitle, SubmitButton } from '../components'
+import {
+  StepLogoContainer,
+  StepIndicator,
+  StepTitle,
+  SubmitButton,
+} from '../components'
 import { footerHomeRegistration } from '../fixtures/footer-content'
 import { REG_FORM } from '../constants/routes'
 import { colors } from '../styles/style-constants'
@@ -19,19 +24,6 @@ const RegContainer = styled.div`
     text-align: center;
   }
 `
-
-const StepLogoContainer = styled.div`
-  width: 260px;
-  height: 90px;
-  margin: 30% auto 20px;
-  display: inline-block;
-
-  background-image: url('../images/misc/reg-devices.png');
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
-  background-size: 260px;
-`
-
 const ContextBody = styled.p`
   font-size: 1.0625rem;
   max-width: 300px;
