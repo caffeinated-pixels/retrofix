@@ -12,14 +12,25 @@ import { colors } from '../styles/style-constants'
 import { footerHomeRegistration } from '../fixtures/footer-content'
 import { PLAN_FORM } from '../constants/routes'
 
-const RegFormContainer = styled.div``
+const RegFormContainer = styled.div`
+  max-width: 440px;
+  margin: 20px auto 0;
+`
 
-const GeneralForm = styled.form``
+const GeneralForm = styled.form`
+  margin: 10px 0 20px;
+`
 
 const RegFormText = styled.p`
   font-size: 1.1875rem;
 `
-const FormInput = styled.input``
+const FormInput = styled.input`
+  width: 100%;
+  height: 60px;
+
+  margin-bottom: 10px;
+  padding: 0 10px;
+`
 
 const FormLabel = styled.label`
   border: 0;
@@ -42,30 +53,18 @@ export default function RegForm() {
             <StepIndicator currentStep='1' />
             <StepTitle>Create a password to start your membership</StepTitle>
           </StepHeaderContainer>
+
+          <RegFormText>Just a few more steps and you're done!</RegFormText>
+          <RegFormText>We hate paperwork, too.</RegFormText>
           <GeneralForm>
-            <RegFormText>Just a few more steps and you're done!</RegFormText>
-            <RegFormText>We hate paperwork, too.</RegFormText>
+            <FormInput id='name' type='text' placeholder='First Name' />
+            <FormLabel htmlFor='name'>First Name</FormLabel>
 
-            <FormInput
-              id='name-input'
-              type='text'
-              placeholder='First Name'
-            ></FormInput>
-            <FormLabel htmlFor='name-input'>First Name</FormLabel>
+            <FormInput id='email' type='email' placeholder='Email' />
+            <FormLabel htmlFor='email'>Email Address</FormLabel>
 
-            <FormInput
-              id='email-input'
-              type='email'
-              placeholder='Email'
-            ></FormInput>
-            <FormLabel htmlFor='email-input'>Email Address</FormLabel>
-
-            <FormInput
-              id='password-input'
-              type='password'
-              placeholder='Password'
-            ></FormInput>
-            <FormLabel htmlFor='password-input'>Password</FormLabel>
+            <FormInput id='password' type='password' placeholder='Password' />
+            <FormLabel htmlFor='password'>Password</FormLabel>
 
             <SubmitButton route={PLAN_FORM}>Next</SubmitButton>
           </GeneralForm>
