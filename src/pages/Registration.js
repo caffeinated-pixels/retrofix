@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { PageContainer, RegNavbar, RegContentContainer, Footer } from '../parts'
-import { SubmitButton } from '../components'
+import { StepIndicator, SubmitButton } from '../components'
 import { footerHomeRegistration } from '../fixtures/footer-content'
 import { REG_FORM } from '../constants/routes'
 import { colors } from '../styles/style-constants'
@@ -28,12 +28,6 @@ const StepLogoContainer = styled.div`
 
 const StepHeaderContainer = styled.div``
 
-const StepIndicator = styled.p`
-  text-transform: uppercase;
-  font-size: 0.8125rem;
-`
-const BoldText = styled.b``
-
 const StepTitle = styled.h1`
   font-size: 1.4375rem;
   margin: 0.2em 0 0.4em;
@@ -56,9 +50,7 @@ export default function Registration() {
         <RegContainer>
           <StepLogoContainer />
           <StepHeaderContainer>
-            <StepIndicator>
-              step <BoldText>1</BoldText> of <BoldText>3</BoldText>
-            </StepIndicator>
+            <StepIndicator currentStep='1' />
             <StepTitle>Finish setting up your account</StepTitle>
           </StepHeaderContainer>
           <ContextBody>
