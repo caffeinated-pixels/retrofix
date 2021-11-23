@@ -24,7 +24,7 @@ const RegContainer = styled.div`
     text-align: center;
   }
 `
-const ContextBody = styled.p`
+const RegParagraph = styled.p`
   font-size: 1.0625rem;
   max-width: 300px;
 
@@ -44,10 +44,10 @@ export default function Registration() {
             <StepIndicator currentStep='1' />
             <StepTitle>Finish setting up your account</StepTitle>
           </StepHeaderContainer>
-          <ContextBody>
+          <RegParagraph>
             Netflix is personalized for you. Create a password to watch on any
             device at any time.
-          </ContextBody>
+          </RegParagraph>
         </RegContainer>
 
         <SubmitButton route={REG_FORM}>Next</SubmitButton>
