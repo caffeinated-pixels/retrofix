@@ -6,7 +6,7 @@ import {
   StepHeaderContainer,
   Footer,
 } from '../parts'
-import { StepIndicator, SubmitButton } from '../components'
+import { StepIndicator, StepTitle, SubmitButton } from '../components'
 import { footerHomeRegistration } from '../fixtures/footer-content'
 import { REG_FORM } from '../constants/routes'
 import { colors } from '../styles/style-constants'
@@ -30,11 +30,6 @@ const StepLogoContainer = styled.div`
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-size: 260px;
-`
-
-const StepTitle = styled.h1`
-  font-size: 1.4375rem;
-  margin: 0.2em 0 0.4em;
 `
 
 const ContextBody = styled.p`
