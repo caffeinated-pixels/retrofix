@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import {
   Home,
   Browse,
@@ -14,7 +14,7 @@ import * as ROUTES from './constants/routes'
 function App() {
   return (
     <Router>
-      <Switch>
+      <Routes>
         <Route exact path='/'>
           <Home />
         </Route>
@@ -39,7 +39,7 @@ function App() {
         <Route path={ROUTES.PROFILE}>
           <Profile />
         </Route>
-      </Switch>
+      </Routes>
     </Router>
   )
 }
