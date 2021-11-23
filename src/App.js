@@ -15,10 +15,10 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route exact path='/' element={<Home />} />
+        <Route path='/' element={<Home />} />
         <Route path={ROUTES.BROWSE} element={<Browse />} />
         <Route path={ROUTES.SIGN_IN} element={<Signin />} />
-        <Route exact path={ROUTES.SIGN_UP} element={<Signup />} />
+        <Route path={ROUTES.SIGN_UP} element={<Signup />} />
         <Route path={ROUTES.REGISTRATION} element={<Registration />} />
         <Route path={ROUTES.REG_FORM} element={<RegForm />} />
         <Route path={ROUTES.PLAN_FORM} element={<PlanForm />} />
