@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { colors, focusOutline } from '../styles/style-constants'
 
 const SubmitButtonContainer = styled.div`
-  max-width: 340px;
+  max-width: ${({ maxWidth }) => (maxWidth ? maxWidth : '340px')};
   margin: 24px auto 0;
 `
 
@@ -30,7 +30,7 @@ const Button = styled.button`
   }
 `
 
-export default function SubmitButton({ route, children }) {
+export default function SubmitButton({ route, maxWidth, children }) {
   const navigate = useNavigate()
 
   const nextPage = () => {
@@ -38,7 +38,7 @@ export default function SubmitButton({ route, children }) {
   }
 
   return (
-    <SubmitButtonContainer>
+    <SubmitButtonContainer maxWidth={maxWidth}>
       <Button onClick={nextPage}>{children}</Button>
     </SubmitButtonContainer>
   )
