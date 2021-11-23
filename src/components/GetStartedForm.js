@@ -133,7 +133,7 @@ export default function GetStartedForm() {
 
   const Signup = (e) => {
     e.preventDefault()
-    navigate.push(REGISTRATION)
+    navigate(REGISTRATION)
   }
 
   return (

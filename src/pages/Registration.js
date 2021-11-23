@@ -80,7 +80,7 @@ export default function Registration() {
   const navigate = useNavigate()
 
   const nextPage = () => {
-    navigate.push(REG_FORM)
+    navigate(REG_FORM)
   }
 
   return (
