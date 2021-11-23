@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { useHistory } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { colors, focusOutline } from '../styles/style-constants'
 import { REGISTRATION } from '../constants/routes'
 
@@ -129,11 +129,11 @@ const ChevronIcon = styled.i`
 `
 
 export default function GetStartedForm() {
-  const history = useHistory()
+  const navigate = useNavigate()
 
   const Signup = (e) => {
     e.preventDefault()
-    history.push(REGISTRATION)
+    navigate.push(REGISTRATION)
   }
 
   return (

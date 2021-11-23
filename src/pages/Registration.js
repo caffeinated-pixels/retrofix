@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { useHistory } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { PageContainer, RegNavbar, RegContentContainer, Footer } from '../parts'
 import { footerHomeRegistration } from '../fixtures/footer-content'
 import { REG_FORM } from '../constants/routes'
@@ -77,10 +77,10 @@ const SubmitButton = styled.button`
 `
 
 export default function Registration() {
-  const history = useHistory()
+  const navigate = useNavigate()
 
   const nextPage = () => {
-    history.push(REG_FORM)
+    navigate.push(REG_FORM)
   }
 
   return (
