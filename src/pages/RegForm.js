@@ -27,12 +27,17 @@ const RegFormText = styled.p`
 const FormInput = styled.input`
   width: 100%;
   height: 60px;
-
   margin-bottom: 10px;
   padding: 0 10px;
+
+  font-size: 0.875rem;
+
+  @media (min-width: 740px) {
+    font-size: 1rem;
+  }
 `
 
-const FormLabel = styled.label`
+const FormHiddenLabel = styled.label`
   border: 0;
   clip: rect(0 0 0 0);
   height: 1px;
@@ -42,6 +47,20 @@ const FormLabel = styled.label`
   position: absolute;
   width: 1px;
 `
+
+const CheckboxWrapper = styled.div`
+  display: flex;
+  align-items: center;
+`
+
+const FormCheckbox = styled.input`
+  margin: 0 10px 0 0;
+  flex-shrink: 0;
+  height: 32px;
+  width: 32px;
+`
+
+const FormLabel = styled.label``
 
 export default function RegForm() {
   return (
@@ -58,15 +77,24 @@ export default function RegForm() {
           <RegFormText>We hate paperwork, too.</RegFormText>
           <GeneralForm>
             <FormInput id='name' type='text' placeholder='First Name' />
-            <FormLabel htmlFor='name'>First Name</FormLabel>
+            <FormHiddenLabel htmlFor='name'>First Name</FormHiddenLabel>
 
             <FormInput id='email' type='email' placeholder='Email' />
-            <FormLabel htmlFor='email'>Email Address</FormLabel>
+            <FormHiddenLabel htmlFor='email'>Email Address</FormHiddenLabel>
 
             <FormInput id='password' type='password' placeholder='Password' />
-            <FormLabel htmlFor='password'>Password</FormLabel>
+            <FormHiddenLabel htmlFor='password'>Password</FormHiddenLabel>
 
-            <SubmitButton route={PLAN_FORM}>Next</SubmitButton>
+            <CheckboxWrapper>
+              <FormCheckbox id='offers' type='checkbox' />
+              <FormLabel htmlFor='offers'>
+                Please do not email me NetFlix special offers
+              </FormLabel>
+            </CheckboxWrapper>
+
+            <SubmitButton route={PLAN_FORM} maxWidth='440px'>
+              Next
+            </SubmitButton>
           </GeneralForm>
         </RegFormContainer>
       </RegContentContainer>
