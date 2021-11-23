@@ -1,5 +1,11 @@
 import styled from 'styled-components'
-import { PageContainer, RegNavbar, RegContentContainer, Footer } from '../parts'
+import {
+  PageContainer,
+  RegNavbar,
+  RegContentContainer,
+  StepHeaderContainer,
+  Footer,
+} from '../parts'
 import { StepIndicator, SubmitButton } from '../components'
 import { footerHomeRegistration } from '../fixtures/footer-content'
 import { REG_FORM } from '../constants/routes'
@@ -25,8 +31,6 @@ const StepLogoContainer = styled.div`
   background-position: 50% 50%;
   background-size: 260px;
 `
-
-const StepHeaderContainer = styled.div``
 
 const StepTitle = styled.h1`
   font-size: 1.4375rem;

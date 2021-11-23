@@ -8,3 +8,4 @@ export { default as Footer } from './Footer'
 
 export { default as RegNavbar } from './RegNavbar'
 export { default as RegContentContainer } from './RegContentContainer'
+export { default as StepHeaderContainer } from './StepHeaderContainer'
