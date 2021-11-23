@@ -6,7 +6,12 @@ import {
   StepHeaderContainer,
   Footer,
 } from '../parts'
-import { StepIndicator, StepTitle, SubmitButton } from '../components'
+import {
+  StepIndicator,
+  GeneralForm,
+  StepTitle,
+  SubmitButton,
+} from '../components'
 
 import { colors } from '../styles/style-constants'
 import { footerHomeRegistration } from '../fixtures/footer-content'
@@ -17,50 +22,9 @@ const RegFormContainer = styled.div`
   margin: 20px auto 0;
 `
 
-const GeneralForm = styled.form`
-  margin: 10px 0 20px;
-`
-
 const RegFormText = styled.p`
   font-size: 1.1875rem;
 `
-const FormInput = styled.input`
-  width: 100%;
-  height: 60px;
-  margin-bottom: 10px;
-  padding: 0 10px;
-
-  font-size: 0.875rem;
-
-  @media (min-width: 740px) {
-    font-size: 1rem;
-  }
-`
-
-const FormHiddenLabel = styled.label`
-  border: 0;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
-`
-
-const CheckboxWrapper = styled.div`
-  display: flex;
-  align-items: center;
-`
-
-const FormCheckbox = styled.input`
-  margin: 0 10px 0 0;
-  flex-shrink: 0;
-  height: 32px;
-  width: 32px;
-`
-
-const FormLabel = styled.label``
 
 export default function RegForm() {
   return (
@@ -76,21 +40,31 @@ export default function RegForm() {
           <RegFormText>Just a few more steps and you're done!</RegFormText>
           <RegFormText>We hate paperwork, too.</RegFormText>
           <GeneralForm>
-            <FormInput id='name' type='text' placeholder='First Name' />
-            <FormHiddenLabel htmlFor='name'>First Name</FormHiddenLabel>
+            <GeneralForm.Input id='name' type='text' placeholder='First Name' />
+            <GeneralForm.HiddenLabel htmlFor='name'>
+              First Name
+            </GeneralForm.HiddenLabel>
 
-            <FormInput id='email' type='email' placeholder='Email' />
-            <FormHiddenLabel htmlFor='email'>Email Address</FormHiddenLabel>
+            <GeneralForm.Input id='email' type='email' placeholder='Email' />
+            <GeneralForm.HiddenLabel htmlFor='email'>
+              Email Address
+            </GeneralForm.HiddenLabel>
 
-            <FormInput id='password' type='password' placeholder='Password' />
-            <FormHiddenLabel htmlFor='password'>Password</FormHiddenLabel>
+            <GeneralForm.Input
+              id='password'
+              type='password'
+              placeholder='Password'
+            />
+            <GeneralForm.HiddenLabel htmlFor='password'>
+              Password
+            </GeneralForm.HiddenLabel>
 
-            <CheckboxWrapper>
-              <FormCheckbox id='offers' type='checkbox' />
-              <FormLabel htmlFor='offers'>
+            <GeneralForm.CheckboxWrapper>
+              <GeneralForm.Checkbox id='offers' type='checkbox' />
+              <GeneralForm.Label htmlFor='offers'>
                 Please do not email me NetFlix special offers
-              </FormLabel>
-            </CheckboxWrapper>
+              </GeneralForm.Label>
+            </GeneralForm.CheckboxWrapper>
 
             <SubmitButton route={PLAN_FORM} maxWidth='440px'>
               Next
