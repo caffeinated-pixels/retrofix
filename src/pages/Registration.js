@@ -10,6 +10,7 @@ import {
   StepLogoContainer,
   StepIndicator,
   StepTitle,
+  RegParagraph,
   SubmitButton,
 } from '../components'
 import { footerHomeRegistration } from '../fixtures/footer-content'
@@ -22,14 +23,6 @@ const RegContainer = styled.div`
 
   @media (min-width: 600px) {
     text-align: center;
-  }
-`
-const RegParagraph = styled.p`
-  font-size: 1.0625rem;
-  max-width: 300px;
-
-  @media (min-width: 600px) {
-    margin: 0 auto;
   }
 `
 
