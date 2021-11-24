@@ -10,16 +10,13 @@ import {
   StepIndicator,
   GeneralForm,
   StepTitle,
+  RegFormText,
   SubmitButton,
 } from '../components'
 
 import { colors } from '../styles/style-constants'
 import { footerHomeRegistration } from '../fixtures/footer-content'
 import { SIGN_UP } from '../constants/routes'
-
-const RegFormText = styled.p`
-  font-size: 1.1875rem;
-`
 
 export default function RegForm() {
   return (

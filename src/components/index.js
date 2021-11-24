@@ -10,4 +10,5 @@ export { default as StepIndicator } from './StepIndicator'
 export { default as StepTitle } from './StepTitle'
 export { default as RegParagraph } from './RegParagraph'
 
+export { default as RegFormText } from './RegFormText'
 export { default as GeneralForm } from './GeneralForm'
