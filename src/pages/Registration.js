@@ -6,7 +6,7 @@ import {
   RegContentContainer,
 } from '../containers'
 import {
-  StepLogoContainer,
+  StepDevicesLogo,
   StepIndicator,
   StepTitle,
   RegParagraph,
@@ -31,7 +31,7 @@ export default function Registration() {
       <RegNavbar />
       <RegContentContainer>
         <RegContainer>
-          <StepLogoContainer bgImage='../images/misc/reg-devices.png' />
+          <StepDevicesLogo />
           <StepHeaderContainer>
             <StepIndicator currentStep='1' />
             <StepTitle>Finish setting up your account</StepTitle>
