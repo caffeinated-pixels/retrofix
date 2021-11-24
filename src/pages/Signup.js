@@ -1,11 +1,11 @@
 import styled from 'styled-components'
 import {
-  PageContainer,
   RegNavbar,
   RegContentContainer,
   StepHeaderContainer,
   Footer,
 } from '../parts'
+import { PageContainer } from '../containers'
 import {
   StepLogoContainer,
   StepIndicator,
