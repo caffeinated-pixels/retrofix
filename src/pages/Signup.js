@@ -19,7 +19,7 @@ import { REG_FORM } from '../constants/routes'
 import { colors } from '../styles/style-constants'
 
 const RegList = styled.ul`
-  margin: 25px 0 20px;
+  margin: 25px 0 44px;
   font-size: 1.0625rem;
   padding-left: 1.2em;
 `
