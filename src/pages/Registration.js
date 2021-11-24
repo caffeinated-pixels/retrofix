@@ -32,7 +32,7 @@ export default function Registration() {
       <RegNavbar />
       <RegContentContainer>
         <RegContainer>
-          <StepLogoContainer />
+          <StepLogoContainer bgImage='../images/misc/reg-devices.png' />
           <StepHeaderContainer>
             <StepIndicator currentStep='1' />
             <StepTitle>Finish setting up your account</StepTitle>
