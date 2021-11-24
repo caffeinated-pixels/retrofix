@@ -1,3 +1,5 @@
+import { useState } from 'react'
+
 import styled from 'styled-components'
 
 const PlanFormContainer = styled.div``
@@ -17,18 +19,39 @@ const PlanSelector = styled.label`
 const RadioButton = styled.input``
 
 export default function PlanFormTable() {
+  const [checkedItem, setCheckedItem] = useState('premium')
+
   return (
     <PlanFormContainer>
       <HeaderContainer>
         <PlanSelector htmlFor='plan-basic'>
-          <RadioButton id='plan-basic' type='radio' name='plan-choice' /> Basic
+          <RadioButton
+            id='plan-basic'
+            type='radio'
+            name='plan-choice'
+            checked={checkedItem === 'basic'}
+            onChange={() => setCheckedItem('basic')}
+          />
+          Basic
         </PlanSelector>
         <PlanSelector htmlFor='plan-standard'>
-          <RadioButton id='plan-standard' type='radio' name='plan-choice' />
+          <RadioButton
+            id='plan-standard'
+            type='radio'
+            name='plan-choice'
+            checked={checkedItem === 'standard'}
+            onChange={() => setCheckedItem('standard')}
+          />
           Standard
         </PlanSelector>
         <PlanSelector htmlFor='plan-premium'>
-          <RadioButton id='plan-premium' type='radio' name='plan-choice' />
+          <RadioButton
+            id='plan-premium'
+            type='radio'
+            name='plan-choice'
+            checked={checkedItem === 'premium'}
+            onChange={() => setCheckedItem('premium')}
+          />
           Premium
         </PlanSelector>
       </HeaderContainer>
