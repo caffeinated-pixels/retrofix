@@ -4,6 +4,7 @@ import {
   PageContainer,
   StepHeaderContainer,
   RegContentContainer,
+  RegFormContainer,
 } from '../containers'
 import {
   StepIndicator,
@@ -15,11 +16,6 @@ import {
 import { colors } from '../styles/style-constants'
 import { footerHomeRegistration } from '../fixtures/footer-content'
 import { SIGN_UP } from '../constants/routes'
-
-const RegFormContainer = styled.div`
-  max-width: 440px;
-  margin: 20px auto 0;
-`
 
 const RegFormText = styled.p`
   font-size: 1.1875rem;
