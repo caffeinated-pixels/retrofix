@@ -1,10 +1,10 @@
-import styled from 'styled-components'
 import { RegNavbar, Footer } from '../parts'
 import {
   PageContainer,
   StepHeaderContainer,
   StepLogoContainer,
   RegContentContainer,
+  RegContainer,
 } from '../containers'
 import {
   StepDevicesLogo,
@@ -16,15 +16,6 @@ import {
 import { footerHomeRegistration } from '../fixtures/footer-content'
 import { REG_FORM } from '../constants/routes'
 import { colors } from '../styles/style-constants'
-
-const RegContainer = styled.div`
-  max-width: 340px;
-  margin: 0 auto 0;
-
-  @media (min-width: 600px) {
-    text-align: center;
-  }
-`
 
 export default function Registration() {
   return (
