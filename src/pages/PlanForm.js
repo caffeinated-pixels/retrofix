@@ -6,7 +6,13 @@ import {
   RegContainer,
   RegContextBody,
 } from '../containers'
-import { StepIndicator, StepTitle, RegList, SubmitButton } from '../components'
+import {
+  StepIndicator,
+  StepTitle,
+  RegList,
+  PlanFormTable,
+  SubmitButton,
+} from '../components'
 import { footerHomeRegistration } from '../fixtures/footer-content'
 import { PLAN_FORM } from '../constants/routes'
 import { colors } from '../styles/style-constants'
@@ -33,7 +39,7 @@ export default function Registration() {
             </RegList>
           </RegContextBody>
         </RegContainer>
-
+        <PlanFormTable />
         <SubmitButton route={PLAN_FORM}>Next</SubmitButton>
       </RegContentContainer>
       <Footer
