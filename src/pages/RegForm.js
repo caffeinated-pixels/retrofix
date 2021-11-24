@@ -1,11 +1,6 @@
 import styled from 'styled-components'
-import {
-  RegNavbar,
-  RegContentContainer,
-  StepHeaderContainer,
-  Footer,
-} from '../parts'
-import { PageContainer } from '../containers'
+import { RegNavbar, RegContentContainer, Footer } from '../parts'
+import { PageContainer, StepHeaderContainer } from '../containers'
 import {
   StepIndicator,
   GeneralForm,
