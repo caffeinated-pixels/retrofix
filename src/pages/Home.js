@@ -1,10 +1,5 @@
-import {
-  Header,
-  MainContainer,
-  StoryCards,
-  FaqSection,
-  Footer,
-} from '../parts/'
+import { Header, StoryCards, FaqSection, Footer } from '../parts/'
+import { MainContainer } from '../containers/'
 import { footerHomeContent } from '../fixtures/footer-content'
 
 export default function Home() {
