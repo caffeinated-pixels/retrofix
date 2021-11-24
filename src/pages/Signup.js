@@ -6,7 +6,7 @@ import {
   RegContentContainer,
 } from '../containers'
 import {
-  StepLogoContainer,
+  StepCheckmarkLogo,
   StepIndicator,
   StepTitle,
   RegParagraph,
@@ -31,7 +31,7 @@ export default function Registration() {
       <RegNavbar />
       <RegContentContainer>
         <RegContainer>
-          <StepLogoContainer bgImage='../images/misc/reg-checkmark-circle.png' />
+          <StepCheckmarkLogo />
           <StepHeaderContainer>
             <StepIndicator currentStep='2' />
             <StepTitle>Choose your plan.</StepTitle>
