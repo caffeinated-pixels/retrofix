@@ -1,3 +1,4 @@
+import styled from 'styled-components'
 import { RegNavbar, Footer } from '../parts'
 import {
   PageContainer,
@@ -11,12 +12,22 @@ import {
   StepCheckmarkLogo,
   StepIndicator,
   StepTitle,
-  RegParagraph,
   SubmitButton,
 } from '../components'
 import { footerHomeRegistration } from '../fixtures/footer-content'
 import { REG_FORM } from '../constants/routes'
 import { colors } from '../styles/style-constants'
+
+const RegList = styled.ul`
+  margin: 25px 0 20px;
+  font-size: 1.0625rem;
+`
+
+const RegListItem = styled.li`
+  & + & {
+    margin-top: 20px;
+  }
+`
 
 export default function Registration() {
   return (
@@ -33,10 +44,13 @@ export default function Registration() {
             <StepTitle>Choose your plan.</StepTitle>
           </StepHeaderContainer>
           <RegContextBody>
-            <RegParagraph>
-              Netflix is personalized for you. Create a password to watch on any
-              device at any time.
-            </RegParagraph>
+            <RegList>
+              <RegListItem>No commitments, cancel anytime.</RegListItem>
+              <RegListItem>
+                Everything on Netflix for one low price.
+              </RegListItem>
+              <RegListItem>Unlimited viewing on all your devices.</RegListItem>
+            </RegList>
           </RegContextBody>
         </RegContainer>
 
