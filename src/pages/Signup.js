@@ -15,7 +15,7 @@ import {
   SubmitButton,
 } from '../components'
 import { footerHomeRegistration } from '../fixtures/footer-content'
-import { REG_FORM } from '../constants/routes'
+import { PLAN_FORM } from '../constants/routes'
 import { colors } from '../styles/style-constants'
 
 export default function Registration() {
@@ -45,7 +45,7 @@ export default function Registration() {
           </RegContextBody>
         </RegContainer>
 
-        <SubmitButton route={REG_FORM}>Next</SubmitButton>
+        <SubmitButton route={PLAN_FORM}>Next</SubmitButton>
       </RegContentContainer>
       <Footer
         footerContent={footerHomeRegistration}
