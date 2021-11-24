@@ -15,7 +15,7 @@ import {
 
 import { colors } from '../styles/style-constants'
 import { footerHomeRegistration } from '../fixtures/footer-content'
-import { PLAN_FORM } from '../constants/routes'
+import { SIGN_UP } from '../constants/routes'
 
 const RegFormContainer = styled.div`
   max-width: 440px;
@@ -66,7 +66,7 @@ export default function RegForm() {
               </GeneralForm.Label>
             </GeneralForm.CheckboxWrapper>
 
-            <SubmitButton route={PLAN_FORM} maxWidth='440px'>
+            <SubmitButton route={SIGN_UP} maxWidth='440px'>
               Next
             </SubmitButton>
           </GeneralForm>
