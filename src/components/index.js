@@ -11,4 +11,5 @@ export { default as StepTitle } from './StepTitle'
 export { default as RegParagraph } from './RegParagraph'
 
 export { default as RegFormText } from './RegFormText'
+export { default as RegList } from './RegList'
 export { default as GeneralForm } from './GeneralForm'
