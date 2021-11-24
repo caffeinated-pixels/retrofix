@@ -3,7 +3,6 @@ import styled from 'styled-components'
 const StepDevicesLogo = styled.div`
   width: 260px;
   height: 90px;
-  margin: 30% auto 20px;
   display: inline-block;
 
   background-image: url('../images/misc/reg-devices.png');

@@ -3,6 +3,7 @@ import { RegNavbar, Footer } from '../parts'
 import {
   PageContainer,
   StepHeaderContainer,
+  StepLogoContainer,
   RegContentContainer,
 } from '../containers'
 import {
@@ -31,7 +32,9 @@ export default function Registration() {
       <RegNavbar />
       <RegContentContainer>
         <RegContainer>
-          <StepDevicesLogo />
+          <StepLogoContainer>
+            <StepDevicesLogo />
+          </StepLogoContainer>
           <StepHeaderContainer>
             <StepIndicator currentStep='1' />
             <StepTitle>Finish setting up your account</StepTitle>
