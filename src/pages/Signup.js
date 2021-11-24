@@ -21,9 +21,21 @@ import { colors } from '../styles/style-constants'
 const RegList = styled.ul`
   margin: 25px 0 20px;
   font-size: 1.0625rem;
+  padding-left: 1.2em;
 `
 
 const RegListItem = styled.li`
+  padding-left: 0.75em;
+  text-align: left;
+
+  &::marker {
+    color: red;
+    content: '\f00c';
+    font-size: 1.5rem;
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 700;
+  }
+
   & + & {
     margin-top: 20px;
   }
