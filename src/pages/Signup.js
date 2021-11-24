@@ -5,6 +5,7 @@ import {
   StepLogoContainer,
   RegContentContainer,
   RegContainer,
+  RegContextBody,
 } from '../containers'
 import {
   StepCheckmarkLogo,
@@ -31,10 +32,12 @@ export default function Registration() {
             <StepIndicator currentStep='2' />
             <StepTitle>Choose your plan.</StepTitle>
           </StepHeaderContainer>
-          <RegParagraph>
-            Netflix is personalized for you. Create a password to watch on any
-            device at any time.
-          </RegParagraph>
+          <RegContextBody>
+            <RegParagraph>
+              Netflix is personalized for you. Create a password to watch on any
+              device at any time.
+            </RegParagraph>
+          </RegContextBody>
         </RegContainer>
 
         <SubmitButton route={REG_FORM}>Next</SubmitButton>

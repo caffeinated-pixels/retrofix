@@ -1,14 +1,5 @@
 import styled from 'styled-components'
 
-const Paragraph = styled.p`
-  font-size: 1.0625rem;
-  max-width: 300px;
+const RegParagraph = styled.p``
 
-  @media (min-width: 600px) {
-    margin: 0 auto;
-  }
-`
-
-export default function RegParagraph({ children }) {
-  return <Paragraph>{children}</Paragraph>
-}
+export default RegParagraph
