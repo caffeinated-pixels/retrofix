@@ -9,6 +9,7 @@ const PlanFormContainer = styled.div``
 const HeaderContainer = styled.div`
   width: 100%;
   display: flex;
+  justify-content: space-around;
 
   @media (min-width: 600px) {
     width: 60%;
@@ -21,6 +22,12 @@ const PlanSelector = styled.label`
   width: 100%;
   text-align: center;
   padding: 8px 4px;
+
+  @media (min-width: 600px) {
+    padding: 0;
+    width: 90px;
+    height: 90px;
+  }
 `
 
 const RadioButton = styled.input`
