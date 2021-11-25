@@ -61,7 +61,7 @@ const PlanNameBox = styled.span`
 `
 
 export default function PlanFormTable() {
-  const [checkedItem, setCheckedItem] = useState('premium')
+  const [checkedItem, setCheckedItem] = useState('standard')
 
   return (
     <PlanFormContainer>
