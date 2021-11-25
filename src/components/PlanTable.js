@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { colors } from '../styles/style-constants'
 
 const Table = styled.table`
   padding-bottom: 10px;
@@ -26,22 +27,23 @@ const TableBody = styled.tbody`
 const TableRow = styled.tr`
   display: flex;
   flex-wrap: wrap;
-  /* align-items: center; */
   width: 100%;
 `
 
 const TableCellFeature = styled.td`
   width: 100%;
   min-height: 37px;
-  font-size: 0.8125rem;
-
   padding: 16px 8px 4px;
+
+  color: ${colors.textDarkGrey};
+  font-size: 0.8125rem;
 `
 
 const TableCell = styled.td`
   min-height: 37px;
   width: calc(100% / 3);
 
+  color: ${colors.textMedGrey};
   font-weight: 700;
 `
 
