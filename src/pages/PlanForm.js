@@ -36,7 +36,9 @@ export default function Registration() {
           </RegContextBody>
         </RegContainerPlanForm>
         <PlanFormTable />
-        <SubmitButton route={PLAN_FORM}>Complete Registration</SubmitButton>
+        <SubmitButton route={PLAN_FORM} maxWidth='440px'>
+          Complete Registration
+        </SubmitButton>
       </RegContentContainer>
       <Footer
         footerContent={footerHomeRegistration}
