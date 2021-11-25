@@ -41,6 +41,11 @@ const PlanNameBox = styled.span`
 
   opacity: ${({ isChecked }) => (isChecked ? '1' : '0.6')};
 
+  [type='radio']:focus + &,
+  [type='radio']:active + & {
+    box-shadow: 0 0 3px 0 ${colors.netflixRed};
+  }
+
   &::after {
     content: '';
     position: absolute;
