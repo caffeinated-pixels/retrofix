@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { PlanTable } from '../components/'
 import { colors } from '../styles/style-constants'
 
 import styled from 'styled-components'
@@ -100,6 +101,7 @@ export default function PlanFormTable() {
           </PlanNameBox>
         </PlanSelector>
       </HeaderContainer>
+      <PlanTable />
     </PlanFormContainer>
   )
 }
