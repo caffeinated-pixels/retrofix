@@ -41,7 +41,7 @@ const TableRow = styled.tr`
   }
 `
 
-const TableCellFeature = styled.td`
+const RowHeader = styled.th`
   width: 100%;
   min-height: 37px;
   padding: 16px 8px 4px;
@@ -69,34 +69,34 @@ export default function PlanTable() {
       <HiddenTableCaption>Netflix Plan Features</HiddenTableCaption>
       <TableBody>
         <TableRow>
-          <TableCellFeature>Monthly price</TableCellFeature>
+          <RowHeader>Monthly price</RowHeader>
           <TableCell>$9.99</TableCell>
           <TableCell>$14.99</TableCell>
           <TableCell>$18.99</TableCell>
         </TableRow>
         <TableRow>
-          <TableCellFeature>Video quality</TableCellFeature>
+          <RowHeader>Video quality</RowHeader>
           <TableCell>Good</TableCell>
           <TableCell>Better</TableCell>
           <TableCell>Best</TableCell>
         </TableRow>
         <TableRow>
-          <TableCellFeature>Resolution</TableCellFeature>
+          <RowHeader>Resolution</RowHeader>
           <TableCell>480p</TableCell>
           <TableCell>1080p</TableCell>
           <TableCell>4K+HDR</TableCell>
         </TableRow>
         <TableRow>
-          <TableCellFeature>
+          <RowHeader>
             Watch on your TV, computer, mobile phone and tablet
-          </TableCellFeature>
-          <TableCell>
+          </RowHeader>
+          <TableCell aria-label='included'>
             <FaCheckmark className='fas fa-check'></FaCheckmark>
           </TableCell>
-          <TableCell>
+          <TableCell aria-label='included'>
             <FaCheckmark className='fas fa-check'></FaCheckmark>
           </TableCell>
-          <TableCell>
+          <TableCell aria-label='included'>
             <FaCheckmark className='fas fa-check'></FaCheckmark>
           </TableCell>
         </TableRow>
