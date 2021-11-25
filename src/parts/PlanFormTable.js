@@ -70,6 +70,10 @@ const SmallPrint = styled.small`
   font-size: 0.8125rem;
   color: ${colors.textMedGrey};
 
+  @media (min-width: 600px) {
+    padding: 0 150px 0 16px;
+  }
+
   &:last-of-type {
     margin-top: 10px;
   }
