@@ -9,6 +9,11 @@ const PlanFormContainer = styled.div``
 const HeaderContainer = styled.div`
   width: 100%;
   display: flex;
+
+  @media (min-width: 600px) {
+    width: 60%;
+    margin-left: auto;
+  }
 `
 
 const PlanSelector = styled.label`

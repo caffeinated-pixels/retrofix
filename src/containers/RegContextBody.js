@@ -5,7 +5,7 @@ const RegContextBody = styled.div`
   max-width: 300px;
 
   @media (min-width: 600px) {
-    margin: 0 auto;
+    margin: ${({ regForm }) => (regForm ? '' : '0 auto')};
   }
 `
 
