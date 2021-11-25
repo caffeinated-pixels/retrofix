@@ -3,12 +3,10 @@ import { colors } from '../styles/style-constants'
 
 const Table = styled.table`
   padding-bottom: 10px;
-  /* border: 1px solid red; */
 
   display: flex;
   border-collapse: collapse;
   text-align: center;
-  /* border-spacing: 0; */
 `
 
 const HiddenTableCaption = styled.caption`
@@ -48,6 +46,7 @@ const RowHeader = styled.th`
 
   color: ${colors.textDarkGrey};
   font-size: 0.8125rem;
+  font-weight: 400;
 `
 
 const TableCell = styled.td`
@@ -57,34 +56,41 @@ const TableCell = styled.td`
 
   color: ${colors.textMedGrey};
   font-weight: 700;
+
+  &:nth-of-type(${({ typeNum }) => typeNum}) {
+    color: ${colors.netflixRedFocus};
+  }
 `
 
 const FaCheckmark = styled.i`
   font-size: 1.5rem;
 `
 
-export default function PlanTable() {
+export default function PlanTable({ selectedPlan }) {
+  const typeNum =
+    selectedPlan === 'basic' ? '1' : selectedPlan === 'standard' ? '2' : '3'
+
   return (
     <Table>
       <HiddenTableCaption>Netflix Plan Features</HiddenTableCaption>
       <TableBody>
         <TableRow>
           <RowHeader>Monthly price</RowHeader>
-          <TableCell>$9.99</TableCell>
-          <TableCell>$14.99</TableCell>
-          <TableCell>$18.99</TableCell>
+          <TableCell typeNum={typeNum}>$9.99</TableCell>
+          <TableCell typeNum={typeNum}>$14.99</TableCell>
+          <TableCell typeNum={typeNum}>$18.99</TableCell>
         </TableRow>
         <TableRow>
           <RowHeader>Video quality</RowHeader>
-          <TableCell>Good</TableCell>
-          <TableCell>Better</TableCell>
-          <TableCell>Best</TableCell>
+          <TableCell typeNum={typeNum}>Good</TableCell>
+          <TableCell typeNum={typeNum}>Better</TableCell>
+          <TableCell typeNum={typeNum}>Best</TableCell>
         </TableRow>
         <TableRow>
           <RowHeader>Resolution</RowHeader>
-          <TableCell>480p</TableCell>
-          <TableCell>1080p</TableCell>
-          <TableCell>4K+HDR</TableCell>
+          <TableCell typeNum={typeNum}>480p</TableCell>
+          <TableCell typeNum={typeNum}>1080p</TableCell>
+          <TableCell typeNum={typeNum}>4K+HDR</TableCell>
         </TableRow>
         <TableRow>
           <RowHeader>

@@ -101,7 +101,7 @@ export default function PlanFormTable() {
           </PlanNameBox>
         </PlanSelector>
       </HeaderContainer>
-      <PlanTable />
+      <PlanTable selectedPlan={checkedItem} />
     </PlanFormContainer>
   )
 }
