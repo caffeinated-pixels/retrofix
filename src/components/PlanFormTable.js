@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { colors } from '../styles/style-constants'
 
 import styled from 'styled-components'
 
@@ -10,13 +11,35 @@ const HeaderContainer = styled.div`
 `
 
 const PlanSelector = styled.label`
+  position: relative;
   width: 100%;
   text-align: center;
-
-  border: 1px solid red;
+  padding: 8px 4px;
 `
 
-const RadioButton = styled.input``
+const RadioButton = styled.input`
+  position: absolute;
+  opacity: 0;
+`
+
+const PlanNameBox = styled.span`
+  background-color: ${colors.netflixRed};
+  color: #fff;
+  font-size: 1.0625rem;
+  font-weight: 700;
+  border-radius: 2px;
+
+  width: 100%;
+  height: 75px;
+  padding: 1px;
+  margin: 0 auto;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  opacity: ${({ isChecked }) => (isChecked ? '1' : '0.6')};
+`
 
 export default function PlanFormTable() {
   const [checkedItem, setCheckedItem] = useState('premium')
@@ -32,7 +55,7 @@ export default function PlanFormTable() {
             checked={checkedItem === 'basic'}
             onChange={() => setCheckedItem('basic')}
           />
-          Basic
+          <PlanNameBox isChecked={checkedItem === 'basic'}>Basic</PlanNameBox>
         </PlanSelector>
         <PlanSelector htmlFor='plan-standard'>
           <RadioButton
@@ -42,7 +65,9 @@ export default function PlanFormTable() {
             checked={checkedItem === 'standard'}
             onChange={() => setCheckedItem('standard')}
           />
-          Standard
+          <PlanNameBox isChecked={checkedItem === 'standard'}>
+            Standard
+          </PlanNameBox>
         </PlanSelector>
         <PlanSelector htmlFor='plan-premium'>
           <RadioButton
@@ -52,7 +77,9 @@ export default function PlanFormTable() {
             checked={checkedItem === 'premium'}
             onChange={() => setCheckedItem('premium')}
           />
-          Premium
+          <PlanNameBox isChecked={checkedItem === 'premium'}>
+            Premium
+          </PlanNameBox>
         </PlanSelector>
       </HeaderContainer>
     </PlanFormContainer>
