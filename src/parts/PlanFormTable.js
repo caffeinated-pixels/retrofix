@@ -63,6 +63,7 @@ const PlanNameBox = styled.span`
 const SmallPrint = styled.small`
   display: block;
   font-size: 0.8125rem;
+  color: ${colors.textMedGrey};
 
   &:last-of-type {
     margin-top: 10px;
