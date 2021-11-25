@@ -3,7 +3,11 @@ import styled from 'styled-components'
 const Table = styled.table`
   padding-bottom: 10px;
   border: 1px solid red;
+
   display: flex;
+  border-collapse: collapse;
+  text-align: center;
+  /* border-spacing: 0; */
 `
 
 const HiddenTableCaption = styled.caption`
@@ -14,11 +18,32 @@ const HiddenTableCaption = styled.caption`
   width: 1px;
 `
 
-const TableBody = styled.tbody``
+const TableBody = styled.tbody`
+  display: flex;
+  flex-wrap: wrap;
+`
 
-const TableRow = styled.tr``
+const TableRow = styled.tr`
+  display: flex;
+  flex-wrap: wrap;
+  /* align-items: center; */
+  width: 100%;
+`
 
-const TableCell = styled.td``
+const TableCellFeature = styled.td`
+  width: 100%;
+  min-height: 37px;
+  font-size: 0.8125rem;
+
+  padding: 16px 8px 4px;
+`
+
+const TableCell = styled.td`
+  min-height: 37px;
+  width: calc(100% / 3);
+
+  font-weight: 700;
+`
 
 const FaCheckmark = styled.i``
 
@@ -28,27 +53,27 @@ export default function PlanTable() {
       <HiddenTableCaption>Netflix Plan Features</HiddenTableCaption>
       <TableBody>
         <TableRow>
-          <TableCell>Monthly price</TableCell>
+          <TableCellFeature>Monthly price</TableCellFeature>
           <TableCell>$9.99</TableCell>
           <TableCell>$14.99</TableCell>
           <TableCell>$18.99</TableCell>
         </TableRow>
         <TableRow>
-          <TableCell>Video quality</TableCell>
+          <TableCellFeature>Video quality</TableCellFeature>
           <TableCell>Good</TableCell>
           <TableCell>Better</TableCell>
           <TableCell>Best</TableCell>
         </TableRow>
         <TableRow>
-          <TableCell>Resolution</TableCell>
+          <TableCellFeature>Resolution</TableCellFeature>
           <TableCell>480p</TableCell>
           <TableCell>1080p</TableCell>
           <TableCell>4K+HDR</TableCell>
         </TableRow>
         <TableRow>
-          <TableCell>
+          <TableCellFeature>
             Watch on your TV, computer, mobile phone and tablet
-          </TableCell>
+          </TableCellFeature>
           <TableCell>
             <FaCheckmark className='fas fa-check'></FaCheckmark>
           </TableCell>
