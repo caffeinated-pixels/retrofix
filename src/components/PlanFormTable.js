@@ -37,8 +37,21 @@ const PlanNameBox = styled.span`
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 
   opacity: ${({ isChecked }) => (isChecked ? '1' : '0.6')};
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    border: 0 solid transparent;
+    border-width: ${({ isChecked }) => (isChecked ? '15px' : '0')};
+    border-top-color: ${colors.netflixRed};
+  }
 `
 
 export default function PlanFormTable() {
