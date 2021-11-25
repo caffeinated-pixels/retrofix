@@ -1,4 +1,4 @@
-import { RegNavbar, Footer } from '../parts'
+import { RegNavbar, PlanFormTable, Footer } from '../parts'
 import {
   PageContainer,
   StepHeaderContainer,
@@ -6,13 +6,7 @@ import {
   RegContainer,
   RegContextBody,
 } from '../containers'
-import {
-  StepIndicator,
-  StepTitle,
-  RegList,
-  PlanFormTable,
-  SubmitButton,
-} from '../components'
+import { StepIndicator, StepTitle, RegList, SubmitButton } from '../components'
 import { footerHomeRegistration } from '../fixtures/footer-content'
 import { PLAN_FORM } from '../constants/routes'
 import { colors } from '../styles/style-constants'

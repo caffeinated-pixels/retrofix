@@ -5,3 +5,4 @@ export { default as FaqSection } from './FaqSection'
 export { default as Footer } from './Footer'
 
 export { default as RegNavbar } from './RegNavbar'
+export { default as PlanFormTable } from './PlanFormTable'
