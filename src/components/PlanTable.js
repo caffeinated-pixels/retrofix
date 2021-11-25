@@ -96,13 +96,13 @@ export default function PlanTable({ selectedPlan }) {
           <RowHeader>
             Watch on your TV, computer, mobile phone and tablet
           </RowHeader>
-          <TableCell aria-label='included'>
+          <TableCell aria-label='included' typeNum={typeNum}>
             <FaCheckmark className='fas fa-check'></FaCheckmark>
           </TableCell>
-          <TableCell aria-label='included'>
+          <TableCell aria-label='included' typeNum={typeNum}>
             <FaCheckmark className='fas fa-check'></FaCheckmark>
           </TableCell>
-          <TableCell aria-label='included'>
+          <TableCell aria-label='included' typeNum={typeNum}>
             <FaCheckmark className='fas fa-check'></FaCheckmark>
           </TableCell>
         </TableRow>
