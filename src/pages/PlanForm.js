@@ -34,7 +34,7 @@ export default function Registration() {
           </RegContextBody>
         </RegContainer>
         <PlanFormTable />
-        <SubmitButton route={PLAN_FORM}>Next</SubmitButton>
+        <SubmitButton route={PLAN_FORM}>Complete Registration</SubmitButton>
       </RegContentContainer>
       <Footer
         footerContent={footerHomeRegistration}
