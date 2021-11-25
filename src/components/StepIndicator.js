@@ -9,7 +9,7 @@ const BoldText = styled.b``
 export default function StepIndicator({ currentStep }) {
   return (
     <Container>
-      step <BoldText>{currentStep}</BoldText> of <BoldText>3</BoldText>
+      step <BoldText>{currentStep}</BoldText> of <BoldText>2</BoldText>
     </Container>
   )
 }
