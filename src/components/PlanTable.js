@@ -47,6 +47,18 @@ const RowHeader = styled.th`
   color: ${colors.textDarkGrey};
   font-size: 0.8125rem;
   font-weight: 400;
+
+  @media (min-width: 600px) {
+    width: 40%;
+    min-height: 60px;
+
+    text-align: left;
+    font-size: 1rem;
+    padding: 12px 16px;
+
+    display: flex;
+    align-items: center;
+  }
 `
 
 const TableCell = styled.td`
@@ -56,6 +68,16 @@ const TableCell = styled.td`
 
   color: ${colors.textMedGrey};
   font-weight: 700;
+
+  @media (min-width: 600px) {
+    width: calc(60% / 3);
+    min-height: 60px;
+    padding: 12px 16px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
   &:nth-of-type(${({ typeNum }) => typeNum}) {
     color: ${colors.netflixRedFocus};
