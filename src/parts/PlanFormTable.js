@@ -60,6 +60,24 @@ const PlanNameBox = styled.span`
   }
 `
 
+const SmallPrint = styled.small`
+  display: block;
+  font-size: 0.8125rem;
+
+  &:last-of-type {
+    margin-top: 10px;
+  }
+`
+
+const Link = styled.a`
+  text-decoration: none;
+
+  &:hover,
+  &:focus-visible {
+    text-decoration: underline;
+  }
+`
+
 export default function PlanFormTable() {
   const [checkedItem, setCheckedItem] = useState('standard')
 
@@ -102,6 +120,16 @@ export default function PlanFormTable() {
         </PlanSelector>
       </HeaderContainer>
       <PlanTable selectedPlan={checkedItem} />
+      <SmallPrint>
+        HD (720p), Full HD (1080p), Ultra HD (4K) and HDR availability subject
+        to your internet service and device capabilities. Not all content is
+        available in all resolutions. See our <Link href='#'>Terms of Use</Link>{' '}
+        for more details.
+      </SmallPrint>
+      <SmallPrint>
+        Only people who live with you may use your account. Watch on 4 different
+        devices at the same time with Premium, 2 with Standard and 1 with Basic.
+      </SmallPrint>
     </PlanFormContainer>
   )
 }
