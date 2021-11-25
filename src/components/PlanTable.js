@@ -3,7 +3,7 @@ import { colors } from '../styles/style-constants'
 
 const Table = styled.table`
   padding-bottom: 10px;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 
   display: flex;
   border-collapse: collapse;
@@ -28,6 +28,17 @@ const TableRow = styled.tr`
   display: flex;
   flex-wrap: wrap;
   width: 100%;
+
+  position: relative;
+
+  & + &::after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: ${colors.borderMedLightGrey};
+  }
 `
 
 const TableCellFeature = styled.td`
@@ -42,12 +53,15 @@ const TableCellFeature = styled.td`
 const TableCell = styled.td`
   min-height: 37px;
   width: calc(100% / 3);
+  padding: 8px;
 
   color: ${colors.textMedGrey};
   font-weight: 700;
 `
 
-const FaCheckmark = styled.i``
+const FaCheckmark = styled.i`
+  font-size: 1.5rem;
+`
 
 export default function PlanTable() {
   return (
