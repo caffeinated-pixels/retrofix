@@ -22,12 +22,6 @@ const PlanSelector = styled.label`
   width: 100%;
   text-align: center;
   padding: 8px 4px;
-
-  @media (min-width: 600px) {
-    padding: 0;
-    width: 90px;
-    height: 90px;
-  }
 `
 
 const RadioButton = styled.input`
@@ -53,6 +47,18 @@ const PlanNameBox = styled.span`
   position: relative;
 
   opacity: ${({ isChecked }) => (isChecked ? '1' : '0.6')};
+
+  @media (min-width: 600px) {
+    padding: 0;
+    width: 90px;
+    height: 90px;
+  }
+
+  @media (min-width: 950px) {
+    padding: 0;
+    width: 120px;
+    height: 120px;
+  }
 
   [type='radio']:focus + &,
   [type='radio']:active + & {
