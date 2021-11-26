@@ -1,3 +1,5 @@
+import { useState, useContext } from 'react'
+import { SignUpContext } from '../context/SignUpContext'
 import { RegNavbar, Footer } from '../parts'
 import {
   PageContainer,
@@ -18,6 +20,19 @@ import { footerHomeRegistration } from '../fixtures/footer-content'
 import { SIGN_UP } from '../constants/routes'
 
 export default function RegForm() {
+  const {
+    globalFirstName,
+    setGlobalFirstName,
+    globalEmail,
+    setGlobalEmail,
+    globalPassword,
+    setGlobalPassword,
+  } = useContext(SignUpContext)
+
+  const [firstName, setFirstName] = useState(globalFirstName)
+  const [email, setEmail] = useState(globalEmail)
+  const [password, setPassword] = useState(globalPassword)
+
   return (
     <PageContainer bgColor={colors.bgWhite} txtColor={colors.textDarkGrey}>
       <RegNavbar />
@@ -31,12 +46,24 @@ export default function RegForm() {
           <RegFormText>Just a few more steps and you're done!</RegFormText>
           <RegFormText>We hate paperwork, too.</RegFormText>
           <GeneralForm>
-            <GeneralForm.Input id='name' type='text' placeholder='First Name' />
+            <GeneralForm.Input
+              id='name'
+              type='text'
+              placeholder='First Name'
+              value={firstName}
+              onChange={(e) => setFirstName(e.target.value)}
+            />
             <GeneralForm.HiddenLabel htmlFor='name'>
               First Name
             </GeneralForm.HiddenLabel>
 
-            <GeneralForm.Input id='email' type='email' placeholder='Email' />
+            <GeneralForm.Input
+              id='email'
+              type='email'
+              placeholder='Email'
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
             <GeneralForm.HiddenLabel htmlFor='email'>
               Email Address
             </GeneralForm.HiddenLabel>
@@ -45,6 +72,8 @@ export default function RegForm() {
               id='password'
               type='password'
               placeholder='Password'
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
             />
             <GeneralForm.HiddenLabel htmlFor='password'>
               Password
@@ -71,20 +100,3 @@ export default function RegForm() {
     </PageContainer>
   )
 }
-
-/* 
-PageContainer
-  RegNavbar
-  RegContentContainer (centerContainer)
-    RegForm
-      firstname
-      email
-      password
-      checkbox
-      submit button
-
-  Footer
-
-
-
-*/
