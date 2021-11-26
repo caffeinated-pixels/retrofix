@@ -1,5 +1,7 @@
+import { useState, useContext } from 'react'
 import styled from 'styled-components'
 import { useNavigate } from 'react-router-dom'
+import { SignUpContext } from '../context/SignUpContext'
 import { colors, focusOutline } from '../styles/style-constants'
 import { REGISTRATION } from '../constants/routes'
 
@@ -129,10 +131,14 @@ const ChevronIcon = styled.i`
 `
 
 export default function GetStartedForm() {
+  const { globalEmail, setGlobalEmail } = useContext(SignUpContext)
+  const [email, setEmail] = useState(globalEmail)
+
   const navigate = useNavigate()
 
   const Signup = (e) => {
     e.preventDefault()
+    setGlobalEmail(email)
     navigate(REGISTRATION)
   }
 
@@ -142,7 +148,13 @@ export default function GetStartedForm() {
         Ready to watch? Enter your email to create or restart your membership.
       </FormText>
       <EmailForm>
-        <EmailInput id='email-input' type='email' placeholder='Email address' />
+        <EmailInput
+          id='email-input'
+          type='email'
+          placeholder='Email address'
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
         <EmailLabel htmlFor='email-input'>Email address</EmailLabel>
         <EmailSubmit onClick={Signup}>
           Get Started
