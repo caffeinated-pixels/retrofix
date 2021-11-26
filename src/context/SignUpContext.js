@@ -1,6 +1,6 @@
 import { useState, createContext } from 'react'
 
-const SignUpContext = createContext()
+export const SignUpContext = createContext()
 
 export default function SignUpContextProvider({ children }) {
   const [firstName, setFirstName] = useState('')
