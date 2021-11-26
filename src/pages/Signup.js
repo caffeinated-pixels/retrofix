@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom'
 import { RegNavbar, Footer } from '../parts'
 import {
   PageContainer,
@@ -19,6 +20,12 @@ import { PLAN_FORM } from '../constants/routes'
 import { colors } from '../styles/style-constants'
 
 export default function Registration() {
+  const navigate = useNavigate()
+
+  const nextPage = () => {
+    navigate(PLAN_FORM)
+  }
+
   return (
     <PageContainer bgColor={colors.bgWhite} txtColor={colors.textDarkGrey}>
       <RegNavbar />
@@ -45,7 +52,7 @@ export default function Registration() {
           </RegContextBody>
         </RegContainer>
 
-        <SubmitButton route={PLAN_FORM}>Next</SubmitButton>
+        <SubmitButton onClick={nextPage}>Next</SubmitButton>
       </RegContentContainer>
       <Footer
         footerContent={footerHomeRegistration}

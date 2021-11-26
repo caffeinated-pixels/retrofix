@@ -1,4 +1,5 @@
 import { useState, useContext } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { SignUpContext } from '../context/SignUpContext'
 import { RegNavbar, Footer } from '../parts'
 import {
@@ -32,6 +33,12 @@ export default function RegForm() {
   const [firstName, setFirstName] = useState(globalFirstName)
   const [email, setEmail] = useState(globalEmail)
   const [password, setPassword] = useState(globalPassword)
+
+  const navigate = useNavigate()
+
+  const nextPage = () => {
+    navigate(SIGN_UP)
+  }
 
   return (
     <PageContainer bgColor={colors.bgWhite} txtColor={colors.textDarkGrey}>
@@ -86,7 +93,7 @@ export default function RegForm() {
               </GeneralForm.Label>
             </GeneralForm.CheckboxWrapper>
 
-            <SubmitButton route={SIGN_UP} maxWidth='440px'>
+            <SubmitButton onClick={nextPage} maxWidth='440px'>
               Next
             </SubmitButton>
           </GeneralForm>

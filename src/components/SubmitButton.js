@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import { useNavigate } from 'react-router-dom'
 import { colors, focusOutline } from '../styles/style-constants'
 
 const SubmitButtonContainer = styled.div`
@@ -30,16 +29,10 @@ const Button = styled.button`
   }
 `
 
-export default function SubmitButton({ route, maxWidth, children }) {
-  const navigate = useNavigate()
-
-  const nextPage = () => {
-    navigate(route)
-  }
-
+export default function SubmitButton({ onClick, maxWidth, children }) {
   return (
     <SubmitButtonContainer maxWidth={maxWidth}>
-      <Button onClick={nextPage}>{children}</Button>
+      <Button onClick={onClick}>{children}</Button>
     </SubmitButtonContainer>
   )
 }
