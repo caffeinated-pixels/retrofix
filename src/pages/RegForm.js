@@ -37,6 +37,9 @@ export default function RegForm() {
   const navigate = useNavigate()
 
   const nextPage = () => {
+    setGlobalFirstName(firstName)
+    setGlobalEmail(email)
+    setGlobalPassword(password)
     navigate(SIGN_UP)
   }
 
