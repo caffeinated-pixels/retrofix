@@ -1,5 +1,6 @@
 import { createContext } from 'react'
 import { initializeApp } from 'firebase/app'
+import { getAuth } from 'firebase/auth'
 
 const FirebaseContext = createContext()
 
@@ -16,6 +17,8 @@ const firebaseConfig = {
 
 const firebaseApp = initializeApp(firebaseConfig)
 // this is the Firebase App object, which is passed to components down via Context
+
+const firebaseAuth = getAuth(firebaseApp)
 
 export default function FirebaseContextProvider({ children }) {
   return <FirebaseContext value={firebaseApp}>{children}</FirebaseContext>
