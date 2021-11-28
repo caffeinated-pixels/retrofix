@@ -1,8 +1,5 @@
-import { createContext } from 'react'
 import { initializeApp } from 'firebase/app'
 import { getAuth } from 'firebase/auth'
-
-const FirebaseContext = createContext()
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
@@ -15,11 +12,7 @@ const firebaseConfig = {
 // Google recommends hiding the config values if publishing as open source
 // TODO: when I publish, I will need to setup Netlify functions to replace these env variables
 
-const firebaseApp = initializeApp(firebaseConfig)
+export const firebaseApp = initializeApp(firebaseConfig)
 // this is the Firebase App object, which is passed to components down via Context
 
-const firebaseAuth = getAuth(firebaseApp)
-
-export default function FirebaseContextProvider({ children }) {
-  return <FirebaseContext value={firebaseApp}>{children}</FirebaseContext>
-}
+export const firebaseAuth = getAuth(firebaseApp)
