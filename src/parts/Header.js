@@ -6,10 +6,15 @@ import { cardBorderBottom } from '../styles/style-constants'
 const HeaderContainer = styled.header`
   width: 100%;
   border-bottom: ${({ hasBorder }) => (hasBorder ? cardBorderBottom : '')};
-  background-image: url('../images/misc/home-bg-large.jpg');
+  background-image: ${({ noBgOnMobile }) =>
+    noBgOnMobile ? `url('')` : `url('../images/misc/home-bg-large.jpg')`};
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+
+  @media (min-width: 740px) {
+    background-image: url('../images/misc/home-bg-large.jpg');
+  }
 `
 const ImageGradient = styled.div`
   background: rgba(0, 0, 0, 0.4);
@@ -40,9 +45,9 @@ const LogoWrapper = styled.div`
     height: 2.8125rem;
   }
 `
-export default function Header({ hasBtn, hasBorder, children }) {
+export default function Header({ hasBtn, hasBorder, noBgOnMobile, children }) {
   return (
-    <HeaderContainer hasBorder={hasBorder}>
+    <HeaderContainer hasBorder={hasBorder} noBgOnMobile={noBgOnMobile}>
       <ImageGradient>
         <Navbar>
           <LogoWrapper>

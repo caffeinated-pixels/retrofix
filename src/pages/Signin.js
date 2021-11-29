@@ -5,7 +5,7 @@ import { footerHomeRegistration } from '../fixtures/footer-content'
 export default function Signin() {
   return (
     <>
-      <Header />
+      <Header noBgOnMobile />
       <MainContainer>
         <h1>Sign in form goes here!</h1>
       </MainContainer>
