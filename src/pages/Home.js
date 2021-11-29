@@ -6,7 +6,7 @@ import { footerHomeContent } from '../fixtures/footer-content'
 export default function Home() {
   return (
     <>
-      <Header hasBtn={true} hasBorder={true}>
+      <Header hasBtn hasBorder>
         <HeaderFeature />
       </Header>
       <MainContainer>
@@ -14,7 +14,7 @@ export default function Home() {
         <FaqSection />
       </MainContainer>
 
-      <Footer footerContent={footerHomeContent} increasedPadding={true} />
+      <Footer footerContent={footerHomeContent} increasedPadding />
     </>
   )
 }
