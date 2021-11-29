@@ -17,10 +17,11 @@ import { colors } from '../styles/style-constants'
 const RegContainerPlanForm = styled.div``
 
 export default function Registration() {
-  const { globalEmail, globalPassword } = useContext(SignUpContext)
+  const { globalFirstName, globalEmail, globalPassword } =
+    useContext(SignUpContext)
 
   const completeRegistration = () => {
-    firebaseRegistration(globalEmail, globalPassword)
+    firebaseRegistration(globalFirstName, globalEmail, globalPassword)
     console.log('registration completed!')
   }
 
