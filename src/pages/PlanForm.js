@@ -1,4 +1,7 @@
+import { useContext } from 'react'
 import styled from 'styled-components'
+import { SignUpContext } from '../context/SignUpContext'
+import firebaseRegistration from '../firebase/firebaseRegistration'
 import { RegNavbar, PlanFormTable, Footer } from '../parts'
 import {
   PageContainer,
@@ -14,6 +17,13 @@ import { colors } from '../styles/style-constants'
 const RegContainerPlanForm = styled.div``
 
 export default function Registration() {
+  const { globalEmail, globalPassword } = useContext(SignUpContext)
+
+  const completeRegistration = () => {
+    firebaseRegistration(globalEmail, globalPassword)
+    console.log('registration completed!')
+  }
+
   return (
     <PageContainer bgColor={colors.bgWhite} txtColor={colors.textDarkGrey}>
       <RegNavbar />
@@ -36,7 +46,11 @@ export default function Registration() {
           </RegContextBody>
         </RegContainerPlanForm>
         <PlanFormTable />
-        <SubmitButton route={PLAN_FORM} maxWidth='440px'>
+        <SubmitButton
+          route={PLAN_FORM}
+          maxWidth='440px'
+          onClick={completeRegistration}
+        >
           Complete Registration
         </SubmitButton>
       </RegContentContainer>
