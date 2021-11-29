@@ -5,7 +5,7 @@ import { cardBorderBottom } from '../styles/style-constants'
 
 const HeaderContainer = styled.header`
   width: 100%;
-  border-bottom: ${cardBorderBottom};
+  border-bottom: ${({ hasBorder }) => (hasBorder ? cardBorderBottom : '')};
   background-image: url('../images/misc/home-bg-large.jpg');
   background-repeat: no-repeat;
   background-size: cover;
@@ -40,9 +40,9 @@ const LogoWrapper = styled.div`
     height: 2.8125rem;
   }
 `
-export default function Header({ hasBtn, children }) {
+export default function Header({ hasBtn, hasBorder, children }) {
   return (
-    <HeaderContainer>
+    <HeaderContainer hasBorder={hasBorder}>
       <ImageGradient>
         <Navbar>
           <LogoWrapper>
