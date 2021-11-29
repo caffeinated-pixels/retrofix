@@ -1,3 +1,15 @@
+import { Header, Footer } from '../parts/'
+import { MainContainer } from '../containers/'
+import { footerHomeRegistration } from '../fixtures/footer-content'
+
 export default function Signin() {
-  return <h1>I am the Signin Page</h1>
+  return (
+    <>
+      <Header />
+      <MainContainer>
+        <h1>Sign in form goes here!</h1>
+      </MainContainer>
+      <Footer footerContent={footerHomeRegistration} borderTop={true} />
+    </>
+  )
 }
