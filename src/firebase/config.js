@@ -13,6 +13,7 @@ const firebaseConfig = {
 // TODO: when I publish, I will need to setup Netlify functions to replace these env variables
 
 export const firebaseApp = initializeApp(firebaseConfig)
-// this is the Firebase App object, which is passed to components down via Context
+// this is the Firebase App object
 
 export const firebaseAuth = getAuth(firebaseApp)
+// this creates a getAuth object for the Firebase authentication service
