@@ -40,7 +40,7 @@ const LogoWrapper = styled.div`
     height: 2.8125rem;
   }
 `
-export default function Header({ children }) {
+export default function Header({ hasBtn, children }) {
   return (
     <HeaderContainer>
       <ImageGradient>
@@ -48,7 +48,7 @@ export default function Header({ children }) {
           <LogoWrapper>
             <SiteLogo />
           </LogoWrapper>
-          <LinkButton href='/signin'>Sign In</LinkButton>
+          {hasBtn && <LinkButton href='/signin'>Sign In</LinkButton>}
         </Navbar>
         {children}
       </ImageGradient>
