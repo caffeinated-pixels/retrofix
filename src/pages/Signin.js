@@ -1,13 +1,55 @@
+import styled from 'styled-components'
 import { Header, Footer } from '../parts/'
 import { MainContainer } from '../containers/'
+import { GeneralForm, SubmitButton } from '../components'
+import { SIGN_UP } from '../constants/routes'
 import { footerHomeRegistration } from '../fixtures/footer-content'
+
+const SignInContentBody = styled.div``
+
+const SignInFormContainer = styled.div``
+
+const FormTitle = styled.h1``
+
+const SignUpText = styled.p``
+
+const SignUpLink = styled.a``
+
+const ReCaptchaText = styled.p``
 
 export default function Signin() {
   return (
     <>
       <Header noBgOnMobile />
       <MainContainer>
-        <h1>Sign in form goes here!</h1>
+        <SignInContentBody>
+          <SignInFormContainer>
+            <FormTitle>Sign In</FormTitle>
+            <GeneralForm>
+              <GeneralForm.Input id='email' type='email' placeholder='Email' />
+              <GeneralForm.HiddenLabel htmlFor='email'>
+                Email Address
+              </GeneralForm.HiddenLabel>
+
+              <GeneralForm.Input
+                id='password'
+                type='password'
+                placeholder='Password'
+              />
+              <GeneralForm.HiddenLabel htmlFor='password'>
+                Password
+              </GeneralForm.HiddenLabel>
+              <SubmitButton maxWidth='440px'>Sign In</SubmitButton>
+            </GeneralForm>
+          </SignInFormContainer>
+          <SignUpText>
+            New to Netflix?<SignUpLink href={SIGN_UP}>Sign up now.</SignUpLink>
+          </SignUpText>
+          <ReCaptchaText>
+            This page is protected by Google reCAPTCHA to ensure you're not a
+            bot.
+          </ReCaptchaText>
+        </SignInContentBody>
       </MainContainer>
       <Footer footerContent={footerHomeRegistration} borderTop={true} />
     </>
