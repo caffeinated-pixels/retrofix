@@ -1,11 +1,14 @@
 import { Header, StoryCards, FaqSection, Footer } from '../parts/'
 import { MainContainer } from '../containers/'
+import { HeaderFeature } from '../components'
 import { footerHomeContent } from '../fixtures/footer-content'
 
 export default function Home() {
   return (
     <>
-      <Header />
+      <Header>
+        <HeaderFeature />
+      </Header>
       <MainContainer>
         <StoryCards />
         <FaqSection />
