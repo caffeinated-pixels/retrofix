@@ -1,10 +1,7 @@
-import styled from 'styled-components'
 import { Header, Navbar, StoryCards, FaqSection, Footer } from '../parts/'
-import { MainContainer } from '../containers/'
+import { SemanticHeader, MainContainer } from '../containers/'
 import { HeaderFeature, SiteLogo, LinkButton } from '../components'
 import { footerHomeContent } from '../fixtures/footer-content'
-
-const SemanticHeader = styled.header``
 
 export default function Home() {
   return (

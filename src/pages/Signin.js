@@ -1,12 +1,10 @@
 import styled from 'styled-components'
 import { Header, RegNavbar, Footer } from '../parts/'
-import { MainContainer } from '../containers/'
+import { SemanticHeader, MainContainer } from '../containers/'
 import { GeneralForm, SubmitButton } from '../components'
 import { colors } from '../styles/style-constants'
 import { SIGN_UP } from '../constants/routes'
 import { footerHomeRegistration } from '../fixtures/footer-content'
-
-const SemanticHeader = styled.header``
 
 const SignInContentBody = styled.div`
   width: 100%;
