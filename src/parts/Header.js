@@ -3,7 +3,7 @@ import { Navbar } from './'
 import { LinkButton, SiteLogo } from '../components'
 import { cardBorderBottom } from '../styles/style-constants'
 
-const HeaderContainer = styled.header`
+const HeaderContainer = styled.div`
   width: 100%;
   border-bottom: ${({ hasBorder }) => (hasBorder ? cardBorderBottom : '')};
   background-image: ${({ noBgOnMobile }) =>
