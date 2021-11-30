@@ -33,11 +33,27 @@ const SigninInput = styled(GeneralForm.Input)`
   border-radius: 4px;
 `
 
-const SignUpText = styled.p``
+const SignUpText = styled.p`
+  color: ${colors.textMedGrey};
+  margin-top: 2em;
+`
 
-const SignUpLink = styled.a``
+const SignUpLink = styled.a`
+  color: #fff;
+  text-decoration: none;
 
-const ReCaptchaText = styled.p``
+  &:hover,
+  &:focus-visible {
+    text-decoration: underline;
+  }
+`
+
+const ReCaptchaText = styled.p`
+  font-size: 0.8125rem;
+  color: ${colors.textLightGrey};
+
+  margin-top: 1em;
+`
 
 export default function Signin() {
   return (
@@ -71,8 +87,8 @@ export default function Signin() {
               </GeneralForm>
             </SignInFormContainer>
             <SignUpText>
-              New to Netflix?
-              <SignUpLink href={SIGN_UP}>Sign up now.</SignUpLink>
+              New to Netflix?{' '}
+              <SignUpLink href={SIGN_UP}>Sign up now</SignUpLink>.
             </SignUpText>
             <ReCaptchaText>
               This page is protected by Google reCAPTCHA to ensure you're not a

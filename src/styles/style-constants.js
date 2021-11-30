@@ -6,6 +6,7 @@ export const colors = {
   bgLightGrey: 'hsl(0, 0%, 95%)',
   borderLightGrey: 'hsl(0, 0%, 90%)',
   borderMedLightGrey: 'hsl(0, 0%, 80%)',
+  textLightGrey: 'hsl(0, 0%, 55%)',
   textMedGrey: 'hsl(0, 0%, 46%)',
   textDarkGrey: 'hsl(0, 0%, 20%)',
   accordionGrey: 'hsl(0, 0%, 19%)',
