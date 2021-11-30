@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import styled from 'styled-components'
+import firebaseSignIn from '../firebase/firebaseSignIn'
 import { Header, RegNavbar, Footer } from '../parts/'
 import { SemanticHeader, MainContainer } from '../containers/'
 import { GeneralForm, SubmitButton } from '../components'
@@ -71,6 +72,12 @@ export default function Signin() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
+  const signIn = (e) => {
+    e.preventDefault()
+    firebaseSignIn(email, password)
+    console.log('Sign in!')
+  }
+
   return (
     <>
       <Header noBgOnMobile>
@@ -105,7 +112,7 @@ export default function Signin() {
                   <GeneralForm.HiddenLabel htmlFor='signin-password'>
                     Password
                   </GeneralForm.HiddenLabel>
-                  <SubmitButton maxWidth='100%' boldText>
+                  <SubmitButton maxWidth='100%' boldText onClick={signIn}>
                     Sign In
                   </SubmitButton>
                 </GeneralForm>
