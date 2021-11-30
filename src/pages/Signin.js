@@ -83,7 +83,7 @@ export default function Signin() {
                   <GeneralForm.HiddenLabel htmlFor='signin-password'>
                     Password
                   </GeneralForm.HiddenLabel>
-                  <SubmitButton maxWidth='440px' boldText>
+                  <SubmitButton maxWidth='100%' boldText>
                     Sign In
                   </SubmitButton>
                 </GeneralForm>
