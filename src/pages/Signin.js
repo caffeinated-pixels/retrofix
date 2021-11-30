@@ -6,6 +6,8 @@ import { colors } from '../styles/style-constants'
 import { SIGN_UP } from '../constants/routes'
 import { footerHomeRegistration } from '../fixtures/footer-content'
 
+const SemanticHeader = styled.header``
+
 const SignInContentBody = styled.div`
   width: 100%;
   min-height: 550px;
@@ -71,7 +73,10 @@ export default function Signin() {
     <>
       <Header noBgOnMobile>
         <Header.ImageGradient>
-          <RegNavbar noBorder />
+          <SemanticHeader>
+            <RegNavbar noBorder />
+          </SemanticHeader>
+
           <MainContainer>
             <SignInContentBody>
               <SignInFormContainer>
