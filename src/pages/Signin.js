@@ -109,13 +109,12 @@ export default function Signin() {
               </ReCaptchaText>
             </SignInContentBody>
           </MainContainer>
+          <Footer
+            footerContent={footerHomeRegistration}
+            borderTop={colors.textMedGrey}
+          />
         </Header.ImageGradient>
       </Header>
-
-      <Footer
-        footerContent={footerHomeRegistration}
-        borderTop={colors.textMedGrey}
-      />
     </>
   )
 }
