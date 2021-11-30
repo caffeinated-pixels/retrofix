@@ -59,44 +59,46 @@ export default function Signin() {
   return (
     <>
       <Header noBgOnMobile>
-        <RegNavbar noBorder />
-        <MainContainer>
-          <SignInContentBody>
-            <SignInFormContainer>
-              <FormTitle>Sign In</FormTitle>
-              <GeneralForm>
-                <SigninInput
-                  id='signin-email'
-                  type='email'
-                  placeholder='Email'
-                />
-                <GeneralForm.HiddenLabel htmlFor='signin-email'>
-                  Email Address
-                </GeneralForm.HiddenLabel>
+        <Header.ImageGradient>
+          <RegNavbar noBorder />
+          <MainContainer>
+            <SignInContentBody>
+              <SignInFormContainer>
+                <FormTitle>Sign In</FormTitle>
+                <GeneralForm>
+                  <SigninInput
+                    id='signin-email'
+                    type='email'
+                    placeholder='Email'
+                  />
+                  <GeneralForm.HiddenLabel htmlFor='signin-email'>
+                    Email Address
+                  </GeneralForm.HiddenLabel>
 
-                <SigninInput
-                  id='signin-password'
-                  type='password'
-                  placeholder='Password'
-                />
-                <GeneralForm.HiddenLabel htmlFor='signin-password'>
-                  Password
-                </GeneralForm.HiddenLabel>
-                <SubmitButton maxWidth='440px' boldText>
-                  Sign In
-                </SubmitButton>
-              </GeneralForm>
-            </SignInFormContainer>
-            <SignUpText>
-              New to Netflix?{' '}
-              <SignUpLink href={SIGN_UP}>Sign up now</SignUpLink>.
-            </SignUpText>
-            <ReCaptchaText>
-              This page is protected by Google reCAPTCHA to ensure you're not a
-              bot.
-            </ReCaptchaText>
-          </SignInContentBody>
-        </MainContainer>
+                  <SigninInput
+                    id='signin-password'
+                    type='password'
+                    placeholder='Password'
+                  />
+                  <GeneralForm.HiddenLabel htmlFor='signin-password'>
+                    Password
+                  </GeneralForm.HiddenLabel>
+                  <SubmitButton maxWidth='440px' boldText>
+                    Sign In
+                  </SubmitButton>
+                </GeneralForm>
+              </SignInFormContainer>
+              <SignUpText>
+                New to Netflix?{' '}
+                <SignUpLink href={SIGN_UP}>Sign up now</SignUpLink>.
+              </SignUpText>
+              <ReCaptchaText>
+                This page is protected by Google reCAPTCHA to ensure you're not
+                a bot.
+              </ReCaptchaText>
+            </SignInContentBody>
+          </MainContainer>
+        </Header.ImageGradient>
       </Header>
 
       <Footer
