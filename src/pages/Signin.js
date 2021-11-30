@@ -114,6 +114,7 @@ export default function Signin() {
           </MainContainer>
           <Footer
             footerContent={footerHomeRegistration}
+            bgColor={colors.bgBlackTrans}
             borderTop={colors.textMedGrey}
           />
         </Header.ImageGradient>
