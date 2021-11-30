@@ -116,6 +116,7 @@ export default function Signin() {
             footerContent={footerHomeRegistration}
             bgColor={colors.bgBlackTrans}
             borderTop={colors.textMedGrey}
+            borderOnlyOnMobile
           />
         </Header.ImageGradient>
       </Header>

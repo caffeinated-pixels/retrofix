@@ -16,6 +16,10 @@ const FooterContainer = styled.footer`
     padding: ${({ increasedPadding }) =>
       increasedPadding ? '75px 45px' : '30px 0'};
   }
+
+  @media (min-width: 750px) {
+    border-top: ${({ borderOnlyOnMobile }) => (borderOnlyOnMobile ? '0' : '')};
+  }
 `
 const FooterWrapper = styled.div`
   max-width: 1000px;
@@ -75,6 +79,7 @@ export default function Footer({
   increasedPadding,
   bgColor,
   borderTop,
+  borderOnlyOnMobile,
 }) {
   const listItems = footerContent.body.map((item, i) => (
     <ListItem key={i}>
@@ -87,6 +92,7 @@ export default function Footer({
       increasedPadding={increasedPadding}
       bgColor={bgColor}
       borderTop={borderTop}
+      borderOnlyOnMobile={borderOnlyOnMobile}
     >
       <FooterWrapper>
         <ContentWrapper>
