@@ -35,20 +35,20 @@ export default function Signin() {
               <FormTitle>Sign In</FormTitle>
               <GeneralForm>
                 <GeneralForm.Input
-                  id='email'
+                  id='signin-email'
                   type='email'
                   placeholder='Email'
                 />
-                <GeneralForm.HiddenLabel htmlFor='email'>
+                <GeneralForm.HiddenLabel htmlFor='signin-email'>
                   Email Address
                 </GeneralForm.HiddenLabel>
 
                 <GeneralForm.Input
-                  id='password'
+                  id='signin-password'
                   type='password'
                   placeholder='Password'
                 />
-                <GeneralForm.HiddenLabel htmlFor='password'>
+                <GeneralForm.HiddenLabel htmlFor='signin-password'>
                   Password
                 </GeneralForm.HiddenLabel>
                 <SubmitButton maxWidth='440px'>Sign In</SubmitButton>
