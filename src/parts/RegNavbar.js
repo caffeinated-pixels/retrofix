@@ -1,13 +1,15 @@
 import styled from 'styled-components'
 import { SiteLogo } from '../components'
 import { HOME } from '../constants/routes'
+import { colors } from '../styles/style-constants'
 
 const NavContainer = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
 
-  border-bottom: 1px solid #e6e6e6;
+  border-bottom: ${({ noBorder }) =>
+    noBorder ? '' : `1px solid ${colors.borderLightGrey}`};
 
   @media (min-width: 500px) {
     height: 75px;
@@ -30,9 +32,9 @@ const LogoWrapper = styled.div`
 
 const LogoLink = styled.a``
 
-export default function RegNavbar({ children }) {
+export default function RegNavbar({ children, noBorder }) {
   return (
-    <NavContainer>
+    <NavContainer noBorder={noBorder}>
       <LogoWrapper>
         <LogoLink href={HOME}>
           <SiteLogo />

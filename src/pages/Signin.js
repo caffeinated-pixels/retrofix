@@ -59,7 +59,7 @@ export default function Signin() {
   return (
     <>
       <Header noBgOnMobile>
-        <RegNavbar />
+        <RegNavbar noBorder />
         <MainContainer>
           <SignInContentBody>
             <SignInFormContainer>
