@@ -3,12 +3,12 @@ export const colors = {
   netflixRedFocus: `hsl(357, 92%, 52%)`,
   bgWhite: `hsl(0, 0%, 100%)`,
   bgBlack: 'hsl(0, 0%, 0%)',
-  bgLightGrey: 'hsl(0, 0%, 95%)',
-  borderLightGrey: 'hsl(0, 0%, 90%)',
-  borderMedLightGrey: 'hsl(0, 0%, 80%)',
-  textLightGrey: 'hsl(0, 0%, 55%)',
-  textMedGrey: 'hsl(0, 0%, 46%)',
-  textDarkGrey: 'hsl(0, 0%, 20%)',
+  bgLightGrey: 'hsl(0, 0%, 95%)', // #f2f2f2
+  borderLightGrey: 'hsl(0, 0%, 90%)', // #e5e5e5
+  borderMedLightGrey: 'hsl(0, 0%, 80%)', // #cccccc
+  textLightGrey: 'hsl(0, 0%, 55%)', // #8c8c8c
+  textMedGrey: 'hsl(0, 0%, 45%)', // #737373
+  textDarkGrey: 'hsl(0, 0%, 20%)', // #333333
   accordionGrey: 'hsl(0, 0%, 19%)',
 }
 
