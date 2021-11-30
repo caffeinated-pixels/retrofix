@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <>
       <SemanticHeader>
-        <Header hasBtn hasBorder>
+        <Header hasBorder>
           <Header.ImageGradient>
             <Navbar>
               <Header.LogoWrapper>
