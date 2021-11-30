@@ -74,11 +74,7 @@ export default function Signin() {
 
   const signIn = (e) => {
     e.preventDefault()
-
-    const trimmedEmail = email.trim()
-    const trimmedPassword = password.trim()
-
-    firebaseSignIn(trimmedEmail, trimmedPassword)
+    firebaseSignIn(email.trim(), password.trim())
   }
 
   return (
