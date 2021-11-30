@@ -105,7 +105,7 @@ export default function RegForm() {
       <Footer
         footerContent={footerHomeRegistration}
         bgColor={colors.bgLightGrey}
-        borderTop={true}
+        borderTop={colors.borderLightGrey}
       />
     </PageContainer>
   )

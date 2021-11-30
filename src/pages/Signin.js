@@ -98,7 +98,10 @@ export default function Signin() {
         </MainContainer>
       </Header>
 
-      <Footer footerContent={footerHomeRegistration} borderTop={true} />
+      <Footer
+        footerContent={footerHomeRegistration}
+        borderTop={colors.textMedGrey}
+      />
     </>
   )
 }

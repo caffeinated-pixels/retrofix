@@ -58,7 +58,7 @@ export default function Registration() {
       <Footer
         footerContent={footerHomeRegistration}
         bgColor={colors.bgLightGrey}
-        borderTop={true}
+        borderTop={colors.borderLightGrey}
       />
     </PageContainer>
   )

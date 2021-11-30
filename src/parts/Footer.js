@@ -5,7 +5,7 @@ const FooterContainer = styled.footer`
   color: ${colors.textMedGrey};
   background-color: ${({ bgColor }) => (bgColor ? bgColor : null)};
   border-top: ${({ borderTop }) =>
-    borderTop ? `1px solid ${colors.borderLightGrey}` : null};
+    borderTop ? `1px solid ${borderTop}` : null};
 
   padding: ${({ increasedPadding }) =>
     increasedPadding ? '50px 5%' : '30px 0'};
