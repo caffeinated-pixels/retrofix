@@ -5,7 +5,13 @@ import { GeneralForm, SubmitButton } from '../components'
 import { SIGN_UP } from '../constants/routes'
 import { footerHomeRegistration } from '../fixtures/footer-content'
 
-const SignInContentBody = styled.div``
+const SignInContentBody = styled.div`
+  width: 100%;
+  min-height: 550px;
+  padding: 20px 5% 30px;
+
+  border-radius: 4px;
+`
 
 const SignInFormContainer = styled.div``
 
