@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import styled from 'styled-components'
 import { Header, RegNavbar, Footer } from '../parts/'
 import { SemanticHeader, MainContainer } from '../containers/'
@@ -67,6 +68,9 @@ const ReCaptchaText = styled.p`
 `
 
 export default function Signin() {
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+
   return (
     <>
       <Header noBgOnMobile>
@@ -84,6 +88,8 @@ export default function Signin() {
                     id='signin-email'
                     type='email'
                     placeholder='Email'
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                   />
                   <GeneralForm.HiddenLabel htmlFor='signin-email'>
                     Email Address
@@ -93,6 +99,8 @@ export default function Signin() {
                     id='signin-password'
                     type='password'
                     placeholder='Password'
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
                   />
                   <GeneralForm.HiddenLabel htmlFor='signin-password'>
                     Password
