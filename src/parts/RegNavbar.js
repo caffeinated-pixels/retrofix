@@ -1,6 +1,6 @@
 import styled from 'styled-components'
-import { SiteLogo, NavLink } from '../components'
-import { HOME, SIGN_IN } from '../constants/routes'
+import { SiteLogo } from '../components'
+import { HOME } from '../constants/routes'
 
 const NavContainer = styled.nav`
   display: flex;
@@ -30,7 +30,7 @@ const LogoWrapper = styled.div`
 
 const LogoLink = styled.a``
 
-export default function Navbar() {
+export default function RegNavbar({ children }) {
   return (
     <NavContainer>
       <LogoWrapper>
@@ -38,7 +38,8 @@ export default function Navbar() {
           <SiteLogo />
         </LogoLink>
       </LogoWrapper>
-      <NavLink href={SIGN_IN}>Sign In</NavLink>
+      {children}
+      {/* <NavLink href={SIGN_IN}>Sign In</NavLink> */}
     </NavContainer>
   )
 }

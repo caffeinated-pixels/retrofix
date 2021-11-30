@@ -14,11 +14,12 @@ import {
   StepTitle,
   RegFormText,
   SubmitButton,
+  NavLink,
 } from '../components'
 
 import { colors } from '../styles/style-constants'
 import { footerHomeRegistration } from '../fixtures/footer-content'
-import { SIGN_UP } from '../constants/routes'
+import { SIGN_UP, SIGN_IN } from '../constants/routes'
 
 export default function RegForm() {
   const {
@@ -45,7 +46,9 @@ export default function RegForm() {
 
   return (
     <PageContainer bgColor={colors.bgWhite} txtColor={colors.textDarkGrey}>
-      <RegNavbar />
+      <RegNavbar>
+        <NavLink href={SIGN_IN}>Sign In</NavLink>
+      </RegNavbar>
       <RegContentContainer>
         <RegFormContainer>
           <StepHeaderContainer>

@@ -9,9 +9,15 @@ import {
   RegContentContainer,
   RegContextBody,
 } from '../containers'
-import { StepIndicator, StepTitle, RegList, SubmitButton } from '../components'
+import {
+  StepIndicator,
+  StepTitle,
+  RegList,
+  SubmitButton,
+  NavLink,
+} from '../components'
 import { footerHomeRegistration } from '../fixtures/footer-content'
-import { PLAN_FORM } from '../constants/routes'
+import { PLAN_FORM, SIGN_IN } from '../constants/routes'
 import { colors } from '../styles/style-constants'
 
 const RegContainerPlanForm = styled.div``
@@ -27,7 +33,9 @@ export default function Registration() {
 
   return (
     <PageContainer bgColor={colors.bgWhite} txtColor={colors.textDarkGrey}>
-      <RegNavbar />
+      <RegNavbar>
+        <NavLink href={SIGN_IN}>Sign In</NavLink>
+      </RegNavbar>
       <RegContentContainer>
         <RegContainerPlanForm>
           <StepHeaderContainer>
