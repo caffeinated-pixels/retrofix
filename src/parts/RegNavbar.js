@@ -7,6 +7,7 @@ const NavContainer = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  min-height: 45px;
 
   border-bottom: ${({ noBorder }) =>
     noBorder ? '' : `1px solid ${colors.borderLightGrey}`};
@@ -41,7 +42,6 @@ export default function RegNavbar({ children, noBorder }) {
         </LogoLink>
       </LogoWrapper>
       {children}
-      {/* <NavLink href={SIGN_IN}>Sign In</NavLink> */}
     </NavContainer>
   )
 }
