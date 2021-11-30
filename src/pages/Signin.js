@@ -12,6 +12,16 @@ const SignInContentBody = styled.div`
   padding: 20px 5% 30px;
 
   border-radius: 4px;
+
+  @media (min-width: 750px) {
+    min-height: 660px;
+    width: 450px;
+    margin: 0 auto;
+
+    background-color: hsla(0, 0%, 0%, 0.75);
+    padding: 60px 68px 40px;
+    /* margin-bottom: 90px; */
+  }
 `
 
 const SignInFormContainer = styled.div``
