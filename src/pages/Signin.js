@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import { Header, Footer } from '../parts/'
 import { MainContainer } from '../containers/'
 import { GeneralForm, SubmitButton } from '../components'
+import { colors } from '../styles/style-constants'
 import { SIGN_UP } from '../constants/routes'
 import { footerHomeRegistration } from '../fixtures/footer-content'
 
@@ -19,6 +20,19 @@ const FormTitle = styled.h1`
   margin-bottom: 28px;
 `
 
+// take and modify CSS for GeneralForm.Input rather than passing down excessive props
+const SigninInput = styled(GeneralForm.Input)`
+  color: #fff;
+  font-size: 1rem;
+
+  padding: 16px 20px;
+  margin-bottom: 16px;
+
+  background-color: ${colors.textDarkGrey};
+  border: 0;
+  border-radius: 4px;
+`
+
 const SignUpText = styled.p``
 
 const SignUpLink = styled.a``
@@ -34,7 +48,7 @@ export default function Signin() {
             <SignInFormContainer>
               <FormTitle>Sign In</FormTitle>
               <GeneralForm>
-                <GeneralForm.Input
+                <SigninInput
                   id='signin-email'
                   type='email'
                   placeholder='Email'
@@ -43,7 +57,7 @@ export default function Signin() {
                   Email Address
                 </GeneralForm.HiddenLabel>
 
-                <GeneralForm.Input
+                <SigninInput
                   id='signin-password'
                   type='password'
                   placeholder='Password'
