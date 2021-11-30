@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Header, Footer } from '../parts/'
+import { Header, RegNavbar, Footer } from '../parts/'
 import { MainContainer } from '../containers/'
 import { GeneralForm, SubmitButton } from '../components'
 import { colors } from '../styles/style-constants'
@@ -59,6 +59,7 @@ export default function Signin() {
   return (
     <>
       <Header noBgOnMobile>
+        <RegNavbar />
         <MainContainer>
           <SignInContentBody>
             <SignInFormContainer>

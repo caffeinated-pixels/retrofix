@@ -1,6 +1,4 @@
 import styled from 'styled-components'
-import { Navbar } from './'
-import { LinkButton, SiteLogo } from '../components'
 import { cardBorderBottom } from '../styles/style-constants'
 
 const HeaderContainer = styled.div`
@@ -45,18 +43,19 @@ const LogoWrapper = styled.div`
     height: 2.8125rem;
   }
 `
-export default function Header({ hasBtn, hasBorder, noBgOnMobile, children }) {
+
+export default function Header({ hasBorder, noBgOnMobile, children }) {
   return (
     <HeaderContainer hasBorder={hasBorder} noBgOnMobile={noBgOnMobile}>
-      <ImageGradient>
-        <Navbar>
-          <LogoWrapper>
-            <SiteLogo />
-          </LogoWrapper>
-          {hasBtn && <LinkButton href='/signin'>Sign In</LinkButton>}
-        </Navbar>
-        {children}
-      </ImageGradient>
+      {children}
     </HeaderContainer>
   )
+}
+
+Header.ImageGradient = ({ children }) => {
+  return <ImageGradient>{children}</ImageGradient>
+}
+
+Header.LogoWrapper = ({ children }) => {
+  return <LogoWrapper>{children}</LogoWrapper>
 }
