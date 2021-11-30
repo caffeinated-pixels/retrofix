@@ -4,7 +4,7 @@ import { Header, RegNavbar, Footer } from '../parts/'
 import { SemanticHeader, MainContainer } from '../containers/'
 import { GeneralForm, SubmitButton } from '../components'
 import { colors } from '../styles/style-constants'
-import { SIGN_UP } from '../constants/routes'
+import { HOME } from '../constants/routes'
 import { footerHomeRegistration } from '../fixtures/footer-content'
 
 const SignInContentBody = styled.div`
@@ -111,8 +111,8 @@ export default function Signin() {
                 </GeneralForm>
               </SignInFormContainer>
               <SignUpText>
-                New to Netflix?{' '}
-                <SignUpLink href={SIGN_UP}>Sign up now</SignUpLink>.
+                New to Netflix? <SignUpLink href={HOME}>Sign up now</SignUpLink>
+                .
               </SignUpText>
               <ReCaptchaText>
                 This page is protected by Google reCAPTCHA to ensure you're not
