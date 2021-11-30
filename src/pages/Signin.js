@@ -18,7 +18,7 @@ const SignInContentBody = styled.div`
     width: 450px;
     margin: 0 auto;
 
-    background-color: hsla(0, 0%, 0%, 0.75);
+    background-color: ${colors.bgBlackTrans};
     padding: 60px 68px 40px;
     margin-bottom: 90px;
   }
