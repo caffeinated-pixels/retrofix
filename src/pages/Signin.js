@@ -17,40 +17,45 @@ const SignUpLink = styled.a``
 
 const ReCaptchaText = styled.p``
 
-// TODO: The Sigin form is nested inside the Header. So I have a Header & Footer but no Main landmark. The page structure needs refactoring/restructuring to improve semantics.
 export default function Signin() {
   return (
     <>
       <Header noBgOnMobile>
-        <SignInContentBody>
-          <SignInFormContainer>
-            <FormTitle>Sign In</FormTitle>
-            <GeneralForm>
-              <GeneralForm.Input id='email' type='email' placeholder='Email' />
-              <GeneralForm.HiddenLabel htmlFor='email'>
-                Email Address
-              </GeneralForm.HiddenLabel>
+        <MainContainer>
+          <SignInContentBody>
+            <SignInFormContainer>
+              <FormTitle>Sign In</FormTitle>
+              <GeneralForm>
+                <GeneralForm.Input
+                  id='email'
+                  type='email'
+                  placeholder='Email'
+                />
+                <GeneralForm.HiddenLabel htmlFor='email'>
+                  Email Address
+                </GeneralForm.HiddenLabel>
 
-              <GeneralForm.Input
-                id='password'
-                type='password'
-                placeholder='Password'
-              />
-              <GeneralForm.HiddenLabel htmlFor='password'>
-                Password
-              </GeneralForm.HiddenLabel>
-              <SubmitButton maxWidth='440px'>Sign In</SubmitButton>
-            </GeneralForm>
-          </SignInFormContainer>
-          <SignUpText>
-            New to Netflix?
-            <SignUpLink href={SIGN_UP}>Sign up now.</SignUpLink>
-          </SignUpText>
-          <ReCaptchaText>
-            This page is protected by Google reCAPTCHA to ensure you're not a
-            bot.
-          </ReCaptchaText>
-        </SignInContentBody>
+                <GeneralForm.Input
+                  id='password'
+                  type='password'
+                  placeholder='Password'
+                />
+                <GeneralForm.HiddenLabel htmlFor='password'>
+                  Password
+                </GeneralForm.HiddenLabel>
+                <SubmitButton maxWidth='440px'>Sign In</SubmitButton>
+              </GeneralForm>
+            </SignInFormContainer>
+            <SignUpText>
+              New to Netflix?
+              <SignUpLink href={SIGN_UP}>Sign up now.</SignUpLink>
+            </SignUpText>
+            <ReCaptchaText>
+              This page is protected by Google reCAPTCHA to ensure you're not a
+              bot.
+            </ReCaptchaText>
+          </SignInContentBody>
+        </MainContainer>
       </Header>
 
       <Footer footerContent={footerHomeRegistration} borderTop={true} />
