@@ -15,7 +15,9 @@ const SignInContentBody = styled.div`
 
 const SignInFormContainer = styled.div``
 
-const FormTitle = styled.h1``
+const FormTitle = styled.h1`
+  margin-bottom: 28px;
+`
 
 const SignUpText = styled.p``
 
