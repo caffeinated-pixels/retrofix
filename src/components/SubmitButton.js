@@ -15,6 +15,7 @@ const Button = styled.button`
 
   color: #fff;
   font-size: 1.0625rem;
+  font-weight: ${({ boldText }) => (boldText ? '700' : '')};
   letter-spacing: 0.025rem;
 
   border-radius: 2px;
@@ -29,10 +30,17 @@ const Button = styled.button`
   }
 `
 
-export default function SubmitButton({ onClick, maxWidth, children }) {
+export default function SubmitButton({
+  onClick,
+  maxWidth,
+  boldText,
+  children,
+}) {
   return (
     <SubmitButtonContainer maxWidth={maxWidth}>
-      <Button onClick={onClick}>{children}</Button>
+      <Button onClick={onClick} boldText={boldText}>
+        {children}
+      </Button>
     </SubmitButtonContainer>
   )
 }
