@@ -20,7 +20,7 @@ const SignInContentBody = styled.div`
 
     background-color: hsla(0, 0%, 0%, 0.75);
     padding: 60px 68px 40px;
-    /* margin-bottom: 90px; */
+    margin-bottom: 90px;
   }
 `
 
@@ -35,6 +35,7 @@ const SigninInput = styled(GeneralForm.Input)`
   color: #fff;
   font-size: 1rem;
 
+  height: 50px;
   padding: 16px 20px;
   margin-bottom: 16px;
 
