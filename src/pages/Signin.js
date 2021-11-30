@@ -17,11 +17,11 @@ const SignUpLink = styled.a``
 
 const ReCaptchaText = styled.p``
 
+// TODO: The Sigin form is nested inside the Header. So I have a Header & Footer but no Main landmark. The page structure needs refactoring/restructuring to improve semantics.
 export default function Signin() {
   return (
     <>
-      <Header noBgOnMobile />
-      <MainContainer>
+      <Header noBgOnMobile>
         <SignInContentBody>
           <SignInFormContainer>
             <FormTitle>Sign In</FormTitle>
@@ -43,14 +43,16 @@ export default function Signin() {
             </GeneralForm>
           </SignInFormContainer>
           <SignUpText>
-            New to Netflix?<SignUpLink href={SIGN_UP}>Sign up now.</SignUpLink>
+            New to Netflix?
+            <SignUpLink href={SIGN_UP}>Sign up now.</SignUpLink>
           </SignUpText>
           <ReCaptchaText>
             This page is protected by Google reCAPTCHA to ensure you're not a
             bot.
           </ReCaptchaText>
         </SignInContentBody>
-      </MainContainer>
+      </Header>
+
       <Footer footerContent={footerHomeRegistration} borderTop={true} />
     </>
   )
