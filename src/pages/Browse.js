@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { RegNavbar, Footer } from '../parts/'
+import { Footer } from '../parts/'
 import { SiteLogo } from '../components'
 import { SemanticHeader, MainContainer } from '../containers/'
 import { footerHomeContent } from '../fixtures/footer-content'
