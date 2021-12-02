@@ -40,7 +40,13 @@ const SearchForm = styled.form`
 `
 
 const SearchInput = styled.input`
+  box-sizing: content-box;
   width: 6em;
+  padding: 4px 0.5em;
+  border: 1px solid #ccc;
+
+  color: #fff;
+  background-color: transparent;
 `
 
 export default function Browse() {
