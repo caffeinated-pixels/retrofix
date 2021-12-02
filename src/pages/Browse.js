@@ -49,6 +49,12 @@ const SearchInput = styled.input`
   background-color: transparent;
 `
 
+const GenreContainer = styled.div``
+
+const GenreTitle = styled.h2``
+
+const GenreRow = styled.div``
+
 export default function Browse() {
   return (
     <>
@@ -86,7 +92,9 @@ header (build from scratch)
 /header
 
 main
-  genre carousels
+  genre carousel
+    header
+    ribbon
 /main
 
 footer
