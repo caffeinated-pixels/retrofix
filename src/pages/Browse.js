@@ -2,7 +2,10 @@ import styled from 'styled-components'
 import { Footer } from '../parts/'
 import { SiteLogo } from '../components'
 import { SemanticHeader, MainContainer } from '../containers/'
+import getSorted from '../helpers/sort-genre-content'
 import { footerHomeContent } from '../fixtures/footer-content'
+
+getSorted()
 
 const BrowseHeader = styled.div``
 
