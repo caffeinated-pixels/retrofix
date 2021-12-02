@@ -17,6 +17,7 @@ const BurgerButton = styled.button`
   border: 0;
   cursor: pointer;
   padding: 0;
+  margin-right: 20px;
 `
 
 const BurgerButtonIcon = styled.img`
@@ -25,9 +26,8 @@ const BurgerButtonIcon = styled.img`
 `
 
 const BrowseLogoWrapper = styled.div`
-  width: 75px;
-  height: 20px;
-  margin-left: 3%;
+  width: 84px;
+  height: 24px;
 
   @media (min-width: 500px) {
     width: 167px;
