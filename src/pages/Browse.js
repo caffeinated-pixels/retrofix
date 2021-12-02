@@ -5,8 +5,6 @@ import { SemanticHeader, MainContainer } from '../containers/'
 import getContentByGenre from '../helpers/sort-genre-content'
 import { footerHomeContent } from '../fixtures/footer-content'
 
-console.log(getContentByGenre())
-
 const BrowseHeader = styled.div``
 
 const BrowseNavbar = styled.nav`
@@ -52,11 +50,46 @@ const SearchInput = styled.input`
   background-color: transparent;
 `
 
-const GenreContainer = styled.div``
+const GenreContainer = styled.div`
+  padding-left: 20px;
+`
 
 const GenreTitle = styled.h2``
 
-const GenreRow = styled.div``
+const GenreRow = styled.div`
+  display: flex;
+  overflow-x: auto;
+  padding-bottom: 40px;
+`
+
+const ContentBox = styled.div`
+  height: 90px;
+  min-width: 160px;
+  margin-right: 2px;
+  cursor: pointer;
+`
+const ContentImage = styled.img`
+  object-fit: cover;
+`
+
+const streamingContent = getContentByGenre()
+console.log(streamingContent)
+
+const genreContainers = streamingContent.map(({ genre, content }) => (
+  <GenreContainer key={genre}>
+    <GenreTitle>{genre}</GenreTitle>
+    <GenreRow>
+      {content.map((item) => (
+        <ContentBox key={item.title}>
+          <ContentImage
+            src={`/images/${item.category}/${item.genre}/${item.slug}/small.jpg`}
+            alt={item.title}
+          />
+        </ContentBox>
+      ))}
+    </GenreRow>
+  </GenreContainer>
+))
 
 export default function Browse() {
   return (
@@ -79,9 +112,7 @@ export default function Browse() {
         </BrowseHeader>
       </SemanticHeader>
 
-      <MainContainer>
-        <h1>Carousels go here</h1>
-      </MainContainer>
+      <MainContainer>{genreContainers}</MainContainer>
       <Footer footerContent={footerHomeContent} increasedPadding />
     </>
   )
