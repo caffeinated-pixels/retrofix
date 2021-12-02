@@ -1,7 +1,6 @@
-import genreContent from '../fixtures/genre-content.json'
+import genreContent from '../fixtures/streaming-content.json'
 
 function getGenreList() {
-  //   return [...new Set(genreContent.map((item) => item.genre))]
   return genreContent.reduce((array, item) => {
     if (array.indexOf(item.genre) === -1) {
       return [...array, item.genre]
@@ -9,7 +8,11 @@ function getGenreList() {
       return array
     }
   }, [])
+
+  //   return [...new Set(genreContent.map((item) => item.genre))]
 }
+
+function sortContentByGenre() {}
 
 export default function getSorted() {
   const genreList = getGenreList()
