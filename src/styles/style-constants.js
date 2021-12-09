@@ -14,5 +14,6 @@ export const colors = {
 }
 
 export const cardBorderBottom = '8px solid #222'
+export const navSliderBorderBottom = '1px solid #333'
 
 export const focusOutline = '2px solid yellow'
