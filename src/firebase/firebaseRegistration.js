@@ -7,7 +7,7 @@ export default async function firebaseRegistration(
   password
 ) {
   try {
-    const user = await createUserWithEmailAndPassword(
+    const response = await createUserWithEmailAndPassword(
       firebaseAuth,
       email,
       password
@@ -17,11 +17,12 @@ export default async function firebaseRegistration(
       displayName: globalFirstName,
       photoURL: '../images/users/1.png',
     })
-    console.log(user)
+    console.log(response)
     console.log(
       firebaseAuth.currentUser.displayName,
       firebaseAuth.currentUser.photoURL
     )
+    return response.user
   } catch (error) {
     console.log(error.message)
   }
