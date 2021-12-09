@@ -4,6 +4,7 @@ import { SiteLogo } from '../components'
 import { SemanticHeader, MainContainer } from '../containers/'
 import getContentByGenre from '../helpers/sort-genre-content'
 import { footerHomeContent } from '../fixtures/footer-content'
+import { navSliderBorderBottom } from '../styles/style-constants'
 
 const BrowseHeader = styled.div``
 
@@ -24,6 +25,24 @@ const NavSlider = styled.div`
   color: gray;
   font-weight: 700;
 `
+
+const NavPrimary = styled.ul`
+  list-style: none;
+  padding: 10px 0 10px 20px;
+  border-bottom: ${navSliderBorderBottom};
+  margin-bottom: 5px;
+`
+const NavSecondary = styled.ul`
+  list-style: none;
+  padding-left: 20px;
+  line-height: 2;
+`
+
+const NavUserLi = styled.li`
+  color: #fff;
+`
+
+const NavLi = styled.li``
 
 const BurgerButton = styled.button`
   background: none;
@@ -120,7 +139,17 @@ export default function Browse() {
             <SearchForm>
               <SearchInput placeholder='Search' />
             </SearchForm>
-            <NavSlider>Nav Slider</NavSlider>
+            <NavSlider>
+              <NavPrimary>
+                <NavUserLi>Dave</NavUserLi>
+                <NavLi>Sign out of Netflix</NavLi>
+              </NavPrimary>
+              <NavSecondary>
+                <NavLi>Home</NavLi>
+                <NavLi>Film</NavLi>
+                <NavLi>Series</NavLi>
+              </NavSecondary>
+            </NavSlider>
           </BrowseNavbar>
         </BrowseHeader>
       </SemanticHeader>
