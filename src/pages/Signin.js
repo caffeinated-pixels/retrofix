@@ -1,12 +1,12 @@
-import { useState, useContext } from 'react'
+import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
 import firebaseSignIn from '../firebase/firebaseSignIn'
-import { FirebaseAuthContext } from '../context/FirebaseAuthContext'
 import { Header, RegNavbar, Footer } from '../parts/'
 import { SemanticHeader, MainContainer } from '../containers/'
 import { GeneralForm, SubmitButton } from '../components'
 import { colors } from '../styles/style-constants'
-import { HOME } from '../constants/routes'
+import { HOME, BROWSE } from '../constants/routes'
 import { footerHomeRegistration } from '../fixtures/footer-content'
 
 const SignInContentBody = styled.div`
@@ -72,13 +72,16 @@ const ReCaptchaText = styled.p`
 export default function Signin() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const user = useContext(FirebaseAuthContext)
+  const navigate = useNavigate()
 
-  console.log('user = ' + user.email)
-
-  const signIn = (e) => {
+  const signIn = async (e) => {
     e.preventDefault()
-    firebaseSignIn(email.trim(), password.trim())
+    const user = await firebaseSignIn(email.trim(), password.trim())
+    console.log('signin from ' + user.email)
+    if (user?.email) {
+      console.log('succesful signin')
+      navigate(BROWSE)
+    }
   }
 
   return (
