@@ -1,4 +1,7 @@
+import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
+import firebaseSignOut from '../firebase/firebaseSignOut'
+import { HOME } from '../constants/routes'
 import { colors, navSliderBorderBottom } from '../styles/style-constants'
 
 const NavSlider = styled.div`
@@ -79,6 +82,14 @@ const NavBtn = styled.button`
 `
 
 export default function NavSliderPanel({ isMenuOpen }) {
+  const navigate = useNavigate()
+
+  const signOut = async () => {
+    await firebaseSignOut()
+    console.log('signed out!')
+    navigate(HOME)
+  }
+
   return (
     <NavSlider isMenuOpen={isMenuOpen}>
       <NavPrimary>
@@ -92,7 +103,7 @@ export default function NavSliderPanel({ isMenuOpen }) {
           </NavBtn>
         </NavUserLi>
         <NavLi>
-          <NavBtn>Sign out of Netflix</NavBtn>
+          <NavBtn onClick={signOut}>Sign out of Netflix</NavBtn>
         </NavLi>
       </NavPrimary>
       <NavSecondary>
