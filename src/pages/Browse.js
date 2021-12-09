@@ -1,5 +1,6 @@
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 import styled from 'styled-components'
+import { FirebaseAuthContext } from '../context/FirebaseAuthContext'
 import { Footer } from '../parts/'
 import { SiteLogo, NavSliderPanel } from '../components'
 import { SemanticHeader, MainContainer } from '../containers/'
@@ -78,7 +79,7 @@ const ContentImage = styled.img`
 `
 
 const streamingContent = getContentByGenre()
-console.log(streamingContent)
+// console.log(streamingContent)
 
 const genreContainers = streamingContent.map(({ genre, content }) => (
   <GenreContainer key={genre}>
@@ -98,9 +99,11 @@ const genreContainers = streamingContent.map(({ genre, content }) => (
 
 export default function Browse() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const user = useContext(FirebaseAuthContext)
+
+  console.log('isUserSignedIn? = ' + user?.email)
 
   const toggleMenu = () => {
-    console.log('toggled!')
     setIsMenuOpen((prevState) => !prevState)
   }
 
