@@ -121,7 +121,9 @@ export default function Browse() {
         </BrowseHeader>
       </SemanticHeader>
 
-      <MainContainer>{genreContainers}</MainContainer>
+      <MainContainer opacity={isMenuOpen ? '0.5' : null}>
+        {genreContainers}
+      </MainContainer>
       <Footer footerContent={footerHomeContent} increasedPadding />
     </>
   )

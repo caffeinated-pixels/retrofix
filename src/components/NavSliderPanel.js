@@ -7,6 +7,7 @@ const NavSlider = styled.div`
   top: 50px;
   bottom: 0;
   left: 0;
+  z-index: 99;
   transform: translateX(-250px);
   transform: ${({ isMenuOpen }) =>
     isMenuOpen ? 'translateX(0)' : 'translateX(-250px)'};
