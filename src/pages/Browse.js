@@ -63,12 +63,12 @@ const GenreRow = styled.div`
 `
 
 const ContentBox = styled.div`
-  height: 90px;
   min-width: 160px;
   margin-right: 2px;
   cursor: pointer;
 `
 const ContentImage = styled.img`
+  height: 90px;
   object-fit: cover;
 `
 
