@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { navSliderBorderBottom } from '../styles/style-constants'
+import { colors, navSliderBorderBottom } from '../styles/style-constants'
 
 const NavSlider = styled.div`
   position: absolute;
@@ -9,7 +9,7 @@ const NavSlider = styled.div`
   left: 0;
 
   background-color: #000;
-  color: gray;
+  color: ${colors.textLightGrey};
   font-weight: 700;
 `
 
@@ -27,21 +27,72 @@ const NavSecondary = styled.ul`
 
 const NavUserLi = styled.li`
   color: #fff;
+  margin-bottom: 10px;
+`
+const NavUserTextWrapper = styled.div`
+  margin-left: 8px;
+`
+
+const NavUserTextTop = styled.p`
+  line-height: 1;
+`
+
+const NavUserTextBottom = styled.p`
+  font-size: 0.7rem;
+  font-weight: 400;
+  color: ${colors.textLightGrey};
+  line-height: 1;
+`
+
+const UserAvatar = styled.img`
+  display: inline-block;
+  width: 2em;
+  vertical-align: middle;
 `
 
 const NavLi = styled.li``
+
+const NavBtn = styled.button`
+  display: flex;
+  border: 0;
+
+  width: 100%;
+  padding: 0;
+
+  cursor: pointer;
+
+  text-align: left;
+  background: none;
+  color: inherit;
+`
 
 export default function NavSliderPanel() {
   return (
     <NavSlider>
       <NavPrimary>
-        <NavUserLi>Dave</NavUserLi>
-        <NavLi>Sign out of Netflix</NavLi>
+        <NavUserLi>
+          <NavBtn>
+            <UserAvatar src='./images/users/1.png' />
+            <NavUserTextWrapper>
+              <NavUserTextTop>Andrea</NavUserTextTop>
+              <NavUserTextBottom>Switch Profiles</NavUserTextBottom>
+            </NavUserTextWrapper>
+          </NavBtn>
+        </NavUserLi>
+        <NavLi>
+          <NavBtn>Sign out of Netflix</NavBtn>
+        </NavLi>
       </NavPrimary>
       <NavSecondary>
-        <NavLi>Home</NavLi>
-        <NavLi>Film</NavLi>
-        <NavLi>Series</NavLi>
+        <NavLi>
+          <NavBtn>Home</NavBtn>
+        </NavLi>
+        <NavLi>
+          <NavBtn>Film</NavBtn>
+        </NavLi>
+        <NavLi>
+          <NavBtn>Series</NavBtn>
+        </NavLi>
       </NavSecondary>
     </NavSlider>
   )
