@@ -1,4 +1,5 @@
 import { useContext } from 'react'
+import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
 import { SignUpContext } from '../context/SignUpContext'
 import firebaseRegistration from '../firebase/firebaseRegistration'
@@ -17,7 +18,7 @@ import {
   NavLink,
 } from '../components'
 import { footerHomeRegistration } from '../fixtures/footer-content'
-import { PLAN_FORM, SIGN_IN } from '../constants/routes'
+import { PLAN_FORM, SIGN_IN, BROWSE, REG_FORM } from '../constants/routes'
 import { colors } from '../styles/style-constants'
 
 const RegContainerPlanForm = styled.div``
@@ -25,10 +26,22 @@ const RegContainerPlanForm = styled.div``
 export default function Registration() {
   const { globalFirstName, globalEmail, globalPassword } =
     useContext(SignUpContext)
+  const navigate = useNavigate()
 
-  const completeRegistration = () => {
-    firebaseRegistration(globalFirstName, globalEmail, globalPassword)
-    console.log('registration completed!')
+  const completeRegistration = async () => {
+    const user = await firebaseRegistration(
+      globalFirstName,
+      globalEmail,
+      globalPassword
+    )
+
+    if (user?.email) {
+      console.log('registration completed!')
+      navigate(BROWSE)
+    } else {
+      console.log('registration failed!')
+      navigate(REG_FORM)
+    }
   }
 
   return (
