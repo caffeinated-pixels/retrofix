@@ -4,6 +4,15 @@ import firebaseSignOut from '../firebase/firebaseSignOut'
 import { HOME } from '../constants/routes'
 import { colors, navSliderBorderBottom } from '../styles/style-constants'
 
+const NavSliderBackground = styled.div`
+  position: fixed;
+  width: 100%;
+  top: 50px;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: ${({ isMenuOpen }) => (isMenuOpen ? 'block' : 'none')};
+`
+
 const NavSlider = styled.div`
   position: fixed;
   width: 250px;
@@ -91,32 +100,35 @@ export default function NavSliderPanel({ isMenuOpen }) {
   }
 
   return (
-    <NavSlider isMenuOpen={isMenuOpen}>
-      <NavPrimary>
-        <NavUserLi>
-          <NavBtn>
-            <UserAvatar src='./images/users/1.png' />
-            <NavUserTextWrapper>
-              <NavUserTextTop>Andrea</NavUserTextTop>
-              <NavUserTextBottom>Switch Profiles</NavUserTextBottom>
-            </NavUserTextWrapper>
-          </NavBtn>
-        </NavUserLi>
-        <NavLi>
-          <NavBtn onClick={signOut}>Sign out of Netflix</NavBtn>
-        </NavLi>
-      </NavPrimary>
-      <NavSecondary>
-        <NavLi>
-          <NavBtn>Home</NavBtn>
-        </NavLi>
-        <NavLi>
-          <NavBtn>Film</NavBtn>
-        </NavLi>
-        <NavLi>
-          <NavBtn>Series</NavBtn>
-        </NavLi>
-      </NavSecondary>
-    </NavSlider>
+    <>
+      <NavSliderBackground isMenuOpen={isMenuOpen}></NavSliderBackground>
+      <NavSlider isMenuOpen={isMenuOpen}>
+        <NavPrimary>
+          <NavUserLi>
+            <NavBtn>
+              <UserAvatar src='./images/users/1.png' />
+              <NavUserTextWrapper>
+                <NavUserTextTop>Andrea</NavUserTextTop>
+                <NavUserTextBottom>Switch Profiles</NavUserTextBottom>
+              </NavUserTextWrapper>
+            </NavBtn>
+          </NavUserLi>
+          <NavLi>
+            <NavBtn onClick={signOut}>Sign out of Netflix</NavBtn>
+          </NavLi>
+        </NavPrimary>
+        <NavSecondary>
+          <NavLi>
+            <NavBtn>Home</NavBtn>
+          </NavLi>
+          <NavLi>
+            <NavBtn>Film</NavBtn>
+          </NavLi>
+          <NavLi>
+            <NavBtn>Series</NavBtn>
+          </NavLi>
+        </NavSecondary>
+      </NavSlider>
+    </>
   )
 }
