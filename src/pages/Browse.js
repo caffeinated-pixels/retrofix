@@ -13,7 +13,7 @@ const BrowseNavbar = styled.nav`
   min-height: 50px;
   padding: 0 20px;
 `
-const NavigationSlider = styled.div`
+const NavSlider = styled.div`
   position: absolute;
   width: 250px;
   top: 50px;
@@ -120,7 +120,7 @@ export default function Browse() {
             <SearchForm>
               <SearchInput placeholder='Search' />
             </SearchForm>
-            <NavigationSlider>Nav Slider</NavigationSlider>
+            <NavSlider>Nav Slider</NavSlider>
           </BrowseNavbar>
         </BrowseHeader>
       </SemanticHeader>
