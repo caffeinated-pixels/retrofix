@@ -11,7 +11,6 @@ const NavSlider = styled.div`
   transform: ${({ isMenuOpen }) =>
     isMenuOpen ? 'translateX(0)' : 'translateX(-250px)'};
   transition: transform 150ms cubic-bezier(0.5, 0, 0.1, 1);
-  /* visibility: hidden; */
 
   background-color: #000;
   z-index: 99;
@@ -70,6 +69,13 @@ const NavBtn = styled.button`
   text-align: left;
   background: none;
   color: inherit;
+
+  &:hover,
+  &:hover p,
+  &:focus-visible,
+  &:focus-visible p {
+    color: #fff;
+  }
 `
 
 export default function NavSliderPanel({ isMenuOpen }) {
