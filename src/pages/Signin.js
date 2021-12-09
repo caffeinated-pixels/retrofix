@@ -1,6 +1,7 @@
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 import styled from 'styled-components'
 import firebaseSignIn from '../firebase/firebaseSignIn'
+import { FirebaseAuthContext } from '../context/FirebaseAuthContext'
 import { Header, RegNavbar, Footer } from '../parts/'
 import { SemanticHeader, MainContainer } from '../containers/'
 import { GeneralForm, SubmitButton } from '../components'
@@ -71,6 +72,9 @@ const ReCaptchaText = styled.p`
 export default function Signin() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const user = useContext(FirebaseAuthContext)
+
+  console.log('user = ' + user.email)
 
   const signIn = (e) => {
     e.preventDefault()
