@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import styled from 'styled-components'
 import { Footer } from '../parts/'
 import { SiteLogo, NavSliderPanel } from '../components'
@@ -92,12 +93,19 @@ const genreContainers = streamingContent.map(({ genre, content }) => (
 ))
 
 export default function Browse() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+
+  const toggleMenu = () => {
+    console.log('toggled!')
+    setIsMenuOpen((prevState) => !prevState)
+  }
+
   return (
     <>
       <SemanticHeader>
         <BrowseHeader>
           <BrowseNavbar>
-            <BurgerButton aria-label='Main menu'>
+            <BurgerButton aria-label='Main menu' onClick={toggleMenu}>
               <BurgerButtonIcon src='../images/icons/hamburger.gif' />
             </BurgerButton>
 
@@ -108,7 +116,7 @@ export default function Browse() {
             <SearchForm>
               <SearchInput placeholder='Search' />
             </SearchForm>
-            <NavSliderPanel />
+            <NavSliderPanel isMenuOpen={isMenuOpen} />
           </BrowseNavbar>
         </BrowseHeader>
       </SemanticHeader>
