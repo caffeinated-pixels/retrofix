@@ -15,3 +15,5 @@ export { default as RegFormText } from './RegFormText'
 export { default as RegList } from './RegList'
 export { default as GeneralForm } from './GeneralForm'
 export { default as PlanTable } from './PlanTable'
+
+export { default as NavSliderPanel } from './NavSliderPanel'
