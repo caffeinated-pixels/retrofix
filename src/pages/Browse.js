@@ -9,10 +9,14 @@ import { footerHomeContent } from '../fixtures/footer-content'
 const BrowseHeader = styled.div``
 
 const BrowseNavbar = styled.nav`
+  position: fixed;
+  z-index: 99;
+  width: 100%;
   display: flex;
   align-items: center;
   min-height: 50px;
   padding: 0 20px;
+  background: black;
 `
 const BurgerButton = styled.button`
   background: none;

@@ -2,12 +2,11 @@ import styled from 'styled-components'
 import { colors, navSliderBorderBottom } from '../styles/style-constants'
 
 const NavSlider = styled.div`
-  position: absolute;
+  position: fixed;
   width: 250px;
   top: 50px;
   bottom: 0;
   left: 0;
-  z-index: 99;
   transform: translateX(-250px);
   transform: ${({ isMenuOpen }) =>
     isMenuOpen ? 'translateX(0)' : 'translateX(-250px)'};
@@ -15,6 +14,7 @@ const NavSlider = styled.div`
   /* visibility: hidden; */
 
   background-color: #000;
+  z-index: 99;
   color: ${colors.textLightGrey};
   font-weight: 700;
 `
