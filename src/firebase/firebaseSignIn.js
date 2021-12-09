@@ -3,9 +3,14 @@ import { signInWithEmailAndPassword } from '@firebase/auth'
 
 export default async function firebaseSignIn(email, password) {
   try {
-    const user = await signInWithEmailAndPassword(firebaseAuth, email, password)
+    const response = await signInWithEmailAndPassword(
+      firebaseAuth,
+      email,
+      password
+    )
 
-    console.log(user)
+    console.log(response)
+    return response.user
   } catch (error) {
     console.log(error.message)
   }
