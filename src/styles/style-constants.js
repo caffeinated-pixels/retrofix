@@ -9,6 +9,7 @@ export const colors = {
   borderMedLightGrey: 'hsl(0, 0%, 80%)', // #cccccc
   textLightGrey: 'hsl(0, 0%, 55%)', // #8c8c8c
   textMedGrey: 'hsl(0, 0%, 45%)', // #737373
+  errTextOrange: 'hsl(32, 97%, 46%)', // #e87c03
   textDarkGrey: 'hsl(0, 0%, 20%)', // #333333
   accordionGrey: 'hsl(0, 0%, 19%)',
 }
