@@ -16,7 +16,7 @@ const SignInContentBody = styled.div`
 
   border-radius: 4px;
 
-  @media (min-width: 750px) {
+  @media (min-width: 740px) {
     min-height: 660px;
     width: 450px;
     margin: 0 auto;
