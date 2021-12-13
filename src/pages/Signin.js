@@ -34,17 +34,27 @@ const FormTitle = styled.h1`
 `
 
 // take and modify CSS for GeneralForm.Input rather than passing down excessive props
+const InputWrapper = styled.div`
+  margin-bottom: 16px;
+`
+
 const SigninInput = styled(GeneralForm.Input)`
   color: #fff;
   font-size: 1rem;
 
   height: 50px;
   padding: 16px 20px;
-  margin-bottom: 16px;
 
   background-color: ${colors.textDarkGrey};
   border: 0;
   border-radius: 4px;
+  margin-bottom: 0;
+`
+
+const InputError = styled.p`
+  font-size: 0.8125rem;
+  color: ${colors.errTextOrange};
+  padding: 6px 3px 0;
 `
 
 const SignUpText = styled.p`
@@ -71,17 +81,33 @@ const ReCaptchaText = styled.p`
 
 export default function Signin() {
   const [email, setEmail] = useState('')
+  const [emailError, setEmailError] = useState(false)
+
   const [password, setPassword] = useState('')
+  const [passwordError, setPasswordError] = useState(false)
+
   const navigate = useNavigate()
 
   const signIn = async (e) => {
     e.preventDefault()
-    const user = await firebaseSignIn(email.trim(), password.trim())
-    console.log('signin from ' + user.email)
-    if (user?.email) {
-      console.log('succesful signin')
-      navigate(BROWSE)
+
+    if (email.length < 5) {
+      setEmailError(true)
+    } else {
+      setEmailError(false)
     }
+
+    if (password.length < 6) {
+      setPasswordError(true)
+    } else {
+      setPasswordError(false)
+    }
+
+    // const user = await firebaseSignIn(email.trim(), password.trim())
+    // if (user?.email) {
+    //   console.log('succesful signin for ' + user?.email)
+    //   navigate(BROWSE)
+    // }
   }
 
   return (
@@ -97,27 +123,40 @@ export default function Signin() {
               <SignInFormContainer>
                 <FormTitle>Sign In</FormTitle>
                 <GeneralForm>
-                  <SigninInput
-                    id='signin-email'
-                    type='email'
-                    placeholder='Email'
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                  />
-                  <GeneralForm.HiddenLabel htmlFor='signin-email'>
-                    Email Address
-                  </GeneralForm.HiddenLabel>
+                  <InputWrapper>
+                    <SigninInput
+                      id='signin-email'
+                      type='email'
+                      placeholder='Email'
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                    />
+                    <GeneralForm.HiddenLabel htmlFor='signin-email'>
+                      Email Address
+                    </GeneralForm.HiddenLabel>
+                    {emailError && (
+                      <InputError>Please enter a valid email.</InputError>
+                    )}
+                  </InputWrapper>
 
-                  <SigninInput
-                    id='signin-password'
-                    type='password'
-                    placeholder='Password'
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                  />
-                  <GeneralForm.HiddenLabel htmlFor='signin-password'>
-                    Password
-                  </GeneralForm.HiddenLabel>
+                  <InputWrapper>
+                    <SigninInput
+                      id='signin-password'
+                      type='password'
+                      placeholder='Password'
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
+                    />
+                    <GeneralForm.HiddenLabel htmlFor='signin-password'>
+                      Password
+                    </GeneralForm.HiddenLabel>
+                    {passwordError && (
+                      <InputError>
+                        Your password must contain at least 6 characters
+                      </InputError>
+                    )}
+                  </InputWrapper>
+
                   <SubmitButton maxWidth='100%' boldText onClick={signIn}>
                     Sign In
                   </SubmitButton>
