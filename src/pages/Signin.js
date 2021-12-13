@@ -150,7 +150,7 @@ export default function Signin() {
                     </GeneralForm.HiddenLabel>
                     {passwordError && (
                       <InputError>
-                        Your password must contain at least 6 characters
+                        Your password must contain at least 6 characters.
                       </InputError>
                     )}
                   </InputWrapper>
