@@ -32,6 +32,15 @@ const SignInFormContainer = styled.div``
 const FormTitle = styled.h1`
   margin-bottom: 28px;
 `
+const FirebaseErrorDisplay = styled.p`
+  margin-bottom: 16px;
+  padding: 10px 20px;
+
+  font-size: 0.875rem;
+  background-color: ${colors.errTextOrange};
+
+  border-radius: 4px;
+`
 
 // take and modify CSS for GeneralForm.Input rather than passing down excessive props
 const InputWrapper = styled.div`
@@ -83,6 +92,7 @@ export default function Signin() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [inputError, setInputError] = useState(false)
+  const [firebaseError, setFirebaseError] = useState('')
 
   const navigate = useNavigate()
 
@@ -91,6 +101,21 @@ export default function Signin() {
 
   const emailError = inputError && isEmailLongEnough
   const passwordError = inputError && isPasswordLongEnough
+
+  const processFirebaseError = (errorMsg) => {
+    const isEmailError = /user-not-found/.test(errorMsg)
+    const isPasswordError = /wrong-password/.test(errorMsg)
+
+    if (isEmailError) {
+      setFirebaseError(
+        `Sorry, we can't find an account with this email address. Please try again`
+      )
+    }
+
+    if (isPasswordError) {
+      setFirebaseError(`Incorrect password. Please try again`)
+    }
+  }
 
   const signIn = async (e) => {
     e.preventDefault()
@@ -106,7 +131,7 @@ export default function Signin() {
       console.log('succesful signin for ' + firebaseResponse.user.email)
       navigate(BROWSE)
     } else if (firebaseResponse.message) {
-      console.log(firebaseResponse.message)
+      processFirebaseError(firebaseResponse.message)
     }
   }
 
@@ -123,6 +148,9 @@ export default function Signin() {
               <SignInFormContainer>
                 <FormTitle>Sign In</FormTitle>
                 <GeneralForm>
+                  {firebaseError && (
+                    <FirebaseErrorDisplay>{firebaseError}</FirebaseErrorDisplay>
+                  )}
                   <InputWrapper>
                     <SigninInput
                       id='signin-email'
