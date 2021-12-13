@@ -101,11 +101,13 @@ export default function Signin() {
       setInputError(false)
     }
 
-    // const user = await firebaseSignIn(email.trim(), password.trim())
-    // if (user?.email) {
-    //   console.log('succesful signin for ' + user?.email)
-    //   navigate(BROWSE)
-    // }
+    const firebaseResponse = await firebaseSignIn(email.trim(), password.trim())
+    if (firebaseResponse.user) {
+      console.log('succesful signin for ' + firebaseResponse.user.email)
+      navigate(BROWSE)
+    } else if (firebaseResponse.message) {
+      console.log(firebaseResponse.message)
+    }
   }
 
   return (
