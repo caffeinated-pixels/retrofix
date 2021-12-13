@@ -81,26 +81,24 @@ const ReCaptchaText = styled.p`
 
 export default function Signin() {
   const [email, setEmail] = useState('')
-  const [emailError, setEmailError] = useState(false)
-
   const [password, setPassword] = useState('')
-  const [passwordError, setPasswordError] = useState(false)
+  const [inputError, setInputError] = useState(false)
 
   const navigate = useNavigate()
+
+  const isEmailLongEnough = email.length < 5
+  const isPasswordLongEnough = password.length < 6
+
+  const emailError = inputError && isEmailLongEnough
+  const passwordError = inputError && isPasswordLongEnough
 
   const signIn = async (e) => {
     e.preventDefault()
 
-    if (email.length < 5) {
-      setEmailError(true)
+    if (isEmailLongEnough || isPasswordLongEnough) {
+      setInputError(true)
     } else {
-      setEmailError(false)
-    }
-
-    if (password.length < 6) {
-      setPasswordError(true)
-    } else {
-      setPasswordError(false)
+      setInputError(false)
     }
 
     // const user = await firebaseSignIn(email.trim(), password.trim())
