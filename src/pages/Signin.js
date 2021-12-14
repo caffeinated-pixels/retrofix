@@ -5,7 +5,7 @@ import firebaseSignIn from '../firebase/firebaseSignIn'
 import { Header, RegNavbar, Footer } from '../parts/'
 import { SemanticHeader, MainContainer } from '../containers/'
 import { GeneralForm, SubmitButton } from '../components'
-import { colors } from '../styles/style-constants'
+import { colors, inputErrorBorderBottom } from '../styles/style-constants'
 import { HOME, BROWSE } from '../constants/routes'
 import { footerHomeRegistration } from '../fixtures/footer-content'
 
@@ -56,6 +56,9 @@ const SigninInput = styled(GeneralForm.Input)`
 
   background-color: ${colors.textDarkGrey};
   border: 0;
+  /* border-bottom: ${inputErrorBorderBottom}; */
+  border-bottom: ${({ inputError }) =>
+    inputError ? inputErrorBorderBottom : null};
   border-radius: 4px;
   margin-bottom: 0;
 `
@@ -89,6 +92,7 @@ const ReCaptchaText = styled.p`
 `
 
 export default function Signin() {
+  // TODO: refactor multiple states with useReducer?
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [inputError, setInputError] = useState(false)
@@ -158,6 +162,7 @@ export default function Signin() {
                       placeholder='Email'
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
+                      inputError={emailError}
                     />
                     <GeneralForm.HiddenLabel htmlFor='signin-email'>
                       Email Address
@@ -174,6 +179,7 @@ export default function Signin() {
                       placeholder='Password'
                       value={password}
                       onChange={(e) => setPassword(e.target.value)}
+                      inputError={passwordError}
                     />
                     <GeneralForm.HiddenLabel htmlFor='signin-password'>
                       Password
