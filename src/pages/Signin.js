@@ -121,21 +121,24 @@ export default function Signin() {
     }
   }
 
-  const signIn = async (e) => {
-    e.preventDefault()
-
-    if (isEmailLongEnough || isPasswordLongEnough) {
-      setInputError(true)
-    } else {
-      setInputError(false)
-    }
-
+  const contactFirebase = async () => {
     const firebaseResponse = await firebaseSignIn(email.trim(), password.trim())
     if (firebaseResponse.user) {
       console.log('succesful signin for ' + firebaseResponse.user.email)
       navigate(BROWSE)
     } else if (firebaseResponse.message) {
       processFirebaseError(firebaseResponse.message)
+    }
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+
+    if (isEmailLongEnough || isPasswordLongEnough) {
+      setInputError(true)
+    } else {
+      setInputError(false)
+      contactFirebase()
     }
   }
 
@@ -191,7 +194,7 @@ export default function Signin() {
                     )}
                   </InputWrapper>
 
-                  <SubmitButton maxWidth='100%' boldText onClick={signIn}>
+                  <SubmitButton maxWidth='100%' boldText onClick={handleSubmit}>
                     Sign In
                   </SubmitButton>
                 </GeneralForm>
