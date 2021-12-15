@@ -17,3 +17,4 @@ export { default as GeneralForm } from './GeneralForm'
 export { default as PlanTable } from './PlanTable'
 
 export { default as NavSliderPanel } from './NavSliderPanel'
+export { default as SigninForm } from './SigninForm'
