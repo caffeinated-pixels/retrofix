@@ -10,6 +10,7 @@ export const colors = {
   textLightGrey: 'hsl(0, 0%, 55%)', // #8c8c8c
   textMedGrey: 'hsl(0, 0%, 45%)', // #737373
   errTextOrange: 'hsl(32, 97%, 46%)', // #e87c03
+  errTextOrangeLighter: 'hsl(37, 100%, 52%)', // #ffa00a
   textDarkGrey: 'hsl(0, 0%, 20%)', // #333333
   accordionGrey: 'hsl(0, 0%, 19%)',
 }
