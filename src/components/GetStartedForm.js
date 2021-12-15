@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import { SignUpContext } from '../context/SignUpContext'
 import { colors, focusOutline } from '../styles/style-constants'
 import { REGISTRATION } from '../constants/routes'
+import isEmailValid from '../helpers/validate-email'
 
 const Form = styled.form`
   display: flex;
@@ -138,8 +139,13 @@ export default function GetStartedForm() {
 
   const Signup = (e) => {
     e.preventDefault()
-    setGlobalEmail(email)
-    navigate(REGISTRATION)
+
+    if (isEmailValid(email)) {
+      setGlobalEmail(email)
+      navigate(REGISTRATION)
+    } else {
+      console.log('invalid email!')
+    }
   }
 
   return (
