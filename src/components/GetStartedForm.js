@@ -3,7 +3,11 @@ import styled from 'styled-components'
 import { useNavigate } from 'react-router-dom'
 import useFormValidation from '../hooks/useFormValidation'
 import { SignUpContext } from '../context/SignUpContext'
-import { colors, focusOutline } from '../styles/style-constants'
+import {
+  colors,
+  inputErrorBorderBottom,
+  focusOutline,
+} from '../styles/style-constants'
 import { REGISTRATION } from '../constants/routes'
 import isEmailValid from '../helpers/validate-email'
 
@@ -71,6 +75,8 @@ const EmailInput = styled.input`
   max-width: 500px;
   padding: 10px;
   border: 1px solid #8c8c8c;
+  border-bottom: ${({ emailError }) =>
+    emailError ? inputErrorBorderBottom : ''};
   font-size: 0.875rem;
 
   @media (min-width: 740px) {
@@ -185,6 +191,7 @@ export default function GetStartedForm() {
             onChange={(e) =>
               dispatch({ type: 'SET_EMAIL', payload: e.target.value })
             }
+            emailError={emailError}
           />
           <EmailLabel htmlFor='email-input'>Email address</EmailLabel>
           {emailError && (
