@@ -1,6 +1,7 @@
-import { useState, useContext } from 'react'
+import { useContext } from 'react'
 import styled from 'styled-components'
 import { useNavigate } from 'react-router-dom'
+import useFormValidation from '../hooks/useFormValidation'
 import { SignUpContext } from '../context/SignUpContext'
 import { colors, focusOutline } from '../styles/style-constants'
 import { REGISTRATION } from '../constants/routes'
@@ -55,11 +56,20 @@ const EmailForm = styled.div`
     max-width: 746px;
   }
 `
+
+const InputWrapper = styled.div`
+  width: 100%;
+  margin-bottom: 10px;
+
+  @media (min-width: 950px) {
+    margin: 0;
+  }
+`
+
 const EmailInput = styled.input`
   width: 100%;
   max-width: 500px;
   padding: 10px;
-  margin-bottom: 10px;
   border: 1px solid #8c8c8c;
   font-size: 0.875rem;
 
@@ -70,7 +80,6 @@ const EmailInput = styled.input`
 
   @media (min-width: 950px) {
     padding: 20px 10px;
-    margin: 0;
     max-width: 450px;
   }
 
@@ -94,6 +103,13 @@ const EmailLabel = styled.label`
   padding: 0;
   position: absolute;
   width: 1px;
+`
+
+const InputError = styled.p`
+  text-align: left;
+  font-size: 0.9375rem;
+  color: ${colors.errTextOrangeLighter};
+  padding: 6px 3px 0;
 `
 
 const EmailSubmit = styled.button`
@@ -133,18 +149,24 @@ const ChevronIcon = styled.i`
 
 export default function GetStartedForm() {
   const { globalEmail, setGlobalEmail } = useContext(SignUpContext)
-  const [email, setEmail] = useState(globalEmail)
+  const [state, dispatch] = useFormValidation({
+    email: globalEmail,
+    inputError: false,
+  })
 
   const navigate = useNavigate()
+
+  const emailError = state.inputError && !isEmailValid(state.email)
 
   const Signup = (e) => {
     e.preventDefault()
 
-    if (isEmailValid(email)) {
-      setGlobalEmail(email)
+    if (isEmailValid(state.email)) {
+      setGlobalEmail(state.email)
       navigate(REGISTRATION)
     } else {
       console.log('invalid email!')
+      dispatch({ type: 'SET_INPUT_ERROR', payload: true })
     }
   }
 
@@ -154,14 +176,22 @@ export default function GetStartedForm() {
         Ready to watch? Enter your email to create or restart your membership.
       </FormText>
       <EmailForm>
-        <EmailInput
-          id='email-input'
-          type='email'
-          placeholder='Email address'
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <EmailLabel htmlFor='email-input'>Email address</EmailLabel>
+        <InputWrapper>
+          <EmailInput
+            id='email-input'
+            type='email'
+            placeholder='Email address'
+            value={state.email}
+            onChange={(e) =>
+              dispatch({ type: 'SET_EMAIL', payload: e.target.value })
+            }
+          />
+          <EmailLabel htmlFor='email-input'>Email address</EmailLabel>
+          {emailError && (
+            <InputError>Please enter a valid email address</InputError>
+          )}
+        </InputWrapper>
+
         <EmailSubmit onClick={Signup}>
           Get Started
           <ChevronIcon className='fas fa-chevron-right' />
