@@ -1,5 +1,5 @@
-import { useReducer } from 'react'
 import { useNavigate } from 'react-router-dom'
+import useFormValidation from '../hooks/useFormValidation'
 import firebaseSignIn from '../firebase/firebaseSignIn'
 import { Header, RegNavbar, Footer } from '../parts/'
 import { SemanticHeader, MainContainer } from '../containers/'
@@ -8,28 +8,8 @@ import { colors } from '../styles/style-constants'
 import { HOME, BROWSE } from '../constants/routes'
 import { footerHomeRegistration } from '../fixtures/footer-content'
 
-const reducer = (state, action) => {
-  switch (action.type) {
-    case 'SET_EMAIL':
-      return { ...state, email: action.payload }
-    case 'SET_PASSWORD':
-      return { ...state, password: action.payload }
-    case 'SET_INPUT_ERROR':
-      return { ...state, inputError: action.payload }
-    case 'SET_FIREBASE_ERROR':
-      return { ...state, firebaseError: action.payload }
-    default:
-      throw new Error(`Unhandled action type: ${action.type}`)
-  }
-}
-
 export default function Signin() {
-  const [state, dispatch] = useReducer(reducer, {
-    email: '',
-    password: '',
-    inputError: false,
-    firebaseError: '',
-  })
+  const [state, dispatch] = useFormValidation()
   const navigate = useNavigate()
 
   const isEmailLongEnough = state.email.length < 5
