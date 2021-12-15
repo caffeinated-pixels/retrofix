@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useReducer } from 'react'
 import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
 import firebaseSignIn from '../firebase/firebaseSignIn'
@@ -90,39 +90,60 @@ const ReCaptchaText = styled.p`
 
   margin-top: 1em;
 `
+const reducer = (state, action) => {
+  switch (action.type) {
+    case 'SET_EMAIL':
+      return { ...state, email: action.payload }
+    case 'SET_PASSWORD':
+      return { ...state, password: action.payload }
+    case 'SET_INPUT_ERROR':
+      return { ...state, inputError: action.payload }
+    case 'SET_FIREBASE_ERROR':
+      return { ...state, firebaseError: action.payload }
+    default:
+      throw new Error(`Unhandled action type: ${action.type}`)
+  }
+}
 
 export default function Signin() {
-  // TODO: refactor multiple states with useReducer?
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-  const [inputError, setInputError] = useState(false)
-  const [firebaseError, setFirebaseError] = useState('')
-
+  const [state, dispatch] = useReducer(reducer, {
+    email: '',
+    password: '',
+    inputError: false,
+    firebaseError: '',
+  })
   const navigate = useNavigate()
 
-  const isEmailLongEnough = email.length < 5
-  const isPasswordLongEnough = password.length < 6
+  const isEmailLongEnough = state.email.length < 5
+  const isPasswordLongEnough = state.password.length < 6
 
-  const emailError = inputError && isEmailLongEnough
-  const passwordError = inputError && isPasswordLongEnough
+  const emailError = state.inputError && isEmailLongEnough
+  const passwordError = state.inputError && isPasswordLongEnough
 
   const processFirebaseError = (errorMsg) => {
     const isEmailError = /user-not-found/.test(errorMsg)
     const isPasswordError = /wrong-password/.test(errorMsg)
 
     if (isEmailError) {
-      setFirebaseError(
-        `Sorry, we can't find an account with this email address. Please try again`
-      )
+      dispatch({
+        type: 'SET_FIREBASE_ERROR',
+        payload: `Sorry, we can't find an account with this email address. Please try again`,
+      })
     }
 
     if (isPasswordError) {
-      setFirebaseError(`Incorrect password. Please try again`)
+      dispatch({
+        type: 'SET_FIREBASE_ERROR',
+        payload: `Incorrect password. Please try again`,
+      })
     }
   }
 
   const contactFirebase = async () => {
-    const firebaseResponse = await firebaseSignIn(email.trim(), password.trim())
+    const firebaseResponse = await firebaseSignIn(
+      state.email.trim(),
+      state.password.trim()
+    )
     if (firebaseResponse.user) {
       console.log('succesful signin for ' + firebaseResponse.user.email)
       navigate(BROWSE)
@@ -135,9 +156,9 @@ export default function Signin() {
     e.preventDefault()
 
     if (isEmailLongEnough || isPasswordLongEnough) {
-      setInputError(true)
+      dispatch({ type: 'SET_INPUT_ERROR', payload: true })
     } else {
-      setInputError(false)
+      dispatch({ type: 'SET_INPUT_ERROR', payload: false })
       contactFirebase()
     }
   }
@@ -155,16 +176,20 @@ export default function Signin() {
               <SignInFormContainer>
                 <FormTitle>Sign In</FormTitle>
                 <GeneralForm>
-                  {firebaseError && (
-                    <FirebaseErrorDisplay>{firebaseError}</FirebaseErrorDisplay>
+                  {state.firebaseError && (
+                    <FirebaseErrorDisplay>
+                      {state.firebaseError}
+                    </FirebaseErrorDisplay>
                   )}
                   <InputWrapper>
                     <SigninInput
                       id='signin-email'
                       type='email'
                       placeholder='Email'
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
+                      value={state.email}
+                      onChange={(e) =>
+                        dispatch({ type: 'SET_EMAIL', payload: e.target.value })
+                      }
                       inputError={emailError}
                     />
                     <GeneralForm.HiddenLabel htmlFor='signin-email'>
@@ -180,8 +205,13 @@ export default function Signin() {
                       id='signin-password'
                       type='password'
                       placeholder='Password'
-                      value={password}
-                      onChange={(e) => setPassword(e.target.value)}
+                      value={state.password}
+                      onChange={(e) =>
+                        dispatch({
+                          type: 'SET_PASSWORD',
+                          payload: e.target.value,
+                        })
+                      }
                       inputError={passwordError}
                     />
                     <GeneralForm.HiddenLabel htmlFor='signin-password'>
