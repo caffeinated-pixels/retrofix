@@ -15,13 +15,15 @@ const reducer = (state, action) => {
   }
 }
 
-export default function useFormValidation() {
-  const [state, dispatch] = useReducer(reducer, {
+export default function useFormValidation(
+  initialState = {
     email: '',
     password: '',
     inputError: false,
     firebaseError: '',
-  })
+  }
+) {
+  const [state, dispatch] = useReducer(reducer, initialState)
 
   return [state, dispatch]
 }
