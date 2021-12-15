@@ -12,11 +12,11 @@ export default function Signin() {
   const [state, dispatch] = useFormValidation()
   const navigate = useNavigate()
 
-  const isEmailLongEnough = state.email.length < 5
-  const isPasswordLongEnough = state.password.length < 6
+  const isEmailTooShort = state.email.length < 5
+  const isPasswordTooShort = state.password.length < 6
 
-  const emailError = state.inputError && isEmailLongEnough
-  const passwordError = state.inputError && isPasswordLongEnough
+  const emailError = state.inputError && isEmailTooShort
+  const passwordError = state.inputError && isPasswordTooShort
 
   const processFirebaseError = (errorMsg) => {
     const isEmailError = /user-not-found/.test(errorMsg)
@@ -53,7 +53,7 @@ export default function Signin() {
   const handleSubmit = (e) => {
     e.preventDefault()
 
-    if (isEmailLongEnough || isPasswordLongEnough) {
+    if (isEmailTooShort || isPasswordTooShort) {
       dispatch({ type: 'SET_INPUT_ERROR', payload: true })
     } else {
       dispatch({ type: 'SET_INPUT_ERROR', payload: false })
