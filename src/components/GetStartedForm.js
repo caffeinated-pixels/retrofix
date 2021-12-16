@@ -12,13 +12,12 @@ import { REGISTRATION } from '../constants/routes'
 import isEmailValid from '../helpers/validate-email'
 
 const Form = styled.form`
-  display: flex;
-  flex-direction: column;
-  max-width: 950px;
+  max-width: 500px;
   margin: 0 auto;
 
   @media (min-width: 950px) {
     padding-top: 0.85rem;
+    max-width: 950px;
   }
 `
 
@@ -44,16 +43,24 @@ const FormText = styled.p`
 `
 
 const EmailForm = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: grid;
+  grid-template-areas:
+    'input'
+    'error'
+    'button';
+
+  grid-template-rows: auto minmax(10px, auto) auto;
+
   margin: 10px auto;
-  width: 100%;
   max-width: 664px;
 
   @media (min-width: 950px) {
-    flex-direction: row;
-    align-items: stretch;
+    grid-template-areas:
+      'input button'
+      'error error';
+
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto;
   }
 
   @media (min-width: 1450px) {
@@ -62,18 +69,13 @@ const EmailForm = styled.div`
 `
 
 const InputWrapper = styled.div`
-  width: 100%;
-  margin-bottom: 10px;
-
-  @media (min-width: 950px) {
-    margin: 0;
-  }
+  grid-area: input;
 `
 
 const EmailInput = styled.input`
   width: 100%;
   max-width: 500px;
-  padding: 10px;
+  padding: 14px 10px;
   border: 1px solid #8c8c8c;
   border-bottom: ${({ emailError }) =>
     emailError ? inputErrorBorderBottom : ''};
@@ -81,7 +83,7 @@ const EmailInput = styled.input`
 
   @media (min-width: 740px) {
     font-size: 1rem;
-    padding: 15px 10px;
+    padding: 19px 10px;
   }
 
   @media (min-width: 950px) {
@@ -96,6 +98,7 @@ const EmailInput = styled.input`
 
   &:focus-visible {
     outline: ${focusOutline};
+    outline: none;
   }
 `
 
@@ -112,20 +115,25 @@ const EmailLabel = styled.label`
 `
 
 const InputError = styled.p`
+  grid-area: error;
+  justify-self: start;
   text-align: left;
   font-size: 0.9375rem;
   color: ${colors.errTextOrangeLighter};
   padding: 6px 3px 0;
+  margin-bottom: 10px;
 `
 
 const EmailSubmit = styled.button`
+  grid-area: button;
+  justify-self: center;
   background-color: ${colors.netflixRed};
   color: #fff;
   border: 0;
   margin: 0.25em 0;
   padding: 0 1em;
   min-height: 40px;
-  min-width: 74px;
+  min-width: max-content;
   letter-spacing: 0.1px;
   line-height: initial;
   cursor: pointer;
@@ -194,10 +202,11 @@ export default function GetStartedForm() {
             emailError={emailError}
           />
           <EmailLabel htmlFor='email-input'>Email address</EmailLabel>
-          {emailError && (
-            <InputError>Please enter a valid email address</InputError>
-          )}
         </InputWrapper>
+
+        {emailError && (
+          <InputError>Please enter a valid email address</InputError>
+        )}
 
         <EmailSubmit onClick={Signup}>
           Get Started
