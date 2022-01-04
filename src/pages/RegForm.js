@@ -1,6 +1,5 @@
 import { useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
-import styled from 'styled-components'
 import useFormValidation from '../hooks/useFormValidation'
 import { SignUpContext } from '../context/SignUpContext'
 import { RegNavbar, Footer } from '../parts'
@@ -23,8 +22,6 @@ import { colors } from '../styles/style-constants'
 import { footerHomeRegistration } from '../fixtures/footer-content'
 import { SIGN_UP, SIGN_IN } from '../constants/routes'
 import isEmailValid from '../helpers/validate-email'
-
-const InputError = styled.p``
 
 export default function RegForm() {
   const {
@@ -95,7 +92,11 @@ export default function RegForm() {
             <GeneralForm.HiddenLabel htmlFor='name'>
               First Name
             </GeneralForm.HiddenLabel>
-            {firstNameError && <InputError>Please enter a name</InputError>}
+            {firstNameError && (
+              <GeneralForm.InputError>
+                Please enter a name.
+              </GeneralForm.InputError>
+            )}
 
             <GeneralForm.Input
               id='email'
@@ -110,7 +111,9 @@ export default function RegForm() {
               Email Address
             </GeneralForm.HiddenLabel>
             {emailError && (
-              <InputError>Please enter a valid email address</InputError>
+              <GeneralForm.InputError>
+                Please enter a valid email address.
+              </GeneralForm.InputError>
             )}
 
             <GeneralForm.Input
@@ -126,9 +129,9 @@ export default function RegForm() {
               Password
             </GeneralForm.HiddenLabel>
             {passwordError && (
-              <InputError>
+              <GeneralForm.InputError>
                 Password should be at least 6 characters long.
-              </InputError>
+              </GeneralForm.InputError>
             )}
 
             <GeneralForm.CheckboxWrapper>

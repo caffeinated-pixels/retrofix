@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { colors } from '../styles/style-constants'
 
 const GeneralForm = styled.form`
   margin: 10px 0 20px;
@@ -26,6 +27,11 @@ GeneralForm.HiddenLabel = styled.label`
   padding: 0;
   position: absolute;
   width: 1px;
+`
+
+GeneralForm.InputError = styled.p`
+  color: ${colors.errTextRed};
+  font-size: 0.8125rem;
 `
 
 GeneralForm.CheckboxWrapper = styled.div`
