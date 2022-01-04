@@ -5,10 +5,13 @@ const Form = styled.form`
   margin: 10px 0 20px;
 `
 
+const InputWrapper = styled.div`
+  margin-bottom: 10px;
+`
+
 const Input = styled.input`
   width: 100%;
   height: 60px;
-  margin-bottom: 10px;
   padding: 0 10px;
 
   font-size: 0.875rem;
@@ -51,6 +54,10 @@ const Label = styled.label``
 export default function GeneralForm({ children, ...restProps }) {
   return <Form {...restProps}>{children}</Form>
 }
+
+GeneralForm.InputWrapper = ({ children, ...restProps }) => (
+  <InputWrapper {...restProps}>{children}</InputWrapper>
+)
 
 GeneralForm.Input = ({ children, ...restProps }) => (
   <Input {...restProps}></Input>

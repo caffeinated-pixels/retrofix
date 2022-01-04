@@ -80,59 +80,65 @@ export default function RegForm() {
           <RegFormText>Just a few more steps and you're done!</RegFormText>
           <RegFormText>We hate paperwork, too.</RegFormText>
           <GeneralForm>
-            <GeneralForm.Input
-              id='name'
-              type='text'
-              placeholder='First Name'
-              value={state.firstName}
-              onChange={(e) =>
-                dispatch({ type: 'SET_FIRST_NAME', payload: e.target.value })
-              }
-            />
-            <GeneralForm.HiddenLabel htmlFor='name'>
-              First Name
-            </GeneralForm.HiddenLabel>
-            {firstNameError && (
-              <GeneralForm.InputError>
-                Please enter a name.
-              </GeneralForm.InputError>
-            )}
+            <GeneralForm.InputWrapper>
+              <GeneralForm.Input
+                id='name'
+                type='text'
+                placeholder='First Name'
+                value={state.firstName}
+                onChange={(e) =>
+                  dispatch({ type: 'SET_FIRST_NAME', payload: e.target.value })
+                }
+              />
+              <GeneralForm.HiddenLabel htmlFor='name'>
+                First Name
+              </GeneralForm.HiddenLabel>
+              {firstNameError && (
+                <GeneralForm.InputError>
+                  Please enter a name.
+                </GeneralForm.InputError>
+              )}
+            </GeneralForm.InputWrapper>
 
-            <GeneralForm.Input
-              id='email'
-              type='email'
-              placeholder='Email'
-              value={state.email}
-              onChange={(e) =>
-                dispatch({ type: 'SET_EMAIL', payload: e.target.value })
-              }
-            />
-            <GeneralForm.HiddenLabel htmlFor='email'>
-              Email Address
-            </GeneralForm.HiddenLabel>
-            {emailError && (
-              <GeneralForm.InputError>
-                Please enter a valid email address.
-              </GeneralForm.InputError>
-            )}
+            <GeneralForm.InputWrapper>
+              <GeneralForm.Input
+                id='email'
+                type='email'
+                placeholder='Email'
+                value={state.email}
+                onChange={(e) =>
+                  dispatch({ type: 'SET_EMAIL', payload: e.target.value })
+                }
+              />
+              <GeneralForm.HiddenLabel htmlFor='email'>
+                Email Address
+              </GeneralForm.HiddenLabel>
+              {emailError && (
+                <GeneralForm.InputError>
+                  Please enter a valid email address.
+                </GeneralForm.InputError>
+              )}
+            </GeneralForm.InputWrapper>
 
-            <GeneralForm.Input
-              id='password'
-              type='password'
-              placeholder='Password'
-              value={state.password}
-              onChange={(e) =>
-                dispatch({ type: 'SET_PASSWORD', payload: e.target.value })
-              }
-            />
-            <GeneralForm.HiddenLabel htmlFor='password'>
-              Password
-            </GeneralForm.HiddenLabel>
-            {passwordError && (
-              <GeneralForm.InputError>
-                Password should be at least 6 characters long.
-              </GeneralForm.InputError>
-            )}
+            <GeneralForm.InputWrapper>
+              <GeneralForm.Input
+                id='password'
+                type='password'
+                placeholder='Password'
+                value={state.password}
+                onChange={(e) =>
+                  dispatch({ type: 'SET_PASSWORD', payload: e.target.value })
+                }
+              />
+              <GeneralForm.HiddenLabel htmlFor='password'>
+                Password
+              </GeneralForm.HiddenLabel>
+              {passwordError && (
+                <GeneralForm.InputError>
+                  Password should be at least 6 characters long.
+                </GeneralForm.InputError>
+              )}
+            </GeneralForm.InputWrapper>
 
             <GeneralForm.CheckboxWrapper>
               <GeneralForm.Checkbox id='offers' type='checkbox' />
