@@ -1,5 +1,6 @@
-import { useState, useContext } from 'react'
+import { useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
+import useFormValidation from '../hooks/useFormValidation'
 import { SignUpContext } from '../context/SignUpContext'
 import { RegNavbar, Footer } from '../parts'
 import {
@@ -31,16 +32,20 @@ export default function RegForm() {
     setGlobalPassword,
   } = useContext(SignUpContext)
 
-  const [firstName, setFirstName] = useState(globalFirstName)
-  const [email, setEmail] = useState(globalEmail)
-  const [password, setPassword] = useState(globalPassword)
+  const [state, dispatch] = useFormValidation({
+    firstName: globalFirstName,
+    email: globalEmail,
+    password: globalPassword,
+    inputError: false,
+    firebaseError: '',
+  })
 
   const navigate = useNavigate()
 
   const nextPage = () => {
-    setGlobalFirstName(firstName.trim())
-    setGlobalEmail(email.trim())
-    setGlobalPassword(password.trim())
+    setGlobalFirstName(state.firstName.trim())
+    setGlobalEmail(state.email.trim())
+    setGlobalPassword(state.password.trim())
     navigate(SIGN_UP)
   }
 
@@ -63,8 +68,10 @@ export default function RegForm() {
               id='name'
               type='text'
               placeholder='First Name'
-              value={firstName}
-              onChange={(e) => setFirstName(e.target.value)}
+              value={state.firstName}
+              onChange={(e) =>
+                dispatch({ type: 'SET_FIRST_NAME', payload: e.target.value })
+              }
             />
             <GeneralForm.HiddenLabel htmlFor='name'>
               First Name
@@ -74,8 +81,10 @@ export default function RegForm() {
               id='email'
               type='email'
               placeholder='Email'
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              value={state.email}
+              onChange={(e) =>
+                dispatch({ type: 'SET_EMAIL', payload: e.target.value })
+              }
             />
             <GeneralForm.HiddenLabel htmlFor='email'>
               Email Address
@@ -85,8 +94,10 @@ export default function RegForm() {
               id='password'
               type='password'
               placeholder='Password'
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              value={state.password}
+              onChange={(e) =>
+                dispatch({ type: 'SET_PASSWORD', payload: e.target.value })
+              }
             />
             <GeneralForm.HiddenLabel htmlFor='password'>
               Password
