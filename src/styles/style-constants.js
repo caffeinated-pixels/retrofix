@@ -16,9 +16,12 @@ export const colors = {
   accordionGrey: 'hsl(0, 0%, 19%)',
 }
 
+// TODO: consolidate into object???
 export const cardBorderBottom = '8px solid #222'
 export const navSliderBorderBottom = '1px solid #333'
 export const inputErrorBorderBottom = `2px solid ${colors.errTextOrange}`
 export const textInputBorder = `1px solid ${colors.textLightGrey}`
+export const textInputBorderGood = `1px solid #5fa53f`
+export const textInputBorderBad = `1px solid #b92d2b`
 
 export const focusOutline = '2px solid yellow'
