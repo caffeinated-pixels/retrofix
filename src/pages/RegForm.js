@@ -1,5 +1,6 @@
 import { useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
+import styled from 'styled-components'
 import useFormValidation from '../hooks/useFormValidation'
 import { SignUpContext } from '../context/SignUpContext'
 import { RegNavbar, Footer } from '../parts'
@@ -21,6 +22,9 @@ import {
 import { colors } from '../styles/style-constants'
 import { footerHomeRegistration } from '../fixtures/footer-content'
 import { SIGN_UP, SIGN_IN } from '../constants/routes'
+import isEmailValid from '../helpers/validate-email'
+
+const InputError = styled.p``
 
 export default function RegForm() {
   const {
@@ -42,11 +46,26 @@ export default function RegForm() {
 
   const navigate = useNavigate()
 
-  const nextPage = () => {
-    setGlobalFirstName(state.firstName.trim())
-    setGlobalEmail(state.email.trim())
-    setGlobalPassword(state.password.trim())
-    navigate(SIGN_UP)
+  const isFirstNameInValid = state.firstName.trim().length === 0
+  const isEmailInvalid = !isEmailValid(state.email)
+  const isPasswordTooShort = state.password.length < 6
+
+  const firstNameError = state.inputError && isFirstNameInValid
+  const emailError = state.inputError && isEmailInvalid
+  const passwordError = state.inputError && isPasswordTooShort
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+
+    if (isFirstNameInValid || isEmailInvalid || isPasswordTooShort) {
+      dispatch({ type: 'SET_INPUT_ERROR', payload: true })
+    } else {
+      dispatch({ type: 'SET_INPUT_ERROR', payload: false })
+      setGlobalFirstName(state.firstName.trim())
+      setGlobalEmail(state.email.trim())
+      setGlobalPassword(state.password.trim())
+      navigate(SIGN_UP)
+    }
   }
 
   return (
@@ -76,6 +95,7 @@ export default function RegForm() {
             <GeneralForm.HiddenLabel htmlFor='name'>
               First Name
             </GeneralForm.HiddenLabel>
+            {firstNameError && <InputError>Please enter a name</InputError>}
 
             <GeneralForm.Input
               id='email'
@@ -89,6 +109,9 @@ export default function RegForm() {
             <GeneralForm.HiddenLabel htmlFor='email'>
               Email Address
             </GeneralForm.HiddenLabel>
+            {emailError && (
+              <InputError>Please enter a valid email address</InputError>
+            )}
 
             <GeneralForm.Input
               id='password'
@@ -102,6 +125,11 @@ export default function RegForm() {
             <GeneralForm.HiddenLabel htmlFor='password'>
               Password
             </GeneralForm.HiddenLabel>
+            {passwordError && (
+              <InputError>
+                Password should be at least 6 characters long.
+              </InputError>
+            )}
 
             <GeneralForm.CheckboxWrapper>
               <GeneralForm.Checkbox id='offers' type='checkbox' />
@@ -110,7 +138,7 @@ export default function RegForm() {
               </GeneralForm.Label>
             </GeneralForm.CheckboxWrapper>
 
-            <SubmitButton onClick={nextPage} maxWidth='440px'>
+            <SubmitButton onClick={handleSubmit} maxWidth='440px'>
               Next
             </SubmitButton>
           </GeneralForm>
