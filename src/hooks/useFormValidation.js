@@ -2,6 +2,8 @@ import { useReducer } from 'react'
 
 const reducer = (state, action) => {
   switch (action.type) {
+    case 'SET_FIRST_NAME':
+      return { ...state, firstName: action.payload }
     case 'SET_EMAIL':
       return { ...state, email: action.payload }
     case 'SET_PASSWORD':
@@ -17,6 +19,7 @@ const reducer = (state, action) => {
 
 export default function useFormValidation(
   initialState = {
+    firstName: '',
     email: '',
     password: '',
     inputError: false,
