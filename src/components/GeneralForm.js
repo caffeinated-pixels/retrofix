@@ -1,11 +1,11 @@
 import styled from 'styled-components'
 import { colors } from '../styles/style-constants'
 
-const GeneralForm = styled.form`
+const Form = styled.form`
   margin: 10px 0 20px;
 `
 
-GeneralForm.Input = styled.input`
+const Input = styled.input`
   width: 100%;
   height: 60px;
   margin-bottom: 10px;
@@ -18,7 +18,7 @@ GeneralForm.Input = styled.input`
   }
 `
 
-GeneralForm.HiddenLabel = styled.label`
+const HiddenLabel = styled.label`
   border: 0;
   clip: rect(0 0 0 0);
   height: 1px;
@@ -29,47 +29,49 @@ GeneralForm.HiddenLabel = styled.label`
   width: 1px;
 `
 
-GeneralForm.InputError = styled.p`
+const InputError = styled.p`
   color: ${colors.errTextRed};
   font-size: 0.8125rem;
 `
 
-GeneralForm.CheckboxWrapper = styled.div`
+const CheckboxWrapper = styled.div`
   display: flex;
   align-items: center;
 `
 
-GeneralForm.Checkbox = styled.input`
+const Checkbox = styled.input`
   margin: 0 10px 0 0;
   flex-shrink: 0;
   height: 32px;
   width: 32px;
 `
 
-GeneralForm.Label = styled.label``
+const Label = styled.label``
 
-export default GeneralForm
+export default function GeneralForm({ children, ...restProps }) {
+  return <Form {...restProps}>{children}</Form>
+}
 
-// export default function GeneralForm({ children, ...restProps }) {
-//   return <Form {...restProps}>{children}</Form>
-// }
+GeneralForm.Input = ({ children, ...restProps }) => (
+  <Input {...restProps}></Input>
+)
 
-// GeneralForm.Input = ({ children, ...restProps }) => (
-//   <Input {...restProps}></Input>
-// )
+GeneralForm.HiddenLabel = ({ children, ...restProps }) => (
+  <HiddenLabel {...restProps}>{children}</HiddenLabel>
+)
 
-// GeneralForm.HiddenLabel = ({ children, ...restProps }) => (
-//   <HiddenLabel {...restProps}>{children}</HiddenLabel>
-// )
+GeneralForm.InputError = ({ children, ...restProps }) => (
+  <InputError {...restProps}>{children}</InputError>
+)
 
-// GeneralForm.CheckboxWrapper = ({ children, ...restProps }) => (
-//   <CheckboxWrapper {...restProps}>{children}</CheckboxWrapper>
-// )
+GeneralForm.CheckboxWrapper = ({ children, ...restProps }) => (
+  <CheckboxWrapper {...restProps}>{children}</CheckboxWrapper>
+)
 
-// GeneralForm.Checkbox = ({ children, ...restProps }) => (
-//   <Checkbox {...restProps}>{children}</Checkbox>
-// )
+GeneralForm.Checkbox = ({ children, ...restProps }) => (
+  <Checkbox {...restProps}>{children}</Checkbox>
+)
 
-// GeneralForm.Label = ({ children, ...restProps }) => (
-//   <Label {...restProps}>{children}</Label>
-// )
+GeneralForm.Label = ({ children, ...restProps }) => (
+  <Label {...restProps}>{children}</Label>
+)
