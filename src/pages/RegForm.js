@@ -18,7 +18,12 @@ import {
   NavLink,
 } from '../components'
 
-import { colors } from '../styles/style-constants'
+import {
+  colors,
+  textInputBorder,
+  textInputBorderGood,
+  textInputBorderBad,
+} from '../styles/style-constants'
 import { footerHomeRegistration } from '../fixtures/footer-content'
 import { SIGN_UP, SIGN_IN } from '../constants/routes'
 import isEmailValid from '../helpers/validate-email'
@@ -65,6 +70,18 @@ export default function RegForm() {
     }
   }
 
+  const determineBorderColor = (validationError) => {
+    if (!state.inputError) {
+      return textInputBorder
+    }
+
+    if (validationError) {
+      return textInputBorderBad
+    } else {
+      return textInputBorderGood
+    }
+  }
+
   return (
     <PageContainer bgColor={colors.bgWhite} txtColor={colors.textDarkGrey}>
       <RegNavbar>
@@ -86,6 +103,7 @@ export default function RegForm() {
                 type='text'
                 placeholder='First Name'
                 value={state.firstName}
+                borderColor={determineBorderColor(isFirstNameInValid)}
                 onChange={(e) =>
                   dispatch({ type: 'SET_FIRST_NAME', payload: e.target.value })
                 }
@@ -106,6 +124,7 @@ export default function RegForm() {
                 type='email'
                 placeholder='Email'
                 value={state.email}
+                borderColor={determineBorderColor(isEmailInvalid)}
                 onChange={(e) =>
                   dispatch({ type: 'SET_EMAIL', payload: e.target.value })
                 }
@@ -126,6 +145,7 @@ export default function RegForm() {
                 type='password'
                 placeholder='Password'
                 value={state.password}
+                borderColor={determineBorderColor(isPasswordTooShort)}
                 onChange={(e) =>
                   dispatch({ type: 'SET_PASSWORD', payload: e.target.value })
                 }

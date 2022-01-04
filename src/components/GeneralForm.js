@@ -16,6 +16,8 @@ const Input = styled.input`
 
   font-size: 0.875rem;
 
+  border: ${({ borderColor }) => borderColor};
+
   @media (min-width: 740px) {
     font-size: 1rem;
   }
@@ -59,8 +61,8 @@ GeneralForm.InputWrapper = ({ children, ...restProps }) => (
   <InputWrapper {...restProps}>{children}</InputWrapper>
 )
 
-GeneralForm.Input = ({ children, ...restProps }) => (
-  <Input {...restProps}></Input>
+GeneralForm.Input = ({ children, borderColor, ...restProps }) => (
+  <Input borderColor={borderColor} {...restProps}></Input>
 )
 
 GeneralForm.HiddenLabel = ({ children, ...restProps }) => (
