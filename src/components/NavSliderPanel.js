@@ -130,8 +130,8 @@ export default function NavSliderPanel({
           <NavLi isActive={activeCategory === 'home'}>
             <NavBtn onClick={() => setCategory('home')}>Home</NavBtn>
           </NavLi>
-          <NavLi isActive={activeCategory === 'film'}>
-            <NavBtn onClick={() => setCategory('film')}>Film</NavBtn>
+          <NavLi isActive={activeCategory === 'films'}>
+            <NavBtn onClick={() => setCategory('films')}>Films</NavBtn>
           </NavLi>
           <NavLi isActive={activeCategory === 'series'}>
             <NavBtn onClick={() => setCategory('series')}>Series</NavBtn>
