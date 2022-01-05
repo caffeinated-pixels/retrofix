@@ -96,10 +96,7 @@ const NavBtn = styled.button`
   }
 `
 
-// function that sets button as active
-// manage with state
-
-export default function NavSliderPanel({ isMenuOpen }) {
+export default function NavSliderPanel({ isMenuOpen, toggleMenu }) {
   const [activeCategory, setActiveCategory] = useState('home')
 
   const navigate = useNavigate()
@@ -112,6 +109,7 @@ export default function NavSliderPanel({ isMenuOpen }) {
 
   const setCategory = (category) => {
     setActiveCategory(category)
+    toggleMenu()
   }
 
   return (

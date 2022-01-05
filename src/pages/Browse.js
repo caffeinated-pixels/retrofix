@@ -123,7 +123,7 @@ export default function Browse() {
             <SearchForm>
               <SearchInput placeholder='Search' />
             </SearchForm>
-            <NavSliderPanel isMenuOpen={isMenuOpen} />
+            <NavSliderPanel isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
           </BrowseNavbar>
         </BrowseHeader>
       </SemanticHeader>
