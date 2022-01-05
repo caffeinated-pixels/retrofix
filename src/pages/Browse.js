@@ -8,7 +8,6 @@ import { footerHomeContent } from '../fixtures/footer-content'
 
 import unsortedStreamingContent from '../fixtures/streaming-content.json'
 import sortStreamingContent from '../helpers/sort-streaming-content'
-import getContentByGenre from '../helpers/sort-genre-content'
 
 const BrowseHeader = styled.div``
 
@@ -89,27 +88,6 @@ const ContentImage = styled.img`
 5. return to step 2 when new category set
 */
 
-const sortedStreamingContent = sortStreamingContent(
-  unsortedStreamingContent,
-  'home'
-)
-
-const genreContainers = sortedStreamingContent.map(({ genre, content }) => (
-  <GenreContainer key={genre}>
-    <GenreTitle>{genre}</GenreTitle>
-    <GenreRow>
-      {content.map((item) => (
-        <ContentBox key={item.title}>
-          <ContentImage
-            src={`/images/${item.category}/${item.genre}/${item.slug}/small.jpg`}
-            alt={item.title}
-          />
-        </ContentBox>
-      ))}
-    </GenreRow>
-  </GenreContainer>
-))
-
 export default function Browse() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [activeCategory, setActiveCategory] = useState('home')
@@ -125,6 +103,27 @@ export default function Browse() {
     setActiveCategory(category)
     toggleMenu()
   }
+
+  const sortedStreamingContent = sortStreamingContent(
+    unsortedStreamingContent,
+    activeCategory
+  )
+
+  const genreContainers = sortedStreamingContent.map(({ genre, content }) => (
+    <GenreContainer key={genre}>
+      <GenreTitle>{genre}</GenreTitle>
+      <GenreRow>
+        {content.map((item) => (
+          <ContentBox key={item.title}>
+            <ContentImage
+              src={`/images/${item.category}/${item.genre}/${item.slug}/small.jpg`}
+              alt={item.title}
+            />
+          </ContentBox>
+        ))}
+      </GenreRow>
+    </GenreContainer>
+  ))
 
   return (
     <>
