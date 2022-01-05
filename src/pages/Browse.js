@@ -1,6 +1,5 @@
-import { useState, useMemo, useContext } from 'react'
+import { useState, useMemo } from 'react'
 import styled from 'styled-components'
-import { FirebaseAuthContext } from '../context/FirebaseAuthContext'
 import { Footer } from '../parts/'
 import { SiteLogo, NavSliderPanel } from '../components'
 import { SemanticHeader, MainContainer } from '../containers/'
@@ -88,10 +87,6 @@ const ContentImage = styled.img`
 export default function Browse() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [activeCategory, setActiveCategory] = useState('home')
-  const user = useContext(FirebaseAuthContext)
-
-  console.log('isUserSignedIn? = ' + user?.email)
-
   const toggleMenu = () => {
     setIsMenuOpen((prevState) => !prevState)
   }

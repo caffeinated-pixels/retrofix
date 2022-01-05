@@ -1,5 +1,7 @@
+import { useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
+import { FirebaseAuthContext } from '../context/FirebaseAuthContext'
 import firebaseSignOut from '../firebase/firebaseSignOut'
 import { HOME } from '../constants/routes'
 import { colors, navSliderBorderBottom } from '../styles/style-constants'
@@ -100,6 +102,7 @@ export default function NavSliderPanel({
   activeCategory,
   setCategory,
 }) {
+  const user = useContext(FirebaseAuthContext)
   const navigate = useNavigate()
 
   const signOut = async () => {
@@ -117,7 +120,9 @@ export default function NavSliderPanel({
             <NavBtn>
               <UserAvatar src='./images/users/1.png' />
               <NavUserTextWrapper>
-                <NavUserTextTop>Andrea</NavUserTextTop>
+                <NavUserTextTop>
+                  {user?.displayName || 'nobody!'}
+                </NavUserTextTop>
                 <NavUserTextBottom>Switch Profiles</NavUserTextBottom>
               </NavUserTextWrapper>
             </NavBtn>
