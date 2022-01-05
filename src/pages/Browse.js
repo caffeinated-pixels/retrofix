@@ -1,4 +1,4 @@
-import { useState, useContext } from 'react'
+import { useState, useMemo, useContext } from 'react'
 import styled from 'styled-components'
 import { FirebaseAuthContext } from '../context/FirebaseAuthContext'
 import { Footer } from '../parts/'
@@ -79,15 +79,6 @@ const ContentImage = styled.img`
   height: 90px;
   object-fit: cover;
 `
-
-/* 
-1. get content list (import from file, later fetch from firebase) - do this only once!
-2. filter by category (home = films + shows) - sep function, update with state (useEffect)
-3. sort into genres - sep funtion
-4. generate components (map through array)
-5. return to step 2 when new category set
-*/
-
 export default function Browse() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [activeCategory, setActiveCategory] = useState('home')
@@ -104,26 +95,29 @@ export default function Browse() {
     toggleMenu()
   }
 
-  const sortedStreamingContent = sortStreamingContent(
-    unsortedStreamingContent,
-    activeCategory
-  )
+  const genreContainers = useMemo(() => {
+    const sortedStreamingContent = sortStreamingContent(
+      unsortedStreamingContent,
+      activeCategory
+    )
 
-  const genreContainers = sortedStreamingContent.map(({ genre, content }) => (
-    <GenreContainer key={genre}>
-      <GenreTitle>{genre}</GenreTitle>
-      <GenreRow>
-        {content.map((item) => (
-          <ContentBox key={item.title}>
-            <ContentImage
-              src={`/images/${item.category}/${item.genre}/${item.slug}/small.jpg`}
-              alt={item.title}
-            />
-          </ContentBox>
-        ))}
-      </GenreRow>
-    </GenreContainer>
-  ))
+    return sortedStreamingContent.map(({ genre, content }) => (
+      <GenreContainer key={genre}>
+        <GenreTitle>{genre}</GenreTitle>
+        <GenreRow>
+          {content.map((item) => (
+            <ContentBox key={item.title}>
+              <ContentImage
+                src={`/images/${item.category}/${item.genre}/${item.slug}/small.jpg`}
+                alt={item.title}
+              />
+            </ContentBox>
+          ))}
+        </GenreRow>
+      </GenreContainer>
+    ))
+  }, [activeCategory])
+  // useMemo will only rerender the genreContainers when activeCategory changes
 
   return (
     <>
