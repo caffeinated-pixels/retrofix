@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
 import firebaseSignOut from '../firebase/firebaseSignOut'
@@ -67,7 +68,9 @@ const UserAvatar = styled.img`
   vertical-align: middle;
 `
 
-const NavLi = styled.li``
+const NavLi = styled.li`
+  color: ${({ isActive }) => (isActive ? 'white' : '')};
+`
 
 const NavBtn = styled.button`
   display: flex;
@@ -90,13 +93,22 @@ const NavBtn = styled.button`
   }
 `
 
+// function that sets button as active
+// manage with state
+
 export default function NavSliderPanel({ isMenuOpen }) {
+  const [activeCategory, setActiveCategory] = useState('home')
+
   const navigate = useNavigate()
 
   const signOut = async () => {
     await firebaseSignOut()
     console.log('signed out!')
     navigate(HOME)
+  }
+
+  const setCategory = (category) => {
+    setActiveCategory(category)
   }
 
   return (
@@ -118,14 +130,14 @@ export default function NavSliderPanel({ isMenuOpen }) {
           </NavLi>
         </NavPrimary>
         <NavSecondary>
-          <NavLi>
-            <NavBtn>Home</NavBtn>
+          <NavLi isActive={activeCategory === 'home'}>
+            <NavBtn onClick={() => setCategory('home')}>Home</NavBtn>
           </NavLi>
-          <NavLi>
-            <NavBtn>Film</NavBtn>
+          <NavLi isActive={activeCategory === 'film'}>
+            <NavBtn onClick={() => setCategory('film')}>Film</NavBtn>
           </NavLi>
-          <NavLi>
-            <NavBtn>Series</NavBtn>
+          <NavLi isActive={activeCategory === 'series'}>
+            <NavBtn onClick={() => setCategory('series')}>Series</NavBtn>
           </NavLi>
         </NavSecondary>
       </NavSlider>
