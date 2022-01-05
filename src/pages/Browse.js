@@ -4,8 +4,11 @@ import { FirebaseAuthContext } from '../context/FirebaseAuthContext'
 import { Footer } from '../parts/'
 import { SiteLogo, NavSliderPanel } from '../components'
 import { SemanticHeader, MainContainer } from '../containers/'
-import getContentByGenre from '../helpers/sort-genre-content'
 import { footerHomeContent } from '../fixtures/footer-content'
+
+import unsortedStreamingContent from '../fixtures/streaming-content.json'
+import sortStreamingContent from '../helpers/sort-streaming-content'
+import getContentByGenre from '../helpers/sort-genre-content'
 
 const BrowseHeader = styled.div``
 
@@ -78,9 +81,20 @@ const ContentImage = styled.img`
   object-fit: cover;
 `
 
-const streamingContent = getContentByGenre()
+/* 
+1. get content list (import from file, later fetch from firebase) - do this only once!
+2. filter by category (home = films + shows) - sep function, update with state (useEffect)
+3. sort into genres - sep funtion
+4. generate components (map through array)
+5. return to step 2 when new category set
+*/
 
-const genreContainers = streamingContent.map(({ genre, content }) => (
+const sortedStreamingContent = sortStreamingContent(
+  unsortedStreamingContent,
+  'home'
+)
+
+const genreContainers = sortedStreamingContent.map(({ genre, content }) => (
   <GenreContainer key={genre}>
     <GenreTitle>{genre}</GenreTitle>
     <GenreRow>
