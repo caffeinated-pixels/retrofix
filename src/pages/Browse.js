@@ -9,7 +9,9 @@ import { footerHomeContent } from '../fixtures/footer-content'
 import unsortedStreamingContent from '../fixtures/streaming-content.json'
 import sortStreamingContent from '../helpers/sort-streaming-content'
 
-const BrowseHeader = styled.div``
+const BrowseHeader = styled.div`
+  position: relative;
+`
 
 const BrowseNavbar = styled.nav`
   position: fixed;
@@ -56,6 +58,10 @@ const SearchInput = styled.input`
 
   color: #fff;
   background-color: transparent;
+`
+
+const GenreContainersWrapper = styled.div`
+  padding-top: 60px;
 `
 
 const GenreContainer = styled.div`
@@ -144,7 +150,9 @@ export default function Browse() {
         </BrowseHeader>
       </SemanticHeader>
 
-      <MainContainer>{genreContainers}</MainContainer>
+      <MainContainer>
+        <GenreContainersWrapper>{genreContainers}</GenreContainersWrapper>
+      </MainContainer>
       <Footer footerContent={footerHomeContent} increasedPadding />
     </>
   )
