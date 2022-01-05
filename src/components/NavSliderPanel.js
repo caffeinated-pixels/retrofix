@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
 import firebaseSignOut from '../firebase/firebaseSignOut'
@@ -96,20 +95,17 @@ const NavBtn = styled.button`
   }
 `
 
-export default function NavSliderPanel({ isMenuOpen, toggleMenu }) {
-  const [activeCategory, setActiveCategory] = useState('home')
-
+export default function NavSliderPanel({
+  isMenuOpen,
+  activeCategory,
+  setCategory,
+}) {
   const navigate = useNavigate()
 
   const signOut = async () => {
     await firebaseSignOut()
     console.log('signed out!')
     navigate(HOME)
-  }
-
-  const setCategory = (category) => {
-    setActiveCategory(category)
-    toggleMenu()
   }
 
   return (

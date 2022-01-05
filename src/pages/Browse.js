@@ -79,7 +79,6 @@ const ContentImage = styled.img`
 `
 
 const streamingContent = getContentByGenre()
-// console.log(streamingContent)
 
 const genreContainers = streamingContent.map(({ genre, content }) => (
   <GenreContainer key={genre}>
@@ -99,12 +98,18 @@ const genreContainers = streamingContent.map(({ genre, content }) => (
 
 export default function Browse() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [activeCategory, setActiveCategory] = useState('home')
   const user = useContext(FirebaseAuthContext)
 
   console.log('isUserSignedIn? = ' + user?.email)
 
   const toggleMenu = () => {
     setIsMenuOpen((prevState) => !prevState)
+  }
+
+  const setCategory = (category) => {
+    setActiveCategory(category)
+    toggleMenu()
   }
 
   return (
@@ -123,7 +128,11 @@ export default function Browse() {
             <SearchForm>
               <SearchInput placeholder='Search' />
             </SearchForm>
-            <NavSliderPanel isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
+            <NavSliderPanel
+              isMenuOpen={isMenuOpen}
+              activeCategory={activeCategory}
+              setCategory={setCategory}
+            />
           </BrowseNavbar>
         </BrowseHeader>
       </SemanticHeader>
