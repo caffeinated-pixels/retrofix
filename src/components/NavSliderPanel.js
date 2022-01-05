@@ -39,7 +39,7 @@ const NavPrimary = styled.ul`
 `
 const NavSecondary = styled.ul`
   list-style: none;
-  padding-left: 20px;
+  padding-left: 0;
   line-height: 2;
 `
 
@@ -69,7 +69,10 @@ const UserAvatar = styled.img`
 `
 
 const NavLi = styled.li`
+  padding-left: ${({ noLeftPadding }) => (noLeftPadding ? '0' : '20px')};
   color: ${({ isActive }) => (isActive ? 'white' : '')};
+  border-left: ${({ isActive }) =>
+    isActive ? '3px solid #b9090b' : '3px solid #000'};
 `
 
 const NavBtn = styled.button`
@@ -125,7 +128,7 @@ export default function NavSliderPanel({ isMenuOpen }) {
               </NavUserTextWrapper>
             </NavBtn>
           </NavUserLi>
-          <NavLi>
+          <NavLi noLeftPadding>
             <NavBtn onClick={signOut}>Sign out of Netflix</NavBtn>
           </NavLi>
         </NavPrimary>
