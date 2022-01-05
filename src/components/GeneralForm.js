@@ -37,6 +37,7 @@ const HiddenLabel = styled.label`
 const InputError = styled.p`
   color: ${colors.errTextRed};
   font-size: 0.8125rem;
+  padding-top: 0.15em;
 `
 
 const CheckboxWrapper = styled.div`
