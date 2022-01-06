@@ -5,7 +5,7 @@ import { Header, RegNavbar, Footer } from '../parts/'
 import { SemanticHeader, MainContainer } from '../containers/'
 import { GeneralForm, SigninForm, SubmitButton } from '../components'
 import { colors } from '../styles/style-constants'
-import { HOME, BROWSE } from '../constants/routes'
+import { HOME, PROFILE } from '../constants/routes'
 import { footerHomeRegistration } from '../fixtures/footer-content'
 
 export default function Signin() {
@@ -44,7 +44,7 @@ export default function Signin() {
     )
     if (firebaseResponse.user) {
       console.log('succesful signin for ' + firebaseResponse.user.email)
-      navigate(BROWSE)
+      navigate(PROFILE)
     } else if (firebaseResponse.message) {
       processFirebaseError(firebaseResponse.message)
     }
