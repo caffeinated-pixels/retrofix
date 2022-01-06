@@ -45,8 +45,8 @@ const NavLink = styled.a`
 
 const Avatar = styled.div`
   position: relative;
-  background-image: ${({ imgUrl }) =>
-    imgUrl ? `url(${imgUrl})` : `url('/images/users/2.png')`};
+  background-color: ${colors.textDarkGrey};
+  background-image: ${({ imgUrl }) => (imgUrl ? `url(${imgUrl})` : '')};
   background-size: cover;
   height: clamp(84px, 10vw, 200px);
   width: clamp(84px, 10vw, 200px);
