@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
 import { FirebaseAuthContext } from '../context/FirebaseAuthContext'
 import firebaseSignOut from '../firebase/firebaseSignOut'
-import { HOME } from '../constants/routes'
+import { HOME, PROFILE } from '../constants/routes'
 import { colors, navSliderBorderBottom } from '../styles/style-constants'
 
 const NavSliderBackground = styled.div`
@@ -116,7 +116,7 @@ export default function NavSliderPanel({
       <NavSlider isMenuOpen={isMenuOpen}>
         <NavPrimary>
           <NavUserLi>
-            <NavBtn>
+            <NavBtn onClick={() => navigate(PROFILE)}>
               <UserAvatar src={user?.photoURL || './images/users/2.png'} />
               <NavUserTextWrapper>
                 <NavUserTextTop>
