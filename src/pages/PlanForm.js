@@ -18,7 +18,7 @@ import {
   NavLink,
 } from '../components'
 import { footerHomeRegistration } from '../fixtures/footer-content'
-import { PLAN_FORM, SIGN_IN, BROWSE, REG_FORM } from '../constants/routes'
+import { PLAN_FORM, SIGN_IN, PROFILE, REG_FORM } from '../constants/routes'
 import { colors } from '../styles/style-constants'
 
 const RegContainerPlanForm = styled.div``
@@ -37,7 +37,7 @@ export default function Registration() {
 
     if (user?.email) {
       console.log('registration completed!')
-      navigate(BROWSE)
+      navigate(PROFILE)
     } else {
       console.log('registration failed!')
       navigate(REG_FORM)
