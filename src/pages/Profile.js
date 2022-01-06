@@ -1,4 +1,6 @@
+import { useContext } from 'react'
 import styled from 'styled-components'
+import { FirebaseAuthContext } from '../context/FirebaseAuthContext'
 import { Header, Navbar } from '../parts/'
 import { SemanticHeader, PageContainer } from '../containers/'
 import { SiteLogo } from '../components'
@@ -43,11 +45,8 @@ const NavLink = styled.a`
 
 const Avatar = styled.div`
   position: relative;
-  background-image: url('/images/users/1.png');
-  /* background-image: url(${({ imgUrl }) =>
-    imgUrl ? imgUrl : '/images/users/1.png'}); */
   background-image: ${({ imgUrl }) =>
-    imgUrl ? `url(${imgUrl})` : `url('/images/users/1.png')`};
+    imgUrl ? `url(${imgUrl})` : `url('/images/users/2.png')`};
   background-size: cover;
   height: clamp(84px, 10vw, 200px);
   width: clamp(84px, 10vw, 200px);
@@ -73,6 +72,9 @@ const Name = styled.p`
 `
 
 export default function Profile() {
+  const user = useContext(FirebaseAuthContext)
+  console.log(user.photoURL)
+
   return (
     <PageContainer>
       <SemanticHeader>
@@ -88,13 +90,13 @@ export default function Profile() {
         <ProfileList>
           <ListItem>
             <NavLink href={BROWSE}>
-              <Avatar imgUrl='/images/users/2.png' />
+              <Avatar imgUrl={user.photoURL} />
               <Name>Dave</Name>
             </NavLink>
           </ListItem>
           <ListItem>
             <NavLink href='#'>
-              <Avatar imgUrl='/images/users/kids.jpg' />
+              <Avatar imgUrl='./images/users/kids.jpg' />
               <Name>Children</Name>
             </NavLink>
           </ListItem>
