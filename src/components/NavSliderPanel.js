@@ -59,7 +59,6 @@ const NavUserTextTop = styled.p`
 const NavUserTextBottom = styled.p`
   font-size: 0.7rem;
   font-weight: 400;
-  color: ${colors.textLightGrey};
   line-height: 1;
 `
 
@@ -87,7 +86,7 @@ const NavBtn = styled.button`
 
   text-align: left;
   background: none;
-  color: inherit;
+  color: ${colors.textLightGrey};
 
   &:hover,
   &:hover p,
@@ -118,7 +117,7 @@ export default function NavSliderPanel({
         <NavPrimary>
           <NavUserLi>
             <NavBtn>
-              <UserAvatar src='./images/users/1.png' />
+              <UserAvatar src={user?.photoURL || './images/users/2.png'} />
               <NavUserTextWrapper>
                 <NavUserTextTop>
                   {user?.displayName || 'nobody!'}
