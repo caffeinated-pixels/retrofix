@@ -44,8 +44,11 @@ const NavLink = styled.a`
 const Avatar = styled.div`
   position: relative;
   background-image: url('/images/users/1.png');
+  /* background-image: url(${({ imgUrl }) =>
+    imgUrl ? imgUrl : '/images/users/1.png'}); */
+  background-image: ${({ imgUrl }) =>
+    imgUrl ? `url(${imgUrl})` : `url('/images/users/1.png')`};
   background-size: cover;
-
   height: clamp(84px, 10vw, 200px);
   width: clamp(84px, 10vw, 200px);
   border-radius: 4px;
@@ -85,13 +88,13 @@ export default function Profile() {
         <ProfileList>
           <ListItem>
             <NavLink href={BROWSE}>
-              <Avatar />
+              <Avatar imgUrl='/images/users/2.png' />
               <Name>Dave</Name>
             </NavLink>
           </ListItem>
           <ListItem>
             <NavLink href='#'>
-              <Avatar src='./images/users/1.png' />
+              <Avatar imgUrl='/images/users/kids.jpg' />
               <Name>Children</Name>
             </NavLink>
           </ListItem>
