@@ -73,7 +73,6 @@ const Name = styled.p`
 
 export default function Profile() {
   const user = useContext(FirebaseAuthContext)
-  console.log(user.photoURL)
 
   return (
     <PageContainer>
@@ -90,8 +89,8 @@ export default function Profile() {
         <ProfileList>
           <ListItem>
             <NavLink href={BROWSE}>
-              <Avatar imgUrl={user.photoURL} />
-              <Name>Dave</Name>
+              <Avatar imgUrl={user?.photoURL} />
+              <Name>{user?.displayName}</Name>
             </NavLink>
           </ListItem>
           <ListItem>
