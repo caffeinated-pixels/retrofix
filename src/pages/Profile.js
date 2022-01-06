@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import { Header, Navbar } from '../parts/'
 import { SemanticHeader, PageContainer } from '../containers/'
 import { SiteLogo } from '../components'
+import { BROWSE } from '../constants/routes'
 import { colors } from '../styles/style-constants'
 
 const MainContainer = styled.main`
@@ -27,6 +28,18 @@ const ProfileList = styled.ul`
 const ListItem = styled.li`
   list-style: none;
 `
+const NavLink = styled.a`
+  color: ${colors.textLightGrey};
+  text-decoration: none;
+
+  &:hover {
+    color: #fff;
+  }
+
+  &:hover > div::after {
+    border-color: white;
+  }
+`
 
 const Avatar = styled.div`
   position: relative;
@@ -48,17 +61,12 @@ const Avatar = styled.div`
     border-radius: 4px;
     border: 2px solid transparent;
   }
-
-  &:hover::after {
-    border-color: white;
-  }
 `
 
 const Name = styled.p`
   margin: 0.6em 0;
   text-align: center;
   font-size: 0.75rem;
-  color: ${colors.textLightGrey};
 `
 
 export default function Profile() {
@@ -76,12 +84,16 @@ export default function Profile() {
         <Title>Who's watching?</Title>
         <ProfileList>
           <ListItem>
-            <Avatar />
-            <Name>Dave</Name>
+            <NavLink href={BROWSE}>
+              <Avatar />
+              <Name>Dave</Name>
+            </NavLink>
           </ListItem>
           <ListItem>
-            <Avatar src='./images/users/1.png' />
-            <Name>Children</Name>
+            <NavLink href='#'>
+              <Avatar src='./images/users/1.png' />
+              <Name>Children</Name>
+            </NavLink>
           </ListItem>
         </ProfileList>
       </MainContainer>
