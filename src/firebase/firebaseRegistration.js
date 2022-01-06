@@ -15,7 +15,7 @@ export default async function firebaseRegistration(
 
     await updateProfile(firebaseAuth.currentUser, {
       displayName: globalFirstName,
-      photoURL: '../images/users/1.png',
+      photoURL: generateRandomPhotoUrl(),
     })
     console.log(response)
     console.log(
@@ -26,4 +26,9 @@ export default async function firebaseRegistration(
   } catch (error) {
     console.log(error.message)
   }
+}
+
+function generateRandomPhotoUrl() {
+  const randomNum = Math.ceil(Math.random() * 5)
+  return `./images/users/${randomNum}.png`
 }
