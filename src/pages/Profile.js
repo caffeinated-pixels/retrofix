@@ -17,7 +17,7 @@ const MainContainer = styled.main`
 `
 
 const Title = styled.h1`
-  font-size: 1.875rem;
+  font-size: max(1.875rem, 3.5vw);
   font-weight: 400;
 `
 
@@ -68,7 +68,7 @@ const Avatar = styled.div`
 const Name = styled.p`
   margin: 0.6em 0;
   text-align: center;
-  font-size: 0.75rem;
+  font-size: max(0.75rem, 1.3vw);
 `
 
 export default function Profile() {
