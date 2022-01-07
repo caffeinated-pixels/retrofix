@@ -30,11 +30,6 @@ const BurgerButtonIcon = styled.img`
 const LogoWrapper = styled.div`
   width: 84px;
   height: 24px;
-
-  @media (min-width: 500px) {
-    width: 167px;
-    height: 45px;
-  }
 `
 
 const SearchForm = styled.form`
