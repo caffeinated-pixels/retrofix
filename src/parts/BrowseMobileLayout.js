@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react'
+import { useMemo } from 'react'
 import styled from 'styled-components'
 import { BrowseHeader, Footer } from '../parts/'
 import { MainContainer } from '../containers/'
@@ -32,19 +32,12 @@ const ContentImage = styled.img`
   height: 90px;
   object-fit: cover;
 `
-export default function BrowseMobileLayout() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [activeCategory, setActiveCategory] = useState('home')
-
-  const toggleMenu = () => {
-    setIsMenuOpen((prevState) => !prevState)
-  }
-
-  const setCategory = (category) => {
-    setActiveCategory(category)
-    toggleMenu()
-  }
-
+export default function BrowseMobileLayout({
+  toggleMenu,
+  isMenuOpen,
+  activeCategory,
+  setCategory,
+}) {
   const genreContainers = useMemo(() => {
     const sortedStreamingContent = sortStreamingContent(
       unsortedStreamingContent,
