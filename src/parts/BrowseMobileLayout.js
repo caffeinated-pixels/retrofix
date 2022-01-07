@@ -5,7 +5,6 @@ import { BrowseHeader, Footer } from '../parts/'
 import { MainContainer } from '../containers/'
 import { footerHomeContent } from '../fixtures/footer-content'
 
-import unsortedStreamingContent from '../fixtures/streaming-content.json'
 import sortStreamingContent from '../helpers/sort-streaming-content'
 
 const GenreContainersWrapper = styled.div`
@@ -34,7 +33,7 @@ const ContentImage = styled.img`
   object-fit: cover;
 `
 export default function BrowseMobileLayout() {
-  const { activeCategory } = useContext(BrowseContext)
+  const { activeCategory, unsortedStreamingContent } = useContext(BrowseContext)
 
   const genreContainers = useMemo(() => {
     const sortedStreamingContent = sortStreamingContent(
@@ -57,7 +56,7 @@ export default function BrowseMobileLayout() {
         </GenreRow>
       </GenreContainer>
     ))
-  }, [activeCategory])
+  }, [activeCategory, unsortedStreamingContent])
   // useMemo will only rerender the genreContainers when activeCategory changes
 
   return (

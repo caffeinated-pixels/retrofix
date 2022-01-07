@@ -1,4 +1,5 @@
 import { createContext, useState } from 'react'
+import unsortedStreamingContent from '../fixtures/streaming-content.json'
 
 export const BrowseContext = createContext()
 
@@ -17,7 +18,13 @@ export default function BrowseContextProvider({ children }) {
 
   return (
     <BrowseContext.Provider
-      value={{ isMenuOpen, activeCategory, toggleMenu, setCategory }}
+      value={{
+        isMenuOpen,
+        activeCategory,
+        toggleMenu,
+        setCategory,
+        unsortedStreamingContent,
+      }}
     >
       {children}
     </BrowseContext.Provider>
