@@ -27,7 +27,7 @@ const BurgerButtonIcon = styled.img`
   width: 24px;
 `
 
-const LogoWrapper = styled.div`
+const LogoWrapperMobile = styled.div`
   width: 84px;
   height: 24px;
 `
@@ -62,8 +62,8 @@ BrowseHeader.BurgerButtonIcon = ({ children, ...restProps }) => {
   return <BurgerButtonIcon {...restProps}>{children}</BurgerButtonIcon>
 }
 
-BrowseHeader.LogoWrapper = ({ children, ...restProps }) => {
-  return <LogoWrapper {...restProps}>{children}</LogoWrapper>
+BrowseHeader.LogoWrapperMobile = ({ children, ...restProps }) => {
+  return <LogoWrapperMobile {...restProps}>{children}</LogoWrapperMobile>
 }
 
 BrowseHeader.SearchForm = ({ children, ...restProps }) => {

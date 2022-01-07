@@ -17,9 +17,9 @@ export default function BrowseHeaderMobile() {
             <BrowseHeader.BurgerButtonIcon src='../images/icons/hamburger.gif' />
           </BrowseHeader.BurgerButton>
 
-          <BrowseHeader.LogoWrapper>
+          <BrowseHeader.LogoWrapperMobile>
             <SiteLogo />
-          </BrowseHeader.LogoWrapper>
+          </BrowseHeader.LogoWrapperMobile>
 
           <BrowseHeader.SearchForm>
             <BrowseHeader.SearchInput placeholder='Search' />
