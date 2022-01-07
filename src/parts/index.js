@@ -6,3 +6,6 @@ export { default as Footer } from './Footer'
 
 export { default as RegNavbar } from './RegNavbar'
 export { default as PlanFormTable } from './PlanFormTable'
+
+export { default as BrowseMobileLayout } from './BrowseMobileLayout'
+export { default as BrowseDesktopLayout } from './BrowseDesktopLayout'
