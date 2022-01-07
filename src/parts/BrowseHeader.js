@@ -1,3 +1,5 @@
+import { useContext } from 'react'
+import { BrowseContext } from '../context/BrowseContext'
 import styled from 'styled-components'
 import { SiteLogo, NavSliderPanel } from '../components'
 import { SemanticHeader } from '../containers/'
@@ -53,12 +55,9 @@ const SearchInput = styled.input`
   background-color: transparent;
 `
 
-export default function BrowseHeader({
-  toggleMenu,
-  isMenuOpen,
-  activeCategory,
-  setCategory,
-}) {
+export default function BrowseHeader() {
+  const { toggleMenu, isMenuOpen, activeCategory, setCategory } =
+    useContext(BrowseContext)
   return (
     <SemanticHeader>
       <Container>

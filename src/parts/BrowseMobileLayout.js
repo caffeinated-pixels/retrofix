@@ -1,5 +1,6 @@
-import { useMemo } from 'react'
+import { useMemo, useContext } from 'react'
 import styled from 'styled-components'
+import { BrowseContext } from '../context/BrowseContext'
 import { BrowseHeader, Footer } from '../parts/'
 import { MainContainer } from '../containers/'
 import { footerHomeContent } from '../fixtures/footer-content'
@@ -32,12 +33,9 @@ const ContentImage = styled.img`
   height: 90px;
   object-fit: cover;
 `
-export default function BrowseMobileLayout({
-  toggleMenu,
-  isMenuOpen,
-  activeCategory,
-  setCategory,
-}) {
+export default function BrowseMobileLayout() {
+  const { activeCategory } = useContext(BrowseContext)
+
   const genreContainers = useMemo(() => {
     const sortedStreamingContent = sortStreamingContent(
       unsortedStreamingContent,
@@ -64,12 +62,7 @@ export default function BrowseMobileLayout({
 
   return (
     <>
-      <BrowseHeader
-        toggleMenu={toggleMenu}
-        isMenuOpen={isMenuOpen}
-        activeCategory={activeCategory}
-        setCategory={setCategory}
-      />
+      <BrowseHeader />
 
       <MainContainer>
         <GenreContainersWrapper>{genreContainers}</GenreContainersWrapper>
