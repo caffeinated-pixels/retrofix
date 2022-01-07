@@ -11,10 +11,10 @@ const Navbar = styled.nav`
   display: flex;
   align-items: center;
   min-height: 50px;
-  padding: 0 20px;
   padding: ${({ padding }) => (padding ? padding : '0 20px')};
-  background: black;
+  background: transparent;
 `
+
 const BurgerButton = styled.button`
   background: none;
   border: 0;
@@ -33,8 +33,39 @@ const LogoWrapperMobile = styled.div`
   height: 24px;
 `
 const LogoWrapperDesktop = styled.div`
-  width: 84px;
-  height: 24px;
+  width: 64.75px;
+  height: 17.5px;
+`
+
+const NavPrimary = styled.ul`
+  display: flex;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+
+  list-style: none;
+`
+
+const NavPrimaryItem = styled.li`
+  margin-left: 20px;
+  font-size: 0.875rem;
+`
+const NavPrimaryBtn = styled(BurgerButton)`
+  margin: 0;
+  color: inherit;
+  transition: color 0.4s;
+
+  &:hover {
+    color: #b3b3b3;
+  }
+`
+
+const NavSecondary = styled(NavPrimary)`
+  margin-left: auto;
+`
+const NavSecondaryItem = styled.li`
+  margin-left: 20px;
+  font-size: 0.875rem;
 `
 
 const SearchForm = styled.form`
@@ -49,6 +80,16 @@ const SearchInput = styled.input`
 
   color: #fff;
   background-color: transparent;
+`
+
+const BellIcon = styled.i`
+  font-size: 1rem;
+`
+
+const Avatar = styled.img`
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
 `
 
 export default function BrowseHeader({ children, ...restProps }) {
@@ -79,10 +120,38 @@ BrowseHeader.LogoWrapperDesktop = ({ children, ...restProps }) => {
   return <LogoWrapperDesktop {...restProps}>{children}</LogoWrapperDesktop>
 }
 
+BrowseHeader.NavPrimary = ({ children, ...restProps }) => {
+  return <NavPrimary {...restProps}>{children}</NavPrimary>
+}
+
+BrowseHeader.NavPrimaryItem = ({ children, ...restProps }) => {
+  return <NavPrimaryItem {...restProps}>{children}</NavPrimaryItem>
+}
+
+BrowseHeader.NavPrimaryBtn = ({ children, ...restProps }) => {
+  return <NavPrimaryBtn {...restProps}>{children}</NavPrimaryBtn>
+}
+
+BrowseHeader.NavSecondary = ({ children, ...restProps }) => {
+  return <NavSecondary {...restProps}>{children}</NavSecondary>
+}
+
+BrowseHeader.NavSecondaryItem = ({ children, ...restProps }) => {
+  return <NavSecondaryItem {...restProps}>{children}</NavSecondaryItem>
+}
+
 BrowseHeader.SearchForm = ({ children, ...restProps }) => {
   return <SearchForm {...restProps}>{children}</SearchForm>
 }
 
 BrowseHeader.SearchInput = ({ children, ...restProps }) => {
   return <SearchInput {...restProps}>{children}</SearchInput>
+}
+
+BrowseHeader.BellIcon = ({ ...restProps }) => {
+  return <BellIcon className='fas fa-bell' {...restProps} />
+}
+
+BrowseHeader.Avatar = ({ src, ...restProps }) => {
+  return <Avatar src={src} {...restProps} />
 }
