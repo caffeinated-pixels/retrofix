@@ -8,10 +8,10 @@ export default function BrowseHeaderDesktop() {
   return (
     <SemanticHeader>
       <BrowseHeader>
-        <BrowseHeader.Navbar>
-          <BrowseHeader.LogoWrapperMobile>
+        <BrowseHeader.Navbar padding='0 4%'>
+          <BrowseHeader.LogoWrapperDesktop>
             <SiteLogo />
-          </BrowseHeader.LogoWrapperMobile>
+          </BrowseHeader.LogoWrapperDesktop>
 
           <BrowseHeader.SearchForm>
             <BrowseHeader.SearchInput placeholder='Search' />

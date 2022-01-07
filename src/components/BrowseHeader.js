@@ -12,6 +12,7 @@ const Navbar = styled.nav`
   align-items: center;
   min-height: 50px;
   padding: 0 20px;
+  padding: ${({ padding }) => (padding ? padding : '0 20px')};
   background: black;
 `
 const BurgerButton = styled.button`
@@ -28,6 +29,10 @@ const BurgerButtonIcon = styled.img`
 `
 
 const LogoWrapperMobile = styled.div`
+  width: 84px;
+  height: 24px;
+`
+const LogoWrapperDesktop = styled.div`
   width: 84px;
   height: 24px;
 `
@@ -50,8 +55,12 @@ export default function BrowseHeader({ children, ...restProps }) {
   return <Container {...restProps}>{children}</Container>
 }
 
-BrowseHeader.Navbar = ({ children, ...restProps }) => {
-  return <Navbar {...restProps}>{children}</Navbar>
+BrowseHeader.Navbar = ({ children, padding, ...restProps }) => {
+  return (
+    <Navbar padding={padding} {...restProps}>
+      {children}
+    </Navbar>
+  )
 }
 
 BrowseHeader.BurgerButton = ({ children, ...restProps }) => {
@@ -64,6 +73,10 @@ BrowseHeader.BurgerButtonIcon = ({ children, ...restProps }) => {
 
 BrowseHeader.LogoWrapperMobile = ({ children, ...restProps }) => {
   return <LogoWrapperMobile {...restProps}>{children}</LogoWrapperMobile>
+}
+
+BrowseHeader.LogoWrapperDesktop = ({ children, ...restProps }) => {
+  return <LogoWrapperDesktop {...restProps}>{children}</LogoWrapperDesktop>
 }
 
 BrowseHeader.SearchForm = ({ children, ...restProps }) => {
