@@ -1,4 +1,5 @@
 import { useState, useMemo } from 'react'
+import useWindowWidth from '../hooks/useWindowWidth'
 import styled from 'styled-components'
 import { Footer } from '../parts/'
 import { SiteLogo, NavSliderPanel } from '../components'
@@ -87,6 +88,10 @@ const ContentImage = styled.img`
 export default function Browse() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [activeCategory, setActiveCategory] = useState('home')
+  const width = useWindowWidth()
+
+  console.log(`screen width: ${width}`)
+
   const toggleMenu = () => {
     setIsMenuOpen((prevState) => !prevState)
   }
