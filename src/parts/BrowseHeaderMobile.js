@@ -2,7 +2,7 @@ import { useContext } from 'react'
 import { BrowseContext } from '../context/BrowseContext'
 import styled from 'styled-components'
 import { SiteLogo, NavSliderPanel } from '../components'
-import { SemanticHeader } from '../containers/'
+import { SemanticHeader } from '../containers'
 
 const Container = styled.div`
   position: relative;
@@ -55,7 +55,7 @@ const SearchInput = styled.input`
   background-color: transparent;
 `
 
-export default function BrowseHeader() {
+export default function BrowseHeaderMobile() {
   const { toggleMenu, isMenuOpen, activeCategory, setCategory } =
     useContext(BrowseContext)
   return (

@@ -9,5 +9,5 @@ export { default as PlanFormTable } from './PlanFormTable'
 
 export { default as BrowseMobileLayout } from './BrowseMobileLayout'
 export { default as BrowseDesktopLayout } from './BrowseDesktopLayout'
-export { default as BrowseHeader } from './BrowseHeader'
+export { default as BrowseHeaderMobile } from './BrowseHeaderMobile'
 export { default as StreamingContent } from './StreamingContent'
