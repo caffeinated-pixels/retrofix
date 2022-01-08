@@ -72,6 +72,10 @@ const SearchForm = styled.form`
   margin-left: auto;
 `
 
+const SearchIcon = styled.i`
+  font-size: 1rem;
+`
+
 const SearchInput = styled.input`
   box-sizing: content-box;
   width: 6em;
@@ -138,6 +142,14 @@ BrowseHeader.NavSecondary = ({ children, ...restProps }) => {
 
 BrowseHeader.NavSecondaryItem = ({ children, ...restProps }) => {
   return <NavSecondaryItem {...restProps}>{children}</NavSecondaryItem>
+}
+
+BrowseHeader.SearchIcon = ({ children, ...restProps }) => {
+  return (
+    <SearchIcon className='fas fa-search' {...restProps}>
+      {children}
+    </SearchIcon>
+  )
 }
 
 BrowseHeader.SearchForm = ({ children, ...restProps }) => {

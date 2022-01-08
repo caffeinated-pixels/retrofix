@@ -30,6 +30,7 @@ export default function BrowseHeaderDesktop() {
           <BrowseHeader.NavSecondary>
             <BrowseHeader.NavSecondaryItem>
               <BrowseHeader.SearchForm>
+                <BrowseHeader.SearchIcon />
                 <BrowseHeader.SearchInput placeholder='Search' />
               </BrowseHeader.SearchForm>
             </BrowseHeader.NavSecondaryItem>
