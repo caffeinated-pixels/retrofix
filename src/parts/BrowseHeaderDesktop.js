@@ -1,10 +1,16 @@
-import { useContext } from 'react'
+import { useState, useContext } from 'react'
 import { BrowseContext } from '../context/BrowseContext'
 import { BrowseHeader, SiteLogo } from '../components'
 import { SemanticHeader } from '../containers'
 
 export default function BrowseHeaderDesktop() {
+  const [isSearchOpen, setIsSearchOpen] = useState(false)
   const { isMenuOpen, activeCategory, setCategory } = useContext(BrowseContext)
+
+  const toggleSearch = () => {
+    setIsSearchOpen((prevState) => !prevState)
+  }
+
   return (
     <SemanticHeader>
       <BrowseHeader>
@@ -30,9 +36,13 @@ export default function BrowseHeaderDesktop() {
           <BrowseHeader.NavSecondary>
             <BrowseHeader.NavSecondaryItem>
               <BrowseHeader.SearchForm>
-                <BrowseHeader.SearchWrapper>
-                  <BrowseHeader.SearchIcon />
-                  <BrowseHeader.SearchInput desktop placeholder='Search' />
+                <BrowseHeader.SearchWrapper isSearchOpen={isSearchOpen}>
+                  <BrowseHeader.SearchIcon onClick={toggleSearch} />
+                  <BrowseHeader.SearchInput
+                    desktop
+                    isSearchOpen={isSearchOpen}
+                    placeholder='Search'
+                  />
                 </BrowseHeader.SearchWrapper>
               </BrowseHeader.SearchForm>
             </BrowseHeader.NavSecondaryItem>

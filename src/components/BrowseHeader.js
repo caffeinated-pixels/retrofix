@@ -74,23 +74,26 @@ const SearchForm = styled.form`
 const SearchWrapper = styled.div`
   display: flex;
   align-items: center;
-  border: 1px solid #ccc;
+  border: ${({ isSearchOpen }) => (isSearchOpen ? '1px solid #ccc' : '0')};
   padding: 0.1em 0.4em;
 `
 
 const SearchIcon = styled.i`
   font-size: 0.8125rem;
+  cursor: pointer;
 `
 
 const SearchInput = styled.input`
   box-sizing: content-box;
+  display: ${({ desktop, isSearchOpen }) =>
+    desktop && !isSearchOpen ? 'none' : 'block'};
+
   width: ${({ desktop }) => (desktop ? '12em' : '6em')};
   padding: 4px 0.5em;
   border: ${({ desktop }) => (desktop ? '0' : '1px solid #ccc')};
 
   color: #fff;
   background-color: transparent;
-  /* background-color: grey; */
 
   &:focus {
     outline: 0;
