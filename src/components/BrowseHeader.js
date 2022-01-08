@@ -85,12 +85,10 @@ const SearchIcon = styled.i`
 
 const SearchInput = styled.input`
   box-sizing: content-box;
-  display: ${({ desktop, isSearchOpen }) =>
-    desktop && !isSearchOpen ? 'none' : 'block'};
+  width: 6em;
 
-  width: ${({ desktop }) => (desktop ? '12em' : '6em')};
   padding: 4px 0.5em;
-  border: ${({ desktop }) => (desktop ? '0' : '1px solid #ccc')};
+  border: 1px solid #ccc;
 
   color: #fff;
   background-color: transparent;
@@ -98,6 +96,16 @@ const SearchInput = styled.input`
   &:focus {
     outline: 0;
   }
+`
+
+const SearchInputDesktop = styled(SearchInput)`
+  transition: width 0.4s;
+  width: ${({ isSearchOpen }) => (isSearchOpen ? '12em' : '0em')};
+  visibility: ${({ isSearchOpen }) => (isSearchOpen ? 'show' : 'hidden')};
+
+  padding: 4px 0.5em;
+  padding: ${({ isSearchOpen }) => (isSearchOpen ? '4px 0.5em' : '0')};
+  border: 0;
 `
 
 const BellIcon = styled.i`
@@ -174,11 +182,19 @@ BrowseHeader.SearchForm = ({ children, ...restProps }) => {
   return <SearchForm {...restProps}>{children}</SearchForm>
 }
 
-BrowseHeader.SearchInput = ({ children, desktop, ...restProps }) => {
+BrowseHeader.SearchInput = ({ children, ...restProps }) => {
+  return <SearchInput {...restProps}>{children}</SearchInput>
+}
+
+BrowseHeader.SearchInputDesktop = ({
+  children,
+  isSearchOpen,
+  ...restProps
+}) => {
   return (
-    <SearchInput desktop={desktop} {...restProps}>
+    <SearchInputDesktop isSearchOpen={isSearchOpen} {...restProps}>
       {children}
-    </SearchInput>
+    </SearchInputDesktop>
   )
 }
 

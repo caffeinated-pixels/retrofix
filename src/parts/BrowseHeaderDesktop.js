@@ -38,8 +38,7 @@ export default function BrowseHeaderDesktop() {
               <BrowseHeader.SearchForm>
                 <BrowseHeader.SearchWrapper isSearchOpen={isSearchOpen}>
                   <BrowseHeader.SearchIcon onClick={toggleSearch} />
-                  <BrowseHeader.SearchInput
-                    desktop
+                  <BrowseHeader.SearchInputDesktop
                     isSearchOpen={isSearchOpen}
                     placeholder='Search'
                   />
