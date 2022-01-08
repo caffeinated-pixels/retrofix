@@ -71,19 +71,30 @@ const NavSecondaryItem = styled.li`
 const SearchForm = styled.form`
   margin-left: auto;
 `
+const SearchWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  padding: 0.1em 0.4em;
+`
 
 const SearchIcon = styled.i`
-  font-size: 1rem;
+  font-size: 0.8125rem;
 `
 
 const SearchInput = styled.input`
   box-sizing: content-box;
-  width: 6em;
+  width: ${({ desktop }) => (desktop ? '12em' : '6em')};
   padding: 4px 0.5em;
-  border: 1px solid #ccc;
+  border: ${({ desktop }) => (desktop ? '0' : '1px solid #ccc')};
 
   color: #fff;
   background-color: transparent;
+  /* background-color: grey; */
+
+  &:focus {
+    outline: 0;
+  }
 `
 
 const BellIcon = styled.i`
@@ -144,6 +155,10 @@ BrowseHeader.NavSecondaryItem = ({ children, ...restProps }) => {
   return <NavSecondaryItem {...restProps}>{children}</NavSecondaryItem>
 }
 
+BrowseHeader.SearchWrapper = ({ children, ...restProps }) => {
+  return <SearchWrapper {...restProps}>{children}</SearchWrapper>
+}
+
 BrowseHeader.SearchIcon = ({ children, ...restProps }) => {
   return (
     <SearchIcon className='fas fa-search' {...restProps}>
@@ -156,8 +171,12 @@ BrowseHeader.SearchForm = ({ children, ...restProps }) => {
   return <SearchForm {...restProps}>{children}</SearchForm>
 }
 
-BrowseHeader.SearchInput = ({ children, ...restProps }) => {
-  return <SearchInput {...restProps}>{children}</SearchInput>
+BrowseHeader.SearchInput = ({ children, desktop, ...restProps }) => {
+  return (
+    <SearchInput desktop={desktop} {...restProps}>
+      {children}
+    </SearchInput>
+  )
 }
 
 BrowseHeader.BellIcon = ({ ...restProps }) => {
