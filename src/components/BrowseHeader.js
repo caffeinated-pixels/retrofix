@@ -111,13 +111,6 @@ const SearchInputDesktop = styled(SearchInput)`
 const BellIcon = styled.i`
   font-size: 1rem;
 `
-
-const Avatar = styled.img`
-  width: 32px;
-  height: 32px;
-  border-radius: 4px;
-`
-
 export default function BrowseHeader({ children, ...restProps }) {
   return <Container {...restProps}>{children}</Container>
 }
@@ -200,8 +193,4 @@ BrowseHeader.SearchInputDesktop = ({
 
 BrowseHeader.BellIcon = ({ ...restProps }) => {
   return <BellIcon className='fas fa-bell' {...restProps} />
-}
-
-BrowseHeader.Avatar = ({ src, ...restProps }) => {
-  return <Avatar src={src} {...restProps} />
 }

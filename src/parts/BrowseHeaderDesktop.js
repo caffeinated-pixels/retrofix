@@ -1,6 +1,6 @@
 import { useState, useContext } from 'react'
 import { BrowseContext } from '../context/BrowseContext'
-import { BrowseHeader, SiteLogo } from '../components'
+import { BrowseHeader, SiteLogo, NavDropDown } from '../components'
 import { SemanticHeader } from '../containers'
 
 export default function BrowseHeaderDesktop() {
@@ -51,7 +51,7 @@ export default function BrowseHeaderDesktop() {
             </BrowseHeader.NavSecondaryItem>
 
             <BrowseHeader.NavSecondaryItem>
-              <BrowseHeader.Avatar src='./images/users/1.png' />
+              <NavDropDown />
             </BrowseHeader.NavSecondaryItem>
           </BrowseHeader.NavSecondary>
         </BrowseHeader.Navbar>
