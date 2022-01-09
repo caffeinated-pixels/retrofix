@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import styled from 'styled-components'
 
 const DropDownWrapper = styled.div`
@@ -10,15 +11,22 @@ const Avatar = styled.img`
   height: 32px;
   border-radius: 4px;
 `
-const ChevronIcon = styled.i`
+const DropDownIcon = styled.i`
   margin-left: 10px;
 `
 
 export default function NavDropDown() {
+  const [isDropDownOpen, setIsDropDownOpen] = useState(false)
+
   return (
-    <DropDownWrapper>
+    <DropDownWrapper
+      onMouseEnter={() => setIsDropDownOpen(true)}
+      onMouseLeave={() => setIsDropDownOpen(false)}
+    >
       <Avatar src='./images/users/1.png' />
-      <ChevronIcon className='fas fa-caret-up' />
+      <DropDownIcon
+        className={isDropDownOpen ? 'fas fa-caret-down' : 'fas fa-caret-up'}
+      />
     </DropDownWrapper>
   )
 }
