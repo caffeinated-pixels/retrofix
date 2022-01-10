@@ -1,9 +1,9 @@
 import { useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
+import useSignOut from '../hooks/useSignOut'
 import { FirebaseAuthContext } from '../context/FirebaseAuthContext'
-import firebaseSignOut from '../firebase/firebaseSignOut'
-import { HOME, PROFILE } from '../constants/routes'
+import { PROFILE } from '../constants/routes'
 import { colors, navSliderBorderBottom } from '../styles/style-constants'
 
 const NavSliderBackground = styled.div`
@@ -102,13 +102,8 @@ export default function NavSliderPanel({
   setCategory,
 }) {
   const user = useContext(FirebaseAuthContext)
+  const signOut = useSignOut()
   const navigate = useNavigate()
-
-  const signOut = async () => {
-    await firebaseSignOut()
-    console.log('signed out!')
-    navigate(HOME)
-  }
 
   return (
     <>
