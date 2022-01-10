@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import useSignOut from '../hooks/useSignOut'
 import styled from 'styled-components'
 import { PROFILE } from '../constants/routes'
 
@@ -69,6 +70,7 @@ const SubMenuBtn = styled.button`
 
 export default function NavDropDown() {
   const [isDropDownOpen, setIsDropDownOpen] = useState(false)
+  const signOut = useSignOut()
   const navigate = useNavigate()
 
   const handleKeyDown = (e) => {
@@ -115,7 +117,7 @@ export default function NavDropDown() {
 
           <SubMenuList>
             <SubMenuItem>
-              <SubMenuBtn>Sign out of Netflix</SubMenuBtn>
+              <SubMenuBtn onClick={signOut}>Sign out of Netflix</SubMenuBtn>
             </SubMenuItem>
           </SubMenuList>
         </SubMenuContainer>
