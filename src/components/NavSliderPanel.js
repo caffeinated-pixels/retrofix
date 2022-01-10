@@ -21,7 +21,6 @@ const NavSlider = styled.div`
   top: 50px;
   bottom: 0;
   left: 0;
-  transform: translateX(-250px);
   transform: ${({ isMenuOpen }) =>
     isMenuOpen ? 'translateX(0)' : 'translateX(-250px)'};
   transition: transform 150ms cubic-bezier(0.5, 0, 0.1, 1);
