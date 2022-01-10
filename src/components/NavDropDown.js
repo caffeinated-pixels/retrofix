@@ -74,6 +74,9 @@ export default function NavDropDown() {
   const navigate = useNavigate()
 
   const handleKeyDown = (e) => {
+    // prevents override of keyboard onClick for menu buttons
+    if (e.currentTarget !== e.target) return
+
     if (e.key === 'Enter' || e.key === ' ') {
       setIsDropDownOpen((prevState) => !prevState)
     }
@@ -109,7 +112,11 @@ export default function NavDropDown() {
               </SubMenuBtn>
             </SubMenuItem>
             <SubMenuItem>
-              <SubMenuBtn onClick={() => navigate(PROFILE)}>
+              <SubMenuBtn
+                onClick={() => {
+                  navigate(PROFILE)
+                }}
+              >
                 Manage Profiles
               </SubMenuBtn>
             </SubMenuItem>
