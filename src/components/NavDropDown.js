@@ -1,5 +1,7 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
+import { PROFILE } from '../constants/routes'
 
 const DropDownWrapper = styled.div`
   position: relative;
@@ -44,12 +46,31 @@ const SubMenuContainer = styled.div`
 
 const SubMenuList = styled.ul`
   list-style: none;
-  padding: 0;
+  padding: 10px 0 5px;
+
+  & + & {
+    border-top: solid 1px rgba(255, 255, 255, 0.25);
+  }
 `
-const SubMenuItem = styled.li``
+const SubMenuItem = styled.li`
+  padding: 5px 10px;
+`
+
+const SubMenuBtn = styled.button`
+  border: 0;
+  cursor: pointer;
+
+  background: transparent;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+`
 
 export default function NavDropDown() {
   const [isDropDownOpen, setIsDropDownOpen] = useState(false)
+  const navigate = useNavigate()
+
   const handleKeyDown = (e) => {
     if (e.key === 'Enter' || e.key === ' ') {
       setIsDropDownOpen((prevState) => !prevState)
@@ -79,8 +100,23 @@ export default function NavDropDown() {
       {isDropDownOpen && (
         <SubMenuContainer>
           <SubMenuList>
-            <SubMenuItem>Children</SubMenuItem>
-            <SubMenuItem>Manage Profiles</SubMenuItem>
+            <SubMenuItem>
+              <SubMenuBtn>
+                <Avatar src='./images/users/kids.jpg' />
+                Children
+              </SubMenuBtn>
+            </SubMenuItem>
+            <SubMenuItem>
+              <SubMenuBtn onClick={() => navigate(PROFILE)}>
+                Manage Profiles
+              </SubMenuBtn>
+            </SubMenuItem>
+          </SubMenuList>
+
+          <SubMenuList>
+            <SubMenuItem>
+              <SubMenuBtn>Sign out of Netflix</SubMenuBtn>
+            </SubMenuItem>
           </SubMenuList>
         </SubMenuContainer>
       )}
