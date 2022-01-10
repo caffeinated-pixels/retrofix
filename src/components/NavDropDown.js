@@ -74,9 +74,6 @@ export default function NavDropDown() {
   const navigate = useNavigate()
 
   const handleKeyDown = (e) => {
-    // prevents override of keyboard onClick for menu buttons
-    if (e.currentTarget !== e.target) return
-
     if (e.key === 'Enter' || e.key === ' ') {
       setIsDropDownOpen((prevState) => !prevState)
     }
@@ -84,13 +81,11 @@ export default function NavDropDown() {
 
   return (
     <DropDownWrapper
-      tabIndex='0'
       onMouseEnter={() => setIsDropDownOpen(true)}
       onMouseLeave={() => setIsDropDownOpen(false)}
       onClick={() => setIsDropDownOpen((prevState) => !prevState)}
-      onKeyDown={handleKeyDown}
     >
-      <AvatarWrapper>
+      <AvatarWrapper tabIndex='0' onKeyDown={handleKeyDown}>
         <Avatar src='./images/users/1.png' />
         <CalloutIcon
           className='fas fa-caret-up'
