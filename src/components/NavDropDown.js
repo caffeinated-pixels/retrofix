@@ -18,10 +18,18 @@ const DropDownIcon = styled.i`
 export default function NavDropDown() {
   const [isDropDownOpen, setIsDropDownOpen] = useState(false)
 
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      setIsDropDownOpen((prevState) => !prevState)
+    }
+  }
+
   return (
     <DropDownWrapper
+      tabIndex='0'
       onMouseEnter={() => setIsDropDownOpen(true)}
       onMouseLeave={() => setIsDropDownOpen(false)}
+      onKeyDown={handleKeyDown}
     >
       <Avatar src='./images/users/1.png' />
       <DropDownIcon
