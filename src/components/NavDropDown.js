@@ -61,6 +61,7 @@ export default function NavDropDown() {
       tabIndex='0'
       onMouseEnter={() => setIsDropDownOpen(true)}
       onMouseLeave={() => setIsDropDownOpen(false)}
+      onClick={() => setIsDropDownOpen((prevState) => !prevState)}
       onKeyDown={handleKeyDown}
     >
       <AvatarWrapper>
