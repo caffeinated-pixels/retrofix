@@ -12,7 +12,11 @@ const Navbar = styled.nav`
   align-items: center;
   min-height: 50px;
   padding: ${({ padding }) => (padding ? padding : '0 20px')};
-  background: transparent;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.7) 10%,
+    rgba(0, 0, 0, 0)
+  );
 `
 
 const BurgerButton = styled.button`
