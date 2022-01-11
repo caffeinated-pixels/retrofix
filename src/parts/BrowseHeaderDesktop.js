@@ -1,11 +1,12 @@
-import { useState, useContext } from 'react'
-import { BrowseContext } from '../context/BrowseContext'
+import { useState } from 'react'
+// import { BrowseContext } from '../context/BrowseContext'
+import { Billboard } from './'
 import { BrowseHeader, SiteLogo, NavDropDown } from '../components'
 import { SemanticHeader } from '../containers'
 
 export default function BrowseHeaderDesktop() {
   const [isSearchOpen, setIsSearchOpen] = useState(false)
-  const { isMenuOpen, activeCategory, setCategory } = useContext(BrowseContext)
+  // const { isMenuOpen, activeCategory, setCategory } = useContext(BrowseContext)
 
   const toggleSearch = () => {
     setIsSearchOpen((prevState) => !prevState)
@@ -55,6 +56,7 @@ export default function BrowseHeaderDesktop() {
             </BrowseHeader.NavSecondaryItem>
           </BrowseHeader.NavSecondary>
         </BrowseHeader.Navbar>
+        <Billboard />
       </BrowseHeader>
     </SemanticHeader>
   )
