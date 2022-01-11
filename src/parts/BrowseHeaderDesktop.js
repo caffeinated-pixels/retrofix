@@ -1,6 +1,6 @@
 import { useState } from 'react'
 // import { BrowseContext } from '../context/BrowseContext'
-import { Billboard } from './'
+import { Billboard, StreamingContent } from './'
 import { BrowseHeader, SiteLogo, NavDropDown } from '../components'
 import { SemanticHeader } from '../containers'
 
@@ -57,6 +57,7 @@ export default function BrowseHeaderDesktop() {
           </BrowseHeader.NavSecondary>
         </BrowseHeader.Navbar>
         <Billboard />
+        <StreamingContent />
       </BrowseHeader>
     </SemanticHeader>
   )
