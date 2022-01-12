@@ -7,11 +7,11 @@ import sortStreamingContent from '../helpers/sort-streaming-content'
 const GenreContainersWrapper = styled.div`
   position: relative;
   padding-top: 60px;
-  margin-top: -15%;
+  margin-top: -17%;
 `
 
 const GenreContainer = styled.div`
-  padding-left: 20px;
+  padding-left: 4%;
 `
 
 const GenreTitle = styled.h2`
