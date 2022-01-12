@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom'
 import { FirebaseAuthContext } from '../context/FirebaseAuthContext'
 import useSignOut from '../hooks/useSignOut'
 import styled from 'styled-components'
-import { colors } from '../styles/style-constants'
 import { PROFILE } from '../constants/routes'
 
 const DropDownWrapper = styled.div`
@@ -43,8 +42,8 @@ const SubMenuContainer = styled.div`
   width: 181px;
 
   font-size: 0.8125rem;
-  background-color: rgba(0, 0, 0, 0.9);
-  border: solid 1px rgba(255, 255, 255, 0.15);
+  background-color: hsla(0, 0%, 0%, 0.9);
+  border: solid 1px hsla(0, 0%, 100%, 0.15);
 `
 
 const SubMenuList = styled.ul`
@@ -52,7 +51,7 @@ const SubMenuList = styled.ul`
   padding: 10px 0 5px;
 
   & + & {
-    border-top: solid 1px rgba(255, 255, 255, 0.25);
+    border-top: solid 1px hsla(0, 0%, 100%, 0.25);
   }
 `
 const SubMenuItem = styled.li`
