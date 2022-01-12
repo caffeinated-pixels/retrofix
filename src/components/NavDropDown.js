@@ -75,8 +75,6 @@ export default function NavDropDown() {
   const signOut = useSignOut()
   const navigate = useNavigate()
 
-  console.log('user = ' + user.photoURL)
-
   const handleKeyDown = (e) => {
     if (e.key === 'Enter' || e.key === ' ') {
       setIsDropDownOpen((prevState) => !prevState)
