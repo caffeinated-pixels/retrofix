@@ -1,7 +1,9 @@
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { FirebaseAuthContext } from '../context/FirebaseAuthContext'
 import useSignOut from '../hooks/useSignOut'
 import styled from 'styled-components'
+import { colors } from '../styles/style-constants'
 import { PROFILE } from '../constants/routes'
 
 const DropDownWrapper = styled.div`
@@ -70,8 +72,11 @@ const SubMenuBtn = styled.button`
 
 export default function NavDropDown() {
   const [isDropDownOpen, setIsDropDownOpen] = useState(false)
+  const user = useContext(FirebaseAuthContext)
   const signOut = useSignOut()
   const navigate = useNavigate()
+
+  console.log('user = ' + user.photoURL)
 
   const handleKeyDown = (e) => {
     if (e.key === 'Enter' || e.key === ' ') {
@@ -86,7 +91,7 @@ export default function NavDropDown() {
       onClick={() => setIsDropDownOpen((prevState) => !prevState)}
     >
       <AvatarWrapper tabIndex='0' onKeyDown={handleKeyDown}>
-        <Avatar src='./images/users/1.png' />
+        <Avatar src={user ? user.photoURL : './images/users/1.png'} />
         <CalloutIcon
           className='fas fa-caret-up'
           isDropDownOpen={isDropDownOpen}
