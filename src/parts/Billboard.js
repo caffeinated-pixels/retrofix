@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 const Container = styled.div`
+  position: relative;
   width: 100%;
   height: 56.25vw;
 
@@ -9,6 +10,24 @@ const Container = styled.div`
   background-position: center;
 
   display: flex;
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 14.74vw;
+    bottom: 0;
+
+    background-image: linear-gradient(
+      to bottom,
+      rgba(20, 20, 20, 0) 0,
+      rgba(20, 20, 20, 0.15) 15%,
+      rgba(20, 20, 20, 0.35) 29%,
+      rgba(20, 20, 20, 0.58) 44%,
+      #141414 68%,
+      #141414 100%
+    );
+  }
 `
 
 const Vignette = styled.div`
