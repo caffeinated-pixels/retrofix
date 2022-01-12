@@ -1,11 +1,11 @@
-import { BrowseHeaderDesktop, StreamingContentMobile, Footer } from '../parts/'
+import { BrowseHeaderDesktop, StreamingContentDesktop, Footer } from '../parts/'
 import { footerHomeContent } from '../fixtures/footer-content'
 
 export default function BrowseDesktopLayout() {
   return (
     <>
       <BrowseHeaderDesktop />
-      <StreamingContentMobile />
+      <StreamingContentDesktop />
       <Footer footerContent={footerHomeContent} increasedPadding />
     </>
   )
