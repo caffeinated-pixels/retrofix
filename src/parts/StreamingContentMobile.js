@@ -12,7 +12,11 @@ const GenreContainer = styled.div`
   padding-left: 20px;
 `
 
-const GenreTitle = styled.h2``
+const GenreTitle = styled.h2`
+  color: #999;
+  font-size: 1.2rem;
+  margin-bottom: 0.5em;
+`
 
 const GenreRow = styled.div`
   display: flex;
