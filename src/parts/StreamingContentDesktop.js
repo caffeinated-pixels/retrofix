@@ -22,19 +22,8 @@ const GenreTitle = styled.h2`
 
 const GenreRow = styled.div`
   display: flex;
-  overflow-x: auto;
   padding-bottom: 40px;
 `
-
-// const ContentBox = styled.div`
-//   min-width: min(100vw * 0.23, 300px);
-//   margin-right: min(5px, 0.4vw);
-//   cursor: pointer;
-// `
-// const ContentImage = styled.img`
-//   object-fit: cover;
-// `
-
 export default function StreamingContentDesktop() {
   const { activeCategory, unsortedStreamingContent } = useContext(BrowseContext)
 
