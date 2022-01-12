@@ -2,6 +2,7 @@ import { useContext, useMemo } from 'react'
 import styled from 'styled-components'
 import { BrowseContext } from '../context/BrowseContext'
 import { MainContainer } from '../containers/'
+import { ContentBox } from '../components'
 import sortStreamingContent from '../helpers/sort-streaming-content'
 
 const GenreContainersWrapper = styled.div`
@@ -25,14 +26,14 @@ const GenreRow = styled.div`
   padding-bottom: 40px;
 `
 
-const ContentBox = styled.div`
-  min-width: min(100vw * 0.23, 300px);
-  margin-right: min(5px, 0.4vw);
-  cursor: pointer;
-`
-const ContentImage = styled.img`
-  object-fit: cover;
-`
+// const ContentBox = styled.div`
+//   min-width: min(100vw * 0.23, 300px);
+//   margin-right: min(5px, 0.4vw);
+//   cursor: pointer;
+// `
+// const ContentImage = styled.img`
+//   object-fit: cover;
+// `
 
 export default function StreamingContentDesktop() {
   const { activeCategory, unsortedStreamingContent } = useContext(BrowseContext)
@@ -48,12 +49,7 @@ export default function StreamingContentDesktop() {
         <GenreTitle>{genre}</GenreTitle>
         <GenreRow>
           {content.map((item) => (
-            <ContentBox key={item.title}>
-              <ContentImage
-                src={`/images/${item.category}/${item.genre}/${item.slug}/small.jpg`}
-                alt={item.title}
-              />
-            </ContentBox>
+            <ContentBox key={item.title} item={item} />
           ))}
         </GenreRow>
       </GenreContainer>
