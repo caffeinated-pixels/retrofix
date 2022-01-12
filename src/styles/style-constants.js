@@ -5,6 +5,7 @@ export const colors = {
   bgBlack: 'hsl(0, 0%, 0%)',
   bgBlackTrans: 'hsla(0, 0%, 0%, 0.75)',
   bgLightGrey: 'hsl(0, 0%, 95%)', // #f2f2f2
+  bgBrowseDarkGrey: 'hsl(0, 0%, 8%)', // #141414
   borderLightGrey: 'hsl(0, 0%, 90%)', // #e5e5e5
   borderMedLightGrey: 'hsl(0, 0%, 80%)', // #cccccc
   textLightGrey: 'hsl(0, 0%, 55%)', // #8c8c8c
