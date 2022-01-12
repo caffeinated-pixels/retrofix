@@ -84,7 +84,7 @@
     "description": "Peppa, an outgoing preschool pig, participates in many energetic activities. She learns something new every day and has a lot of fun with her family and friends.",
     "category": "series",
     "genre": "children",
-    "maturity": "0",
+    "maturity": "PG",
     "slug": "peppa-pig"
   },
   {
@@ -92,7 +92,7 @@
     "description": "Dora, a seven-year-old girl of Latin American descent, embarks upon numerous adventures in the wilderness with her friend Boots, a monkey, and a variety of fun and useful tools.",
     "category": "series",
     "genre": "children",
-    "maturity": "0",
+    "maturity": "PG",
     "slug": "dora-the-explorer"
   },
   {
@@ -100,7 +100,7 @@
     "description": "Six brave puppies, captained by a tech-savvy ten-year-old boy, Ryder, work together to accomplish high-stakes rescue missions to safeguard the residents of the Adventure Bay community.",
     "category": "series",
     "genre": "children",
-    "maturity": "0",
+    "maturity": "PG",
     "slug": "paw-patrol"
   },
   {
@@ -108,7 +108,7 @@
     "description": "Bespectacled aardvark Arthur Read demonstrates to kids how to deal with such childhood traumas and challenges as homework, teachers and bullies.",
     "category": "series",
     "genre": "children",
-    "maturity": "0",
+    "maturity": "PG",
     "slug": "arthur"
   },
   {
@@ -116,7 +116,7 @@
     "description": "A yellow sea sponge named SpongeBob SquarePants lives in the city of Bikini Bottom deep in the Pacific Ocean. ",
     "category": "series",
     "genre": "children",
-    "maturity": "0",
+    "maturity": "PG",
     "slug": "spongebob"
   },
   {
@@ -287,7 +287,7 @@
     "description": "Dracula, who owns a high-end resort for monsters, attempts to keep his daughter from falling in love with Jonathan, a human.",
     "category": "films",
     "genre": "children",
-    "maturity": "0",
+    "maturity": "PG",
     "slug": "hotel-transylvania"
   },
   {
@@ -295,7 +295,7 @@
     "description": "Gru, a criminal mastermind, adopts three orphans as pawns to carry out the biggest heist in history. His life takes an unexpected turn when the little girls see him as their potential father.",
     "category": "films",
     "genre": "children",
-    "maturity": "0",
+    "maturity": "PG",
     "slug": "despicable-me"
   },
   {
@@ -303,7 +303,7 @@
     "description": "Anna sets out on a journey with an iceman, Kristoff, and his reindeer, Sven, in order to find her sister, Elsa, who has the power to convert any object or person into ice.",
     "category": "films",
     "genre": "children",
-    "maturity": "0",
+    "maturity": "PG",
     "slug": "frozen"
   },
   {
@@ -311,7 +311,7 @@
     "description": "In this animated feature by noted Japanese director Hayao Miyazaki, 10-year-old Chihiro (Rumi Hiiragi) and her parents (Takashi Naitô, Yasuko Sawaguchi) stumble upon a seemingly abandoned amusement park.",
     "category": "films",
     "genre": "children",
-    "maturity": "0",
+    "maturity": "PG",
     "slug": "spirited-away"
   },
   {
@@ -319,7 +319,7 @@
     "description": "Carl, an old widower, goes off on an adventure in his flying house in search of Paradise Falls, his wife's dream destination.",
     "category": "films",
     "genre": "children",
-    "maturity": "0",
+    "maturity": "PG",
     "slug": "up"
   },
 
