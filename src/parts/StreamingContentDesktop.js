@@ -5,14 +5,19 @@ import { MainContainer } from '../containers/'
 import sortStreamingContent from '../helpers/sort-streaming-content'
 
 const GenreContainersWrapper = styled.div`
+  position: relative;
   padding-top: 60px;
+  margin-top: -15%;
 `
 
 const GenreContainer = styled.div`
   padding-left: 20px;
 `
 
-const GenreTitle = styled.h2``
+const GenreTitle = styled.h2`
+  font-size: 1.4vw;
+  margin-bottom: 0.5em;
+`
 
 const GenreRow = styled.div`
   display: flex;
