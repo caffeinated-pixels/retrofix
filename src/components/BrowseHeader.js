@@ -1,8 +1,6 @@
 import styled from 'styled-components'
 
-const Container = styled.div`
-  position: relative;
-`
+const Container = styled.div``
 
 const Navbar = styled.nav`
   position: fixed;
