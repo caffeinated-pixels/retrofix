@@ -30,7 +30,7 @@ const ContentImage = styled.img`
   object-fit: cover;
 `
 
-export default function StreamingContent() {
+export default function StreamingContentMobile() {
   const { activeCategory, unsortedStreamingContent } = useContext(BrowseContext)
 
   const genreContainers = useMemo(() => {
