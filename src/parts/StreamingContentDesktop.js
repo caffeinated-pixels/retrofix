@@ -12,17 +12,42 @@ const GenreContainersWrapper = styled.div`
 `
 
 const GenreContainer = styled.div`
-  padding-left: 4%;
+  margin-bottom: 3vw;
 `
 
 const GenreTitle = styled.h2`
   font-size: 1.4vw;
+  margin-left: 4%;
   margin-bottom: 0.5em;
 `
 
+const SlideWrapper = styled.div`
+  position: relative;
+
+  border: 1px solid red;
+`
+
+const GoBackBox = styled.div`
+  position: absolute;
+  width: 4%;
+  top: 0;
+  bottom: 0;
+
+  background: rgba(20, 20, 20, 0.5);
+  background: red;
+`
+const GoForwardBox = styled(GoBackBox)`
+  right: 0;
+`
+
+const GoBackArrow = styled.i``
+
+const GoForwardArrow = styled.i``
+
 const GenreRow = styled.div`
   display: flex;
-  padding-bottom: 40px;
+  /* padding-bottom: 40px; */
+  padding-left: 4%;
 `
 export default function StreamingContentDesktop() {
   const { activeCategory, unsortedStreamingContent } = useContext(BrowseContext)
@@ -36,11 +61,16 @@ export default function StreamingContentDesktop() {
     return sortedStreamingContent.map(({ genre, content }) => (
       <GenreContainer key={genre}>
         <GenreTitle>{genre}</GenreTitle>
-        <GenreRow>
-          {content.map((item) => (
-            <ContentBox key={item.title} item={item} />
-          ))}
-        </GenreRow>
+
+        <SlideWrapper>
+          <GoBackBox className='go-back' />
+          <GenreRow>
+            {content.map((item) => (
+              <ContentBox key={item.title} item={item} />
+            ))}
+          </GenreRow>
+          <GoForwardBox className='go-forward' />
+        </SlideWrapper>
       </GenreContainer>
     ))
   }, [activeCategory, unsortedStreamingContent])
