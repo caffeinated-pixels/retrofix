@@ -23,11 +23,6 @@ const Modal = styled.div`
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  /* transform: scale(5); */
-
-  /* top: 0;
-  bottom: 0; */
-
   border-radius: 6px;
   z-index: 9999;
 `
