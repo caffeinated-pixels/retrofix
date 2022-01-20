@@ -32,7 +32,7 @@ export default function ContentBox({ item }) {
 
   return (
     <Container
-      onMouseEnter={() => setDisplayModal(true)}
+      // onMouseEnter={() => setDisplayModal(true)}
       displayModal={displayModal}
     >
       <ContentImage
