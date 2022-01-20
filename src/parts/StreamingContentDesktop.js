@@ -33,16 +33,22 @@ const GoBackBox = styled.div`
   top: 0;
   bottom: 0;
 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   background: rgba(20, 20, 20, 0.5);
-  background: red;
+  /* background: red; */
 `
 const GoForwardBox = styled(GoBackBox)`
   right: 0;
+  background: rgba(20, 20, 20, 0.7);
 `
 
-const GoBackArrow = styled.i``
-
-const GoForwardArrow = styled.i``
+const ArrowIcon = styled.i`
+  cursor: pointer;
+  font-size: 3rem;
+`
 
 const GenreRow = styled.div`
   display: flex;
@@ -63,13 +69,17 @@ export default function StreamingContentDesktop() {
         <GenreTitle>{genre}</GenreTitle>
 
         <SlideWrapper>
-          <GoBackBox className='go-back' />
+          <GoBackBox className='go-back'>
+            <ArrowIcon className='fas fa-angle-left' />
+          </GoBackBox>
           <GenreRow>
             {content.map((item) => (
               <ContentBox key={item.title} item={item} />
             ))}
           </GenreRow>
-          <GoForwardBox className='go-forward' />
+          <GoForwardBox className='go-forward'>
+            <ArrowIcon className='fas fa-angle-right' />
+          </GoForwardBox>
         </SlideWrapper>
       </GenreContainer>
     ))
