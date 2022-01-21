@@ -23,8 +23,6 @@ const GenreTitle = styled.h2`
 
 const SlideWrapper = styled.div`
   position: relative;
-
-  border: 1px solid red;
 `
 
 const GoBackBox = styled.div`
@@ -36,23 +34,26 @@ const GoBackBox = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 
   background: rgba(20, 20, 20, 0.5);
-  /* background: red; */
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+
+  &:hover {
+    background: rgba(20, 20, 20, 0.7);
+  }
 `
 const GoForwardBox = styled(GoBackBox)`
   right: 0;
-  background: rgba(20, 20, 20, 0.7);
 `
 
 const ArrowIcon = styled.i`
-  cursor: pointer;
   font-size: 3rem;
 `
 
 const GenreRow = styled.div`
   display: flex;
-  /* padding-bottom: 40px; */
   padding-left: 4%;
 `
 export default function StreamingContentDesktop() {
