@@ -4,8 +4,11 @@ import { colors } from '../styles/style-constants'
 
 const Container = styled.div`
   position: relative;
-  min-width: min(100vw * 0.23, 300px);
-  margin-right: min(5px, 0.4vw);
+  /* min-width: min(100vw * 0.23, 300px); */
+  min-width: 24%;
+  // TODO: On Netflix, this width changes with media queries!
+
+  padding: 0 0.2vw;
   cursor: pointer;
 `
 const ContentImage = styled.img`
