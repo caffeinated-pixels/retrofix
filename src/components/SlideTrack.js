@@ -11,6 +11,7 @@ const GoBackBox = styled.div`
   width: 4%;
   top: 0;
   bottom: 0;
+  z-index: 10;
 
   display: flex;
   justify-content: center;
