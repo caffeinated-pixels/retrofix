@@ -1,4 +1,4 @@
-import { useState, useLayoutEffect, useEffect, useRef } from 'react'
+import { useState, useLayoutEffect, useRef } from 'react'
 import styled from 'styled-components'
 import { ContentBox } from '../components'
 
@@ -49,7 +49,7 @@ const GenreRow = styled.div`
 */
 
 export default function SlideTrack({ content }) {
-  const [firstSlide, setFirstSlide] = useState(1)
+  const [firstSlide, setFirstSlide] = useState(0)
   const [trackOffset, setTrackOffset] = useState('0px')
 
   const ref = useRef(null)
@@ -68,11 +68,12 @@ export default function SlideTrack({ content }) {
     return () => window.removeEventListener('resize', calcTrackOffset)
   }, [firstSlide])
 
-  const handleForward = () => console.log('forward')
+  const handleForward = () => setFirstSlide((prev) => prev + 1)
+  const handleBack = () => setFirstSlide((prev) => (prev > 0 ? prev - 1 : prev))
 
   return (
     <SlideWrapper>
-      <GoBackBox className='go-back'>
+      <GoBackBox className='go-back' onClick={handleBack}>
         <ArrowIcon className='fas fa-angle-left' />
       </GoBackBox>
       <GenreRow trackOffset={trackOffset} ref={ref}>
