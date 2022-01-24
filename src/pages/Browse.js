@@ -7,7 +7,7 @@ export default function Browse() {
 
   return (
     <BrowseContextProvider>
-      {width < 810 ? <BrowseMobileLayout /> : <BrowseDesktopLayout />}
+      {width < 768 ? <BrowseMobileLayout /> : <BrowseDesktopLayout />}
     </BrowseContextProvider>
   )
 }
