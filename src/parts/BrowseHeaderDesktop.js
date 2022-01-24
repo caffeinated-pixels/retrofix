@@ -15,7 +15,7 @@ export default function BrowseHeaderDesktop() {
   return (
     <SemanticHeader>
       <BrowseHeader>
-        <BrowseHeader.Navbar padding='0 4%'>
+        <BrowseHeader.Navbar padding='0 4vw'>
           <BrowseHeader.LogoWrapperDesktop>
             <SiteLogo />
           </BrowseHeader.LogoWrapperDesktop>

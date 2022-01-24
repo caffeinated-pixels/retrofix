@@ -5,7 +5,7 @@ const Container = styled.div``
 const Navbar = styled.nav`
   position: fixed;
   z-index: 99;
-  width: 100%;
+  width: 100vw;
   display: flex;
   align-items: center;
   min-height: 50px;
