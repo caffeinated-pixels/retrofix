@@ -38,6 +38,7 @@ const GenreRow = styled.div`
   display: flex;
   padding-left: 4%;
   transform: translateX(${({ trackOffset }) => trackOffset});
+  transition: transform 750ms ease;
 `
 
 /* 
