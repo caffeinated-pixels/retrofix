@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useLayoutEffect, useEffect, useRef } from 'react'
 import styled from 'styled-components'
 import { ContentBox } from '../components'
 
@@ -36,22 +36,50 @@ const ArrowIcon = styled.i`
 const GenreRow = styled.div`
   display: flex;
   padding-left: 4%;
+  transform: translateX(${({ trackOffset }) => trackOffset});
 `
 
+/* 
+- initial track position is 0px
+- offset value = width of slide
+- move track (forward/back) by offset value on btn click
+- need to get slideWidth and calculate offset value on first render
+- recalculate offset value everytime window resizes
+*/
+
 export default function SlideTrack({ content }) {
+  const [firstSlide, setFirstSlide] = useState(1)
   const [trackOffset, setTrackOffset] = useState('0px')
+
+  const ref = useRef(null)
+
+  useLayoutEffect(() => {
+    const calcTrackOffset = () => {
+      const slideWidth = ref.current.firstChild.getBoundingClientRect().width
+      const trackOffset = slideWidth * firstSlide
+      setTrackOffset(`-${trackOffset}px`)
+    }
+
+    calcTrackOffset()
+
+    // recalc offset everytime window resizes
+    window.addEventListener('resize', calcTrackOffset)
+    return () => window.removeEventListener('resize', calcTrackOffset)
+  }, [firstSlide])
+
+  const handleForward = () => console.log('forward')
 
   return (
     <SlideWrapper>
       <GoBackBox className='go-back'>
         <ArrowIcon className='fas fa-angle-left' />
       </GoBackBox>
-      <GenreRow offset={trackOffset}>
+      <GenreRow trackOffset={trackOffset} ref={ref}>
         {content.map((item) => (
           <ContentBox key={item.title} item={item} />
         ))}
       </GenreRow>
-      <GoForwardBox className='go-forward'>
+      <GoForwardBox className='go-forward' onClick={handleForward}>
         <ArrowIcon className='fas fa-angle-right' />
       </GoForwardBox>
     </SlideWrapper>
