@@ -39,14 +39,14 @@ const GenreRow = styled.div`
 `
 
 export default function SlideTrack({ content }) {
-  const [slideOffset, setSlideOffset] = useState('0px')
+  const [trackOffset, setTrackOffset] = useState('0px')
 
   return (
     <SlideWrapper>
       <GoBackBox className='go-back'>
         <ArrowIcon className='fas fa-angle-left' />
       </GoBackBox>
-      <GenreRow offset={slideOffset}>
+      <GenreRow offset={trackOffset}>
         {content.map((item) => (
           <ContentBox key={item.title} item={item} />
         ))}
