@@ -57,7 +57,9 @@ export default function SlideTrack({ content }) {
 
   useLayoutEffect(() => {
     const calcTrackOffset = () => {
+      // get width of first slide
       const slideWidth = ref.current.firstChild.getBoundingClientRect().width
+
       const trackOffset = slideWidth * firstSlide
       setTrackOffset(`-${trackOffset}px`)
     }
@@ -69,8 +71,18 @@ export default function SlideTrack({ content }) {
     return () => window.removeEventListener('resize', calcTrackOffset)
   }, [firstSlide])
 
-  const handleForward = () => setFirstSlide((prev) => prev + 1)
-  const handleBack = () => setFirstSlide((prev) => (prev > 0 ? prev - 1 : prev))
+  const handleForward = () => {
+    setFirstSlide((prev) => {
+      const isLastSlide = prev === content.length - 1
+      return isLastSlide ? prev : prev + 1
+    })
+  }
+  const handleBack = () => {
+    setFirstSlide((prev) => {
+      const isFirstSlide = prev === 0
+      return isFirstSlide ? prev : prev - 1
+    })
+  }
 
   return (
     <SlideWrapper>
