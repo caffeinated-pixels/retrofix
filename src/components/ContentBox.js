@@ -3,10 +3,18 @@ import styled from 'styled-components'
 import { colors } from '../styles/style-constants'
 
 const Container = styled.div`
-  position: relative;
+  /* position: relative; */
   min-width: min(24%, 300px);
   padding: 0 0.2vw;
   cursor: pointer;
+
+  transition: all 250ms;
+
+  &:hover,
+  &:focus-visible {
+    transform: scale(0.98);
+    filter: brightness(0.5);
+  }
 `
 const ContentImage = styled.img`
   object-fit: cover;
@@ -32,6 +40,7 @@ export default function ContentBox({ item }) {
 
   return (
     <Container
+      tabIndex='0'
       // onMouseEnter={() => setDisplayModal(true)}
       displayModal={displayModal}
     >
