@@ -4,6 +4,7 @@ import { ContentBox } from '../components'
 
 const SlideTrackWrapper = styled.div`
   position: relative;
+  overflow: hidden;
 `
 
 const GoBackBox = styled.div`
