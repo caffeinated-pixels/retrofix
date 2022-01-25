@@ -2,7 +2,7 @@ import { useState, useLayoutEffect, useRef } from 'react'
 import styled from 'styled-components'
 import { ContentBox } from '../components'
 
-const SlideWrapper = styled.div`
+const SlideTrackWrapper = styled.div`
   position: relative;
 `
 
@@ -85,7 +85,7 @@ export default function SlideTrack({ content }) {
   }
 
   return (
-    <SlideWrapper>
+    <SlideTrackWrapper>
       <GoBackBox className='go-back' onClick={handleBack}>
         <ArrowIcon className='fas fa-angle-left' />
       </GoBackBox>
@@ -97,6 +97,6 @@ export default function SlideTrack({ content }) {
       <GoForwardBox className='go-forward' onClick={handleForward}>
         <ArrowIcon className='fas fa-angle-right' />
       </GoForwardBox>
-    </SlideWrapper>
+    </SlideTrackWrapper>
   )
 }
