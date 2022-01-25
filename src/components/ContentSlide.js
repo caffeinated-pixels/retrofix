@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import styled from 'styled-components'
-import { colors } from '../styles/style-constants'
+import { LargeContentModal } from './'
 
 const Container = styled.div`
   /* position: relative; */
@@ -15,33 +15,32 @@ const Container = styled.div`
     transform: scale(0.98);
     filter: brightness(0.5);
   }
+
+  &:focus-visible {
+    outline: 0;
+  }
 `
 const ContentImage = styled.img`
   object-fit: cover;
 `
 
-const Modal = styled.div`
-  background-color: ${colors.bgBrowseDarkGrey};
-  background-color: grey;
-
-  position: absolute;
-  width: 332px;
-  height: 374px;
-
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 6px;
-  z-index: 9999;
-`
-
 export default function ContentSlide({ item }) {
   const [displayModal, setDisplayModal] = useState(false)
+
+  const handleShowModal = () => {
+    console.log('open modal')
+    setDisplayModal(true)
+  }
+  const handleCloseModal = (e) => {
+    console.log('close modal')
+    e.stopPropagation()
+    setDisplayModal(false)
+  }
 
   return (
     <Container
       tabIndex='0'
-      // onMouseEnter={() => setDisplayModal(true)}
+      onClick={handleShowModal}
       displayModal={displayModal}
     >
       <ContentImage
@@ -49,7 +48,7 @@ export default function ContentSlide({ item }) {
         alt={item.title}
       />
       {displayModal && (
-        <Modal onMouseLeave={() => setDisplayModal(false)}>I am a modal</Modal>
+        <LargeContentModal handleCloseModal={handleCloseModal} />
       )}
     </Container>
   )
