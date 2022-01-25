@@ -42,14 +42,6 @@ const GenreRow = styled.div`
   transition: transform 750ms ease;
 `
 
-/* 
-- initial track position is 0px
-- offset value = width of slide
-- move track (forward/back) by offset value on btn click
-- need to get slideWidth and calculate offset value on first render
-- recalculate offset value everytime window resizes
-*/
-
 export default function SlideTrack({ content }) {
   const [firstSlide, setFirstSlide] = useState(0)
   const [trackOffset, setTrackOffset] = useState('0px')
