@@ -1,6 +1,6 @@
 import { useState, useLayoutEffect, useRef } from 'react'
 import styled from 'styled-components'
-import { ContentBox } from '../components'
+import { ContentSlide } from '../components'
 
 const SlideTrackWrapper = styled.div`
   position: relative;
@@ -84,7 +84,7 @@ export default function SlideTrack({ content }) {
       </GoBackBox>
       <Track trackOffset={trackOffset} ref={ref}>
         {content.map((item) => (
-          <ContentBox key={item.title} item={item} />
+          <ContentSlide key={item.title} item={item} />
         ))}
       </Track>
       <GoForwardBox className='go-forward' onClick={handleForward}>

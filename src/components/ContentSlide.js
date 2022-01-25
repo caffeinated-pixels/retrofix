@@ -35,7 +35,7 @@ const Modal = styled.div`
   z-index: 9999;
 `
 
-export default function ContentBox({ item }) {
+export default function ContentSlide({ item }) {
   const [displayModal, setDisplayModal] = useState(false)
 
   return (
