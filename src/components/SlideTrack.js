@@ -35,7 +35,7 @@ const ArrowIcon = styled.i`
   font-size: 3rem;
 `
 
-const GenreRow = styled.div`
+const Track = styled.div`
   display: flex;
   padding-left: 4%;
   transform: translateX(${({ trackOffset }) => trackOffset});
@@ -82,11 +82,11 @@ export default function SlideTrack({ content }) {
       <GoBackBox className='go-back' onClick={handleBack}>
         <ArrowIcon className='fas fa-angle-left' />
       </GoBackBox>
-      <GenreRow trackOffset={trackOffset} ref={ref}>
+      <Track trackOffset={trackOffset} ref={ref}>
         {content.map((item) => (
           <ContentBox key={item.title} item={item} />
         ))}
-      </GenreRow>
+      </Track>
       <GoForwardBox className='go-forward' onClick={handleForward}>
         <ArrowIcon className='fas fa-angle-right' />
       </GoForwardBox>
