@@ -26,6 +26,7 @@ const ContentImage = styled.img`
 
 export default function ContentSlide({ item }) {
   const [displayModal, setDisplayModal] = useState(false)
+  const imgUrl = `/images/${item.category}/${item.genre}/${item.slug}/small.jpg`
 
   const handleShowModal = () => {
     console.log('open modal')
@@ -43,12 +44,12 @@ export default function ContentSlide({ item }) {
       onClick={handleShowModal}
       displayModal={displayModal}
     >
-      <ContentImage
-        src={`/images/${item.category}/${item.genre}/${item.slug}/small.jpg`}
-        alt={item.title}
-      />
+      <ContentImage src={imgUrl} alt={item.title} />
       {displayModal && (
-        <LargeContentModal handleCloseModal={handleCloseModal} />
+        <LargeContentModal
+          handleCloseModal={handleCloseModal}
+          imgUrl={imgUrl}
+        />
       )}
     </Container>
   )
