@@ -34,6 +34,9 @@ const Header = styled.div`
   background-image: url(${({ imgUrl }) => imgUrl});
   background-size: cover;
 
+  display: flex;
+  justify-content: space-between;
+
   &::after {
     content: '';
     position: absolute;
@@ -43,11 +46,30 @@ const Header = styled.div`
     background: linear-gradient(to top, #181818, transparent 50%);
   }
 `
-export default function LargeContentModal({ handleCloseModal, imgUrl }) {
+
+const TitleBox = styled.div`
+  align-self: flex-end;
+  border: 1px solid red;
+  z-index: 10;
+  width: 40%;
+  /* height: 50%; */
+  margin-left: 3em;
+  margin-bottom: 3em;
+`
+
+const Title = styled.h2`
+  font-size: 2.5rem;
+`
+
+export default function LargeContentModal({ handleCloseModal, imgUrl, item }) {
   return ReactDOM.createPortal(
     <Background onClick={handleCloseModal}>
       <ModalContainer>
-        <Header imgUrl={imgUrl}></Header>
+        <Header imgUrl={imgUrl}>
+          <TitleBox>
+            <Title>{item.title}</Title>
+          </TitleBox>
+        </Header>
       </ModalContainer>
     </Background>,
     modalRoot

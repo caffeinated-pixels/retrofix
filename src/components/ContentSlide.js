@@ -49,6 +49,7 @@ export default function ContentSlide({ item }) {
         <LargeContentModal
           handleCloseModal={handleCloseModal}
           imgUrl={imgUrl}
+          item={item}
         />
       )}
     </Container>
