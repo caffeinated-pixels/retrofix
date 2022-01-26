@@ -26,6 +26,18 @@ const ModalContainer = styled.div`
   width: min(90%, 1100px);
   border-radius: 6px;
   box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.75);
+
+  animation: open 0.5s ease-in;
+
+  @keyframes open {
+    0% {
+      transform: scale(0);
+    }
+
+    100% {
+      transform: scale(1);
+    }
+  }
 `
 
 const Header = styled.div`
