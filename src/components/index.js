@@ -20,6 +20,10 @@ export { default as SigninForm } from './SigninForm'
 export { default as BrowseHeader } from './BrowseHeader'
 export { default as NavSliderPanel } from './NavSliderPanel'
 export { default as NavDropDown } from './NavDropDown'
+
+export * as browseButtons from './BrowseButtons'
+
 export { default as SlideTrack } from './SlideTrack'
 export { default as ContentSlide } from './ContentSlide'
+
 export { default as LargeContentModal } from './LargeContentModal'
