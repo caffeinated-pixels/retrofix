@@ -18,18 +18,18 @@ const Background = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 100;
 `
 const ModalContainer = styled.div`
   background-color: ${colors.bgBrowseDarkGrey};
   background-color: #181818;
-  width: min(90%, 950px);
-  height: 80%;
+  width: min(90%, 1100px);
   border-radius: 6px;
 `
 
 const Header = styled.div`
   position: relative;
-  height: 70%;
+  height: 50vh;
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
 
@@ -59,7 +59,7 @@ const TitleBox = styled.div`
 
 const Title = styled.h2`
   font-size: 3rem;
-  margin-bottom: 1em;
+  margin-bottom: 0.5em;
 `
 
 const ButtonWrapper = styled.div``
@@ -114,6 +114,7 @@ const CloseIcon = styled.i`
 
 const DetailsContainer = styled.div`
   margin-left: 3em;
+  margin-bottom: 3em;
   width: 60%;
 `
 
