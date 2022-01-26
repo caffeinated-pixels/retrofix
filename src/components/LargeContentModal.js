@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import ReactDOM from 'react-dom'
 import styled from 'styled-components'
 import { browseButtons } from '.'
@@ -112,6 +113,15 @@ const CloseIcon = styled.i`
 `
 
 export default function LargeContentModal({ handleCloseModal, imgUrl, item }) {
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') handleCloseModal()
+    }
+
+    document.addEventListener('keydown', handleKeyDown)
+    return () => document.removeEventListener('keydown', handleKeyDown)
+  }, [handleCloseModal])
+
   return ReactDOM.createPortal(
     <Background>
       <ModalContainer>
