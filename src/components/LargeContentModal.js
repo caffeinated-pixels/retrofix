@@ -112,6 +112,35 @@ const CloseIcon = styled.i`
   font-size: 1.3rem;
 `
 
+const DetailsContainer = styled.div`
+  margin-left: 3em;
+  width: 60%;
+`
+
+const MetaDataContainer = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+`
+
+const MatchScore = styled.div`
+  color: #46d369;
+  font-weight: 700;
+`
+
+const Year = styled.div``
+
+const MaturityRating = styled.div`
+  border: solid 1px rgba(255, 255, 255, 0.4);
+  padding: 0.1em 0.4em;
+`
+
+const Synopsis = styled.p`
+  font-size: 1.125rem;
+  line-height: 1.5;
+  margin-top: 1em;
+`
+
 export default function LargeContentModal({ handleCloseModal, imgUrl, item }) {
   useEffect(() => {
     const handleKeyDown = (e) => {
@@ -145,6 +174,14 @@ export default function LargeContentModal({ handleCloseModal, imgUrl, item }) {
             <CloseIcon className='fas fa-times' />
           </CloseButton>
         </Header>
+        <DetailsContainer>
+          <MetaDataContainer>
+            <MatchScore>157% Match</MatchScore>
+            <Year>2022</Year>
+            <MaturityRating>TV-{item.maturity}</MaturityRating>
+          </MetaDataContainer>
+          <Synopsis>{item.description}</Synopsis>
+        </DetailsContainer>
       </ModalContainer>
     </Background>,
     modalRoot
