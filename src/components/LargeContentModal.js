@@ -80,6 +80,11 @@ const RoundButton = styled.button`
   &:hover {
     border-color: #fff;
   }
+
+  &:focus {
+    outline: 2px solid white;
+    outline-offset: 2px;
+  }
 `
 
 const RoundButtonIcon = styled.i``
@@ -113,7 +118,7 @@ export default function LargeContentModal({ handleCloseModal, imgUrl, item }) {
           <TitleBox>
             <Title>{item.title}</Title>
             <ButtonWrapper>
-              <browseButtons.PlayButton>
+              <browseButtons.PlayButton autoFocus>
                 <browseButtons.PlayIcon className='fas fa-play' />
                 Play
               </browseButtons.PlayButton>
