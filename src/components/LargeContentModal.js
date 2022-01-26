@@ -104,6 +104,7 @@ const CloseButton = styled.button`
   cursor: pointer;
   margin-top: 1.25em;
   margin-right: 1.25em;
+  line-height: 1;
 `
 
 const CloseIcon = styled.i`
