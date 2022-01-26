@@ -6,9 +6,13 @@ const Container = styled.div`
   /* position: relative; */
   min-width: min(24%, 300px);
   padding: 0 0.2vw;
+
   cursor: pointer;
 
   transition: all 250ms;
+`
+const ContentImage = styled.img`
+  object-fit: cover;
 
   &:hover,
   &:focus-visible {
@@ -17,11 +21,8 @@ const Container = styled.div`
   }
 
   &:focus-visible {
-    outline: 0;
+    outline: auto;
   }
-`
-const ContentImage = styled.img`
-  object-fit: cover;
 `
 
 export default function ContentSlide({ item }) {
@@ -31,6 +32,13 @@ export default function ContentSlide({ item }) {
   const handleShowModal = () => {
     setDisplayModal(true)
   }
+
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter') {
+      setDisplayModal(true)
+    }
+  }
+
   const handleCloseModal = (e) => {
     e?.stopPropagation()
     // if the event object exists, we need to stop event bubbling up to Container & calling handleShowModal()
@@ -39,12 +47,13 @@ export default function ContentSlide({ item }) {
   }
 
   return (
-    <Container
-      tabIndex='0'
-      onClick={handleShowModal}
-      displayModal={displayModal}
-    >
-      <ContentImage src={imgUrl} alt={item.title} />
+    <Container onClick={handleShowModal} displayModal={displayModal}>
+      <ContentImage
+        tabIndex='0'
+        src={imgUrl}
+        alt={item.title}
+        onKeyDown={handleKeyDown}
+      />
       {displayModal && (
         <LargeContentModal
           handleCloseModal={handleCloseModal}
