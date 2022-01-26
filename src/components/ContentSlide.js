@@ -34,7 +34,10 @@ export default function ContentSlide({ item }) {
   }
   const handleCloseModal = (e) => {
     console.log('close modal')
-    e.stopPropagation()
+
+    e?.stopPropagation()
+    // if the event object exists, we need to stop event bubbling up to Container & calling handleShowModal()
+
     setDisplayModal(false)
   }
 
