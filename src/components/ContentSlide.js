@@ -29,12 +29,9 @@ export default function ContentSlide({ item }) {
   const imgUrl = `/images/${item.category}/${item.genre}/${item.slug}/small.jpg`
 
   const handleShowModal = () => {
-    console.log('open modal')
     setDisplayModal(true)
   }
   const handleCloseModal = (e) => {
-    console.log('close modal')
-
     e?.stopPropagation()
     // if the event object exists, we need to stop event bubbling up to Container & calling handleShowModal()
 
