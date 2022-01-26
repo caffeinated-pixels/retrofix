@@ -12,7 +12,7 @@ export const PlayButton = styled.button`
     background-color: rgba(255, 255, 255, 0.75);
   }
 
-  &:focus-visible {
+  &:focus {
     outline: 2px solid white;
     outline-offset: 2px;
   }
