@@ -155,7 +155,9 @@ const Synopsis = styled.p`
   margin-top: 1em;
 `
 
-export default function LargeContentModal({ handleCloseModal, imgUrl, item }) {
+export default function LargeContentModal({ handleCloseModal, item }) {
+  const imgUrl = `/images/${item.category}/${item.genre}/${item.slug}/large.jpg`
+
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.key === 'Escape') handleCloseModal()

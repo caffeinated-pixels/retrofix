@@ -27,7 +27,7 @@ const ContentImage = styled.img`
 
 export default function ContentSlide({ item }) {
   const [displayModal, setDisplayModal] = useState(false)
-  const imgUrl = `/images/${item.category}/${item.genre}/${item.slug}/small.jpg`
+  const imgUrl = `/images/${item.category}/${item.genre}/${item.slug}/thumb.jpg`
 
   const handleShowModal = () => {
     setDisplayModal(true)
@@ -55,11 +55,7 @@ export default function ContentSlide({ item }) {
         onKeyDown={handleKeyDown}
       />
       {displayModal && (
-        <LargeContentModal
-          handleCloseModal={handleCloseModal}
-          imgUrl={imgUrl}
-          item={item}
-        />
+        <LargeContentModal handleCloseModal={handleCloseModal} item={item} />
       )}
     </Container>
   )

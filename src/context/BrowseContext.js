@@ -1,5 +1,5 @@
 import { createContext, useState } from 'react'
-import unsortedStreamingContent from '../fixtures/streaming-content.json'
+import unsortedStreamingContent from '../fixtures/shows-and-films.json'
 
 export const BrowseContext = createContext()
 

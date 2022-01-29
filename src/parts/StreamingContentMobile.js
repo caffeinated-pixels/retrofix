@@ -50,7 +50,7 @@ export default function StreamingContentMobile() {
           {content.map((item) => (
             <ContentBox key={item.title}>
               <ContentImage
-                src={`/images/${item.category}/${item.genre}/${item.slug}/small.jpg`}
+                src={`/images/${item.category}/${item.genre}/${item.slug}/thumb.jpg`}
                 alt={item.title}
               />
             </ContentBox>
