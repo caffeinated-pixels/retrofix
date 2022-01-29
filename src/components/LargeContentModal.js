@@ -193,7 +193,7 @@ export default function LargeContentModal({ handleCloseModal, item }) {
         <DetailsContainer>
           <MetaDataContainer>
             <MatchScore>157% Match</MatchScore>
-            <Year>2022</Year>
+            <Year>{item.year}</Year>
             <MaturityRating>TV-{item.maturity}</MaturityRating>
           </MetaDataContainer>
           <Synopsis>{item.description}</Synopsis>
