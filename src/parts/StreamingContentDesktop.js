@@ -3,7 +3,6 @@ import styled from 'styled-components'
 import { BrowseContext } from '../context/BrowseContext'
 import { MainContainer } from '../containers/'
 import { SlideTrack } from '../components'
-import sortStreamingContent from '../helpers/sort-streaming-content'
 
 const GenreContainersWrapper = styled.div`
   position: relative;
@@ -22,22 +21,17 @@ const GenreTitle = styled.h2`
 `
 
 export default function StreamingContentDesktop() {
-  const { activeCategory, unsortedStreamingContent } = useContext(BrowseContext)
+  const { sortedContent } = useContext(BrowseContext)
 
   const genreContainers = useMemo(() => {
-    const sortedStreamingContent = sortStreamingContent(
-      unsortedStreamingContent,
-      activeCategory
-    )
-
-    return sortedStreamingContent.map(({ genre, content }) => (
+    return sortedContent.map(({ genre, content }) => (
       <GenreContainer key={genre}>
         <GenreTitle>{genre}</GenreTitle>
         <SlideTrack content={content} />
       </GenreContainer>
     ))
-  }, [activeCategory, unsortedStreamingContent])
-  // useMemo will only rerender the genreContainers when activeCategory changes
+  }, [sortedContent])
+  // useMemo will only rerender the genreContainers when sortedContent changes
 
   return (
     <MainContainer>

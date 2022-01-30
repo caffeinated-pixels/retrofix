@@ -2,7 +2,6 @@ import { useContext, useMemo } from 'react'
 import styled from 'styled-components'
 import { BrowseContext } from '../context/BrowseContext'
 import { MainContainer } from '../containers/'
-import sortStreamingContent from '../helpers/sort-streaming-content'
 
 const GenreContainersWrapper = styled.div`
   padding-top: 60px;
@@ -35,15 +34,10 @@ const ContentImage = styled.img`
 `
 
 export default function StreamingContentMobile() {
-  const { activeCategory, unsortedStreamingContent } = useContext(BrowseContext)
+  const { sortedContent } = useContext(BrowseContext)
 
   const genreContainers = useMemo(() => {
-    const sortedStreamingContent = sortStreamingContent(
-      unsortedStreamingContent,
-      activeCategory
-    )
-
-    return sortedStreamingContent.map(({ genre, content }) => (
+    return sortedContent.map(({ genre, content }) => (
       <GenreContainer key={genre}>
         <GenreTitle>{genre}</GenreTitle>
         <GenreRow>
@@ -58,8 +52,8 @@ export default function StreamingContentMobile() {
         </GenreRow>
       </GenreContainer>
     ))
-  }, [activeCategory, unsortedStreamingContent])
-  // useMemo will only rerender the genreContainers when activeCategory changes
+  }, [sortedContent])
+  // useMemo will only rerender the genreContainers when sortedContent changes
 
   return (
     <MainContainer>
