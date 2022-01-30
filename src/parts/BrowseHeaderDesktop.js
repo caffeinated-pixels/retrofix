@@ -1,12 +1,12 @@
-import { useState } from 'react'
-// import { BrowseContext } from '../context/BrowseContext'
+import { useState, useContext } from 'react'
+import { BrowseContext } from '../context/BrowseContext'
 import { Billboard } from './'
 import { BrowseHeader, SiteLogo, NavDropDown } from '../components'
 import { SemanticHeader } from '../containers'
 
 export default function BrowseHeaderDesktop() {
   const [isSearchOpen, setIsSearchOpen] = useState(false)
-  // const { isMenuOpen, activeCategory, setCategory } = useContext(BrowseContext)
+  const { activeCategory, setCategory } = useContext(BrowseContext)
 
   const toggleSearch = () => {
     setIsSearchOpen((prevState) => !prevState)
@@ -22,15 +22,21 @@ export default function BrowseHeaderDesktop() {
 
           <BrowseHeader.NavPrimary>
             <BrowseHeader.NavPrimaryItem>
-              <BrowseHeader.NavPrimaryBtn>Home</BrowseHeader.NavPrimaryBtn>
+              <BrowseHeader.NavPrimaryBtn onClick={() => setCategory('home')}>
+                Home
+              </BrowseHeader.NavPrimaryBtn>
             </BrowseHeader.NavPrimaryItem>
 
             <BrowseHeader.NavPrimaryItem>
-              <BrowseHeader.NavPrimaryBtn>Films</BrowseHeader.NavPrimaryBtn>
+              <BrowseHeader.NavPrimaryBtn onClick={() => setCategory('films')}>
+                Films
+              </BrowseHeader.NavPrimaryBtn>
             </BrowseHeader.NavPrimaryItem>
 
             <BrowseHeader.NavPrimaryItem>
-              <BrowseHeader.NavPrimaryBtn>Series</BrowseHeader.NavPrimaryBtn>
+              <BrowseHeader.NavPrimaryBtn onClick={() => setCategory('series')}>
+                Series
+              </BrowseHeader.NavPrimaryBtn>
             </BrowseHeader.NavPrimaryItem>
           </BrowseHeader.NavPrimary>
 
