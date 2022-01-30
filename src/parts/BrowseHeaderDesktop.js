@@ -22,19 +22,28 @@ export default function BrowseHeaderDesktop() {
 
           <BrowseHeader.NavPrimary>
             <BrowseHeader.NavPrimaryItem>
-              <BrowseHeader.NavPrimaryBtn onClick={() => setCategory('home')}>
+              <BrowseHeader.NavPrimaryBtn
+                isActive={activeCategory === 'home'}
+                onClick={() => setCategory('home')}
+              >
                 Home
               </BrowseHeader.NavPrimaryBtn>
             </BrowseHeader.NavPrimaryItem>
 
             <BrowseHeader.NavPrimaryItem>
-              <BrowseHeader.NavPrimaryBtn onClick={() => setCategory('films')}>
+              <BrowseHeader.NavPrimaryBtn
+                isActive={activeCategory === 'films'}
+                onClick={() => setCategory('films')}
+              >
                 Films
               </BrowseHeader.NavPrimaryBtn>
             </BrowseHeader.NavPrimaryItem>
 
             <BrowseHeader.NavPrimaryItem>
-              <BrowseHeader.NavPrimaryBtn onClick={() => setCategory('series')}>
+              <BrowseHeader.NavPrimaryBtn
+                isActive={activeCategory === 'series'}
+                onClick={() => setCategory('series')}
+              >
                 Series
               </BrowseHeader.NavPrimaryBtn>
             </BrowseHeader.NavPrimaryItem>

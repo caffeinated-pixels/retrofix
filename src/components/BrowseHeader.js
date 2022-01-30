@@ -54,7 +54,9 @@ const NavPrimaryItem = styled.li`
 `
 const NavPrimaryBtn = styled(BurgerButton)`
   margin: 0;
-  color: inherit;
+  color: #e5e5e5;
+  font-weight: ${({ isActive }) => (isActive ? '700' : '400')};
+  font-size: ${({ isActive }) => (isActive ? '0.975rem' : 'inherit')};
   transition: color 0.4s;
 
   &:hover {
@@ -149,8 +151,12 @@ BrowseHeader.NavPrimaryItem = ({ children, ...restProps }) => {
   return <NavPrimaryItem {...restProps}>{children}</NavPrimaryItem>
 }
 
-BrowseHeader.NavPrimaryBtn = ({ children, ...restProps }) => {
-  return <NavPrimaryBtn {...restProps}>{children}</NavPrimaryBtn>
+BrowseHeader.NavPrimaryBtn = ({ children, isActive, ...restProps }) => {
+  return (
+    <NavPrimaryBtn isActive={isActive} {...restProps}>
+      {children}
+    </NavPrimaryBtn>
+  )
 }
 
 BrowseHeader.NavSecondary = ({ children, ...restProps }) => {
