@@ -8,6 +8,7 @@ export default function BrowseContextProvider({ children }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [activeCategory, setActiveCategory] = useState('home')
   const [sortedContent, setSortedContent] = useState([])
+  const [randomShow, setRandomShow] = useState({})
 
   useEffect(() => {
     const sortedStreamingContent = sortStreamingContent(
@@ -17,6 +18,16 @@ export default function BrowseContextProvider({ children }) {
 
     setSortedContent(sortedStreamingContent)
   }, [activeCategory])
+
+  useEffect(() => {
+    if (sortedContent.length > 0) {
+      const randomGenreIndex = Math.floor(Math.random() * sortedContent.length)
+      const randomGenreArr = sortedContent[randomGenreIndex].content
+      const randomShowIndex = Math.floor(Math.random() * randomGenreArr.length)
+      const randomShow = randomGenreArr[randomShowIndex]
+      setRandomShow(randomShow)
+    }
+  }, [sortedContent])
 
   const toggleMenu = () => {
     setIsMenuOpen((prevState) => !prevState)
@@ -36,6 +47,7 @@ export default function BrowseContextProvider({ children }) {
         toggleMenu,
         setCategory,
         sortedContent,
+        randomShow,
       }}
     >
       {children}
