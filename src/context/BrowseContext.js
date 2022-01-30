@@ -14,6 +14,7 @@ export default function BrowseContextProvider({ children }) {
   const setCategory = (category) => {
     setActiveCategory(category)
     toggleMenu()
+    // TODO: only call toggleMenu for mobile layout
   }
 
   return (
