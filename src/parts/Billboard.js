@@ -1,4 +1,6 @@
+import { useContext } from 'react'
 import styled from 'styled-components'
+import { BrowseContext } from '../context/BrowseContext'
 import { browseButtons } from '../components'
 
 const Container = styled.div`
@@ -6,7 +8,7 @@ const Container = styled.div`
   width: 100%;
   height: 56.25vw;
 
-  background-image: url('./images/misc/joker1.jpg');
+  background-image: url(${({ imgUrl }) => imgUrl});
   background-size: cover;
   background-position: center;
 
@@ -65,18 +67,17 @@ const ButtonWrapper = styled.div`
   margin-top: 1.5vw;
 `
 export default function Billboard() {
+  const { randomShow } = useContext(BrowseContext)
+  const imgUrl = randomShow.slug
+    ? `/images/${randomShow.category}/${randomShow.genre}/${randomShow.slug}/large.jpg`
+    : null
+
   return (
-    <Container>
+    <Container className='container' imgUrl={imgUrl}>
       <Vignette>
         <FeaturedContainer>
-          <FeaturedTitle>Joker</FeaturedTitle>
-          <FeaturedSynopsis>
-            Forever alone in a crowd, failed comedian Arthur Fleck seeks
-            connection as he walks the streets of Gotham City. Arthur wears two
-            masks -- the one he paints for his day job as a clown, and the guise
-            he projects in a futile attempt to feel like he's part of the world
-            around him.
-          </FeaturedSynopsis>
+          <FeaturedTitle>{randomShow.title}</FeaturedTitle>
+          <FeaturedSynopsis>{randomShow.description}</FeaturedSynopsis>
           <ButtonWrapper>
             <browseButtons.PlayButton>
               <browseButtons.PlayIcon className='fas fa-play' />
