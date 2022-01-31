@@ -1,5 +1,5 @@
-import { useState } from 'react'
 import styled from 'styled-components'
+import useLargeModal from '../hooks/useLargeModal'
 import { LargeContentModal } from './'
 
 const Container = styled.div`
@@ -26,25 +26,9 @@ const ContentImage = styled.img`
 `
 
 export default function ContentSlide({ item }) {
-  const [displayModal, setDisplayModal] = useState(false)
+  const { displayModal, handleShowModal, handleKeyDown, handleCloseModal } =
+    useLargeModal()
   const imgUrl = `/images/${item.category}/${item.genre}/${item.slug}/thumb.jpg`
-
-  const handleShowModal = () => {
-    setDisplayModal(true)
-  }
-
-  const handleKeyDown = (e) => {
-    if (e.key === 'Enter') {
-      setDisplayModal(true)
-    }
-  }
-
-  const handleCloseModal = (e) => {
-    e?.stopPropagation()
-    // if the event object exists, we need to stop event bubbling up to Container & calling handleShowModal()
-
-    setDisplayModal(false)
-  }
 
   return (
     <Container onClick={handleShowModal} displayModal={displayModal}>
