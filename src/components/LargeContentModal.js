@@ -142,7 +142,7 @@ const MatchScore = styled.div`
   font-weight: 700;
 `
 
-const Year = styled.div``
+const Metadata = styled.div``
 
 const MaturityRating = styled.div`
   border: solid 1px rgba(255, 255, 255, 0.4);
@@ -193,8 +193,9 @@ export default function LargeContentModal({ handleCloseModal, item }) {
         <DetailsContainer>
           <MetaDataContainer>
             <MatchScore>157% Match</MatchScore>
-            <Year>{item.year}</Year>
+            <Metadata>{item.year}</Metadata>
             <MaturityRating>TV-{item.maturity}</MaturityRating>
+            <Metadata>{item.length}</Metadata>
           </MetaDataContainer>
           <Synopsis>{item.description}</Synopsis>
         </DetailsContainer>
