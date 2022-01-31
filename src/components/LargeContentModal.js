@@ -23,7 +23,7 @@ const Background = styled.div`
 const ModalContainer = styled.div`
   background-color: ${colors.bgBrowseDarkGrey};
   background-color: #181818;
-  width: min(90%, 1100px);
+  width: min(98%, 1100px);
   border-radius: 6px;
   box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.75);
 
@@ -65,7 +65,7 @@ const Header = styled.div`
 const TitleBox = styled.div`
   align-self: flex-end;
   z-index: 10;
-  width: 60%;
+  width: 70%;
   margin-left: 3em;
   margin-bottom: 3em;
 `
@@ -126,9 +126,14 @@ const CloseIcon = styled.i`
 `
 
 const DetailsContainer = styled.div`
-  margin-left: 3em;
+  display: flex;
+  gap: 2em;
+  padding: 0 3em;
+`
+
+const LeftDetailsBox = styled.div`
   margin-bottom: 3em;
-  width: 60%;
+  width: 70%;
 `
 
 const MetaDataContainer = styled.div`
@@ -158,6 +163,22 @@ const Synopsis = styled.p`
   font-size: 1.125rem;
   line-height: 1.5;
   margin-top: 1em;
+`
+
+const RightDetailsBox = styled.div`
+  width: 30%;
+  line-height: 22px;
+`
+
+const People = styled.div`
+  font-size: 0.875rem;
+  margin-bottom: 1em;
+  margin-right: 0.5em;
+
+  &::before {
+    content: '${({ firstWord }) => firstWord}';
+    color: #777;
+  }
 `
 
 export default function LargeContentModal({ handleCloseModal, item }) {
@@ -196,14 +217,22 @@ export default function LargeContentModal({ handleCloseModal, item }) {
           </CloseButton>
         </Header>
         <DetailsContainer>
-          <MetaDataContainer>
-            <MatchScore>157% Match</MatchScore>
-            <Metadata>{item.year}</Metadata>
-            <MaturityRating>TV-{item.maturity}</MaturityRating>
-            <Metadata>{item.length}</Metadata>
-            <Resolution>64K</Resolution>
-          </MetaDataContainer>
-          <Synopsis>{item.description}</Synopsis>
+          <LeftDetailsBox>
+            <MetaDataContainer>
+              <MatchScore>157% Match</MatchScore>
+              <Metadata>{item.year}</Metadata>
+              <MaturityRating>TV-{item.maturity}</MaturityRating>
+              <Metadata>{item.length}</Metadata>
+              <Resolution>64K</Resolution>
+            </MetaDataContainer>
+            <Synopsis>{item.description}</Synopsis>
+          </LeftDetailsBox>
+          <RightDetailsBox>
+            {item.director && (
+              <People firstWord='Director: '>{item.director}</People>
+            )}
+            {item.cast && <People firstWord='Cast: '>{item.cast}</People>}
+          </RightDetailsBox>
         </DetailsContainer>
       </ModalContainer>
     </Background>,
