@@ -44,7 +44,9 @@ const DetailsContainer = styled.div`
   width: 100vw;
 `
 
-const MetadataBox = styled.div``
+const MetadataBox = styled.div`
+  background-image: linear-gradient(to bottom, transparent, #000);
+`
 
 const ShowTitle = styled.h1`
   text-align: center;
@@ -55,7 +57,7 @@ const ShowInfoBox = styled.div`
   justify-content: center;
   align-items: center;
   gap: 0.3em;
-  margin-bottom: 2em;
+  padding-bottom: 2em;
   font-size: 0.75rem;
   color: #999;
 `
@@ -67,7 +69,9 @@ const MaturityRating = styled.div`
   padding: 0.1em 0.2em 0;
 `
 
-const AppLaunchBox = styled.div``
+const AppLaunchBox = styled.div`
+  background-color: #000;
+`
 
 const WatchNetflix = styled.p`
   text-align: center;
