@@ -1,7 +1,8 @@
 import { useContext } from 'react'
 import styled from 'styled-components'
+import useLargeModal from '../hooks/useLargeModal'
 import { BrowseContext } from '../context/BrowseContext'
-import { browseButtons } from '../components'
+import { browseButtons, LargeContentModal } from '../components'
 
 const Container = styled.div`
   position: relative;
@@ -79,6 +80,8 @@ const MaturityRating = styled.div`
 
 export default function Billboard() {
   const { randomShow } = useContext(BrowseContext)
+  const { displayModal, handleShowModal, handleCloseModal } = useLargeModal()
+
   const imgUrl = randomShow.slug
     ? `/images/${randomShow.category}/${randomShow.genre}/${randomShow.slug}/large.jpg`
     : null
@@ -94,7 +97,7 @@ export default function Billboard() {
               <browseButtons.PlayIcon className='fas fa-play' />
               Play
             </browseButtons.PlayButton>
-            <browseButtons.MoreInfoButton>
+            <browseButtons.MoreInfoButton onClick={handleShowModal}>
               <browseButtons.InfoIcon className='fas fa-info-circle' />
               More Info
             </browseButtons.MoreInfoButton>
@@ -102,6 +105,12 @@ export default function Billboard() {
           <MaturityRating>TV-{randomShow.maturity}</MaturityRating>
         </FeaturedContainer>
       </Vignette>
+      {displayModal && (
+        <LargeContentModal
+          handleCloseModal={handleCloseModal}
+          item={randomShow}
+        />
+      )}
     </Container>
   )
 }
