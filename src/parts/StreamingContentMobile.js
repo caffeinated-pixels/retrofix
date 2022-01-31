@@ -1,7 +1,9 @@
 import { useContext, useMemo } from 'react'
 import styled from 'styled-components'
+import { useNavigate } from 'react-router-dom'
 import { BrowseContext } from '../context/BrowseContext'
 import { MainContainer } from '../containers/'
+import { GET_THE_APP } from '../constants/routes'
 
 const GenreContainersWrapper = styled.div`
   padding-top: 60px;
@@ -35,6 +37,7 @@ const ContentImage = styled.img`
 
 export default function StreamingContentMobile() {
   const { sortedContent } = useContext(BrowseContext)
+  const navigate = useNavigate()
 
   const genreContainers = useMemo(() => {
     return sortedContent.map(({ genre, content }) => (
@@ -42,7 +45,10 @@ export default function StreamingContentMobile() {
         <GenreTitle>{genre}</GenreTitle>
         <GenreRow>
           {content.map((item) => (
-            <ContentBox key={item.title}>
+            <ContentBox
+              key={item.title}
+              onClick={() => navigate(GET_THE_APP, { state: item })}
+            >
               <ContentImage
                 src={`/images/${item.category}/${item.genre}/${item.slug}/thumb.jpg`}
                 alt={item.title}
