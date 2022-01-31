@@ -66,6 +66,16 @@ const FeaturedSynopsis = styled.p`
 const ButtonWrapper = styled.div`
   margin-top: 1.5vw;
 `
+
+const MaturityRating = styled.div`
+  position: absolute;
+  right: 0;
+  background-color: rgba(51, 51, 51, 0.6);
+  padding: 0.5vw 3.5vw 0.5vw 0.8vw;
+  border-left: solid 3px #dcdcdc;
+  font-size: 1.1vw;
+`
+
 export default function Billboard() {
   const { randomShow } = useContext(BrowseContext)
   const imgUrl = randomShow.slug
@@ -88,6 +98,7 @@ export default function Billboard() {
               More Info
             </browseButtons.MoreInfoButton>
           </ButtonWrapper>
+          <MaturityRating>TV-{randomShow.maturity}</MaturityRating>
         </FeaturedContainer>
       </Vignette>
     </Container>
