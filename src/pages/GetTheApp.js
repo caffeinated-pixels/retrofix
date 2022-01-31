@@ -30,7 +30,7 @@ const LogoWrapper = styled.div`
   width: 120px;
 `
 
-const Main = styled.main`
+const ShowImage = styled.div`
   height: 80vh;
   background-image: url(${({ imgUrl }) => imgUrl});
   background-position: 50% 0;
@@ -59,12 +59,12 @@ const ShowInfoBox = styled.div`
   color: #999;
 `
 
+const Info = styled.div``
+
 const MaturityRating = styled.div`
   border: 1px solid #4c4c44;
   padding: 0.1em 0.2em 0;
 `
-
-const Info = styled.div``
 
 export default function GetTheApp() {
   const { state: show } = useLocation()
@@ -77,7 +77,7 @@ export default function GetTheApp() {
           <SiteLogo />
         </LogoWrapper>
       </Header>
-      <Main imgUrl={imgUrl}></Main>
+      <ShowImage imgUrl={imgUrl}></ShowImage>
       <DetailsContainer>
         <MetadataBox>
           <ShowTitle>{show.title}</ShowTitle>
