@@ -8,6 +8,7 @@ import {
   PlanForm,
   Signup,
   Profile,
+  GetTheApp,
 } from './pages'
 import * as ROUTES from './constants/routes'
 
@@ -23,6 +24,7 @@ function App() {
         <Route path={ROUTES.REG_FORM} element={<RegForm />} />
         <Route path={ROUTES.PLAN_FORM} element={<PlanForm />} />
         <Route path={ROUTES.PROFILE} element={<Profile />} />
+        <Route path={ROUTES.GET_THE_APP} element={<GetTheApp />} />
       </Routes>
     </Router>
   )

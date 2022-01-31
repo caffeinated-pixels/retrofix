@@ -8,3 +8,5 @@ export { default as RegForm } from './RegForm'
 export { default as PlanForm } from './PlanForm'
 
 export { default as Profile } from './Profile'
+
+export { default as GetTheApp } from './GetTheApp'
