@@ -147,6 +147,11 @@ const Metadata = styled.div``
 const MaturityRating = styled.div`
   border: solid 1px rgba(255, 255, 255, 0.4);
   padding: 0.1em 0.4em;
+  line-height: 1;
+`
+const Resolution = styled(MaturityRating)`
+  border-radius: 3px;
+  font-size: 0.65rem;
 `
 
 const Synopsis = styled.p`
@@ -196,6 +201,7 @@ export default function LargeContentModal({ handleCloseModal, item }) {
             <Metadata>{item.year}</Metadata>
             <MaturityRating>TV-{item.maturity}</MaturityRating>
             <Metadata>{item.length}</Metadata>
+            <Resolution>64K</Resolution>
           </MetaDataContainer>
           <Synopsis>{item.description}</Synopsis>
         </DetailsContainer>
