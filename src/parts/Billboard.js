@@ -49,7 +49,7 @@ const Vignette = styled.div`
 `
 
 const FeaturedContainer = styled.div`
-  width: calc(100vw * 0.36); // 36% of viewport width
+  width: max(100vw * 0.36, 300px);
   margin-left: calc(100vw * 0.04);
 `
 
