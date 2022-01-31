@@ -232,6 +232,12 @@ export default function LargeContentModal({ handleCloseModal, item }) {
               <People firstWord='Director: '>{item.director}</People>
             )}
             {item.cast && <People firstWord='Cast: '>{item.cast}</People>}
+            {item.cast && (
+              <People firstWord='Genres: '>
+                {item.genre}
+                {item.subgenres ? `, ${item.subgenres}` : ''}
+              </People>
+            )}
           </RightDetailsBox>
         </DetailsContainer>
       </ModalContainer>
