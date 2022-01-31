@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components'
 import { useLocation } from 'react-router-dom'
 import { SiteLogo } from '../components'
+import { HOME, BROWSE } from '../constants/routes'
 import { colors } from '../styles/style-constants'
 
 const PageContainer = styled.div`
@@ -30,6 +31,8 @@ const Header = styled.header`
 const LogoWrapper = styled.div`
   width: 120px;
 `
+
+const LogoLink = styled.a``
 
 const ShowImage = styled.div`
   height: 80vh;
@@ -119,7 +122,9 @@ export default function GetTheApp() {
     <PageContainer>
       <Header>
         <LogoWrapper>
-          <SiteLogo />
+          <LogoLink href={HOME}>
+            <SiteLogo />
+          </LogoLink>
         </LogoWrapper>
       </Header>
       <ShowImage imgUrl={imgUrl}></ShowImage>
@@ -136,7 +141,7 @@ export default function GetTheApp() {
           <WatchNetflix>Watch NetFlix on your phone or tablet</WatchNetflix>
           <AppLinkButton>Get the free app</AppLinkButton>
         </AppLaunchBox>
-        <ReturnLinkButton>
+        <ReturnLinkButton href={BROWSE}>
           <ReturnIcon className='fas fa-share' />
           Back to Browse Page
         </ReturnLinkButton>
