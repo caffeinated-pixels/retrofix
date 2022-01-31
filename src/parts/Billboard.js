@@ -70,6 +70,7 @@ const ButtonWrapper = styled.div`
 const MaturityRating = styled.div`
   position: absolute;
   right: 0;
+  transform: translateY(-100%);
   background-color: rgba(51, 51, 51, 0.6);
   padding: 0.5vw 3.5vw 0.5vw 0.8vw;
   border-left: solid 3px #dcdcdc;
