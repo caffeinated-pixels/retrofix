@@ -97,7 +97,7 @@ const AppLinkButton = styled.a`
   border-radius: 0.1em;
   margin: 1em auto;
   padding: 1em 0;
-  width: 80%;
+  width: min(80%, 400px);
 `
 
 const ReturnLinkButton = styled.a`
