@@ -1,11 +1,18 @@
-import { useContext } from 'react'
+import { useContext, useState, useEffect } from 'react'
 import { BrowseContext } from '../context/BrowseContext'
 import { BrowseHeader, SiteLogo, NavSliderPanel } from '../components'
 import { SemanticHeader } from '../containers'
 
 export default function BrowseHeaderMobile() {
-  const { toggleMenu, isMenuOpen, activeCategory, setCategory } =
-    useContext(BrowseContext)
+  const { activeCategory, setCategory } = useContext(BrowseContext)
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+
+  const toggleMenu = () => {
+    setIsMenuOpen((prevState) => !prevState)
+  }
+
+  useEffect(() => toggleMenu, [activeCategory])
+
   return (
     <SemanticHeader>
       <BrowseHeader>
