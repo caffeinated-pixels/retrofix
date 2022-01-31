@@ -1,6 +1,7 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { useLocation } from 'react-router-dom'
 import { SiteLogo } from '../components'
+import { colors } from '../styles/style-constants'
 
 const PageContainer = styled.div`
   position: relative;
@@ -66,6 +67,46 @@ const MaturityRating = styled.div`
   padding: 0.1em 0.2em 0;
 `
 
+const AppLaunchBox = styled.div``
+
+const WatchNetflix = styled.p`
+  text-align: center;
+  font-size: 4vh;
+  font-weight: 700;
+  margin: 0 1em;
+`
+
+const buttonBaseCss = css`
+  display: block;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  color: inherit;
+`
+
+const AppLinkButton = styled.a`
+  ${buttonBaseCss}
+  background: ${colors.netflixRed};
+  border-radius: 0.1em;
+  margin: 1em auto;
+  padding: 1em 0;
+  width: 80%;
+`
+
+const ReturnLinkButton = styled.a`
+  ${buttonBaseCss}
+  width: 100vw;
+  background: #141414;
+  padding: 1.2em 0;
+  border-top: 1px solid #1c1c1c;
+  font-size: 2.5vh;
+  line-height: 2;
+`
+
+const ReturnIcon = styled.i`
+  margin-right: 0.5em;
+`
+
 export default function GetTheApp() {
   const { state: show } = useLocation()
   const imgUrl = `/images/${show.category}/${show.genre}/${show.slug}/large.jpg`
@@ -87,6 +128,14 @@ export default function GetTheApp() {
             <Info>{show.length}</Info>
           </ShowInfoBox>
         </MetadataBox>
+        <AppLaunchBox>
+          <WatchNetflix>Watch NetFlix on your phone or tablet</WatchNetflix>
+          <AppLinkButton>Get the free app</AppLinkButton>
+        </AppLaunchBox>
+        <ReturnLinkButton>
+          <ReturnIcon className='fas fa-share' />
+          Back to Browse Page
+        </ReturnLinkButton>
       </DetailsContainer>
     </PageContainer>
   )
