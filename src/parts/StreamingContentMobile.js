@@ -58,7 +58,7 @@ export default function StreamingContentMobile() {
         </GenreRow>
       </GenreContainer>
     ))
-  }, [sortedContent])
+  }, [sortedContent, navigate])
   // useMemo will only rerender the genreContainers when sortedContent changes
 
   return (
