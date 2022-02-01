@@ -10,3 +10,4 @@ export { default as PlanForm } from './PlanForm'
 export { default as Profile } from './Profile'
 
 export { default as GetTheApp } from './GetTheApp'
+export { default as SearchPage } from './SearchPage'

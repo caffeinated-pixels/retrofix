@@ -9,6 +9,7 @@ import {
   Signup,
   Profile,
   GetTheApp,
+  SearchPage,
 } from './pages'
 import * as ROUTES from './constants/routes'
 
@@ -25,6 +26,7 @@ function App() {
         <Route path={ROUTES.PLAN_FORM} element={<PlanForm />} />
         <Route path={ROUTES.PROFILE} element={<Profile />} />
         <Route path={ROUTES.GET_THE_APP} element={<GetTheApp />} />
+        <Route path={ROUTES.SEARCH} element={<SearchPage />} />
       </Routes>
     </Router>
   )

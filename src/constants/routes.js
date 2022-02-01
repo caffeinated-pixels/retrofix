@@ -11,3 +11,4 @@ export const SIGN_IN = '/signin'
 export const PROFILE = '/profile'
 
 export const GET_THE_APP = '/get-the-app'
+export const SEARCH = '/search'
