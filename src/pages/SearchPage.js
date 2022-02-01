@@ -1,3 +1,8 @@
+import useWindowWidth from '../hooks/useWindowWidth'
+import { SearchMobileLayout, SearchDesktopLayout } from '../parts'
+
 export default function SearchPage() {
-  return <h1>I am the search page</h1>
+  const width = useWindowWidth()
+
+  return <>{width < 768 ? <SearchMobileLayout /> : <SearchDesktopLayout />}</>
 }

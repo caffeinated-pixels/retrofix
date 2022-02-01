@@ -14,3 +14,6 @@ export { default as BrowseHeaderDesktop } from './BrowseHeaderDesktop'
 export { default as Billboard } from './Billboard'
 export { default as StreamingContentMobile } from './StreamingContentMobile'
 export { default as StreamingContentDesktop } from './StreamingContentDesktop'
+
+export { default as SearchMobileLayout } from './SearchMobileLayout'
+export { default as SearchDesktopLayout } from './SearchDesktopLayout'
