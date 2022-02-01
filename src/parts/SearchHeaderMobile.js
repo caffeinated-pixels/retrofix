@@ -2,7 +2,11 @@ import { useState } from 'react'
 import { browseHeader, SiteLogo, NavSliderPanel } from '../components'
 import { SemanticHeader } from '../containers'
 
-export default function SearchHeaderMobile() {
+export default function SearchHeaderMobile({
+  searchInput,
+  handleSearchInput,
+  handleSubmit,
+}) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const toggleMenu = () => {
@@ -24,8 +28,12 @@ export default function SearchHeaderMobile() {
             <SiteLogo />
           </browseHeader.LogoWrapperMobile>
 
-          <browseHeader.SearchForm>
-            <browseHeader.SearchInput placeholder='Search' />
+          <browseHeader.SearchForm onSubmit={handleSubmit}>
+            <browseHeader.SearchInput
+              placeholder='Search'
+              value={searchInput}
+              onChange={handleSearchInput}
+            />
           </browseHeader.SearchForm>
           <NavSliderPanel isMenuOpen={isMenuOpen} />
         </browseHeader.Navbar>

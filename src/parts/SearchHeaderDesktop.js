@@ -4,6 +4,7 @@ import { SemanticHeader } from '../containers'
 export default function SearchHeaderDesktop({
   searchInput,
   handleSearchInput,
+  handleSubmit,
 }) {
   return (
     <SemanticHeader>
@@ -29,12 +30,14 @@ export default function SearchHeaderDesktop({
 
           <browseHeader.NavSecondary>
             <browseHeader.NavSecondaryItem>
-              <browseHeader.SearchForm>
+              <browseHeader.SearchForm onSubmit={handleSubmit}>
                 <browseHeader.SearchWrapper isSearchOpen={true}>
                   <browseHeader.SearchIcon />
                   <browseHeader.SearchInputDesktop
                     isSearchOpen={true}
                     placeholder='Search'
+                    value={searchInput}
+                    onChange={handleSearchInput}
                   />
                 </browseHeader.SearchWrapper>
               </browseHeader.SearchForm>
