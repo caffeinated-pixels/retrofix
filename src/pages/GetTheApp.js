@@ -53,6 +53,7 @@ const MetadataBox = styled.div`
 
 const ShowTitle = styled.h1`
   text-align: center;
+  margin-bottom: 0.33em;
 `
 
 const ShowInfoBox = styled.div`
