@@ -41,8 +41,6 @@ const results = unsortedStreamingContent.map((show, i) => {
   )
 })
 
-console.log(results)
-
 export default function SearchResultsLayout() {
   return (
     <LayoutContainer>
