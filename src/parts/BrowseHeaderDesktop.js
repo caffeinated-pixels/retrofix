@@ -53,7 +53,10 @@ export default function BrowseHeaderDesktop() {
             <browseHeader.NavSecondaryItem>
               <browseHeader.SearchForm>
                 <browseHeader.SearchWrapper isSearchOpen={isSearchOpen}>
-                  <browseHeader.SearchIcon onClick={toggleSearch} />
+                  <browseHeader.SearchIcon
+                    className='fas fa-search'
+                    onClick={toggleSearch}
+                  />
                   <browseHeader.SearchInputDesktop
                     isSearchOpen={isSearchOpen}
                     placeholder='Search'
@@ -63,7 +66,7 @@ export default function BrowseHeaderDesktop() {
             </browseHeader.NavSecondaryItem>
 
             <browseHeader.NavSecondaryItem>
-              <browseHeader.BellIcon />
+              <browseHeader.BellIcon className='fas fa-bell' />
             </browseHeader.NavSecondaryItem>
 
             <browseHeader.NavSecondaryItem>
