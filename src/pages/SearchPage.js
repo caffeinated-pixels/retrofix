@@ -8,6 +8,7 @@ import {
   Footer,
 } from '../parts/'
 import { footerHomeContent } from '../fixtures/footer-content'
+import unsortedStreamingContent from '../fixtures/shows-and-films.json'
 
 export default function SearchPage() {
   const [searchInput, setSearchInput] = useState('')
@@ -37,7 +38,7 @@ export default function SearchPage() {
           handleSearchInput={handleSearchInput}
         />
       )}
-      <SearchResultsLayout />
+      <SearchResultsLayout searchResults={unsortedStreamingContent} />
       <Footer footerContent={footerHomeContent} increasedPadding />
     </BrowsePageContainer>
   )

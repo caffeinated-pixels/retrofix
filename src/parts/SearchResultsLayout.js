@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import unsortedStreamingContent from '../fixtures/shows-and-films.json'
 
 const LayoutContainer = styled.div`
   padding: 70px 4vw 0;
@@ -31,17 +30,17 @@ const ContentImage = styled.img`
   }
 `
 
-const results = unsortedStreamingContent.map((show, i) => {
-  const imgUrl = `/images/${show.category}/${show.genre}/${show.slug}/thumb.jpg`
+export default function SearchResultsLayout({ searchResults }) {
+  const results = searchResults.map((show, i) => {
+    const imgUrl = `/images/${show.category}/${show.genre}/${show.slug}/thumb.jpg`
 
-  return (
-    <Container key={`result-${i}`}>
-      <ContentImage tabIndex='0' src={imgUrl} alt={show.title} />
-    </Container>
-  )
-})
+    return (
+      <Container key={`result-${i}`}>
+        <ContentImage tabIndex='0' src={imgUrl} alt={show.title} />
+      </Container>
+    )
+  })
 
-export default function SearchResultsLayout() {
   return (
     <LayoutContainer>
       <ResultsGallery>{results}</ResultsGallery>
