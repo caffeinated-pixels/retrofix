@@ -1,7 +1,7 @@
 import { useState, useContext } from 'react'
 import { BrowseContext } from '../context/BrowseContext'
 import { Billboard } from './'
-import { BrowseHeader, SiteLogo, NavDropDown } from '../components'
+import { browseHeader, SiteLogo, NavDropDown } from '../components'
 import { SemanticHeader } from '../containers'
 
 export default function BrowseHeaderDesktop() {
@@ -14,65 +14,65 @@ export default function BrowseHeaderDesktop() {
 
   return (
     <SemanticHeader>
-      <BrowseHeader>
-        <BrowseHeader.Navbar padding='0 4vw'>
-          <BrowseHeader.LogoWrapperDesktop>
+      <browseHeader.Container>
+        <browseHeader.Navbar padding='0 4vw'>
+          <browseHeader.LogoWrapperDesktop>
             <SiteLogo />
-          </BrowseHeader.LogoWrapperDesktop>
+          </browseHeader.LogoWrapperDesktop>
 
-          <BrowseHeader.NavPrimary>
-            <BrowseHeader.NavPrimaryItem>
-              <BrowseHeader.NavPrimaryBtn
+          <browseHeader.NavPrimary>
+            <browseHeader.NavPrimaryItem>
+              <browseHeader.NavPrimaryBtn
                 isActive={activeCategory === 'home'}
                 onClick={() => setCategory('home')}
               >
                 Home
-              </BrowseHeader.NavPrimaryBtn>
-            </BrowseHeader.NavPrimaryItem>
+              </browseHeader.NavPrimaryBtn>
+            </browseHeader.NavPrimaryItem>
 
-            <BrowseHeader.NavPrimaryItem>
-              <BrowseHeader.NavPrimaryBtn
+            <browseHeader.NavPrimaryItem>
+              <browseHeader.NavPrimaryBtn
                 isActive={activeCategory === 'films'}
                 onClick={() => setCategory('films')}
               >
                 Films
-              </BrowseHeader.NavPrimaryBtn>
-            </BrowseHeader.NavPrimaryItem>
+              </browseHeader.NavPrimaryBtn>
+            </browseHeader.NavPrimaryItem>
 
-            <BrowseHeader.NavPrimaryItem>
-              <BrowseHeader.NavPrimaryBtn
+            <browseHeader.NavPrimaryItem>
+              <browseHeader.NavPrimaryBtn
                 isActive={activeCategory === 'series'}
                 onClick={() => setCategory('series')}
               >
                 Series
-              </BrowseHeader.NavPrimaryBtn>
-            </BrowseHeader.NavPrimaryItem>
-          </BrowseHeader.NavPrimary>
+              </browseHeader.NavPrimaryBtn>
+            </browseHeader.NavPrimaryItem>
+          </browseHeader.NavPrimary>
 
-          <BrowseHeader.NavSecondary>
-            <BrowseHeader.NavSecondaryItem>
-              <BrowseHeader.SearchForm>
-                <BrowseHeader.SearchWrapper isSearchOpen={isSearchOpen}>
-                  <BrowseHeader.SearchIcon onClick={toggleSearch} />
-                  <BrowseHeader.SearchInputDesktop
+          <browseHeader.NavSecondary>
+            <browseHeader.NavSecondaryItem>
+              <browseHeader.SearchForm>
+                <browseHeader.SearchWrapper isSearchOpen={isSearchOpen}>
+                  <browseHeader.SearchIcon onClick={toggleSearch} />
+                  <browseHeader.SearchInputDesktop
                     isSearchOpen={isSearchOpen}
                     placeholder='Search'
                   />
-                </BrowseHeader.SearchWrapper>
-              </BrowseHeader.SearchForm>
-            </BrowseHeader.NavSecondaryItem>
+                </browseHeader.SearchWrapper>
+              </browseHeader.SearchForm>
+            </browseHeader.NavSecondaryItem>
 
-            <BrowseHeader.NavSecondaryItem>
-              <BrowseHeader.BellIcon />
-            </BrowseHeader.NavSecondaryItem>
+            <browseHeader.NavSecondaryItem>
+              <browseHeader.BellIcon />
+            </browseHeader.NavSecondaryItem>
 
-            <BrowseHeader.NavSecondaryItem>
+            <browseHeader.NavSecondaryItem>
               <NavDropDown />
-            </BrowseHeader.NavSecondaryItem>
-          </BrowseHeader.NavSecondary>
-        </BrowseHeader.Navbar>
+            </browseHeader.NavSecondaryItem>
+          </browseHeader.NavSecondary>
+        </browseHeader.Navbar>
         <Billboard />
-      </BrowseHeader>
+      </browseHeader.Container>
     </SemanticHeader>
   )
 }

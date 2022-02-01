@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 
-const Container = styled.div``
+export const Container = styled.div``
 
-const Navbar = styled.nav`
+export const Navbar = styled.nav`
   position: fixed;
   z-index: 99;
   width: 100vw;
@@ -17,7 +17,7 @@ const Navbar = styled.nav`
   );
 `
 
-const BurgerButton = styled.button`
+export const BurgerButton = styled.button`
   background: none;
   border: 0;
   cursor: pointer;
@@ -25,21 +25,21 @@ const BurgerButton = styled.button`
   margin-right: 20px;
 `
 
-const BurgerButtonIcon = styled.img`
+export const BurgerButtonIcon = styled.img`
   width: 24px;
   width: 24px;
 `
 
-const LogoWrapperMobile = styled.div`
+export const LogoWrapperMobile = styled.div`
   width: 84px;
   height: 24px;
 `
-const LogoWrapperDesktop = styled.div`
+export const LogoWrapperDesktop = styled.div`
   width: 64.75px;
   height: 17.5px;
 `
 
-const NavPrimary = styled.ul`
+export const NavPrimary = styled.ul`
   display: flex;
   align-items: center;
   padding: 0;
@@ -48,11 +48,11 @@ const NavPrimary = styled.ul`
   list-style: none;
 `
 
-const NavPrimaryItem = styled.li`
+export const NavPrimaryItem = styled.li`
   margin-left: 20px;
   font-size: 0.875rem;
 `
-const NavPrimaryBtn = styled(BurgerButton)`
+export const NavPrimaryBtn = styled(BurgerButton)`
   margin: 0;
   color: #e5e5e5;
   font-weight: ${({ isActive }) => (isActive ? '700' : '400')};
@@ -64,30 +64,30 @@ const NavPrimaryBtn = styled(BurgerButton)`
   }
 `
 
-const NavSecondary = styled(NavPrimary)`
+export const NavSecondary = styled(NavPrimary)`
   margin-left: auto;
 `
-const NavSecondaryItem = styled.li`
+export const NavSecondaryItem = styled.li`
   margin-left: 20px;
   font-size: 0.875rem;
 `
 
-const SearchForm = styled.form`
+export const SearchForm = styled.form`
   margin-left: auto;
 `
-const SearchWrapper = styled.div`
+export const SearchWrapper = styled.div`
   display: flex;
   align-items: center;
   border: ${({ isSearchOpen }) => (isSearchOpen ? '1px solid #ccc' : '0')};
   padding: 0.1em 0.4em;
 `
 
-const SearchIcon = styled.i`
+export const SearchIcon = styled.i`
   font-size: 0.8125rem;
   cursor: pointer;
 `
 
-const SearchInput = styled.input`
+export const SearchInput = styled.input`
   box-sizing: content-box;
   width: 6em;
 
@@ -102,7 +102,7 @@ const SearchInput = styled.input`
   }
 `
 
-const SearchInputDesktop = styled(SearchInput)`
+export const SearchInputDesktop = styled(SearchInput)`
   transition: width 0.4s;
   width: ${({ isSearchOpen }) => (isSearchOpen ? '12em' : '0em')};
   visibility: ${({ isSearchOpen }) => (isSearchOpen ? 'show' : 'hidden')};
@@ -112,93 +112,93 @@ const SearchInputDesktop = styled(SearchInput)`
   border: 0;
 `
 
-const BellIcon = styled.i`
+export const BellIcon = styled.i`
   font-size: 1rem;
 `
-export default function BrowseHeader({ children, ...restProps }) {
-  return <Container {...restProps}>{children}</Container>
-}
+// export default function BrowseHeader({ children, ...restProps }) {
+//   return <Container {...restProps}>{children}</Container>
+// }
 
-BrowseHeader.Navbar = ({ children, padding, ...restProps }) => {
-  return (
-    <Navbar padding={padding} {...restProps}>
-      {children}
-    </Navbar>
-  )
-}
+// BrowseHeader.Navbar = ({ children, padding, ...restProps }) => {
+//   return (
+//     <Navbar padding={padding} {...restProps}>
+//       {children}
+//     </Navbar>
+//   )
+// }
 
-BrowseHeader.BurgerButton = ({ children, ...restProps }) => {
-  return <BurgerButton {...restProps}>{children}</BurgerButton>
-}
+// BrowseHeader.BurgerButton = ({ children, ...restProps }) => {
+//   return <BurgerButton {...restProps}>{children}</BurgerButton>
+// }
 
-BrowseHeader.BurgerButtonIcon = ({ children, ...restProps }) => {
-  return <BurgerButtonIcon {...restProps}>{children}</BurgerButtonIcon>
-}
+// BrowseHeader.BurgerButtonIcon = ({ children, ...restProps }) => {
+//   return <BurgerButtonIcon {...restProps}>{children}</BurgerButtonIcon>
+// }
 
-BrowseHeader.LogoWrapperMobile = ({ children, ...restProps }) => {
-  return <LogoWrapperMobile {...restProps}>{children}</LogoWrapperMobile>
-}
+// BrowseHeader.LogoWrapperMobile = ({ children, ...restProps }) => {
+//   return <LogoWrapperMobile {...restProps}>{children}</LogoWrapperMobile>
+// }
 
-BrowseHeader.LogoWrapperDesktop = ({ children, ...restProps }) => {
-  return <LogoWrapperDesktop {...restProps}>{children}</LogoWrapperDesktop>
-}
+// BrowseHeader.LogoWrapperDesktop = ({ children, ...restProps }) => {
+//   return <LogoWrapperDesktop {...restProps}>{children}</LogoWrapperDesktop>
+// }
 
-BrowseHeader.NavPrimary = ({ children, ...restProps }) => {
-  return <NavPrimary {...restProps}>{children}</NavPrimary>
-}
+// BrowseHeader.NavPrimary = ({ children, ...restProps }) => {
+//   return <NavPrimary {...restProps}>{children}</NavPrimary>
+// }
 
-BrowseHeader.NavPrimaryItem = ({ children, ...restProps }) => {
-  return <NavPrimaryItem {...restProps}>{children}</NavPrimaryItem>
-}
+// BrowseHeader.NavPrimaryItem = ({ children, ...restProps }) => {
+//   return <NavPrimaryItem {...restProps}>{children}</NavPrimaryItem>
+// }
 
-BrowseHeader.NavPrimaryBtn = ({ children, isActive, ...restProps }) => {
-  return (
-    <NavPrimaryBtn isActive={isActive} {...restProps}>
-      {children}
-    </NavPrimaryBtn>
-  )
-}
+// BrowseHeader.NavPrimaryBtn = ({ children, isActive, ...restProps }) => {
+//   return (
+//     <NavPrimaryBtn isActive={isActive} {...restProps}>
+//       {children}
+//     </NavPrimaryBtn>
+//   )
+// }
 
-BrowseHeader.NavSecondary = ({ children, ...restProps }) => {
-  return <NavSecondary {...restProps}>{children}</NavSecondary>
-}
+// BrowseHeader.NavSecondary = ({ children, ...restProps }) => {
+//   return <NavSecondary {...restProps}>{children}</NavSecondary>
+// }
 
-BrowseHeader.NavSecondaryItem = ({ children, ...restProps }) => {
-  return <NavSecondaryItem {...restProps}>{children}</NavSecondaryItem>
-}
+// BrowseHeader.NavSecondaryItem = ({ children, ...restProps }) => {
+//   return <NavSecondaryItem {...restProps}>{children}</NavSecondaryItem>
+// }
 
-BrowseHeader.SearchWrapper = ({ children, ...restProps }) => {
-  return <SearchWrapper {...restProps}>{children}</SearchWrapper>
-}
+// BrowseHeader.SearchWrapper = ({ children, ...restProps }) => {
+//   return <SearchWrapper {...restProps}>{children}</SearchWrapper>
+// }
 
-BrowseHeader.SearchIcon = ({ children, ...restProps }) => {
-  return (
-    <SearchIcon className='fas fa-search' {...restProps}>
-      {children}
-    </SearchIcon>
-  )
-}
+// BrowseHeader.SearchIcon = ({ children, ...restProps }) => {
+//   return (
+//     <SearchIcon className='fas fa-search' {...restProps}>
+//       {children}
+//     </SearchIcon>
+//   )
+// }
 
-BrowseHeader.SearchForm = ({ children, ...restProps }) => {
-  return <SearchForm {...restProps}>{children}</SearchForm>
-}
+// BrowseHeader.SearchForm = ({ children, ...restProps }) => {
+//   return <SearchForm {...restProps}>{children}</SearchForm>
+// }
 
-BrowseHeader.SearchInput = ({ children, ...restProps }) => {
-  return <SearchInput {...restProps}>{children}</SearchInput>
-}
+// BrowseHeader.SearchInput = ({ children, ...restProps }) => {
+//   return <SearchInput {...restProps}>{children}</SearchInput>
+// }
 
-BrowseHeader.SearchInputDesktop = ({
-  children,
-  isSearchOpen,
-  ...restProps
-}) => {
-  return (
-    <SearchInputDesktop isSearchOpen={isSearchOpen} {...restProps}>
-      {children}
-    </SearchInputDesktop>
-  )
-}
+// BrowseHeader.SearchInputDesktop = ({
+//   children,
+//   isSearchOpen,
+//   ...restProps
+// }) => {
+//   return (
+//     <SearchInputDesktop isSearchOpen={isSearchOpen} {...restProps}>
+//       {children}
+//     </SearchInputDesktop>
+//   )
+// }
 
-BrowseHeader.BellIcon = ({ ...restProps }) => {
-  return <BellIcon className='fas fa-bell' {...restProps} />
-}
+// BrowseHeader.BellIcon = ({ ...restProps }) => {
+//   return <BellIcon className='fas fa-bell' {...restProps} />
+// }

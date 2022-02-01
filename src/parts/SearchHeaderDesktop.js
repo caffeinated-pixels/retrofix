@@ -1,52 +1,55 @@
-import { BrowseHeader, SiteLogo, NavDropDown } from '../components'
+import { browseHeader, SiteLogo, NavDropDown } from '../components'
 import { SemanticHeader } from '../containers'
 
-export default function SearchHeaderDesktop() {
+export default function SearchHeaderDesktop({
+  searchInput,
+  handleSearchInput,
+}) {
   return (
     <SemanticHeader>
-      <BrowseHeader>
-        <BrowseHeader.Navbar padding='0 4vw'>
-          <BrowseHeader.LogoWrapperDesktop>
+      <browseHeader.Container>
+        <browseHeader.Navbar padding='0 4vw'>
+          <browseHeader.LogoWrapperDesktop>
             <SiteLogo />
-          </BrowseHeader.LogoWrapperDesktop>
+          </browseHeader.LogoWrapperDesktop>
 
-          <BrowseHeader.NavPrimary>
-            <BrowseHeader.NavPrimaryItem>
-              <BrowseHeader.NavPrimaryBtn>Home</BrowseHeader.NavPrimaryBtn>
-            </BrowseHeader.NavPrimaryItem>
+          <browseHeader.NavPrimary>
+            <browseHeader.NavPrimaryItem>
+              <browseHeader.NavPrimaryBtn>Home</browseHeader.NavPrimaryBtn>
+            </browseHeader.NavPrimaryItem>
 
-            <BrowseHeader.NavPrimaryItem>
-              <BrowseHeader.NavPrimaryBtn>Films</BrowseHeader.NavPrimaryBtn>
-            </BrowseHeader.NavPrimaryItem>
+            <browseHeader.NavPrimaryItem>
+              <browseHeader.NavPrimaryBtn>Films</browseHeader.NavPrimaryBtn>
+            </browseHeader.NavPrimaryItem>
 
-            <BrowseHeader.NavPrimaryItem>
-              <BrowseHeader.NavPrimaryBtn>Series</BrowseHeader.NavPrimaryBtn>
-            </BrowseHeader.NavPrimaryItem>
-          </BrowseHeader.NavPrimary>
+            <browseHeader.NavPrimaryItem>
+              <browseHeader.NavPrimaryBtn>Series</browseHeader.NavPrimaryBtn>
+            </browseHeader.NavPrimaryItem>
+          </browseHeader.NavPrimary>
 
-          <BrowseHeader.NavSecondary>
-            <BrowseHeader.NavSecondaryItem>
-              <BrowseHeader.SearchForm>
-                <BrowseHeader.SearchWrapper isSearchOpen={true}>
-                  <BrowseHeader.SearchIcon />
-                  <BrowseHeader.SearchInputDesktop
+          <browseHeader.NavSecondary>
+            <browseHeader.NavSecondaryItem>
+              <browseHeader.SearchForm>
+                <browseHeader.SearchWrapper isSearchOpen={true}>
+                  <browseHeader.SearchIcon />
+                  <browseHeader.SearchInputDesktop
                     isSearchOpen={true}
                     placeholder='Search'
                   />
-                </BrowseHeader.SearchWrapper>
-              </BrowseHeader.SearchForm>
-            </BrowseHeader.NavSecondaryItem>
+                </browseHeader.SearchWrapper>
+              </browseHeader.SearchForm>
+            </browseHeader.NavSecondaryItem>
 
-            <BrowseHeader.NavSecondaryItem>
-              <BrowseHeader.BellIcon />
-            </BrowseHeader.NavSecondaryItem>
+            <browseHeader.NavSecondaryItem>
+              <browseHeader.BellIcon />
+            </browseHeader.NavSecondaryItem>
 
-            <BrowseHeader.NavSecondaryItem>
+            <browseHeader.NavSecondaryItem>
               <NavDropDown />
-            </BrowseHeader.NavSecondaryItem>
-          </BrowseHeader.NavSecondary>
-        </BrowseHeader.Navbar>
-      </BrowseHeader>
+            </browseHeader.NavSecondaryItem>
+          </browseHeader.NavSecondary>
+        </browseHeader.Navbar>
+      </browseHeader.Container>
     </SemanticHeader>
   )
 }

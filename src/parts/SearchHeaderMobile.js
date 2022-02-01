@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { BrowseHeader, SiteLogo, NavSliderPanel } from '../components'
+import { browseHeader, SiteLogo, NavSliderPanel } from '../components'
 import { SemanticHeader } from '../containers'
 
 export default function SearchHeaderMobile() {
@@ -11,25 +11,25 @@ export default function SearchHeaderMobile() {
 
   return (
     <SemanticHeader>
-      <BrowseHeader>
-        <BrowseHeader.Navbar>
-          <BrowseHeader.BurgerButton
+      <browseHeader.Container>
+        <browseHeader.Navbar>
+          <browseHeader.BurgerButton
             aria-label='Main menu'
             onClick={toggleMenu}
           >
-            <BrowseHeader.BurgerButtonIcon src='../images/icons/hamburger.gif' />
-          </BrowseHeader.BurgerButton>
+            <browseHeader.BurgerButtonIcon src='../images/icons/hamburger.gif' />
+          </browseHeader.BurgerButton>
 
-          <BrowseHeader.LogoWrapperMobile>
+          <browseHeader.LogoWrapperMobile>
             <SiteLogo />
-          </BrowseHeader.LogoWrapperMobile>
+          </browseHeader.LogoWrapperMobile>
 
-          <BrowseHeader.SearchForm>
-            <BrowseHeader.SearchInput placeholder='Search' />
-          </BrowseHeader.SearchForm>
+          <browseHeader.SearchForm>
+            <browseHeader.SearchInput placeholder='Search' />
+          </browseHeader.SearchForm>
           <NavSliderPanel isMenuOpen={isMenuOpen} />
-        </BrowseHeader.Navbar>
-      </BrowseHeader>
+        </browseHeader.Navbar>
+      </browseHeader.Container>
     </SemanticHeader>
   )
 }

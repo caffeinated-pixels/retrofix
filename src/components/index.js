@@ -17,7 +17,8 @@ export { default as GeneralForm } from './GeneralForm'
 export { default as PlanTable } from './PlanTable'
 export { default as SigninForm } from './SigninForm'
 
-export { default as BrowseHeader } from './BrowseHeader'
+export * as browseHeader from './BrowseHeader'
+
 export { default as NavSliderPanel } from './NavSliderPanel'
 export { default as NavDropDown } from './NavDropDown'
 
