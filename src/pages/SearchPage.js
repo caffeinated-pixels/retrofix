@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import Fuse from 'fuse.js'
 import useWindowWidth from '../hooks/useWindowWidth'
 import { BrowsePageContainer } from '../containers'
 import {
@@ -11,7 +12,8 @@ import { footerHomeContent } from '../fixtures/footer-content'
 import unsortedStreamingContent from '../fixtures/shows-and-films.json'
 
 export default function SearchPage() {
-  const [searchInput, setSearchInput] = useState('')
+  const [searchInput, setSearchInput] = useState('RoboCop')
+  const [searchResults, setSearchResults] = useState([])
   const width = useWindowWidth()
 
   const handleSubmit = (e) => {
@@ -22,6 +24,15 @@ export default function SearchPage() {
   const handleSearchInput = (e) => {
     setSearchInput(e.target.value)
   }
+
+  useEffect(() => {
+    const fuse = new Fuse(unsortedStreamingContent, {
+      keys: ['description', 'title', 'cast'],
+    })
+
+    const fuseResults = fuse.search(searchInput).map((result) => result.item)
+    setSearchResults(fuseResults)
+  }, [searchInput])
 
   return (
     <BrowsePageContainer>
@@ -38,7 +49,7 @@ export default function SearchPage() {
           handleSearchInput={handleSearchInput}
         />
       )}
-      <SearchResultsLayout searchResults={unsortedStreamingContent} />
+      <SearchResultsLayout searchResults={searchResults} />
       <Footer footerContent={footerHomeContent} increasedPadding />
     </BrowsePageContainer>
   )
