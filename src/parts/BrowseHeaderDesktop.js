@@ -1,5 +1,6 @@
 import { useState, useContext } from 'react'
 import { BrowseContext } from '../context/BrowseContext'
+import useBrowseSearch from '../hooks/useBrowseSearch'
 import { Billboard } from './'
 import { browseHeader, SiteLogo, NavDropDown } from '../components'
 import { SemanticHeader } from '../containers'
@@ -7,6 +8,7 @@ import { SemanticHeader } from '../containers'
 export default function BrowseHeaderDesktop() {
   const [isSearchOpen, setIsSearchOpen] = useState(false)
   const { activeCategory, setCategory } = useContext(BrowseContext)
+  const [handleSubmit, handleSearchInput] = useBrowseSearch()
 
   const toggleSearch = () => {
     setIsSearchOpen((prevState) => !prevState)
@@ -51,7 +53,7 @@ export default function BrowseHeaderDesktop() {
 
           <browseHeader.NavSecondary>
             <browseHeader.NavSecondaryItem>
-              <browseHeader.SearchForm>
+              <browseHeader.SearchForm onSubmit={handleSubmit}>
                 <browseHeader.SearchWrapper isSearchOpen={isSearchOpen}>
                   <browseHeader.SearchIcon
                     className='fas fa-search'
@@ -60,6 +62,7 @@ export default function BrowseHeaderDesktop() {
                   <browseHeader.SearchInputDesktop
                     isSearchOpen={isSearchOpen}
                     placeholder='Search'
+                    onChange={handleSearchInput}
                   />
                 </browseHeader.SearchWrapper>
               </browseHeader.SearchForm>

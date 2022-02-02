@@ -1,11 +1,13 @@
 import { useContext, useState, useEffect } from 'react'
 import { BrowseContext } from '../context/BrowseContext'
+import useBrowseSearch from '../hooks/useBrowseSearch'
 import { browseHeader, SiteLogo, NavSliderPanel } from '../components'
 import { SemanticHeader } from '../containers'
 
 export default function BrowseHeaderMobile() {
   const { activeCategory, setCategory } = useContext(BrowseContext)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [handleSubmit, handleSearchInput] = useBrowseSearch()
 
   const toggleMenu = () => {
     setIsMenuOpen((prevState) => !prevState)
@@ -28,8 +30,11 @@ export default function BrowseHeaderMobile() {
             <SiteLogo />
           </browseHeader.LogoWrapperMobile>
 
-          <browseHeader.SearchForm>
-            <browseHeader.SearchInput placeholder='Search' />
+          <browseHeader.SearchForm onSubmit={handleSubmit}>
+            <browseHeader.SearchInput
+              placeholder='Search'
+              onChange={handleSearchInput}
+            />
           </browseHeader.SearchForm>
           <NavSliderPanel
             isMenuOpen={isMenuOpen}
