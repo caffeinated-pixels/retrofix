@@ -1,16 +1,26 @@
-import { useState } from 'react'
+import { useState, useContext } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { BrowseContext } from '../context/BrowseContext'
 import { browseHeader, SiteLogo, NavSliderPanel } from '../components'
 import { SemanticHeader } from '../containers'
+import { BROWSE } from '../constants/routes'
 
 export default function SearchHeaderMobile({
   searchInput,
   handleSearchInput,
   handleSubmit,
 }) {
+  const { activeCategory, setCategory } = useContext(BrowseContext)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const navigate = useNavigate()
 
   const toggleMenu = () => {
     setIsMenuOpen((prevState) => !prevState)
+  }
+
+  const handleCategory = (category) => {
+    setCategory(category)
+    navigate(BROWSE)
   }
 
   return (
@@ -36,7 +46,11 @@ export default function SearchHeaderMobile({
               onChange={handleSearchInput}
             />
           </browseHeader.SearchForm>
-          <NavSliderPanel isMenuOpen={isMenuOpen} />
+          <NavSliderPanel
+            isMenuOpen={isMenuOpen}
+            activeCategory={activeCategory}
+            setCategory={handleCategory}
+          />
         </browseHeader.Navbar>
       </browseHeader.Container>
     </SemanticHeader>
