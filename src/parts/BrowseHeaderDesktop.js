@@ -18,6 +18,7 @@ export default function BrowseHeaderDesktop() {
   }
 
   useEffect(() => {
+    // display search input if returning from SearchPage
     if (prevURL === 'search') setIsSearchOpen(true)
   }, [prevURL])
 
