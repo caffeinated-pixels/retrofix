@@ -1,8 +1,8 @@
-import { createContext, useState, useEffect } from 'react'
+import { createContext, useState, useEffect, useContext } from 'react'
 import sortStreamingContent from '../helpers/sort-streaming-content'
 import unsortedStreamingContent from '../fixtures/shows-and-films.json'
 
-export const BrowseContext = createContext()
+const BrowseContext = createContext()
 
 export default function BrowseContextProvider({ children }) {
   const [activeCategory, setActiveCategory] = useState('home')
@@ -45,3 +45,5 @@ export default function BrowseContextProvider({ children }) {
     </BrowseContext.Provider>
   )
 }
+
+export const useBrowseContext = () => useContext(BrowseContext)

@@ -1,6 +1,6 @@
-import { useContext, useMemo } from 'react'
+import { useMemo } from 'react'
 import styled from 'styled-components'
-import { BrowseContext } from '../context/BrowseContext'
+import { useBrowseContext } from '../context/BrowseContext'
 import { MainContainer } from '../containers/'
 import { SlideTrack } from '../components'
 
@@ -21,7 +21,7 @@ const GenreTitle = styled.h2`
 `
 
 export default function StreamingContentDesktop() {
-  const { sortedContent } = useContext(BrowseContext)
+  const { sortedContent } = useBrowseContext()
 
   const genreContainers = useMemo(() => {
     return sortedContent.map(({ genre, content }) => (

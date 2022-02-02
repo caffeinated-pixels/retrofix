@@ -1,7 +1,6 @@
-import { useContext } from 'react'
 import styled from 'styled-components'
 import useLargeModal from '../hooks/useLargeModal'
-import { BrowseContext } from '../context/BrowseContext'
+import { useBrowseContext } from '../context/BrowseContext'
 import { browseButtons, LargeContentModal } from '../components'
 
 const Container = styled.div`
@@ -79,7 +78,7 @@ const MaturityRating = styled.div`
 `
 
 export default function Billboard() {
-  const { randomShow } = useContext(BrowseContext)
+  const { randomShow } = useBrowseContext()
   const { displayModal, handleShowModal, handleCloseModal } = useLargeModal()
 
   const imgUrl = randomShow.slug

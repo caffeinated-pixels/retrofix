@@ -1,11 +1,11 @@
-import { useContext, useState, useEffect } from 'react'
-import { BrowseContext } from '../context/BrowseContext'
+import { useState, useEffect } from 'react'
+import { useBrowseContext } from '../context/BrowseContext'
 import useBrowseSearch from '../hooks/useBrowseSearch'
 import { browseHeader, SiteLogo, NavSliderPanel } from '../components'
 import { SemanticHeader } from '../containers'
 
 export default function BrowseHeaderMobile() {
-  const { activeCategory, setCategory } = useContext(BrowseContext)
+  const { activeCategory, setCategory } = useBrowseContext()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [handleSubmit, handleSearchInput] = useBrowseSearch()
 

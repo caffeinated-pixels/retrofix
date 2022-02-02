@@ -1,7 +1,6 @@
-import { useContext } from 'react'
 import { browseHeader, SiteLogo, NavDropDown } from '../components'
 import { useNavigate } from 'react-router-dom'
-import { BrowseContext } from '../context/BrowseContext'
+import { useBrowseContext } from '../context/BrowseContext'
 import { SemanticHeader } from '../containers'
 import { BROWSE } from '../constants/routes'
 
@@ -10,7 +9,7 @@ export default function SearchHeaderDesktop({
   handleSearchInput,
   handleSubmit,
 }) {
-  const { activeCategory, setCategory } = useContext(BrowseContext)
+  const { activeCategory, setCategory } = useBrowseContext()
   const navigate = useNavigate()
 
   const handleChangeCategory = (category) => {

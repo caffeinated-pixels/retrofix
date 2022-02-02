@@ -1,7 +1,7 @@
-import { useContext, useMemo } from 'react'
+import { useMemo } from 'react'
 import styled from 'styled-components'
 import { useNavigate } from 'react-router-dom'
-import { BrowseContext } from '../context/BrowseContext'
+import { useBrowseContext } from '../context/BrowseContext'
 import { MainContainer } from '../containers/'
 import { GET_THE_APP } from '../constants/routes'
 
@@ -36,7 +36,7 @@ const ContentImage = styled.img`
 `
 
 export default function StreamingContentMobile() {
-  const { sortedContent } = useContext(BrowseContext)
+  const { sortedContent } = useBrowseContext()
   const navigate = useNavigate()
 
   const genreContainers = useMemo(() => {

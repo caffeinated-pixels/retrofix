@@ -1,6 +1,6 @@
-import { useState, useContext, useRef, useEffect } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
-import { BrowseContext } from '../context/BrowseContext'
+import { useBrowseContext } from '../context/BrowseContext'
 import useBrowseSearch from '../hooks/useBrowseSearch'
 import { Billboard } from './'
 import { browseHeader, SiteLogo, NavDropDown } from '../components'
@@ -8,7 +8,7 @@ import { SemanticHeader } from '../containers'
 
 export default function BrowseHeaderDesktop() {
   const [isSearchOpen, setIsSearchOpen] = useState(false)
-  const { activeCategory, setCategory } = useContext(BrowseContext)
+  const { activeCategory, setCategory } = useBrowseContext()
   const [handleSubmit, handleSearchInput] = useBrowseSearch()
   const { state: prevURL } = useLocation()
   const ref = useRef(null)

@@ -1,6 +1,6 @@
-import { useState, useContext } from 'react'
+import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { BrowseContext } from '../context/BrowseContext'
+import { useBrowseContext } from '../context/BrowseContext'
 import { browseHeader, SiteLogo, NavSliderPanel } from '../components'
 import { SemanticHeader } from '../containers'
 import { BROWSE } from '../constants/routes'
@@ -10,7 +10,7 @@ export default function SearchHeaderMobile({
   handleSearchInput,
   handleSubmit,
 }) {
-  const { activeCategory, setCategory } = useContext(BrowseContext)
+  const { activeCategory, setCategory } = useBrowseContext()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const navigate = useNavigate()
 
