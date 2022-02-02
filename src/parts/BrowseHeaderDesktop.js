@@ -1,4 +1,4 @@
-import { useState, useContext } from 'react'
+import { useState, useContext, useRef, useEffect } from 'react'
 import { BrowseContext } from '../context/BrowseContext'
 import useBrowseSearch from '../hooks/useBrowseSearch'
 import { Billboard } from './'
@@ -9,10 +9,17 @@ export default function BrowseHeaderDesktop() {
   const [isSearchOpen, setIsSearchOpen] = useState(false)
   const { activeCategory, setCategory } = useContext(BrowseContext)
   const [handleSubmit, handleSearchInput] = useBrowseSearch()
+  const ref = useRef(null)
 
   const toggleSearch = () => {
     setIsSearchOpen((prevState) => !prevState)
   }
+
+  useEffect(() => {
+    if (isSearchOpen) {
+      ref.current.focus()
+    }
+  }, [isSearchOpen])
 
   return (
     <SemanticHeader>
@@ -60,6 +67,7 @@ export default function BrowseHeaderDesktop() {
                   </browseHeader.OpenSearchButton>
 
                   <browseHeader.SearchInputDesktop
+                    ref={ref}
                     isSearchOpen={isSearchOpen}
                     placeholder='Search'
                     onChange={handleSearchInput}
