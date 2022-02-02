@@ -5,9 +5,5 @@ import { BrowseMobileLayout, BrowseDesktopLayout } from '../parts'
 export default function Browse() {
   const width = useWindowWidth()
 
-  return (
-    <BrowseContextProvider>
-      {width < 768 ? <BrowseMobileLayout /> : <BrowseDesktopLayout />}
-    </BrowseContextProvider>
-  )
+  return <>{width < 768 ? <BrowseMobileLayout /> : <BrowseDesktopLayout />}</>
 }
