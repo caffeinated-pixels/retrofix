@@ -68,7 +68,10 @@ export default function BrowseHeaderDesktop() {
             <browseHeader.NavSecondaryItem>
               <browseHeader.SearchForm onSubmit={handleSubmit}>
                 <browseHeader.SearchWrapper isSearchOpen={isSearchOpen}>
-                  <browseHeader.IconButton onClick={toggleSearch}>
+                  <browseHeader.IconButton
+                    onClick={toggleSearch}
+                    aria-label='open search box'
+                  >
                     <browseHeader.SearchIcon className='fas fa-search' />
                   </browseHeader.IconButton>
 
