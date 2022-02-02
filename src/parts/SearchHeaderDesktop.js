@@ -1,11 +1,15 @@
 import { browseHeader, SiteLogo, NavDropDown } from '../components'
+import { useNavigate } from 'react-router-dom'
 import { SemanticHeader } from '../containers'
+import { BROWSE } from '../constants/routes'
 
 export default function SearchHeaderDesktop({
   searchInput,
   handleSearchInput,
   handleSubmit,
 }) {
+  const navigate = useNavigate()
+
   return (
     <SemanticHeader>
       <browseHeader.Container>
@@ -32,7 +36,7 @@ export default function SearchHeaderDesktop({
             <browseHeader.NavSecondaryItem>
               <browseHeader.SearchForm onSubmit={handleSubmit}>
                 <browseHeader.SearchWrapper isSearchOpen={true}>
-                  <browseHeader.SearchIcon />
+                  <browseHeader.SearchIcon className='fas fa-search' />
                   <browseHeader.SearchInputDesktop
                     autoFocus
                     isSearchOpen={true}
@@ -40,6 +44,12 @@ export default function SearchHeaderDesktop({
                     value={searchInput}
                     onChange={handleSearchInput}
                   />
+                  <browseHeader.CloseSearchButton
+                    aria-label='close search'
+                    onClick={() => navigate(BROWSE)}
+                  >
+                    <browseHeader.CloseIcon className='fas fa-times' />
+                  </browseHeader.CloseSearchButton>
                 </browseHeader.SearchWrapper>
               </browseHeader.SearchForm>
             </browseHeader.NavSecondaryItem>

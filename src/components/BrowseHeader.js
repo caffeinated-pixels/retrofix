@@ -76,10 +76,11 @@ export const SearchForm = styled.form`
   margin-left: auto;
 `
 export const SearchWrapper = styled.div`
+  position: relative;
   display: flex;
   align-items: center;
   border: ${({ isSearchOpen }) => (isSearchOpen ? '1px solid #ccc' : '0')};
-  padding: 0.1em 0.4em;
+  padding: 0.1em 0.9em 0.1em 0.4em;
 `
 
 export const IconButton = styled.button`
@@ -117,6 +118,13 @@ export const SearchInputDesktop = styled(SearchInput)`
   padding: ${({ isSearchOpen }) => (isSearchOpen ? '4px 0.5em' : '0')};
   border: 0;
 `
+
+export const CloseSearchButton = styled(IconButton)`
+  position: absolute;
+  right: 0;
+`
+
+export const CloseIcon = styled.i``
 
 export const BellIcon = styled.i`
   font-size: 1rem;
