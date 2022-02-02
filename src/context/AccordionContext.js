@@ -1,6 +1,6 @@
-import { createContext, useState } from 'react'
+import { createContext, useState, useContext } from 'react'
 
-export const AccordionContext = createContext()
+const AccordionContext = createContext()
 
 export function AccordionContextProvider({ children }) {
   const [activeAccordionItem, setActiveAccordionItem] = useState(null)
@@ -23,3 +23,5 @@ export function AccordionContextProvider({ children }) {
     </AccordionContext.Provider>
   )
 }
+
+export const useAccordionContext = () => useContext(AccordionContext)

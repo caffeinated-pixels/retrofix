@@ -1,6 +1,5 @@
-import { useContext } from 'react'
 import styled from 'styled-components'
-import { AccordionContext } from '../context/AccordionContext'
+import { useAccordionContext } from '../context/AccordionContext'
 import { colors } from '../styles/style-constants'
 
 import React from 'react'
@@ -46,7 +45,7 @@ const AnswerPanel = styled.div`
 `
 
 export default function AccordionItem({ id, answer, question }) {
-  const { activeAccordionItem, setToggle } = useContext(AccordionContext)
+  const { activeAccordionItem, setToggle } = useAccordionContext()
 
   return (
     <AccordionItemWrapper>
