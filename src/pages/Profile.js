@@ -1,6 +1,5 @@
-import { useContext } from 'react'
 import styled from 'styled-components'
-import { FirebaseAuthContext } from '../context/FirebaseAuthContext'
+import { useAuth } from '../context/FirebaseAuthContext'
 import { Header, Navbar } from '../parts/'
 import { SemanticHeader, PageContainer } from '../containers/'
 import { SiteLogo } from '../components'
@@ -72,7 +71,7 @@ const Name = styled.p`
 `
 
 export default function Profile() {
-  const user = useContext(FirebaseAuthContext)
+  const user = useAuth()
 
   return (
     <PageContainer>

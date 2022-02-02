@@ -1,8 +1,7 @@
-import { useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
 import useSignOut from '../hooks/useSignOut'
-import { FirebaseAuthContext } from '../context/FirebaseAuthContext'
+import { useAuth } from '../context/FirebaseAuthContext'
 import { PROFILE } from '../constants/routes'
 import { colors, navSliderBorderBottom } from '../styles/style-constants'
 
@@ -100,7 +99,7 @@ export default function NavSliderPanel({
   activeCategory,
   setCategory,
 }) {
-  const user = useContext(FirebaseAuthContext)
+  const user = useAuth()
   const signOut = useSignOut()
   const navigate = useNavigate()
 

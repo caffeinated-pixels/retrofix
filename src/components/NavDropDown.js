@@ -1,6 +1,6 @@
-import { useState, useContext } from 'react'
+import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { FirebaseAuthContext } from '../context/FirebaseAuthContext'
+import { useAuth } from '../context/FirebaseAuthContext'
 import useSignOut from '../hooks/useSignOut'
 import styled from 'styled-components'
 import { PROFILE } from '../constants/routes'
@@ -71,7 +71,7 @@ const SubMenuBtn = styled.button`
 
 export default function NavDropDown() {
   const [isDropDownOpen, setIsDropDownOpen] = useState(false)
-  const user = useContext(FirebaseAuthContext)
+  const user = useAuth()
   const signOut = useSignOut()
   const navigate = useNavigate()
 
