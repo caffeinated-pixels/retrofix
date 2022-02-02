@@ -1,6 +1,6 @@
-import { useState, createContext } from 'react'
+import { useState, createContext, useContext } from 'react'
 
-export const SignUpContext = createContext()
+const SignUpContext = createContext()
 
 export default function SignUpContextProvider({ children }) {
   const [globalFirstName, setGlobalFirstName] = useState('')
@@ -22,3 +22,5 @@ export default function SignUpContextProvider({ children }) {
     </SignUpContext.Provider>
   )
 }
+
+export const useSignUpContext = () => useContext(SignUpContext)

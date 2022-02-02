@@ -1,7 +1,6 @@
-import { useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 import useFormValidation from '../hooks/useFormValidation'
-import { SignUpContext } from '../context/SignUpContext'
+import { useSignUpContext } from '../context/SignUpContext'
 import { RegNavbar, Footer } from '../parts'
 import {
   PageContainer,
@@ -36,7 +35,7 @@ export default function RegForm() {
     setGlobalEmail,
     globalPassword,
     setGlobalPassword,
-  } = useContext(SignUpContext)
+  } = useSignUpContext()
 
   const [state, dispatch] = useFormValidation({
     firstName: globalFirstName,

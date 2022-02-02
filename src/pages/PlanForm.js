@@ -1,7 +1,6 @@
-import { useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
-import { SignUpContext } from '../context/SignUpContext'
+import { useSignUpContext } from '../context/SignUpContext'
 import firebaseRegistration from '../firebase/firebaseRegistration'
 import { RegNavbar, PlanFormTable, Footer } from '../parts'
 import {
@@ -24,8 +23,7 @@ import { colors } from '../styles/style-constants'
 const RegContainerPlanForm = styled.div``
 
 export default function Registration() {
-  const { globalFirstName, globalEmail, globalPassword } =
-    useContext(SignUpContext)
+  const { globalFirstName, globalEmail, globalPassword } = useSignUpContext()
   const navigate = useNavigate()
 
   const completeRegistration = async () => {

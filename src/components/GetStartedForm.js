@@ -1,8 +1,7 @@
-import { useContext } from 'react'
 import styled from 'styled-components'
 import { useNavigate } from 'react-router-dom'
 import useFormValidation from '../hooks/useFormValidation'
-import { SignUpContext } from '../context/SignUpContext'
+import { useSignUpContext } from '../context/SignUpContext'
 import {
   colors,
   inputErrorBorderBottom,
@@ -162,7 +161,7 @@ const ChevronIcon = styled.i`
 `
 
 export default function GetStartedForm() {
-  const { globalEmail, setGlobalEmail } = useContext(SignUpContext)
+  const { globalEmail, setGlobalEmail } = useSignUpContext()
   const [state, dispatch] = useFormValidation({
     email: globalEmail,
     inputError: false,
