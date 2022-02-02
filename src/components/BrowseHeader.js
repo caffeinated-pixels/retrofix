@@ -82,7 +82,7 @@ export const SearchWrapper = styled.div`
   padding: 0.1em 0.4em;
 `
 
-export const OpenSearchButton = styled.button`
+export const IconButton = styled.button`
   cursor: pointer;
   background: transparent;
   border: 0;
