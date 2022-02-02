@@ -8,9 +8,9 @@ const LayoutContainer = styled.div`
 
 const ResultsGallery = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, auto));
-  grid-column-gap: 0.4vw;
-  grid-row-gap: 48px;
+  grid-template-columns: repeat(auto-fit, minmax(150px, auto));
+  grid-column-gap: max(3.5px, 0.4vw);
+  grid-row-gap: 40px;
 `
 
 const Container = styled.div`
