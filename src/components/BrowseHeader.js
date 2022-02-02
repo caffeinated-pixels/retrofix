@@ -82,9 +82,15 @@ export const SearchWrapper = styled.div`
   padding: 0.1em 0.4em;
 `
 
+export const OpenSearchButton = styled.button`
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  color: inherit;
+`
+
 export const SearchIcon = styled.i`
   font-size: 0.8125rem;
-  cursor: pointer;
 `
 
 export const SearchInput = styled.input`
