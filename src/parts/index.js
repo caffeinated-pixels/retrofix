@@ -19,3 +19,4 @@ export { default as SearchHeaderDesktop } from './SearchHeaderDesktop'
 export { default as SearchHeaderMobile } from './SearchHeaderMobile'
 
 export { default as SearchResultsLayout } from './SearchResultsLayout'
+export { default as SearchResultsLayoutMobile } from './SearchResultsLayoutMobile'
