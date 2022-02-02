@@ -7,6 +7,7 @@ import {
   SearchHeaderDesktop,
   SearchHeaderMobile,
   SearchResultsLayout,
+  SearchResultsLayoutMobile,
   Footer,
 } from '../parts/'
 import { footerHomeContent } from '../fixtures/footer-content'
@@ -54,19 +55,25 @@ export default function SearchPage() {
   return (
     <BrowsePageContainer>
       {width < 768 ? (
-        <SearchHeaderMobile
-          handleSubmit={handleSubmit}
-          searchInput={searchInput}
-          handleSearchInput={handleSearchInput}
-        />
+        <>
+          <SearchHeaderMobile
+            handleSubmit={handleSubmit}
+            searchInput={searchInput}
+            handleSearchInput={handleSearchInput}
+          />
+          <SearchResultsLayoutMobile searchResults={searchResults} />
+        </>
       ) : (
-        <SearchHeaderDesktop
-          handleSubmit={handleSubmit}
-          searchInput={searchInput}
-          handleSearchInput={handleSearchInput}
-        />
+        <>
+          <SearchHeaderDesktop
+            handleSubmit={handleSubmit}
+            searchInput={searchInput}
+            handleSearchInput={handleSearchInput}
+          />
+          <SearchResultsLayout searchResults={searchResults} />
+        </>
       )}
-      <SearchResultsLayout searchResults={searchResults} />
+
       <Footer footerContent={footerHomeContent} increasedPadding />
     </BrowsePageContainer>
   )
