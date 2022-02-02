@@ -1,4 +1,5 @@
 import { useState, useContext, useRef, useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
 import { BrowseContext } from '../context/BrowseContext'
 import useBrowseSearch from '../hooks/useBrowseSearch'
 import { Billboard } from './'
@@ -9,11 +10,16 @@ export default function BrowseHeaderDesktop() {
   const [isSearchOpen, setIsSearchOpen] = useState(false)
   const { activeCategory, setCategory } = useContext(BrowseContext)
   const [handleSubmit, handleSearchInput] = useBrowseSearch()
+  const { state: prevURL } = useLocation()
   const ref = useRef(null)
 
   const toggleSearch = () => {
     setIsSearchOpen((prevState) => !prevState)
   }
+
+  useEffect(() => {
+    if (prevURL === 'search') setIsSearchOpen(true)
+  }, [prevURL])
 
   useEffect(() => {
     if (isSearchOpen) {

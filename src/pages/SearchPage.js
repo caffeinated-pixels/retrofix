@@ -29,7 +29,7 @@ export default function SearchPage() {
 
     if (e.target.value.trim() === '') {
       // return to browse page if searchInput becomes empty
-      navigate(BROWSE)
+      navigate(BROWSE, { state: 'search' })
     } else {
       // sync URL param and searchInput
       navigate(`?q=${e.target.value}`)
