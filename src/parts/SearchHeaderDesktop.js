@@ -1,5 +1,7 @@
+import { useContext } from 'react'
 import { browseHeader, SiteLogo, NavDropDown } from '../components'
 import { useNavigate } from 'react-router-dom'
+import { BrowseContext } from '../context/BrowseContext'
 import { SemanticHeader } from '../containers'
 import { BROWSE } from '../constants/routes'
 
@@ -8,7 +10,13 @@ export default function SearchHeaderDesktop({
   handleSearchInput,
   handleSubmit,
 }) {
+  const { activeCategory, setCategory } = useContext(BrowseContext)
   const navigate = useNavigate()
+
+  const handleChangeCategory = (category) => {
+    setCategory(category)
+    navigate(BROWSE)
+  }
 
   return (
     <SemanticHeader>
@@ -20,15 +28,30 @@ export default function SearchHeaderDesktop({
 
           <browseHeader.NavPrimary>
             <browseHeader.NavPrimaryItem>
-              <browseHeader.NavPrimaryBtn>Home</browseHeader.NavPrimaryBtn>
+              <browseHeader.NavPrimaryBtn
+                isActive={activeCategory === 'home'}
+                onClick={() => handleChangeCategory('home')}
+              >
+                Home
+              </browseHeader.NavPrimaryBtn>
             </browseHeader.NavPrimaryItem>
 
             <browseHeader.NavPrimaryItem>
-              <browseHeader.NavPrimaryBtn>Films</browseHeader.NavPrimaryBtn>
+              <browseHeader.NavPrimaryBtn
+                isActive={activeCategory === 'films'}
+                onClick={() => handleChangeCategory('films')}
+              >
+                Films
+              </browseHeader.NavPrimaryBtn>
             </browseHeader.NavPrimaryItem>
 
             <browseHeader.NavPrimaryItem>
-              <browseHeader.NavPrimaryBtn>Series</browseHeader.NavPrimaryBtn>
+              <browseHeader.NavPrimaryBtn
+                isActive={activeCategory === 'series'}
+                onClick={() => handleChangeCategory('series')}
+              >
+                Series
+              </browseHeader.NavPrimaryBtn>
             </browseHeader.NavPrimaryItem>
           </browseHeader.NavPrimary>
 
