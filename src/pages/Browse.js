@@ -1,4 +1,3 @@
-import BrowseContextProvider from '../context/BrowseContext'
 import useWindowWidth from '../hooks/useWindowWidth'
 import { BrowseMobileLayout, BrowseDesktopLayout } from '../parts'
 
