@@ -30,6 +30,7 @@ export default function SearchHeaderMobile({
 
           <browseHeader.SearchForm onSubmit={handleSubmit}>
             <browseHeader.SearchInput
+              autoFocus
               placeholder='Search'
               value={searchInput}
               onChange={handleSearchInput}

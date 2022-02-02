@@ -34,6 +34,7 @@ export default function SearchHeaderDesktop({
                 <browseHeader.SearchWrapper isSearchOpen={true}>
                   <browseHeader.SearchIcon />
                   <browseHeader.SearchInputDesktop
+                    autoFocus
                     isSearchOpen={true}
                     placeholder='Search'
                     value={searchInput}
