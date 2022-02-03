@@ -1,7 +1,8 @@
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 import { colors, focusOutline } from '../styles/style-constants'
 
-const Button = styled.a`
+const LinkButton = styled(Link)`
   text-decoration: none;
   background-color: ${({ bgcolor }) => (bgcolor ? bgcolor : colors.netflixRed)};
   color: #fff;
@@ -24,6 +25,4 @@ const Button = styled.a`
   }
 `
 
-export default function LinkButton({ children, ...restProps }) {
-  return <Button {...restProps}>{children}</Button>
-}
+export default LinkButton

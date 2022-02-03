@@ -13,7 +13,7 @@ export default function Home() {
               <Header.LogoWrapper>
                 <SiteLogo />
               </Header.LogoWrapper>
-              <LinkButton href='/signin'>Sign In</LinkButton>
+              <LinkButton to='/signin'>Sign In</LinkButton>
             </Navbar>
             <HeaderFeature />
           </Header.ImageGradient>
