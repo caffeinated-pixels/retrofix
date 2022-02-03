@@ -44,7 +44,7 @@ export default function Signin() {
     )
     if (firebaseResponse.user) {
       console.log('succesful signin for ' + firebaseResponse.user.email)
-      navigate(PROFILE)
+      navigate(PROFILE, { replace: true }) // 2nd arg prevents browser back returning to signin page
     } else if (firebaseResponse.message) {
       processFirebaseError(firebaseResponse.message)
     }
