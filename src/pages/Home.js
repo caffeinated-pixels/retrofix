@@ -2,6 +2,7 @@ import { Header, Navbar, StoryCards, FaqSection, Footer } from '../parts/'
 import { SemanticHeader, MainContainer } from '../containers/'
 import { HeaderFeature, SiteLogo, LinkButton } from '../components'
 import { footerHomeContent } from '../fixtures/footer-content'
+import { SIGN_IN } from '../constants/routes'
 
 export default function Home() {
   return (
@@ -13,7 +14,7 @@ export default function Home() {
               <Header.LogoWrapper>
                 <SiteLogo />
               </Header.LogoWrapper>
-              <LinkButton to='/signin'>Sign In</LinkButton>
+              <LinkButton to={SIGN_IN}>Sign In</LinkButton>
             </Navbar>
             <HeaderFeature />
           </Header.ImageGradient>
