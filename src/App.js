@@ -18,11 +18,17 @@ function App() {
   return (
     <Router>
       <Routes>
+        {/* Public routes*/}
         <Route path='/' element={<Home />} />
-        <Route path={ROUTES.BROWSE} element={<RequireAuth />}>
-          <Route path={ROUTES.BROWSE} element={<Browse />} />
-        </Route>
         <Route path={ROUTES.SIGN_IN} element={<Signin />} />
+
+        {/* Protected routes*/}
+        <Route element={<RequireAuth />}>
+          <Route path={ROUTES.BROWSE} element={<Browse />} />
+          <Route path={ROUTES.PROFILE} element={<Profile />} />
+          <Route path={ROUTES.GET_THE_APP} element={<GetTheApp />} />
+          <Route path={ROUTES.SEARCH} element={<SearchPage />} />
+        </Route>
 
         <Route path={ROUTES.SIGN_UP}>
           <Route index element={<Signup />}></Route>
@@ -30,10 +36,6 @@ function App() {
           <Route path={ROUTES.REG_FORM} element={<RegForm />} />
           <Route path={ROUTES.PLAN_FORM} element={<PlanForm />} />
         </Route>
-
-        <Route path={ROUTES.PROFILE} element={<Profile />} />
-        <Route path={ROUTES.GET_THE_APP} element={<GetTheApp />} />
-        <Route path={ROUTES.SEARCH} element={<SearchPage />} />
       </Routes>
     </Router>
   )
