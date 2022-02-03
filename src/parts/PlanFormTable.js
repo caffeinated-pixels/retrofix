@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link as RouterLink } from 'react-router-dom'
 import { PlanTable } from '../components/'
 import { colors } from '../styles/style-constants'
 
@@ -92,7 +93,7 @@ const SmallPrint = styled.small`
   }
 `
 
-const Link = styled.a`
+const Link = styled(RouterLink)`
   text-decoration: none;
 
   &:hover,
@@ -146,7 +147,7 @@ export default function PlanFormTable() {
       <SmallPrint>
         HD (720p), Full HD (1080p), Ultra HD (4K) and HDR availability subject
         to your internet service and device capabilities. Not all content is
-        available in all resolutions. See our <Link href='#'>Terms of Use</Link>{' '}
+        available in all resolutions. See our <Link to='#'>Terms of Use</Link>{' '}
         for more details.
       </SmallPrint>
       <SmallPrint>
