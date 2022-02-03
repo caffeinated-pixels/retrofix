@@ -84,7 +84,7 @@ export default function RegForm() {
   return (
     <PageContainer bgColor={colors.bgWhite} txtColor={colors.textDarkGrey}>
       <RegNavbar>
-        <NavLink href={SIGN_IN}>Sign In</NavLink>
+        <NavLink to={SIGN_IN}>Sign In</NavLink>
       </RegNavbar>
       <RegContentContainer>
         <RegFormContainer>

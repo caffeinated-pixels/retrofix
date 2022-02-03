@@ -1,6 +1,7 @@
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
-const Link = styled.a`
+const NavLink = styled(Link)`
   text-decoration: none;
   font-size: 0.875rem;
   letter-spacing: 0.2px;
@@ -27,6 +28,4 @@ const Link = styled.a`
   }
 `
 
-export default function NavLink({ href, children }) {
-  return <Link href={href}>{children}</Link>
-}
+export default NavLink
