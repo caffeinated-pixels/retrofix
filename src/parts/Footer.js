@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Link as RouterLink } from 'react-router-dom'
 import { colors } from '../styles/style-constants'
 
 const FooterContainer = styled.footer`
@@ -60,7 +61,7 @@ const ListItem = styled.li`
   padding-right: 12px;
 `
 
-const Link = styled.a`
+const Link = styled(RouterLink)`
   text-decoration: none;
   color: inherit;
 
@@ -83,7 +84,7 @@ export default function Footer({
 }) {
   const listItems = footerContent.body.map((item, i) => (
     <ListItem key={i}>
-      <Link href='#'>{item}</Link>
+      <Link to='#'>{item}</Link>
     </ListItem>
   ))
 
