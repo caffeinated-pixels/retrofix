@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 import { useAuth } from '../context/FirebaseAuthContext'
 import { Header, Navbar } from '../parts/'
 import { SemanticHeader, PageContainer } from '../containers/'
@@ -29,7 +30,7 @@ const ProfileList = styled.ul`
 const ListItem = styled.li`
   list-style: none;
 `
-const NavLink = styled.a`
+const NavLink = styled(Link)`
   color: ${colors.textLightGrey};
   text-decoration: none;
 
@@ -87,13 +88,13 @@ export default function Profile() {
         <Title>Who's watching?</Title>
         <ProfileList>
           <ListItem>
-            <NavLink href={BROWSE}>
+            <NavLink to={BROWSE}>
               <Avatar imgUrl={user?.photoURL} />
               <Name>{user?.displayName}</Name>
             </NavLink>
           </ListItem>
           <ListItem>
-            <NavLink href='#'>
+            <NavLink to='#'>
               <Avatar imgUrl='./images/users/kids.jpg' />
               <Name>Children</Name>
             </NavLink>
@@ -103,11 +104,3 @@ export default function Profile() {
     </PageContainer>
   )
 }
-
-/* 
-Header (containing logo)
-Main
-  h1 (Who's watching?)
-  profile divs
-
-*/
