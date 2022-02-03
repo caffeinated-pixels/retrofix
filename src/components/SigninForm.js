@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Link as RouterLink } from 'react-router-dom'
 import { GeneralForm } from '../components'
 import { colors, inputErrorBorderBottom } from '../styles/style-constants'
 
@@ -67,7 +68,7 @@ const Text = styled.p`
   margin-top: 2em;
 `
 
-const Link = styled.a`
+const Link = styled(RouterLink)`
   color: #fff;
   text-decoration: none;
 

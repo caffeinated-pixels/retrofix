@@ -131,7 +131,7 @@ export default function Signin() {
               </SigninForm.Container>
               <SigninForm.Text>
                 New to Netflix?{' '}
-                <SigninForm.Link href={HOME}>Sign up now</SigninForm.Link>.
+                <SigninForm.Link to={HOME}>Sign up now</SigninForm.Link>.
               </SigninForm.Text>
               <SigninForm.ReCaptchaText>
                 This page is protected by Google reCAPTCHA to ensure you're not
