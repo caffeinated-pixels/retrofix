@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components'
-import { useLocation } from 'react-router-dom'
+import { useLocation, Link } from 'react-router-dom'
 import { SiteLogo } from '../components'
 import { HOME, BROWSE } from '../constants/routes'
 import { colors } from '../styles/style-constants'
@@ -32,7 +32,7 @@ const LogoWrapper = styled.div`
   width: 120px;
 `
 
-const LogoLink = styled.a``
+const LogoLink = styled(Link)``
 
 const ShowImage = styled.div`
   height: 80vh;
@@ -92,7 +92,7 @@ const buttonBaseCss = css`
   color: inherit;
 `
 
-const AppLinkButton = styled.a`
+const AppLinkButton = styled(Link)`
   ${buttonBaseCss}
   background: ${colors.netflixRed};
   border-radius: 0.1em;
@@ -101,7 +101,7 @@ const AppLinkButton = styled.a`
   width: min(80%, 400px);
 `
 
-const ReturnLinkButton = styled.a`
+const ReturnLinkButton = styled(Link)`
   ${buttonBaseCss}
   width: 100vw;
   background: #141414;
@@ -123,7 +123,7 @@ export default function GetTheApp() {
     <PageContainer>
       <Header>
         <LogoWrapper>
-          <LogoLink href={HOME}>
+          <LogoLink to={HOME}>
             <SiteLogo />
           </LogoLink>
         </LogoWrapper>
@@ -140,9 +140,9 @@ export default function GetTheApp() {
         </MetadataBox>
         <AppLaunchBox>
           <WatchNetflix>Watch NetFlix on your phone or tablet</WatchNetflix>
-          <AppLinkButton>Get the free app</AppLinkButton>
+          <AppLinkButton to='#'>Get the free app</AppLinkButton>
         </AppLaunchBox>
-        <ReturnLinkButton href={BROWSE}>
+        <ReturnLinkButton to={BROWSE}>
           <ReturnIcon className='fas fa-share' />
           Back to Browse Page
         </ReturnLinkButton>
