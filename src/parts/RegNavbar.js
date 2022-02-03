@@ -1,7 +1,5 @@
 import styled from 'styled-components'
-import { Link } from 'react-router-dom'
 import { SiteLogo } from '../components'
-import { HOME } from '../constants/routes'
 import { colors } from '../styles/style-constants'
 
 const NavContainer = styled.nav`
@@ -32,15 +30,11 @@ const LogoWrapper = styled.div`
   }
 `
 
-const LogoLink = styled(Link)``
-
 export default function RegNavbar({ children, noBorder }) {
   return (
     <NavContainer noBorder={noBorder}>
       <LogoWrapper>
-        <LogoLink to={HOME}>
-          <SiteLogo />
-        </LogoLink>
+        <SiteLogo />
       </LogoWrapper>
       {children}
     </NavContainer>
