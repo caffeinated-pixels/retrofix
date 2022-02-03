@@ -31,3 +31,4 @@ export { default as ContentSlide } from './ContentSlide'
 export { default as LargeContentModal } from './LargeContentModal'
 
 export { default as RequireAuth } from './RequireAuth'
+export { default as RedirectUser } from './RedirectUser'
