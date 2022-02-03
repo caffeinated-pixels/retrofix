@@ -7,12 +7,14 @@ import BrowseContextProvider from './context/BrowseContext'
 import SignUpContextProvider from './context/SignUpContext'
 
 ReactDOM.render(
-  <FirebaseAuthContextProvider>
-    <BrowseContextProvider>
-      <SignUpContextProvider>
-        <App />
-      </SignUpContextProvider>
-    </BrowseContextProvider>
-  </FirebaseAuthContextProvider>,
+  <React.StrictMode>
+    <FirebaseAuthContextProvider>
+      <BrowseContextProvider>
+        <SignUpContextProvider>
+          <App />
+        </SignUpContextProvider>
+      </BrowseContextProvider>
+    </FirebaseAuthContextProvider>
+  </React.StrictMode>,
   document.getElementById('root')
 )
