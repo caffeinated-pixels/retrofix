@@ -3,7 +3,7 @@ import useFormValidation from '../hooks/useFormValidation'
 import firebaseSignIn from '../firebase/firebaseSignIn'
 import { Header, RegNavbar, Footer } from '../parts/'
 import { SemanticHeader, MainContainer } from '../containers/'
-import { GeneralForm, SigninForm, SubmitButton } from '../components'
+import { GeneralForm, signinForm, SubmitButton } from '../components'
 import { colors } from '../styles/style-constants'
 import { HOME, PROFILE } from '../constants/routes'
 import { footerHomeRegistration } from '../fixtures/footer-content'
@@ -70,17 +70,17 @@ export default function Signin() {
           </SemanticHeader>
 
           <MainContainer>
-            <SigninForm>
-              <SigninForm.Container>
-                <SigninForm.Title>Sign In</SigninForm.Title>
+            <signinForm.ContentBody>
+              <signinForm.Container>
+                <signinForm.Title>Sign In</signinForm.Title>
                 <GeneralForm>
                   {state.firebaseError && (
-                    <SigninForm.FirebaseErrorDisplay>
+                    <signinForm.FirebaseErrorDisplay>
                       {state.firebaseError}
-                    </SigninForm.FirebaseErrorDisplay>
+                    </signinForm.FirebaseErrorDisplay>
                   )}
-                  <SigninForm.InputWrapper>
-                    <SigninForm.Input
+                  <signinForm.InputWrapper>
+                    <signinForm.Input
                       id='signin-email'
                       type='email'
                       placeholder='Email'
@@ -94,14 +94,14 @@ export default function Signin() {
                       Email Address
                     </GeneralForm.HiddenLabel>
                     {emailError && (
-                      <SigninForm.InputError>
+                      <signinForm.InputError>
                         Please enter a valid email.
-                      </SigninForm.InputError>
+                      </signinForm.InputError>
                     )}
-                  </SigninForm.InputWrapper>
+                  </signinForm.InputWrapper>
 
-                  <SigninForm.InputWrapper>
-                    <SigninForm.Input
+                  <signinForm.InputWrapper>
+                    <signinForm.Input
                       id='signin-password'
                       type='password'
                       placeholder='Password'
@@ -118,26 +118,26 @@ export default function Signin() {
                       Password
                     </GeneralForm.HiddenLabel>
                     {passwordError && (
-                      <SigninForm.InputError>
+                      <signinForm.InputError>
                         Your password must contain at least 6 characters.
-                      </SigninForm.InputError>
+                      </signinForm.InputError>
                     )}
-                  </SigninForm.InputWrapper>
+                  </signinForm.InputWrapper>
 
                   <SubmitButton maxWidth='100%' boldText onClick={handleSubmit}>
                     Sign In
                   </SubmitButton>
                 </GeneralForm>
-              </SigninForm.Container>
-              <SigninForm.Text>
+              </signinForm.Container>
+              <signinForm.Text>
                 New to Netflix?{' '}
-                <SigninForm.Link to={HOME}>Sign up now</SigninForm.Link>.
-              </SigninForm.Text>
-              <SigninForm.ReCaptchaText>
+                <signinForm.Link to={HOME}>Sign up now</signinForm.Link>.
+              </signinForm.Text>
+              <signinForm.ReCaptchaText>
                 This page is protected by Google reCAPTCHA to ensure you're not
                 a bot.
-              </SigninForm.ReCaptchaText>
-            </SigninForm>
+              </signinForm.ReCaptchaText>
+            </signinForm.ContentBody>
           </MainContainer>
           <Footer
             footerContent={footerHomeRegistration}

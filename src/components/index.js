@@ -15,7 +15,8 @@ export { default as RegFormText } from './RegFormText'
 export { default as RegList } from './RegList'
 export { default as GeneralForm } from './GeneralForm'
 export { default as PlanTable } from './PlanTable'
-export { default as SigninForm } from './SigninForm'
+
+export * as signinForm from './SigninForm'
 
 export * as browseHeader from './BrowseHeader'
 

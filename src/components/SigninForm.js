@@ -3,7 +3,7 @@ import { Link as RouterLink } from 'react-router-dom'
 import { GeneralForm } from '../components'
 import { colors, inputErrorBorderBottom } from '../styles/style-constants'
 
-const SignInContentBody = styled.div`
+export const ContentBody = styled.div`
   width: 100%;
   min-height: 550px;
   padding: 20px 5% 30px;
@@ -21,12 +21,12 @@ const SignInContentBody = styled.div`
   }
 `
 
-const Container = styled.div``
+export const Container = styled.div``
 
-const Title = styled.h1`
+export const Title = styled.h1`
   margin-bottom: 28px;
 `
-const FirebaseErrorDisplay = styled.p`
+export const FirebaseErrorDisplay = styled.p`
   margin-bottom: 16px;
   padding: 10px 20px;
 
@@ -37,11 +37,11 @@ const FirebaseErrorDisplay = styled.p`
 `
 
 // take and modify CSS for GeneralForm.Input rather than passing down excessive props
-const InputWrapper = styled.div`
+export const InputWrapper = styled.div`
   margin-bottom: 16px;
 `
 
-const Input = styled(GeneralForm.Input)`
+export const Input = styled(GeneralForm.Input)`
   color: #fff;
   font-size: 1rem;
 
@@ -57,18 +57,18 @@ const Input = styled(GeneralForm.Input)`
   margin-bottom: 0;
 `
 
-const InputError = styled.p`
+export const InputError = styled.p`
   font-size: 0.8125rem;
   color: ${colors.errTextOrange};
   padding: 6px 3px 0;
 `
 
-const Text = styled.p`
+export const Text = styled.p`
   color: ${colors.textMedGrey};
   margin-top: 2em;
 `
 
-const Link = styled(RouterLink)`
+export const Link = styled(RouterLink)`
   color: #fff;
   text-decoration: none;
 
@@ -78,49 +78,9 @@ const Link = styled(RouterLink)`
   }
 `
 
-const ReCaptchaText = styled.p`
+export const ReCaptchaText = styled.p`
   font-size: 0.8125rem;
   color: ${colors.textLightGrey};
 
   margin-top: 1em;
 `
-
-export default function SigninForm({ children, ...restProps }) {
-  return <SignInContentBody {...restProps}>{children}</SignInContentBody>
-}
-
-SigninForm.Container = ({ children, ...restProps }) => (
-  <Container {...restProps}>{children}</Container>
-)
-
-SigninForm.Title = ({ children, ...restProps }) => (
-  <Title {...restProps}>{children}</Title>
-)
-
-SigninForm.FirebaseErrorDisplay = ({ children, ...restProps }) => (
-  <FirebaseErrorDisplay {...restProps}>{children}</FirebaseErrorDisplay>
-)
-
-SigninForm.InputWrapper = ({ children, ...restProps }) => (
-  <InputWrapper {...restProps}>{children}</InputWrapper>
-)
-
-SigninForm.Input = ({ children, ...restProps }) => (
-  <Input {...restProps}>{children}</Input>
-)
-
-SigninForm.InputError = ({ children, ...restProps }) => (
-  <InputError {...restProps}>{children}</InputError>
-)
-
-SigninForm.Text = ({ children, ...restProps }) => (
-  <Text {...restProps}>{children}</Text>
-)
-
-SigninForm.Link = ({ children, ...restProps }) => (
-  <Link {...restProps}>{children}</Link>
-)
-
-SigninForm.ReCaptchaText = ({ children, ...restProps }) => (
-  <ReCaptchaText {...restProps}>{children}</ReCaptchaText>
-)
