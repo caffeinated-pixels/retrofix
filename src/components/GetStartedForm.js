@@ -186,7 +186,7 @@ export default function GetStartedForm() {
   return (
     <Form>
       <FormText>
-        Ready to watch? Enter your email to create or restart your membership.
+        Ready to sign away your soul? Enter your email to get started.
       </FormText>
       <EmailForm>
         <InputWrapper>
