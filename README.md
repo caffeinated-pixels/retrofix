@@ -11,4 +11,5 @@ Technologies used:
 - React
 - React Router (React Library)
 - Styled-Components (React library)
+- Fuse.js (JS library for fuzzy searching)
 - Firebase authentication
