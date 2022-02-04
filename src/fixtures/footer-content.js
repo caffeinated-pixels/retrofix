@@ -1,5 +1,5 @@
 export const footerHomeContent = {
-  title: 'Questions? Call 1-555-123-4567',
+  title: "Questions? Don't Call 1-555-123-4567",
   body: [
     'FAQ',
     'Help Center',
@@ -21,13 +21,13 @@ export const footerHomeContent = {
     'Speed Test',
     'Legal Notices',
 
-    'Only on Netflix',
+    'Only on RetroFix',
   ],
-  bottomText: 'Netflix Canada',
+  bottomText: 'RetroFix Canada',
 }
 
 export const footerHomeRegistration = {
-  title: 'Questions? Call 1-555-123-4567',
+  title: "Questions? Don't Call 1-555-123-4567",
   body: [
     'FAQ',
     'Help Center',
@@ -37,26 +37,3 @@ export const footerHomeRegistration = {
     'Corporate Information',
   ],
 }
-
-// export const footerHomeContent = {
-//   title: 'Questions? Call 1-555-123-4567',
-//   body: [
-//     'FAQ',
-//     'Account',
-//     'Investor Relations',
-//     'Redeem Gift Cards',
-//     'Ways to Watch',
-//     'Privacy',
-//     'Corporate Information',
-//     'Speed Test',
-//     'Only on Netflix',
-//     'Help Center',
-//     'Media Center',
-//     'Jobs',
-//     'Buy Gift Cards',
-//     'Terms of Use',
-//     'Cookie Preferences',
-//     'Contact Us',
-//     'Legal Notices',
-//   ],
-// }
