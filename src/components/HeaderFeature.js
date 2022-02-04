@@ -50,8 +50,8 @@ const Subtitle = styled.p`
 export default function HeaderFeature() {
   return (
     <FeatureWrapper>
-      <Title>Unlimited movies, TV shows, and more.</Title>
-      <Subtitle>Watch anywhere. Cancel anytime.</Subtitle>
+      <Title>Retrotastic movies, TV shows, and more.</Title>
+      <Subtitle>Never watch. Never cancel.</Subtitle>
       <GetStartedForm />
     </FeatureWrapper>
   )
