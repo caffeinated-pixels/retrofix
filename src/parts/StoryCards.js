@@ -85,9 +85,9 @@ const StoryImage = styled.img`
 
 export default function StoryCards() {
   const storyContent = storyContentData.map((item) => (
-    <StoryCard key={item.id} direction={item.direction}>
+    <StoryCard key={item.id}>
       <ContentWrapper direction={item.direction}>
-        <TextWrapper>
+        <TextWrapper direction={item.direction}>
           <Title>{item.title}</Title>
           <Subtitle>{item.subtitle}</Subtitle>
         </TextWrapper>
