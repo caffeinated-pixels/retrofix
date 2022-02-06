@@ -51,16 +51,18 @@ export default function Registration() {
         <RegContainerPlanForm>
           <StepHeaderContainer>
             <StepIndicator currentStep='2' />
-            <StepTitle>Choose the plan that’s right for you</StepTitle>
+            <StepTitle>Choose the plan that's right for you</StepTitle>
           </StepHeaderContainer>
           <RegContextBody regForm={true}>
             <RegList planform>
               <RegList.Item planform>
-                Intrusive ads every 22 seconds.
+                Content that's literally unwatchable.
               </RegList.Item>
-              <RegList.Item planform>Recommendations you'll hate.</RegList.Item>
               <RegList.Item planform>
-                Virtually impossible to cancel.
+                Recommendations based on someone else's tastes.
+              </RegList.Item>
+              <RegList.Item planform>
+                None of these plans are real!
               </RegList.Item>
             </RegList>
           </RegContextBody>
