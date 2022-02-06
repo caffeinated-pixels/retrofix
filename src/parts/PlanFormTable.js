@@ -116,7 +116,7 @@ export default function PlanFormTable() {
             checked={checkedItem === 'basic'}
             onChange={() => setCheckedItem('basic')}
           />
-          <PlanNameBox isChecked={checkedItem === 'basic'}>Basic</PlanNameBox>
+          <PlanNameBox isChecked={checkedItem === 'basic'}>Pauper</PlanNameBox>
         </PlanSelector>
         <PlanSelector htmlFor='plan-standard'>
           <RadioButton
@@ -126,9 +126,7 @@ export default function PlanFormTable() {
             checked={checkedItem === 'standard'}
             onChange={() => setCheckedItem('standard')}
           />
-          <PlanNameBox isChecked={checkedItem === 'standard'}>
-            Standard
-          </PlanNameBox>
+          <PlanNameBox isChecked={checkedItem === 'standard'}>Pleb</PlanNameBox>
         </PlanSelector>
         <PlanSelector htmlFor='plan-premium'>
           <RadioButton
@@ -139,20 +137,20 @@ export default function PlanFormTable() {
             onChange={() => setCheckedItem('premium')}
           />
           <PlanNameBox isChecked={checkedItem === 'premium'}>
-            Premium
+            Money Bags
           </PlanNameBox>
         </PlanSelector>
       </HeaderContainer>
       <PlanTable selectedPlan={checkedItem} />
       <SmallPrint>
-        HD (720p), Full HD (1080p), Ultra HD (4K) and HDR availability subject
-        to your internet service and device capabilities. Not all content is
-        available in all resolutions. See our <Link to='#'>Terms of Use</Link>{' '}
-        for more details.
+        This is the small print, which we probably should make even more
+        minuscule.
       </SmallPrint>
       <SmallPrint>
-        Only people who live with you may use your account. Watch on 4 different
-        devices at the same time with Premium, 2 with Standard and 1 with Basic.
+        Anyway, by pressing that big red button, you agree to everything in our{' '}
+        <Link to='#'>Terms of Use</Link>, including forfeiting your soul and
+        waiving all legal rights. But I'm sure that you've studied in
+        painstaking detail the 4037 pages of our T&Cs.
       </SmallPrint>
     </PlanFormContainer>
   )
