@@ -130,12 +130,12 @@ export default function Signin() {
                 </GeneralForm>
               </signinForm.Container>
               <signinForm.Text>
-                New to Netflix?{' '}
+                New to RetroFix?{' '}
                 <signinForm.Link to={HOME}>Sign up now</signinForm.Link>.
               </signinForm.Text>
               <signinForm.ReCaptchaText>
-                This page is protected by Google reCAPTCHA to ensure you're not
-                a bot.
+                This page is protected by one of those really annoying CAPTCHA
+                tests to ensure you're not human.
               </signinForm.ReCaptchaText>
             </signinForm.ContentBody>
           </MainContainer>
