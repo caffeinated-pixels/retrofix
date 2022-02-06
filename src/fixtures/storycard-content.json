@@ -4,7 +4,7 @@
     "title": "Enjoy on your TV.",
     "subtitle": "Delight in perusing all our pretend content on any device with a web browser, including your TV!",
     "image": "/images/misc/home-tv.jpg",
-    "alt": "Watching Netflix on a TV",
+    "alt": "The RetroFix website displayed on a TV",
     "direction": "row",
     "negativeMargin": "-10% auto 0"
   },
@@ -13,7 +13,7 @@
     "title": "Download your shows to watch offline.",
     "subtitle": "If you can find one of our shows on a real streaming service, feel free to download and watch offline!",
     "image": "/images/misc/home-mobile.jpg",
-    "alt": "Downloading Stranger Things on mobile",
+    "alt": "A mobile phone screen showing Rutger Hauer loading a shotgun",
     "direction": "row-reverse",
     "negativeMargin": "0 auto"
   },
@@ -22,7 +22,7 @@
     "title": "Watch everywhere.",
     "subtitle": "This is what Takeshi Kitano would look like if you watched Hana-bi on an Amiga 1000.",
     "image": "/images/misc/home-amiga.jpg",
-    "alt": "Watching Netflix on any device type",
+    "alt": "Takeshi Kitano in the flim Hana-bi, displayed on an Amiga 1000 computer",
     "direction": "row",
     "negativeMargin": "0 auto"
   },
@@ -31,7 +31,7 @@
     "title": "Create profiles for kids.",
     "subtitle": "Kids are as evil as pineapple on a pizza, so RetroFix is a no-kids zone!",
     "image": "/images/misc/home-kids.jpg",
-    "alt": "Kids profiles on Netflix",
+    "alt": "The young Michael Myers from Halloween",
     "direction": "row-reverse",
     "negativeMargin": "0 auto"
   }
