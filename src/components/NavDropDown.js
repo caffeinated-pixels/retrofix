@@ -121,7 +121,7 @@ export default function NavDropDown() {
 
           <SubMenuList>
             <SubMenuItem>
-              <SubMenuBtn onClick={signOut}>Sign out of Netflix</SubMenuBtn>
+              <SubMenuBtn onClick={signOut}>Sign out of RetroFix</SubMenuBtn>
             </SubMenuItem>
           </SubMenuList>
         </SubMenuContainer>
