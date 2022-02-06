@@ -24,7 +24,7 @@
     "image": "/images/misc/home-amiga.jpg",
     "alt": "Watching Netflix on any device type",
     "direction": "row",
-    "negativeMargin": "-5% auto 0"
+    "negativeMargin": "0 auto"
   },
   {
     "id": 4,
