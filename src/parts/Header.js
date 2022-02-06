@@ -5,13 +5,13 @@ const HeaderContainer = styled.div`
   width: 100%;
   border-bottom: ${({ hasBorder }) => (hasBorder ? cardBorderBottom : '')};
   background-image: ${({ noBgOnMobile }) =>
-    noBgOnMobile ? `url('')` : `url('../images/misc/home-bg-large.jpg')`};
+    noBgOnMobile ? `url('')` : `url('../images/misc/videodrome.jpg')`};
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 
   @media (min-width: 740px) {
-    background-image: url('../images/misc/home-bg-large.jpg');
+    background-image: url('../images/misc/videodrome.jpg');
   }
 `
 const ImageGradient = styled.div`
