@@ -93,8 +93,10 @@ export default function RegForm() {
             <StepTitle>Create a password to start your membership</StepTitle>
           </StepHeaderContainer>
 
-          <RegFormText>Just a few more steps and you're done!</RegFormText>
-          <RegFormText>We hate paperwork, too.</RegFormText>
+          <RegFormText>Just a couple more steps and you're done!</RegFormText>
+          <RegFormText>
+            We love paperwork and small print. Get ready to sign away your soul!
+          </RegFormText>
           <GeneralForm>
             <GeneralForm.InputWrapper>
               <GeneralForm.Input
@@ -162,7 +164,8 @@ export default function RegForm() {
             <GeneralForm.CheckboxWrapper>
               <GeneralForm.Checkbox id='offers' type='checkbox' />
               <GeneralForm.Label htmlFor='offers'>
-                Please do not email me NetFlix special offers
+                Don't tick if don't want to not receive unsolicited emails from
+                dodgy third parties 😜
               </GeneralForm.Label>
             </GeneralForm.CheckboxWrapper>
 
