@@ -44,8 +44,8 @@ export default function Registration() {
 
           <RegContextBody>
             <RegParagraph>
-              Netflix is personalized for you. Create a password to watch on any
-              device at any time.
+              RetroFix is personalized for you. Create a password to browse on
+              any device at any time.
             </RegParagraph>
           </RegContextBody>
         </RegContainer>
