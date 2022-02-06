@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import { Link as RouterLink } from 'react-router-dom'
 import { PlanTable } from '../components/'
 import { colors } from '../styles/style-constants'
 
@@ -93,15 +92,6 @@ const SmallPrint = styled.small`
   }
 `
 
-const Link = styled(RouterLink)`
-  text-decoration: none;
-
-  &:hover,
-  &:focus-visible {
-    text-decoration: underline;
-  }
-`
-
 export default function PlanFormTable() {
   const [checkedItem, setCheckedItem] = useState('standard')
 
@@ -143,14 +133,14 @@ export default function PlanFormTable() {
       </HeaderContainer>
       <PlanTable selectedPlan={checkedItem} />
       <SmallPrint>
-        This is the small print, which we probably should make even more
-        minuscule.
+        Just to be clear, RetroFix is not a real streaming service, it doesn't
+        actually cost any money and you won't receive any emails!
       </SmallPrint>
       <SmallPrint>
-        Anyway, by pressing that big red button, you agree to everything in our{' '}
-        <Link to='#'>Terms of Use</Link>, including forfeiting your soul and
-        waiving all legal rights. But I'm sure that you've studied in
-        painstaking detail the 4037 pages of our T&Cs.
+        Pressing the big red button will create a user account using the
+        Firebase API, which will allow you to browse all the pretend content. If
+        you don't want to create an account, feel free to sign in with the guest
+        account. Email: guest@retrofix.com; password: password.
       </SmallPrint>
     </PlanFormContainer>
   )
