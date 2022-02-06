@@ -29,7 +29,7 @@ const TextWrapper = styled.div`
   padding: 15px 0;
 
   @media (min-width: 950px) {
-    width: 52%;
+    width: 50vw;
     text-align: left;
     padding: ${({ direction }) =>
       direction === 'row' ? '0 3rem 0 0' : '0 0 0 3rem'};
