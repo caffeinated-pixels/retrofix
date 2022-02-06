@@ -55,12 +55,12 @@ export default function Registration() {
           </StepHeaderContainer>
           <RegContextBody regForm={true}>
             <RegList planform>
-              <RegList.Item planform>Watch all you want. Ad-free.</RegList.Item>
               <RegList.Item planform>
-                Recommendations just for you.
+                Intrusive ads every 22 seconds.
               </RegList.Item>
+              <RegList.Item planform>Recommendations you'll hate.</RegList.Item>
               <RegList.Item planform>
-                Change or cancel your plan anytime.
+                Virtually impossible to cancel.
               </RegList.Item>
             </RegList>
           </RegContextBody>
