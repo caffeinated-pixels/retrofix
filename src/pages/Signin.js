@@ -134,8 +134,9 @@ export default function Signin() {
                 <signinForm.Link to={HOME}>Sign up now</signinForm.Link>.
               </signinForm.Text>
               <signinForm.ReCaptchaText>
-                This page is protected by one of those really annoying CAPTCHA
-                tests to ensure you're not human.
+                RetroFix uses the Firebase API for user accounts. If you don't
+                want to create an account, please feel free to use the guest
+                account. Email: guest@retrofix.com; password: password.
               </signinForm.ReCaptchaText>
             </signinForm.ContentBody>
           </MainContainer>
