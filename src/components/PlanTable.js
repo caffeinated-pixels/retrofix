@@ -98,34 +98,34 @@ export default function PlanTable({ selectedPlan }) {
       <TableBody>
         <TableRow>
           <RowHeader>Monthly price</RowHeader>
-          <TableCell typeNum={typeNum}>$9.99</TableCell>
-          <TableCell typeNum={typeNum}>$14.99</TableCell>
-          <TableCell typeNum={typeNum}>$18.99</TableCell>
+          <TableCell typeNum={typeNum}>$59.99</TableCell>
+          <TableCell typeNum={typeNum}>$149.99</TableCell>
+          <TableCell typeNum={typeNum}>$666.66</TableCell>
         </TableRow>
         <TableRow>
           <RowHeader>Video quality</RowHeader>
-          <TableCell typeNum={typeNum}>Good</TableCell>
-          <TableCell typeNum={typeNum}>Better</TableCell>
-          <TableCell typeNum={typeNum}>Best</TableCell>
+          <TableCell typeNum={typeNum}>Garbage</TableCell>
+          <TableCell typeNum={typeNum}>Adequate</TableCell>
+          <TableCell typeNum={typeNum}>Uber</TableCell>
         </TableRow>
         <TableRow>
           <RowHeader>Resolution</RowHeader>
+          <TableCell typeNum={typeNum}>256p</TableCell>
           <TableCell typeNum={typeNum}>480p</TableCell>
-          <TableCell typeNum={typeNum}>1080p</TableCell>
-          <TableCell typeNum={typeNum}>4K+HDR</TableCell>
+          <TableCell typeNum={typeNum}>64K+4D</TableCell>
         </TableRow>
         <TableRow>
           <RowHeader>
             Watch on your TV, computer, mobile phone and tablet
           </RowHeader>
           <TableCell aria-label='included' typeNum={typeNum}>
-            <FaCheckmark className='fas fa-check'></FaCheckmark>
+            <FaCheckmark className='fas fa-times'></FaCheckmark>
           </TableCell>
           <TableCell aria-label='included' typeNum={typeNum}>
-            <FaCheckmark className='fas fa-check'></FaCheckmark>
+            <FaCheckmark className='fas fa-times'></FaCheckmark>
           </TableCell>
           <TableCell aria-label='included' typeNum={typeNum}>
-            <FaCheckmark className='fas fa-check'></FaCheckmark>
+            <FaCheckmark className='fas fa-times'></FaCheckmark>
           </TableCell>
         </TableRow>
       </TableBody>
