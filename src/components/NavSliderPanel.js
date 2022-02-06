@@ -120,7 +120,7 @@ export default function NavSliderPanel({
             </NavBtn>
           </NavUserLi>
           <NavLi noLeftPadding>
-            <NavBtn onClick={signOut}>Sign out of Netflix</NavBtn>
+            <NavBtn onClick={signOut}>Sign out of RetroFix</NavBtn>
           </NavLi>
         </NavPrimary>
         <NavSecondary>
