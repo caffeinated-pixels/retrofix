@@ -44,12 +44,14 @@ export default function Registration() {
           </StepHeaderContainer>
           <RegContextBody>
             <RegList>
-              <RegList.Item>No commitments, cancel anytime.</RegList.Item>
               <RegList.Item>
-                Everything on Netflix for one low price.
+                Our dark patterns mean cancelling is virtually impossible.
               </RegList.Item>
               <RegList.Item>
-                Unlimited viewing on all your devices.
+                Everything on RetroFix for one sky-high price.
+              </RegList.Item>
+              <RegList.Item>
+                Highly-compressed and badly-upscaled content.
               </RegList.Item>
             </RegList>
           </RegContextBody>
