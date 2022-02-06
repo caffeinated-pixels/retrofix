@@ -45,14 +45,12 @@ export default function Registration() {
           <RegContextBody>
             <RegList>
               <RegList.Item>
-                Our dark patterns mean cancelling is virtually impossible.
+                Stay with us. Forever, and ever, and ever.
               </RegList.Item>
               <RegList.Item>
-                Everything on RetroFix for one sky-high price.
+                Everything on RetroFix for more than you can afford.
               </RegList.Item>
-              <RegList.Item>
-                Highly-compressed and badly-upscaled content.
-              </RegList.Item>
+              <RegList.Item>Awesome shows that you can't watch.</RegList.Item>
             </RegList>
           </RegContextBody>
         </RegContainer>
