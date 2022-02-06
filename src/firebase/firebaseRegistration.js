@@ -29,6 +29,6 @@ export default async function firebaseRegistration(
 }
 
 function generateRandomPhotoUrl() {
-  const randomNum = Math.ceil(Math.random() * 5)
+  const randomNum = Math.ceil(Math.random() * 6)
   return `./images/users/${randomNum}.png`
 }
