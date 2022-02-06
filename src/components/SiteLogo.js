@@ -10,7 +10,7 @@ const Logo = styled.img`
 export default function SiteLogo({ ...restProps }) {
   return (
     <Link to={HOME}>
-      <Logo src='../images/misc/logo.svg' alt='Netflix logo' {...restProps} />
+      <Logo src='../images/misc/logo.svg' alt='RetroFix logo' {...restProps} />
     </Link>
   )
 }
