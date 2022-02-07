@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import useLargeModal from '../hooks/useLargeModal'
+import useNavigateToWatch from '../hooks/useNavigateToWatch'
 import { useBrowseContext } from '../context/BrowseContext'
 import { browseButtons, LargeContentModal } from '../components'
 
@@ -80,6 +81,7 @@ const MaturityRating = styled.div`
 export default function Billboard() {
   const { randomShow } = useBrowseContext()
   const { displayModal, handleShowModal, handleCloseModal } = useLargeModal()
+  const handlePlay = useNavigateToWatch(randomShow)
 
   const imgUrl = randomShow.slug
     ? `/images/${randomShow.category}/${randomShow.genre}/${randomShow.slug}/large.jpg`
@@ -92,7 +94,7 @@ export default function Billboard() {
           <FeaturedTitle>{randomShow.title}</FeaturedTitle>
           <FeaturedSynopsis>{randomShow.description}</FeaturedSynopsis>
           <ButtonWrapper>
-            <browseButtons.PlayButton>
+            <browseButtons.PlayButton onClick={handlePlay}>
               <browseButtons.PlayIcon className='fas fa-play' />
               Play
             </browseButtons.PlayButton>
