@@ -34,7 +34,7 @@ function App() {
         <Route element={<RequireAuth />}>
           <Route path={ROUTES.BROWSE} element={<Browse />} />
           <Route path={ROUTES.PROFILE} element={<Profile />} />
-          <Route path={ROUTES.GET_THE_APP} element={<GetTheApp />} />
+          <Route path={`${ROUTES.GET_THE_APP}/:id`} element={<GetTheApp />} />
           <Route path={ROUTES.SEARCH} element={<SearchPage />} />
         </Route>
       </Routes>
