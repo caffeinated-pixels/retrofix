@@ -12,3 +12,4 @@ export const PROFILE = '/profile'
 
 export const GET_THE_APP = '/get-the-app'
 export const SEARCH = '/search'
+export const WATCH = '/watch'

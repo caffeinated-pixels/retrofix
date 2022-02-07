@@ -10,6 +10,7 @@ import {
   Profile,
   GetTheApp,
   SearchPage,
+  Watch,
 } from './pages'
 import { RequireAuth, RedirectUser } from './components'
 import * as ROUTES from './constants/routes'
@@ -36,6 +37,7 @@ function App() {
           <Route path={ROUTES.PROFILE} element={<Profile />} />
           <Route path={`${ROUTES.GET_THE_APP}/:id`} element={<GetTheApp />} />
           <Route path={ROUTES.SEARCH} element={<SearchPage />} />
+          <Route path={`${ROUTES.WATCH}/:id`} element={<Watch />} />
         </Route>
       </Routes>
     </Router>

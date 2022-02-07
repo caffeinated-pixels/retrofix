@@ -11,3 +11,4 @@ export { default as Profile } from './Profile'
 
 export { default as GetTheApp } from './GetTheApp'
 export { default as SearchPage } from './SearchPage'
+export { default as Watch } from './Watch'
