@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components'
 import { useParams, Link } from 'react-router-dom'
 import { useBrowseContext } from '../context/BrowseContext'
 import { SiteLogo } from '../components'
-import { HOME, BROWSE } from '../constants/routes'
+import { BROWSE } from '../constants/routes'
 import { colors } from '../styles/style-constants'
 
 const PageContainer = styled.div`
@@ -33,8 +33,6 @@ const Header = styled.header`
 const LogoWrapper = styled.div`
   width: 120px;
 `
-
-const LogoLink = styled(Link)``
 
 const ShowImage = styled.div`
   height: 80vh;
@@ -134,9 +132,7 @@ export default function GetTheApp() {
     <PageContainer>
       <Header>
         <LogoWrapper>
-          <LogoLink to={HOME}>
-            <SiteLogo />
-          </LogoLink>
+          <SiteLogo />
         </LogoWrapper>
       </Header>
       <ShowImage imgUrl={imgUrl}></ShowImage>
