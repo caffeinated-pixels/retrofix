@@ -37,6 +37,7 @@ export default function BrowseContextProvider({ children }) {
       value={{
         activeCategory,
         setCategory,
+        unsortedStreamingContent,
         sortedContent,
         randomShow,
       }}
