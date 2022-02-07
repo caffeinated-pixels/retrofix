@@ -1,8 +1,10 @@
 import { useEffect } from 'react'
 import ReactDOM from 'react-dom'
 import styled from 'styled-components'
+import { useNavigate } from 'react-router-dom'
 import { browseButtons } from '.'
 import { colors } from '../styles/style-constants'
+import { WATCH } from '../constants/routes'
 
 const modalRoot = document.getElementById('modal-root')
 
@@ -182,6 +184,7 @@ const People = styled.div`
 `
 
 export default function LargeContentModal({ handleCloseModal, item }) {
+  const navigate = useNavigate()
   const imgUrl = `/images/${item.category}/${item.genre}/${item.slug}/large.jpg`
 
   useEffect(() => {
@@ -193,6 +196,10 @@ export default function LargeContentModal({ handleCloseModal, item }) {
     return () => document.removeEventListener('keydown', handleKeyDown)
   }, [handleCloseModal])
 
+  const handlePlay = () => {
+    navigate(`${WATCH}/${item.id}`)
+  }
+
   return ReactDOM.createPortal(
     <Background>
       <ModalContainer>
@@ -200,7 +207,7 @@ export default function LargeContentModal({ handleCloseModal, item }) {
           <TitleBox>
             <Title>{item.title}</Title>
             <ButtonWrapper>
-              <browseButtons.PlayButton autoFocus>
+              <browseButtons.PlayButton onClick={handlePlay} autoFocus>
                 <browseButtons.PlayIcon className='fas fa-play' />
                 Play
               </browseButtons.PlayButton>
