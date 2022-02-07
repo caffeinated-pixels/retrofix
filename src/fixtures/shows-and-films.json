@@ -10,7 +10,8 @@
     "length": "1h 42m",
     "director": "Paul Verhoeven",
     "cast": "Peter Weller, Nancy Allen, Kurtwood Smith",
-    "slug": "robocop"
+    "slug": "robocop",
+    "id": "1"
   },
   {
     "title": "Blade Runner",
@@ -23,7 +24,8 @@
     "length": "1h 57m",
     "director": "Ridley Scott",
     "cast": "Harrison Ford, Rutger Hauer, Sean Young",
-    "slug": "blade-runner"
+    "slug": "blade-runner",
+    "id": "2"
   },
   {
     "title": "Total Recall",
@@ -36,7 +38,8 @@
     "length": "1h 53m",
     "director": "Paul Verhoeven",
     "cast": "Arnold Schwarzenegger, Sharon Stone, Michael Ironside",
-    "slug": "total-recall"
+    "slug": "total-recall",
+    "id": "3"
   },
   {
     "title": "Alien",
@@ -49,7 +52,8 @@
     "length": "1h 51m",
     "director": "Ridley Scott",
     "cast": "Sigourney Weaver, Tom Skerritt, John Hurt",
-    "slug": "alien"
+    "slug": "alien",
+    "id": "4"
   },
   {
     "title": "Escape from New York",
@@ -62,7 +66,8 @@
     "length": "1h 39m",
     "director": "John Carpenter",
     "cast": "Kurt Russell, Lee Van Cleef, Donald Pleasence",
-    "slug": "escape-new-york"
+    "slug": "escape-new-york",
+    "id": "5"
   },
   {
     "title": "The Terminator",
@@ -75,7 +80,8 @@
     "length": "1h 47m",
     "director": "James Cameron",
     "cast": "Arnold Schwarzenegger, Linda Hamilton, Michael Biehn",
-    "slug": "terminator"
+    "slug": "terminator",
+    "id": "6"
   },
   {
     "title": "Starship Troopers",
@@ -88,7 +94,8 @@
     "length": "2h 9m",
     "director": "Paul Verhoeven",
     "cast": "Casper Van Dien, Denise Richards, Dina Meyer",
-    "slug": "starship-troopers"
+    "slug": "starship-troopers",
+    "id": "7"
   },
   {
     "title": "2001: A Space Odyssey",
@@ -101,7 +108,8 @@
     "length": "2h 29m",
     "director": "Stanley Kubrick",
     "cast": "Keir Dullea, Gary Lockwood, William Sylvester",
-    "slug": "2001"
+    "slug": "2001",
+    "id": "8"
   },
   {
     "title": "Invasion of the Body Snatchers",
@@ -114,9 +122,9 @@
     "length": "1h 55m",
     "director": "Philip Kaufman",
     "cast": "Donald Sutherland, Brooke Adams, Jeff Goldblum",
-    "slug": "body-snatchers"
+    "slug": "body-snatchers",
+    "id": "9"
   },
-
   {
     "title": "The Twilight Zone",
     "description": "Ordinary people find themselves in extraordinarily astounding situations, which they each try to solve in a remarkable manner.",
@@ -127,7 +135,8 @@
     "year": "1959",
     "length": "5 seasons",
     "cast": "Rod Serling, Robert McCord, Jay Overholts",
-    "slug": "twilight-zone"
+    "slug": "twilight-zone",
+    "id": "10"
   },
   {
     "title": "Ghost in The Shell",
@@ -139,7 +148,8 @@
     "year": "2002",
     "length": "2 seasons",
     "cast": "Shirô Saitô, Mary Elizabeth McGlynn, William Frederick Knight",
-    "slug": "stand-alone"
+    "slug": "stand-alone",
+    "id": "11"
   },
   {
     "title": "Battlestar Galactica",
@@ -151,7 +161,8 @@
     "year": "2004",
     "length": "5 seasons",
     "cast": "Edward James Olmos, Mary McDonnell, Jamie Bamber",
-    "slug": "battlestar"
+    "slug": "battlestar",
+    "id": "12"
   },
   {
     "title": "Utopia",
@@ -163,7 +174,8 @@
     "year": "2013",
     "length": "2 seasons",
     "cast": "Adeel Akhtar, Paul Higgins, Neil Maskell",
-    "slug": "utopia"
+    "slug": "utopia",
+    "id": "13"
   },
   {
     "title": "X-Files",
@@ -175,7 +187,8 @@
     "year": "1993",
     "length": "11 seasons",
     "cast": "David Duchovny, Gillian Anderson, Mitch Pileggi",
-    "slug": "x-files"
+    "slug": "x-files",
+    "id": "14"
   },
   {
     "title": "The Hitchhiker's Guide to the Galaxy",
@@ -187,7 +200,8 @@
     "year": "1981",
     "length": "1 season",
     "cast": "Simon Jones, David Dixon, Peter Jones",
-    "slug": "hitchhikers-guide"
+    "slug": "hitchhikers-guide",
+    "id": "15"
   },
   {
     "title": "Cowboy Bebop",
@@ -199,7 +213,8 @@
     "year": "1998",
     "length": "1 season",
     "cast": "Kôichi Yamadera,Unshô Ishizuka, Megumi Hayashibara",
-    "slug": "cowboy-bebop"
+    "slug": "cowboy-bebop",
+    "id": "16"
   },
   {
     "title": "Evil Dead",
@@ -211,7 +226,8 @@
     "length": "1h 25m",
     "director": "Sam Raimi",
     "cast": "Bruce Campbell, Betsy Baker, Ellen Sandweiss",
-    "slug": "evil-dead"
+    "slug": "evil-dead",
+    "id": "17"
   },
   {
     "title": "The Thing",
@@ -224,7 +240,8 @@
     "length": "1h 49m",
     "director": "John Carpenter",
     "cast": "Kurt Russell, Wilford Brimley, Keith David",
-    "slug": "the-thing"
+    "slug": "the-thing",
+    "id": "18"
   },
   {
     "title": "The Shining",
@@ -237,7 +254,8 @@
     "length": "2h 26m",
     "director": "Stanley Kubrick",
     "cast": "Jack Nicholson, Shelley Duvall, Danny Lloyd",
-    "slug": "the-shining"
+    "slug": "the-shining",
+    "id": "19"
   },
   {
     "title": "Halloween",
@@ -250,7 +268,8 @@
     "length": "1h 31m",
     "director": "John Carpenter",
     "cast": "Donald Pleasence, Jamie Lee Curtis, Tony Moran",
-    "slug": "halloween"
+    "slug": "halloween",
+    "id": "20"
   },
   {
     "title": "The Wicker Man",
@@ -263,7 +282,8 @@
     "length": "1h 28m",
     "director": "Robin Hardy",
     "cast": "Edward Woodward, Christopher Lee, Diane Cilento",
-    "slug": "wicker-man"
+    "slug": "wicker-man",
+    "id": "21"
   },
   {
     "title": "Psycho",
@@ -276,7 +296,8 @@
     "length": "1h 48m",
     "director": "Alfred Hitchcock",
     "cast": "Janet Leigh, Anthony Perkins, Vera Miles",
-    "slug": "psycho"
+    "slug": "psycho",
+    "id": "22"
   },
   {
     "title": "Videodrome",
@@ -289,9 +310,9 @@
     "length": "1h 27m",
     "director": "David Cronenberg",
     "cast": "James Woods, Debbie Harry, Sonja Smits",
-    "slug": "videodrome"
+    "slug": "videodrome",
+    "id": "23"
   },
-
   {
     "title": "Hana-Bi",
     "description": "Nishi leaves the police in the face of harrowing personal and professional difficulties. Spiraling into depression, he makes questionable decisions.",
@@ -303,7 +324,8 @@
     "length": "1h 43m",
     "director": "Takeshi Kitano",
     "cast": "Takeshi Kitano, Kayoko Kishimoto, Ren Ôsugi",
-    "slug": "hana-bi"
+    "slug": "hana-bi",
+    "id": "24"
   },
   {
     "title": "Ichi The Killer",
@@ -316,7 +338,8 @@
     "length": "2h 9m",
     "director": "Takashi Miike",
     "cast": "Tadanobu Asano, Nao Ōmori, Shin'ya Tsukamoto",
-    "slug": "ichi-the-killer"
+    "slug": "ichi-the-killer",
+    "id": "25"
   },
   {
     "title": "Dead Man",
@@ -329,7 +352,8 @@
     "length": "2h 1m",
     "director": "Jim Jarmusch",
     "cast": "Johnny Depp, Gary Farmer, Crispin Glover",
-    "slug": "dead-man"
+    "slug": "dead-man",
+    "id": "26"
   },
   {
     "title": "The Godfather",
@@ -342,7 +366,8 @@
     "length": "2h 55m",
     "director": "Francis Ford Coppola",
     "cast": "Marlon Brando, Al Pacino, James Caan",
-    "slug": "godfather"
+    "slug": "godfather",
+    "id": "27"
   },
   {
     "title": "Blue Velvet",
@@ -355,7 +380,8 @@
     "length": "2h 1m",
     "director": "David Lynch",
     "cast": "Isabella Rossellini, Kyle MacLachlan, Dennis Hopper",
-    "slug": "blue-velvet"
+    "slug": "blue-velvet",
+    "id": "28"
   },
   {
     "title": "One Flew Over The Cuckoo's Nest",
@@ -367,7 +393,8 @@
     "length": "2h 13m",
     "director": "Milos Forman",
     "cast": "Jack Nicholson, Louise Fletcher, Michael Berryman",
-    "slug": "one-flew-cuckoo"
+    "slug": "one-flew-cuckoo",
+    "id": "29"
   },
   {
     "title": "The Third Man",
@@ -380,7 +407,8 @@
     "length": "1h 44m",
     "director": "Carol Reed",
     "cast": "Orson Welles, Joseph Cotten, Alida Valli",
-    "slug": "third-man"
+    "slug": "third-man",
+    "id": "30"
   },
   {
     "title": "The Prisoner",
@@ -392,7 +420,8 @@
     "year": "1967",
     "length": "2 seasons",
     "cast": "Patrick McGoohan, Angelo Muscat, Peter Swanwick",
-    "slug": "the-prisoner"
+    "slug": "the-prisoner",
+    "id": "31"
   },
   {
     "title": "I, Claudius",
@@ -404,7 +433,8 @@
     "year": "1976",
     "length": "1 season",
     "cast": "Derek Jacobi, Sian Phillips, Brian Blessed",
-    "slug": "i-claudius"
+    "slug": "i-claudius",
+    "id": "32"
   },
   {
     "title": "Twin Peaks",
@@ -416,7 +446,8 @@
     "year": "1990",
     "length": "3 seasons",
     "cast": "Kyle MacLachlan, Michael Ontkean, Mädchen Amick",
-    "slug": "twin-peaks"
+    "slug": "twin-peaks",
+    "id": "33"
   },
   {
     "title": "Deadwood",
@@ -428,7 +459,8 @@
     "year": "2004",
     "length": "3 seasons",
     "cast": "Timothy Olyphant, Ian McShane, Molly Parker",
-    "slug": "deadwood"
+    "slug": "deadwood",
+    "id": "34"
   },
   {
     "title": "Tinker Tailor Soldier Spy",
@@ -440,7 +472,8 @@
     "year": "1979",
     "length": "1 season",
     "cast": "Alec Guinness, Alexander Knox, Ian Richardson",
-    "slug": "tinker-tailor"
+    "slug": "tinker-tailor",
+    "id": "35"
   },
   {
     "title": "MPD Psycho",
@@ -452,7 +485,8 @@
     "year": "2000",
     "length": "1 season",
     "cast": "Ren ÔsugiNaoki HosakaTomoko Nakajima",
-    "slug": "mpd-psycho"
+    "slug": "mpd-psycho",
+    "id": "36"
   },
   {
     "title": "The Wire",
@@ -464,9 +498,9 @@
     "year": "2002",
     "length": "5 seasons",
     "cast": "Dominic West, John Doman, Deirdre Lovejoy",
-    "slug": "the-wire"
+    "slug": "the-wire",
+    "id": "37"
   },
-
   {
     "title": "Night On Earth",
     "description": "An anthology of 5 different cab drivers in 5 American and European cities and their remarkable fares on the same eventful night.",
@@ -478,7 +512,8 @@
     "length": "2h 9m",
     "director": "Jim Jarmusch",
     "cast": "Winona Ryder, Gena Rowlands, Lisanne Falk",
-    "slug": "night-on-earth"
+    "slug": "night-on-earth",
+    "id": "38"
   },
   {
     "title": "Monty Python and the Holy Grail",
@@ -491,7 +526,8 @@
     "length": "1h 31m",
     "director": "Terry Gilliam, Terry Jones",
     "cast": "Graham Chapman, John Cleese, Eric Idle",
-    "slug": "holy-grail"
+    "slug": "holy-grail",
+    "id": "39"
   },
   {
     "title": "Team America: World Police",
@@ -504,7 +540,8 @@
     "length": "1h 39m",
     "director": "Trey Parker",
     "cast": "Trey Parker, Matt Stone, Elle Russ",
-    "slug": "team-america"
+    "slug": "team-america",
+    "id": "40"
   },
   {
     "title": "Gremlins",
@@ -517,7 +554,8 @@
     "length": "1h 46m",
     "director": "Joe Dante",
     "cast": "Zach Galligan, Phoebe Cates, Hoyt Axton",
-    "slug": "gremlins"
+    "slug": "gremlins",
+    "id": "41"
   },
   {
     "title": "The Big Lebowski",
@@ -530,7 +568,8 @@
     "length": "1h 57m",
     "director": "Joel Coen, Ethan Coen",
     "cast": "Jeff Bridges, John Goodman, Julianne Moore",
-    "slug": "big-lebowski"
+    "slug": "big-lebowski",
+    "id": "42"
   },
   {
     "title": "Ghostbusters",
@@ -543,7 +582,8 @@
     "length": "1h 45m",
     "director": "Ivan Reitman",
     "cast": "Dan Aykroyd, Harold Ramis, Bill Murray",
-    "slug": "ghostbusters"
+    "slug": "ghostbusters",
+    "id": "43"
   },
   {
     "title": "The Blues Brothers",
@@ -556,7 +596,8 @@
     "length": "2h 13m",
     "director": "John Landis",
     "cast": "John Belushi, Dan Aykroyd, Cab Calloway",
-    "slug": "blues-brothers"
+    "slug": "blues-brothers",
+    "id": "44"
   },
   {
     "title": "The Ladykillers",
@@ -569,7 +610,8 @@
     "length": "1h 31m",
     "director": "Alexander Mackendrick",
     "cast": "Alec Guinness, Peter Sellers, Cecil Parker",
-    "slug": "lady-killers"
+    "slug": "lady-killers",
+    "id": "45"
   },
   {
     "title": "Dr Strangelove",
@@ -582,7 +624,8 @@
     "length": "1h 34m",
     "director": "Stanley Kubrick",
     "cast": "George C. Scott, Peter Sellers, Slim Pickens",
-    "slug": "dr-strangelove"
+    "slug": "dr-strangelove",
+    "id": "46"
   },
   {
     "title": "Yes, Minister!",
@@ -593,7 +636,8 @@
     "year": "1980",
     "length": "3 seasons",
     "cast": "Paul Eddington, Nigel Hawthorne, Derek Fowlds",
-    "slug": "yes-minister"
+    "slug": "yes-minister",
+    "id": "47"
   },
   {
     "title": "Red Dwarf",
@@ -605,7 +649,8 @@
     "year": "1988",
     "length": "6 seasons",
     "cast": "Chris Barrie, Craig Charles, Danny John-Jules",
-    "slug": "red-dwarf"
+    "slug": "red-dwarf",
+    "id": "48"
   },
   {
     "title": "Blackadder",
@@ -616,7 +661,8 @@
     "year": "1982",
     "length": "4 seasons",
     "cast": "Rowan Atkinson, Tim McInnerny, Tony Robinson",
-    "slug": "blackadder"
+    "slug": "blackadder",
+    "id": "49"
   },
   {
     "title": "M*A*S*H",
@@ -628,7 +674,8 @@
     "year": "1972",
     "length": "11 seasons",
     "cast": "Alan Alda, Wayne Rogers, Loretta Swit",
-    "slug": "mash"
+    "slug": "mash",
+    "id": "50"
   },
   {
     "title": "Garth Marenghi's Darkplace",
@@ -639,7 +686,8 @@
     "year": "2004",
     "length": "1 season",
     "cast": "Richard Ayoade, Matt Berry, Matthew Holness",
-    "slug": "darkplace"
+    "slug": "darkplace",
+    "id": "51"
   },
   {
     "title": "Metalocalypse",
@@ -651,7 +699,8 @@
     "year": "2006",
     "length": "4 seasons",
     "cast": "Brendon Small, Tommy Blacha, Mark Hamill",
-    "slug": "metalocalypse"
+    "slug": "metalocalypse",
+    "id": "52"
   },
   {
     "title": "Curb Your Enthusiasm",
@@ -662,7 +711,8 @@
     "year": "2000",
     "length": "11 seasons",
     "cast": "Larry David, Cheryl Hines, Jeff Garlin",
-    "slug": "curb"
+    "slug": "curb",
+    "id": "53"
   },
   {
     "title": "South Park",
@@ -674,7 +724,8 @@
     "year": "1997",
     "length": "23 seasons",
     "cast": "Trey Parker, Matt Stone, Isaac Hayes",
-    "slug": "south-park"
+    "slug": "south-park",
+    "id": "54"
   },
   {
     "title": "Jam",
@@ -685,7 +736,8 @@
     "year": "2000",
     "length": "1 season",
     "cast": "Christopher Morris, Amelia Bullmore, David Cann",
-    "slug": "jam"
+    "slug": "jam",
+    "id": "55"
   },
   {
     "title": "Brass Eye",
@@ -696,7 +748,8 @@
     "year": "1997",
     "length": "1 season",
     "cast": "Christopher Morris, Mark Heap, Kevin Eldon",
-    "slug": "brass-eye"
+    "slug": "brass-eye",
+    "id": "56"
   },
   {
     "title": "Spaced",
@@ -707,9 +760,9 @@
     "year": "1999",
     "length": "2 seasons",
     "cast": "Simon Pegg, Nick Frost, Jessica Hynes",
-    "slug": "spaced"
+    "slug": "spaced",
+    "id": "57"
   },
-
   {
     "title": "Jodorwky's Dune",
     "description": "The story of cult film director Alejandro Jodorowsky's ambitious but ultimately doomed film adaptation of the seminal science fiction novel.",
@@ -721,7 +774,8 @@
     "length": "1h 30m",
     "director": "Frank Pavich",
     "cast": "Alejandro Jodorowsky, Chris Foss, H.R. Giger",
-    "slug": "jodorwkys-dune"
+    "slug": "jodorwkys-dune",
+    "id": "58"
   },
   {
     "title": "Zappa",
@@ -734,7 +788,8 @@
     "length": "2h 9m",
     "director": "Alex Winter",
     "cast": "Frank Zappa, Lonnie Lardner, Patrice Zappa",
-    "slug": "zappa"
+    "slug": "zappa",
+    "id": "59"
   },
   {
     "title": "Dangerous Days: Making Blade Runner",
@@ -747,7 +802,8 @@
     "length": "3h 34m",
     "director": "Charles de Lauzirika",
     "cast": "Daryl Hannah, Rutger Hauer, Harrison Ford",
-    "slug": "dangerous-days"
+    "slug": "dangerous-days",
+    "id": "60"
   },
   {
     "title": "Searching for the Wrong-Eyed Jesus",
@@ -760,7 +816,8 @@
     "length": "1h 22m",
     "director": "Andrew Douglas",
     "cast": "Jim White, Harry Crews, Johnny Dowd",
-    "slug": "wrong-eyed-jesus"
+    "slug": "wrong-eyed-jesus",
+    "id": "61"
   },
   {
     "title": "Hearts of Darkness: A Filmmaker's Apocalypse",
@@ -772,7 +829,8 @@
     "length": "1h 36m",
     "director": "Fax Bahr, George Hickenlooper, Eleanor Coppola",
     "cast": "Dennis Hopper, Martin Sheen, Marlon Brando",
-    "slug": "hearts-of-darkness"
+    "slug": "hearts-of-darkness",
+    "id": "62"
   },
   {
     "title": "From Bedrooms to Billions",
@@ -784,7 +842,8 @@
     "length": "2h 30m",
     "director": "Anthony Caulfield, Nicola Caulfield",
     "cast": "Shahid Ahmad, Nigel Alderton, Nick Alexander ",
-    "slug": "bedrooms-to-billions"
+    "slug": "bedrooms-to-billions",
+    "id": "63"
   },
   {
     "title": "From Bedrooms to Billions: The Amiga Years!",
@@ -796,7 +855,8 @@
     "length": "2h 32m",
     "director": "Anthony Caulfield, Nicola Caulfield",
     "cast": "Shahid Ahmad, Richard Aplin, Brian Bagnall",
-    "slug": "amiga-years"
+    "slug": "amiga-years",
+    "id": "64"
   },
   {
     "title": "The King of Kong",
@@ -808,7 +868,8 @@
     "length": "1h 19m",
     "director": "Seth Gordon",
     "cast": "Steve Wiebe, Billy Mitchell, Mark Alpiger",
-    "slug": "king-of-kong"
+    "slug": "king-of-kong",
+    "id": "65"
   },
   {
     "title": "Civilisation",
@@ -820,7 +881,8 @@
     "year": "1969",
     "length": "1 season",
     "cast": "Kenneth Clark, Ian Richardson, Ronald Lacey",
-    "slug": "civilisation"
+    "slug": "civilisation",
+    "id": "66"
   },
   {
     "title": "Screenwipe",
@@ -832,7 +894,8 @@
     "year": "2006",
     "length": "5 seasons",
     "cast": "Charlie Brooker, Al Campbell, David Firth",
-    "slug": "screenwipe"
+    "slug": "screenwipe",
+    "id": "67"
   },
   {
     "title": "World At War",
@@ -844,7 +907,8 @@
     "year": "1973",
     "length": "1 season",
     "cast": "Laurence Olivier, Albert Speer, Anthony Eden",
-    "slug": "world-at-war"
+    "slug": "world-at-war",
+    "id": "68"
   },
   {
     "title": "The Vietnam War",
@@ -856,7 +920,8 @@
     "year": "2017",
     "length": "1 season",
     "cast": "Peter Coyote, Huy Duc, James Willbanks",
-    "slug": "vietnam-war"
+    "slug": "vietnam-war",
+    "id": "69"
   },
   {
     "title": "Abroad in Britain",
@@ -867,7 +932,8 @@
     "year": "1990",
     "length": "1 season",
     "cast": "Jonathan Meades",
-    "slug": "abroad-in-britain"
+    "slug": "abroad-in-britain",
+    "id": "70"
   },
   {
     "title": "Even Further Abroad",
@@ -878,7 +944,8 @@
     "year": "1997",
     "length": "1 season",
     "cast": "Jonathan Meades",
-    "slug": "even-further-abroad"
+    "slug": "even-further-abroad",
+    "id": "71"
   },
   {
     "title": "Victoria Died in 1901 and is Still Alive Today",
@@ -889,7 +956,8 @@
     "year": "2001",
     "length": "1 episode",
     "cast": "Jonathan Meades, Christopher Biggins, Skandar Keynes",
-    "slug": "victoria-died"
+    "slug": "victoria-died",
+    "id": "72"
   },
   {
     "title": "Simon Schama's Power of Art",
@@ -900,9 +968,9 @@
     "year": "2006",
     "length": "1 season",
     "cast": "Simon Schama, Grégoire Bonnet, Allan Corduner",
-    "slug": "power-of-art"
+    "slug": "power-of-art",
+    "id": "73"
   },
-
   {
     "title": "Predator",
     "description": "A team of commandos on a mission in a Central American jungle find themselves hunted by an extraterrestrial warrior.",
@@ -914,7 +982,8 @@
     "length": "1h 46m",
     "director": "John McTiernan",
     "cast": "Arnold Schwarzenegger, Carl Weathers, Kevin Peter Hall",
-    "slug": "predator"
+    "slug": "predator",
+    "id": "74"
   },
   {
     "title": "The Hitcher",
@@ -927,7 +996,8 @@
     "length": "1h 37m",
     "director": "Robert Harmon",
     "cast": "Rutger Hauer, C. Thomas Howell, Jennifer Jason Leigh",
-    "slug": "the-hitcher"
+    "slug": "the-hitcher",
+    "id": "75"
   },
   {
     "title": "Hard Boiled",
@@ -940,7 +1010,8 @@
     "length": "1h 28m",
     "director": "John Woo",
     "cast": "Chow Yun-Fat, Tony Chiu-Wai Leung, Teresa Mo",
-    "slug": "hard-boiled"
+    "slug": "hard-boiled",
+    "id": "76"
   },
   {
     "title": "A Better Tomorrow",
@@ -953,7 +1024,8 @@
     "length": "1h 35m",
     "director": "John Woo",
     "cast": "Lung Ti, Leslie Cheung, Chow Yun-Fat",
-    "slug": "better-tommorrow"
+    "slug": "better-tommorrow",
+    "id": "77"
   },
   {
     "title": "You Only Live Twice",
@@ -966,7 +1038,8 @@
     "length": "1h 57m",
     "director": "Lewis Gilbert",
     "cast": "Sean Connery, Akiko Wakabayashi, Donald Pleasence ",
-    "slug": "you-only-live"
+    "slug": "you-only-live",
+    "id": "78"
   },
   {
     "title": "Die Hard",
@@ -979,7 +1052,8 @@
     "length": "2h 12m",
     "director": "John McTiernan",
     "cast": "Bruce Willis, Alan Rickman, Bonnie Bedelia",
-    "slug": "die-hard"
+    "slug": "die-hard",
+    "id": "79"
   },
   {
     "title": "Akira",
@@ -992,7 +1066,8 @@
     "length": "2h 4m",
     "director": "Katsuhiro Ôtomo",
     "cast": "Mitsuo Iwata, Nozomu Sasaki, Mami Koyama",
-    "slug": "akira"
+    "slug": "akira",
+    "id": "80"
   },
   {
     "title": "Yojimbo",
@@ -1004,7 +1079,8 @@
     "length": "1h 50m",
     "director": "Akira Kurosawa",
     "cast": "Toshirô Mifune, Eijirô Tôno, Tatsuya Nakadai",
-    "slug": "yojimbo"
+    "slug": "yojimbo",
+    "id": "81"
   },
   {
     "title": "Spartacus: Blood and Sand",
@@ -1015,7 +1091,8 @@
     "year": "2010",
     "length": "3 seasons",
     "cast": "Andy Whitfield, Lucy Lawless, Manu Bennett",
-    "slug": "spartacus"
+    "slug": "spartacus",
+    "id": "82"
   },
   {
     "title": "Miami Vice",
@@ -1027,7 +1104,8 @@
     "year": "1984",
     "length": "5 seasons",
     "cast": "Don Johnson, Philip Michael Thomas, Saundra Santiago",
-    "slug": "miami-vice"
+    "slug": "miami-vice",
+    "id": "83"
   },
   {
     "title": "Ash vs Evil Dead",
@@ -1039,7 +1117,8 @@
     "year": "2015",
     "length": "3 seasons",
     "cast": "Bruce Campbell, Ray Santiago, Dana DeLorenzo",
-    "slug": "ash-vs-evil"
+    "slug": "ash-vs-evil",
+    "id": "84"
   },
   {
     "title": "Barry",
@@ -1051,7 +1130,8 @@
     "year": "2018",
     "length": "2 seasons",
     "cast": "Bill Hader, Stephen Root, Sarah Goldberg",
-    "slug": "barry"
+    "slug": "barry",
+    "id": "85"
   },
   {
     "title": "Takeshi's Castle",
@@ -1063,7 +1143,8 @@
     "year": "1986",
     "length": "2 seasons",
     "cast": "Takeshi Kitano, Hayato Tani, Michiru Jo",
-    "slug": "takeshis-castle"
+    "slug": "takeshis-castle",
+    "id": "86"
   },
   {
     "title": "Archer",
@@ -1075,7 +1156,8 @@
     "year": "2009",
     "length": "12 seasons",
     "cast": "H. Jon Benjamin, Judy Greer, Amber Nash",
-    "slug": "archer"
+    "slug": "archer",
+    "id": "87"
   },
   {
     "title": "Dragon Ball Z",
@@ -1087,6 +1169,7 @@
     "year": "1989",
     "length": "9 seasons",
     "cast": "Jôji Yanami, Kyle Hebert, Masako Nozawa",
-    "slug": "dragon-ball-z"
+    "slug": "dragon-ball-z",
+    "id": "88"
   }
 ]
