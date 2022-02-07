@@ -47,7 +47,7 @@ export default function StreamingContentMobile() {
           {content.map((item) => (
             <ContentBox
               key={item.title}
-              onClick={() => navigate(GET_THE_APP, { state: item })}
+              onClick={() => navigate(`${GET_THE_APP}/${item.id}`)}
             >
               <ContentImage
                 src={`/images/${item.category}/${item.genre}/${item.slug}/thumb.jpg`}
