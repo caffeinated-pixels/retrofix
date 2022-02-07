@@ -146,8 +146,8 @@ export default function GetTheApp() {
           </ShowInfoBox>
         </MetadataBox>
         <AppLaunchBox>
-          <WatchNetflix>Watch NetFlix on your phone or tablet</WatchNetflix>
-          <AppLinkButton to='#'>Get the free app</AppLinkButton>
+          <WatchNetflix>Watch RetroFix on your phone or tablet</WatchNetflix>
+          <AppLinkButton to='#'>Get the imaginery app</AppLinkButton>
         </AppLaunchBox>
         <ReturnLinkButton to={BROWSE}>
           <ReturnIcon className='fas fa-share' />
