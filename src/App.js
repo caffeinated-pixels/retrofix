@@ -11,6 +11,7 @@ import {
   GetTheApp,
   SearchPage,
   Watch,
+  PageNotFound,
 } from './pages'
 import { RequireAuth, RedirectUser } from './components'
 import * as ROUTES from './constants/routes'
@@ -39,6 +40,8 @@ function App() {
           <Route path={ROUTES.SEARCH} element={<SearchPage />} />
           <Route path={`${ROUTES.WATCH}/:id`} element={<Watch />} />
         </Route>
+
+        <Route path='*' element={<PageNotFound />} />
       </Routes>
     </Router>
   )
