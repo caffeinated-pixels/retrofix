@@ -1,5 +1,7 @@
+import { useMemo } from 'react'
 import styled, { css } from 'styled-components'
-import { useLocation, Link } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
+import { useBrowseContext } from '../context/BrowseContext'
 import { SiteLogo } from '../components'
 import { HOME, BROWSE } from '../constants/routes'
 import { colors } from '../styles/style-constants'
@@ -116,7 +118,16 @@ const ReturnIcon = styled.i`
 `
 
 export default function GetTheApp() {
-  const { state: show } = useLocation()
+  const { unsortedStreamingContent } = useBrowseContext()
+  const { id } = useParams()
+
+  const show = useMemo(() => {
+    const showIndex = unsortedStreamingContent.findIndex(
+      (show) => show.id === id
+    )
+    return unsortedStreamingContent[showIndex]
+  }, [unsortedStreamingContent, id])
+
   const imgUrl = `/images/${show.category}/${show.genre}/${show.slug}/large.jpg`
 
   return (
