@@ -9,8 +9,6 @@ const firebaseConfig = {
   messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_ID,
   appId: process.env.REACT_APP_FIREBASE_APP_ID,
 }
-// Google recommends hiding the config values if publishing as open source
-// TODO: when I publish, I will need to setup Netlify functions to replace these env variables
 
 export const firebaseApp = initializeApp(firebaseConfig)
 // this is the Firebase App object
