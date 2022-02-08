@@ -41,7 +41,7 @@ function App() {
           <Route path={`${ROUTES.WATCH}/:id`} element={<Watch />} />
         </Route>
 
-        <Route path='*' element={<PageNotFound />} />
+        <Route path='/*' element={<PageNotFound />} />
       </Routes>
     </Router>
   )
