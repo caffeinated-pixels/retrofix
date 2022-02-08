@@ -9,7 +9,6 @@ export default async function firebaseSignIn(email, password) {
       password
     )
 
-    console.log(response)
     return response
   } catch (error) {
     return error

@@ -34,10 +34,8 @@ export default function Registration() {
     )
 
     if (user?.email) {
-      console.log('registration completed!')
       navigate(PROFILE)
     } else {
-      console.log('registration failed!')
       navigate(REG_FORM)
     }
   }

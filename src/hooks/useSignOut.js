@@ -7,7 +7,6 @@ export default function useSignOut() {
 
   return async () => {
     await firebaseSignOut()
-    console.log('signed out!')
     navigate(HOME)
   }
 }

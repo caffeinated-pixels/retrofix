@@ -43,7 +43,6 @@ export default function Signin() {
       state.password.trim()
     )
     if (firebaseResponse.user) {
-      console.log('succesful signin for ' + firebaseResponse.user.email)
       navigate(PROFILE, { replace: true }) // 2nd arg prevents browser back returning to signin page
     } else if (firebaseResponse.message) {
       processFirebaseError(firebaseResponse.message)

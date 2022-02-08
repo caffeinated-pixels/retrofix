@@ -17,11 +17,6 @@ export default async function firebaseRegistration(
       displayName: globalFirstName,
       photoURL: generateRandomPhotoUrl(),
     })
-    console.log(response)
-    console.log(
-      firebaseAuth.currentUser.displayName,
-      firebaseAuth.currentUser.photoURL
-    )
     return response.user
   } catch (error) {
     console.log(error.message)

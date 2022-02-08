@@ -178,7 +178,6 @@ export default function GetStartedForm() {
       setGlobalEmail(state.email)
       navigate(REGISTRATION)
     } else {
-      console.log('invalid email!')
       dispatch({ type: 'SET_INPUT_ERROR', payload: true })
     }
   }
