@@ -81,8 +81,14 @@ const CreditText = styled.p`
   margin-top: 2em;
 `
 
-const CreditLink = styled(Link)`
+const CreditLink = styled.a`
   font-weight: 700;
+  text-decoration: none;
+  color: inherit;
+
+  &:hover {
+    text-decoration: underline;
+  }
 `
 
 const FaIcon = styled.i``
@@ -116,12 +122,12 @@ export default function Footer({
           ) : null}
           <CreditText>
             Coded by{' '}
-            <CreditLink to='https://steviegill-webportfolio.netlify.app/'>
+            <CreditLink href='https://steviegill-webportfolio.netlify.app/'>
               Stevie Gill
             </CreditLink>{' '}
             |{' '}
             <FaIcon className='fab fa-github-square' aria-label='Github logo' />{' '}
-            <CreditLink to='https://github.com/caffeinated-pixels/retrofix'>
+            <CreditLink href='https://github.com/caffeinated-pixels/retrofix'>
               Repo
             </CreditLink>
           </CreditText>
