@@ -25,6 +25,7 @@ const FooterContainer = styled.footer`
 const FooterWrapper = styled.div`
   max-width: 1000px;
   margin: 0 auto;
+  font-size: 0.8125rem;
 `
 
 const ContentWrapper = styled.div`
@@ -34,6 +35,7 @@ const ContentWrapper = styled.div`
 
 const TopText = styled.p`
   margin: 0 0 30px;
+  font-size: 1rem;
 `
 
 const UnorderedList = styled.ul`
@@ -71,9 +73,19 @@ const Link = styled(RouterLink)`
 `
 
 const BottomText = styled.p`
-  font-size: 13px;
-  margin-top: 24px;
+  margin-top: 1.5em;
 `
+
+const CreditText = styled.p`
+  text-align: center;
+  margin-top: 2em;
+`
+
+const CreditLink = styled(Link)`
+  font-weight: 700;
+`
+
+const FaIcon = styled.i``
 
 export default function Footer({
   footerContent,
@@ -102,6 +114,17 @@ export default function Footer({
           {footerContent.bottomText ? (
             <BottomText>{footerContent.bottomText}</BottomText>
           ) : null}
+          <CreditText>
+            Coded by{' '}
+            <CreditLink to='https://steviegill-webportfolio.netlify.app/'>
+              Stevie Gill
+            </CreditLink>{' '}
+            |{' '}
+            <FaIcon className='fab fa-github-square' aria-label='Github logo' />{' '}
+            <CreditLink to='https://github.com/caffeinated-pixels/retrofix'>
+              Repo
+            </CreditLink>
+          </CreditText>
         </ContentWrapper>
       </FooterWrapper>
     </FooterContainer>
