@@ -1,4 +1,4 @@
-import { useLayoutEffect, useRef } from 'react'
+import { useEffect, useLayoutEffect, useRef } from 'react'
 import styled from 'styled-components'
 import useSlideTracks from '../hooks/useSlideTracks'
 import { ContentSlide } from '../components'
@@ -61,21 +61,31 @@ export default function SlideTrack({ content }) {
     dispatch({ type: 'SET_PAGE_LENGTH', payload: pageLength })
     dispatch({ type: 'SET_TOTAL_PAGES', payload: totalNumPages })
     dispatch({ type: 'SET_ACTIVE_SLIDES' })
+    console.log('first useLayoutEffect fired')
   }, [content, dispatch])
 
   useLayoutEffect(() => {
+    console.log('2nd useLayoutEffect fired')
+
+    // update trackOffset value when window resizes
+    const slideWidth = ref.current.firstChild.getBoundingClientRect().width
+    dispatch({ type: 'SET_TRACK_OFFSET', payload: slideWidth })
+  }, [state.currentPage, dispatch])
+
+  useEffect(() => {
     const setTrackOffset = () => {
       // get width of first slide
       const slideWidth = ref.current.firstChild.getBoundingClientRect().width
       dispatch({ type: 'SET_TRACK_OFFSET', payload: slideWidth })
+      console.log('setTrackOffset fired')
     }
 
-    setTrackOffset()
+    console.log('useEffect fired')
 
     // recalc offset everytime window resizes
     window.addEventListener('resize', setTrackOffset)
     return () => window.removeEventListener('resize', setTrackOffset)
-  }, [state.currentPage, dispatch])
+  }, [dispatch])
 
   const handleForward = () => {
     const isLastPage = state.totalPages - 1 === state.currentPage
