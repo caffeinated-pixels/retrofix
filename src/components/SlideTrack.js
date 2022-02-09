@@ -6,14 +6,22 @@ import { ContentSlide } from '../components'
 const SlideTrackWrapper = styled.div`
   position: relative;
   overflow: hidden;
+
+  &:hover > button > i,
+  &:focus-within > button > i {
+    display: block;
+  }
 `
 
-const GoBackBox = styled.div`
+const GoBackBox = styled.button`
   position: absolute;
   width: 4%;
   top: 0;
   bottom: 0;
   z-index: 10;
+
+  color: inherit;
+  border: 0;
 
   display: flex;
   justify-content: center;
@@ -39,6 +47,10 @@ const GoForwardBox = styled(GoBackBox)`
 
 const ArrowIcon = styled.i`
   font-size: 3rem;
+
+  @media (hover: hover) {
+    display: none;
+  }
 `
 
 const Track = styled.div`
