@@ -43,7 +43,6 @@ const Track = styled.div`
 `
 
 export default function SlideTrack({ content }) {
-  const [firstSlide, setFirstSlide] = useState(0)
   const [pages, setPages] = useState({
     currentPage: 0,
     pageLength: 0,
@@ -83,8 +82,9 @@ export default function SlideTrack({ content }) {
       // get width of first slide
 
       const slideWidth = ref.current.firstChild.getBoundingClientRect().width
+      const pageWidth = slideWidth * pages.pageLength
 
-      const trackOffset = slideWidth * firstSlide
+      const trackOffset = pageWidth * pages.currentPage
       setTrackOffset(`-${trackOffset}px`)
     }
 
@@ -93,18 +93,38 @@ export default function SlideTrack({ content }) {
     // recalc offset everytime window resizes
     window.addEventListener('resize', calcTrackOffset)
     return () => window.removeEventListener('resize', calcTrackOffset)
-  }, [firstSlide])
+  }, [pages])
+
+  const calcNewPageSlides = (pages, increment) => {
+    const firstSlide = (pages.currentPage + increment) * pages.pageLength
+
+    return Array.from(Array(pages.pageLength)).map((item, i) => i + firstSlide)
+  }
 
   const handleForward = () => {
-    setFirstSlide((prev) => {
-      const isLastSlide = prev === content.length - 1
-      return isLastSlide ? prev : prev + 1
+    setPages((prev) => {
+      const isLastPage = prev.totalPages - 1 === prev.currentPage
+
+      if (isLastPage) return prev
+
+      return {
+        ...prev,
+        currentPage: prev.currentPage + 1,
+        slides: calcNewPageSlides(prev, 1),
+      }
     })
   }
   const handleBack = () => {
-    setFirstSlide((prev) => {
-      const isFirstSlide = prev === 0
-      return isFirstSlide ? prev : prev - 1
+    setPages((prev) => {
+      const isFirstPage = prev.currentPage === 0
+
+      if (isFirstPage) return prev
+
+      return {
+        ...prev,
+        currentPage: prev.currentPage - 1,
+        slides: calcNewPageSlides(prev, -1),
+      }
     })
   }
 
