@@ -137,10 +137,10 @@ export default function PlanFormTable() {
         actually cost any money and you won't receive any emails!
       </SmallPrint>
       <SmallPrint>
-        Pressing the big red button will create a user account using the
-        Firebase API, which will allow you to browse all the pretend content. If
-        you don't want to create an account, feel free to sign in with the guest
-        account. Email: guest@retrofix.com; password: password.
+        Pressing the big red button will create a user account managed by the
+        Firebase API. An account is required to browse all the pretend content.
+        If you don't want to create an account, please feel free to sign in with
+        the guest account. Email: guest@retrofix.com; password: password.
       </SmallPrint>
     </PlanFormContainer>
   )
