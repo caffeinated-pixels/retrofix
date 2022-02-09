@@ -1,4 +1,4 @@
-import { useState, useLayoutEffect, useRef } from 'react'
+import { useState, useLayoutEffect, useRef, useMemo } from 'react'
 import styled from 'styled-components'
 import { ContentSlide } from '../components'
 
@@ -44,13 +44,44 @@ const Track = styled.div`
 
 export default function SlideTrack({ content }) {
   const [firstSlide, setFirstSlide] = useState(0)
+  const [pages, setPages] = useState({
+    currentPage: 0,
+    pageLength: 0,
+    totalPages: 0,
+    slides: [],
+  })
+
   const [trackOffset, setTrackOffset] = useState('0px')
 
   const ref = useRef(null)
+  const totalNumSlides = useMemo(() => content.length, [content])
+
+  useLayoutEffect(() => {
+    const slideWidth = ref.current.firstChild.getBoundingClientRect().width
+    const slideTrackWidth = ref.current.getBoundingClientRect().width
+    const pageLength = Math.floor(slideTrackWidth / slideWidth)
+    const totalNumPages = Math.ceil(totalNumSlides / pageLength)
+
+    setPages((prev) => {
+      const firstSlide = prev.currentPage * pageLength
+
+      const slides = Array.from(Array(pageLength)).map(
+        (item, i) => i + firstSlide
+      )
+
+      return {
+        currentPage: prev.currentPage,
+        pageLength: pageLength,
+        totalPages: totalNumPages,
+        slides: slides,
+      }
+    })
+  }, [totalNumSlides])
 
   useLayoutEffect(() => {
     const calcTrackOffset = () => {
       // get width of first slide
+
       const slideWidth = ref.current.firstChild.getBoundingClientRect().width
 
       const trackOffset = slideWidth * firstSlide
@@ -78,16 +109,20 @@ export default function SlideTrack({ content }) {
   }
 
   return (
-    <SlideTrackWrapper>
-      <GoBackBox className='go-back' onClick={handleBack}>
+    <SlideTrackWrapper tabIndex='0'>
+      <GoBackBox className='go-back' tabIndex='0' onClick={handleBack}>
         <ArrowIcon className='fas fa-angle-left' />
       </GoBackBox>
       <Track trackOffset={trackOffset} ref={ref}>
-        {content.map((item) => (
-          <ContentSlide key={item.title} item={item} />
+        {content.map((item, i) => (
+          <ContentSlide
+            key={item.title}
+            item={item}
+            isSlideOnCurrentPage={pages.slides.includes(i)}
+          />
         ))}
       </Track>
-      <GoForwardBox className='go-forward' onClick={handleForward}>
+      <GoForwardBox className='go-forward' tabIndex='0' onClick={handleForward}>
         <ArrowIcon className='fas fa-angle-right' />
       </GoForwardBox>
     </SlideTrackWrapper>

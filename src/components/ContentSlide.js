@@ -25,15 +25,17 @@ const ContentImage = styled.img`
   }
 `
 
-export default function ContentSlide({ item }) {
+export default function ContentSlide({ item, isSlideOnCurrentPage }) {
   const { displayModal, handleShowModal, handleKeyDown, handleCloseModal } =
     useLargeModal()
   const imgUrl = `/images/${item.category}/${item.genre}/${item.slug}/thumb.jpg`
 
+  const tabIndex = isSlideOnCurrentPage ? '0' : '-1'
+
   return (
     <Container onClick={handleShowModal} displayModal={displayModal}>
       <ContentImage
-        tabIndex='0'
+        tabIndex={tabIndex}
         src={imgUrl}
         alt={item.title}
         onKeyDown={handleKeyDown}
