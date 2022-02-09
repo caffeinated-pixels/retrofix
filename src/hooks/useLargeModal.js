@@ -8,9 +8,12 @@ export default function useLargeModal() {
   }
 
   const handleKeyDown = (e) => {
-    if (e.key === 'Enter') {
-      setDisplayModal(true)
-    }
+    // add delay to stop Play button also being activated!
+    setTimeout(() => {
+      if (e.key === 'Enter') {
+        setDisplayModal(true)
+      }
+    }, 10)
   }
 
   const handleCloseModal = (e) => {
