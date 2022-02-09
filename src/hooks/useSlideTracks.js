@@ -15,8 +15,8 @@ const setActiveSlides = (state) => {
   return Array.from(Array(state.pageLength)).map((item, i) => i + firstSlide)
 }
 
-const setTrackOffset = (state) => {
-  const pageWidth = state.slideWidth * state.pageLength
+const setTrackOffset = (state, slideWidth) => {
+  const pageWidth = slideWidth * state.pageLength
   const trackOffset = pageWidth * state.currentPage
 
   return `-${trackOffset}px`
@@ -24,8 +24,6 @@ const setTrackOffset = (state) => {
 
 const reducer = (state, action) => {
   switch (action.type) {
-    case 'SET_SLIDE_WIDTH':
-      return { ...state, slideWidth: action.payload }
     case 'SET_CURRENT_PAGE':
       return { ...state, currentPage: action.payload }
     case 'SET_PAGE_LENGTH':
@@ -35,7 +33,7 @@ const reducer = (state, action) => {
     case 'SET_ACTIVE_SLIDES':
       return { ...state, activeSlides: setActiveSlides(state) }
     case 'SET_TRACK_OFFSET':
-      return { ...state, trackOffset: setTrackOffset(state) }
+      return { ...state, trackOffset: setTrackOffset(state, action.payload) }
     case 'RESET_STATE':
       return { ...initialState }
     default:

@@ -67,8 +67,7 @@ export default function SlideTrack({ content }) {
     const setTrackOffset = () => {
       // get width of first slide
       const slideWidth = ref.current.firstChild.getBoundingClientRect().width
-      dispatch({ type: 'SET_SLIDE_WIDTH', payload: slideWidth })
-      dispatch({ type: 'SET_TRACK_OFFSET' })
+      dispatch({ type: 'SET_TRACK_OFFSET', payload: slideWidth })
     }
 
     setTrackOffset()
