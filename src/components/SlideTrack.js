@@ -52,21 +52,16 @@ export default function SlideTrack({ content }) {
     // clear state when content updates
     dispatch({ type: 'RESET_STATE' })
 
-    const totalNumSlides = content.length
+    // then setup state values based on current content & slideWidth
     const slideWidth = ref.current.firstChild.getBoundingClientRect().width
     const slideTrackWidth = ref.current.getBoundingClientRect().width
     const pageLength = Math.floor(slideTrackWidth / slideWidth)
-    const totalNumPages = Math.ceil(totalNumSlides / pageLength)
 
     dispatch({ type: 'SET_PAGE_LENGTH', payload: pageLength })
-    dispatch({ type: 'SET_TOTAL_PAGES', payload: totalNumPages })
     dispatch({ type: 'SET_ACTIVE_SLIDES' })
-    console.log('first useLayoutEffect fired')
-  }, [content, dispatch])
+  }, [dispatch])
 
   useLayoutEffect(() => {
-    console.log('2nd useLayoutEffect fired')
-
     // update trackOffset value when window resizes
     const slideWidth = ref.current.firstChild.getBoundingClientRect().width
     dispatch({ type: 'SET_TRACK_OFFSET', payload: slideWidth })
@@ -77,10 +72,7 @@ export default function SlideTrack({ content }) {
       // get width of first slide
       const slideWidth = ref.current.firstChild.getBoundingClientRect().width
       dispatch({ type: 'SET_TRACK_OFFSET', payload: slideWidth })
-      console.log('setTrackOffset fired')
     }
-
-    console.log('useEffect fired')
 
     // recalc offset everytime window resizes
     window.addEventListener('resize', setTrackOffset)
@@ -88,7 +80,8 @@ export default function SlideTrack({ content }) {
   }, [dispatch])
 
   const handleForward = () => {
-    const isLastPage = state.totalPages - 1 === state.currentPage
+    const totalNumPages = Math.ceil(content.length / state.pageLength)
+    const isLastPage = totalNumPages - 1 === state.currentPage
 
     if (isLastPage) return
 

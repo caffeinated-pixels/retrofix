@@ -1,10 +1,8 @@
 import { useReducer } from 'react'
 
 const initialState = {
-  slideWidth: 0,
   currentPage: 0,
   pageLength: 0,
-  totalPages: 0,
   activeSlides: [],
   trackOffset: '0px',
 }
@@ -28,8 +26,6 @@ const reducer = (state, action) => {
       return { ...state, currentPage: action.payload }
     case 'SET_PAGE_LENGTH':
       return { ...state, pageLength: action.payload }
-    case 'SET_TOTAL_PAGES':
-      return { ...state, totalPages: action.payload }
     case 'SET_ACTIVE_SLIDES':
       return { ...state, activeSlides: setActiveSlides(state) }
     case 'SET_TRACK_OFFSET':
