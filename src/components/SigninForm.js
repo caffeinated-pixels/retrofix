@@ -50,7 +50,6 @@ export const Input = styled(GeneralForm.Input)`
 
   background-color: ${colors.textDarkGrey};
   border: 0;
-  /* border-bottom: ${inputErrorBorderBottom}; */
   border-bottom: ${({ inputError }) =>
     inputError ? inputErrorBorderBottom : null};
   border-radius: 4px;
@@ -78,8 +77,9 @@ export const Link = styled(RouterLink)`
   }
 `
 
-export const ReCaptchaText = styled.p`
+export const SmallPrint = styled.p`
   font-size: 0.8125rem;
+  line-height: 1.25;
   color: ${colors.textLightGrey};
 
   margin-top: 1em;

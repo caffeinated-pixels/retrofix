@@ -133,11 +133,11 @@ export default function Signin() {
                 New to RetroFix?{' '}
                 <signinForm.Link to={HOME}>Sign up now</signinForm.Link>.
               </signinForm.Text>
-              <signinForm.ReCaptchaText>
-                RetroFix uses the Firebase API for user accounts. If you don't
-                want to create an account, please feel free to use the guest
-                account. Email: guest@retrofix.com; password: password.
-              </signinForm.ReCaptchaText>
+              <signinForm.SmallPrint>
+                RetroFix uses the Firebase API for user authentication. If you
+                don't wish to create an account, please feel free to use the
+                guest account. Email: guest@retrofix.com; password: password.
+              </signinForm.SmallPrint>
             </signinForm.ContentBody>
           </MainContainer>
           <Footer
