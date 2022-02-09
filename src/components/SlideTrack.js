@@ -27,6 +27,11 @@ const GoBackBox = styled.div`
   &:hover {
     background: rgba(20, 20, 20, 0.7);
   }
+
+  &:focus-visible {
+    outline: auto;
+    outline-offset: -1px;
+  }
 `
 const GoForwardBox = styled(GoBackBox)`
   right: 0;
@@ -45,7 +50,6 @@ const Track = styled.div`
 
 export default function SlideTrack({ content }) {
   const [state, dispatch] = useSlideTracks()
-
   const ref = useRef(null)
 
   useLayoutEffect(() => {
@@ -97,7 +101,7 @@ export default function SlideTrack({ content }) {
   }
 
   return (
-    <SlideTrackWrapper tabIndex='0'>
+    <SlideTrackWrapper>
       <GoBackBox className='go-back' tabIndex='0' onClick={handleBack}>
         <ArrowIcon className='fas fa-angle-left' />
       </GoBackBox>
