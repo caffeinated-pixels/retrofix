@@ -44,8 +44,8 @@ export default function Registration() {
 
           <RegContextBody>
             <RegParagraph>
-              RetroFix is personalized for you. Create a password to browse on
-              any device at any time.
+              RetroFix uses the Firebase API for user authentication. You can
+              also signin to RetroFix using the guest account.
             </RegParagraph>
           </RegContextBody>
         </RegContainer>
