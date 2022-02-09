@@ -60,12 +60,3 @@ export default function Registration() {
     </PageContainer>
   )
 }
-
-/* 
-  <PageContainer>
-
-  
-  </PageContainer>
-
-
-*/
