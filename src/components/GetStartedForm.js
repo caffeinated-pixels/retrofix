@@ -2,11 +2,7 @@ import styled from 'styled-components'
 import { useNavigate } from 'react-router-dom'
 import useFormValidation from '../hooks/useFormValidation'
 import { useSignUpContext } from '../context/SignUpContext'
-import {
-  colors,
-  inputErrorBorderBottom,
-  focusOutline,
-} from '../styles/style-constants'
+import { colors, inputErrorBorderBottom } from '../styles/style-constants'
 import { REGISTRATION } from '../constants/routes'
 import isEmailValid from '../helpers/validate-email'
 
@@ -96,8 +92,7 @@ const EmailInput = styled.input`
   }
 
   &:focus-visible {
-    outline: ${focusOutline};
-    outline: none;
+    outline: auto;
   }
 `
 
@@ -152,7 +147,7 @@ const EmailSubmit = styled.button`
   }
 
   &:focus-visible {
-    outline: ${focusOutline};
+    outline: auto;
   }
 `
 

@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { colors, focusOutline } from '../styles/style-constants'
+import { colors } from '../styles/style-constants'
 
 const SubmitButtonContainer = styled.div`
   max-width: ${({ maxWidth }) => (maxWidth ? maxWidth : '340px')};
@@ -26,7 +26,7 @@ const Button = styled.button`
   }
 
   &:focus-visible {
-    outline: ${focusOutline};
+    outline: auto;
   }
 `
 

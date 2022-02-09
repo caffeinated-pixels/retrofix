@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
-import { colors, focusOutline } from '../styles/style-constants'
+import { colors } from '../styles/style-constants'
 
 const LinkButton = styled(Link)`
   text-decoration: none;
@@ -21,7 +21,7 @@ const LinkButton = styled(Link)`
   }
 
   &:focus-visible {
-    outline: ${focusOutline};
+    outline: auto;
   }
 `
 
