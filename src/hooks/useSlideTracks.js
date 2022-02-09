@@ -1,5 +1,14 @@
 import { useReducer } from 'react'
 
+const initialState = {
+  slideWidth: 0,
+  currentPage: 0,
+  pageLength: 0,
+  totalPages: 0,
+  activeSlides: [],
+  trackOffset: '0px',
+}
+
 const setActiveSlides = (state) => {
   const firstSlide = state.currentPage * state.pageLength
 
@@ -27,21 +36,14 @@ const reducer = (state, action) => {
       return { ...state, activeSlides: setActiveSlides(state) }
     case 'SET_TRACK_OFFSET':
       return { ...state, trackOffset: setTrackOffset(state) }
+    case 'RESET_STATE':
+      return { ...initialState }
     default:
       throw new Error(`Unhandled action type: ${action.type}`)
   }
 }
 
-export default function useSlideTracks(
-  initialState = {
-    slideWidth: 0,
-    currentPage: 0,
-    pageLength: 0,
-    totalPages: 0,
-    activeSlides: [],
-    trackOffset: '0px',
-  }
-) {
+export default function useSlideTracks() {
   const [state, dispatch] = useReducer(reducer, initialState)
 
   return [state, dispatch]

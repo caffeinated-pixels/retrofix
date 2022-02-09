@@ -49,6 +49,9 @@ export default function SlideTrack({ content }) {
   const ref = useRef(null)
 
   useLayoutEffect(() => {
+    // clear state when content updates
+    dispatch({ type: 'RESET_STATE' })
+
     const totalNumSlides = content.length
     const slideWidth = ref.current.firstChild.getBoundingClientRect().width
     const slideTrackWidth = ref.current.getBoundingClientRect().width
