@@ -1,5 +1,6 @@
-import { useState, useLayoutEffect, useRef, useMemo } from 'react'
+import { useLayoutEffect, useRef } from 'react'
 import styled from 'styled-components'
+import useSlideTracks from '../hooks/useSlideTracks'
 import { ContentSlide } from '../components'
 
 const SlideTrackWrapper = styled.div`
@@ -43,89 +44,51 @@ const Track = styled.div`
 `
 
 export default function SlideTrack({ content }) {
-  const [pages, setPages] = useState({
-    currentPage: 0,
-    pageLength: 0,
-    totalPages: 0,
-    slides: [],
-  })
-
-  const [trackOffset, setTrackOffset] = useState('0px')
+  const [state, dispatch] = useSlideTracks()
 
   const ref = useRef(null)
-  const totalNumSlides = useMemo(() => content.length, [content])
 
   useLayoutEffect(() => {
+    const totalNumSlides = content.length
     const slideWidth = ref.current.firstChild.getBoundingClientRect().width
     const slideTrackWidth = ref.current.getBoundingClientRect().width
     const pageLength = Math.floor(slideTrackWidth / slideWidth)
     const totalNumPages = Math.ceil(totalNumSlides / pageLength)
 
-    setPages((prev) => {
-      const firstSlide = prev.currentPage * pageLength
-
-      const slides = Array.from(Array(pageLength)).map(
-        (item, i) => i + firstSlide
-      )
-
-      return {
-        currentPage: prev.currentPage,
-        pageLength: pageLength,
-        totalPages: totalNumPages,
-        slides: slides,
-      }
-    })
-  }, [totalNumSlides])
+    dispatch({ type: 'SET_PAGE_LENGTH', payload: pageLength })
+    dispatch({ type: 'SET_TOTAL_PAGES', payload: totalNumPages })
+    dispatch({ type: 'SET_ACTIVE_SLIDES' })
+  }, [content, dispatch])
 
   useLayoutEffect(() => {
-    const calcTrackOffset = () => {
+    const setTrackOffset = () => {
       // get width of first slide
-
       const slideWidth = ref.current.firstChild.getBoundingClientRect().width
-      const pageWidth = slideWidth * pages.pageLength
-
-      const trackOffset = pageWidth * pages.currentPage
-      setTrackOffset(`-${trackOffset}px`)
+      dispatch({ type: 'SET_SLIDE_WIDTH', payload: slideWidth })
+      dispatch({ type: 'SET_TRACK_OFFSET' })
     }
 
-    calcTrackOffset()
+    setTrackOffset()
 
     // recalc offset everytime window resizes
-    window.addEventListener('resize', calcTrackOffset)
-    return () => window.removeEventListener('resize', calcTrackOffset)
-  }, [pages])
-
-  const calcNewPageSlides = (pages, increment) => {
-    const firstSlide = (pages.currentPage + increment) * pages.pageLength
-
-    return Array.from(Array(pages.pageLength)).map((item, i) => i + firstSlide)
-  }
+    window.addEventListener('resize', setTrackOffset)
+    return () => window.removeEventListener('resize', setTrackOffset)
+  }, [state.currentPage, dispatch])
 
   const handleForward = () => {
-    setPages((prev) => {
-      const isLastPage = prev.totalPages - 1 === prev.currentPage
+    const isLastPage = state.totalPages - 1 === state.currentPage
 
-      if (isLastPage) return prev
+    if (isLastPage) return
 
-      return {
-        ...prev,
-        currentPage: prev.currentPage + 1,
-        slides: calcNewPageSlides(prev, 1),
-      }
-    })
+    dispatch({ type: 'SET_CURRENT_PAGE', payload: state.currentPage + 1 })
+    dispatch({ type: 'SET_ACTIVE_SLIDES' })
   }
   const handleBack = () => {
-    setPages((prev) => {
-      const isFirstPage = prev.currentPage === 0
+    const isFirstPage = state.currentPage === 0
+    if (isFirstPage) return
 
-      if (isFirstPage) return prev
-
-      return {
-        ...prev,
-        currentPage: prev.currentPage - 1,
-        slides: calcNewPageSlides(prev, -1),
-      }
-    })
+    dispatch({ type: 'SET_CURRENT_PAGE', payload: state.currentPage - 1 })
+    dispatch({ type: 'SET_ACTIVE_SLIDES' })
   }
 
   return (
@@ -133,12 +96,12 @@ export default function SlideTrack({ content }) {
       <GoBackBox className='go-back' tabIndex='0' onClick={handleBack}>
         <ArrowIcon className='fas fa-angle-left' />
       </GoBackBox>
-      <Track trackOffset={trackOffset} ref={ref}>
+      <Track trackOffset={state.trackOffset} ref={ref}>
         {content.map((item, i) => (
           <ContentSlide
             key={item.title}
             item={item}
-            isSlideOnCurrentPage={pages.slides.includes(i)}
+            isSlideOnCurrentPage={state.activeSlides.includes(i)}
           />
         ))}
       </Track>
