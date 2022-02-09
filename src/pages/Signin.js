@@ -4,6 +4,7 @@ import firebaseSignIn from '../firebase/firebaseSignIn'
 import { Header, RegNavbar, Footer } from '../parts/'
 import { SemanticHeader, MainContainer } from '../containers/'
 import { GeneralForm, signinForm, SubmitButton } from '../components'
+import isEmailValid from '../helpers/validate-email'
 import { colors } from '../styles/style-constants'
 import { HOME, PROFILE } from '../constants/routes'
 import { footerHomeRegistration } from '../fixtures/footer-content'
@@ -12,10 +13,10 @@ export default function Signin() {
   const [state, dispatch] = useFormValidation()
   const navigate = useNavigate()
 
-  const isEmailTooShort = state.email.length < 5
+  const isEmailInvalid = !isEmailValid(state.email)
   const isPasswordTooShort = state.password.length < 6
 
-  const emailError = state.inputError && isEmailTooShort
+  const emailError = state.inputError && isEmailInvalid
   const passwordError = state.inputError && isPasswordTooShort
 
   const processFirebaseError = (errorMsg) => {
@@ -52,7 +53,7 @@ export default function Signin() {
   const handleSubmit = (e) => {
     e.preventDefault()
 
-    if (isEmailTooShort || isPasswordTooShort) {
+    if (isEmailInvalid || isPasswordTooShort) {
       dispatch({ type: 'SET_INPUT_ERROR', payload: true })
     } else {
       dispatch({ type: 'SET_INPUT_ERROR', payload: false })
