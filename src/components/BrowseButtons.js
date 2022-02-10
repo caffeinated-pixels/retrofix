@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { colors } from '../styles/style-constants'
 
 export const PlayButton = styled.button`
   border: 0;
@@ -7,9 +8,10 @@ export const PlayButton = styled.button`
   font-weight: 700;
   padding: 8px 24px 8px 20px;
   margin-right: 1rem;
+  background-color: ${colors.playButtonWhite};
 
   &:hover {
-    background-color: rgba(255, 255, 255, 0.75);
+    background-color: ${colors.playButtonHover};
   }
 
   &:focus {
@@ -24,10 +26,10 @@ export const PlayIcon = styled.i`
 
 export const MoreInfoButton = styled(PlayButton)`
   color: white;
-  background-color: rgba(109, 109, 110, 0.7);
+  background-color: ${colors.moreInfoButtonGrey};
 
   &:hover {
-    background-color: rgba(109, 109, 110, 0.4);
+    background-color: ${colors.moreInfoButtonHover};
   }
 `
 

@@ -120,10 +120,14 @@ const CloseButton = styled.button`
   margin-top: 1.25em;
   margin-right: 1.25em;
   line-height: 1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `
 
 const CloseIcon = styled.i`
-  font-size: 1.3rem;
+  font-size: 1.25rem;
 `
 
 const DetailsContainer = styled.div`
