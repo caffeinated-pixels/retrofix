@@ -9,6 +9,7 @@ export const PlayButton = styled.button`
   padding: 8px 24px 8px 20px;
   margin-right: 1rem;
   background-color: ${colors.playButtonWhite};
+  color: #000;
 
   &:hover {
     background-color: ${colors.playButtonHover};
