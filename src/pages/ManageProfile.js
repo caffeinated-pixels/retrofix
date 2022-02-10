@@ -20,37 +20,55 @@ export default function ManageProfile() {
           <profile.ListItem>
             <profile.NavButton>
               <profile.Avatar imgUrl='./images/users/1.png' />
-              <profile.Name>Brigand</profile.Name>
+              <profile.Name>
+                The <br />
+                Brigand
+              </profile.Name>
             </profile.NavButton>
           </profile.ListItem>
           <profile.ListItem>
-            <profile.NavButton to='#'>
+            <profile.NavButton>
               <profile.Avatar imgUrl='./images/users/2.png' />
-              <profile.Name>Gentleman</profile.Name>
+              <profile.Name>
+                The <br />
+                Gentleman
+              </profile.Name>
             </profile.NavButton>
           </profile.ListItem>
           <profile.ListItem>
-            <profile.NavButton to='#'>
+            <profile.NavButton>
               <profile.Avatar imgUrl='./images/users/3.png' />
-              <profile.Name>Mercenary</profile.Name>
+              <profile.Name>
+                The <br />
+                Mercenary
+              </profile.Name>
             </profile.NavButton>
           </profile.ListItem>
           <profile.ListItem>
-            <profile.NavButton to='#'>
+            <profile.NavButton>
               <profile.Avatar imgUrl='./images/users/4.png' />
-              <profile.Name>Navvie</profile.Name>
+              <profile.Name>
+                The <br />
+                Navvie
+              </profile.Name>
             </profile.NavButton>
           </profile.ListItem>
           <profile.ListItem>
-            <profile.NavButton to='#'>
+            <profile.NavButton>
               <profile.Avatar imgUrl='./images/users/5.png' />
-              <profile.Name>Preacher</profile.Name>
+              <profile.Name>
+                The <br />
+                Preacher
+              </profile.Name>
             </profile.NavButton>
           </profile.ListItem>
           <profile.ListItem>
-            <profile.NavButton to='#'>
+            <profile.NavButton>
               <profile.Avatar imgUrl='./images/users/6.png' />
-              <profile.Name>Thug</profile.Name>
+              <profile.Name>
+                The <br />
+                Thug
+              </profile.Name>
             </profile.NavButton>
           </profile.ListItem>
         </profile.ProfileList>
