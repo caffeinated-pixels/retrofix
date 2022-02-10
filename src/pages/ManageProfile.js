@@ -1,11 +1,23 @@
+import { useNavigate } from 'react-router-dom'
 import { Header, Navbar } from '../parts/'
 import { SemanticHeader, PageContainer } from '../containers/'
 import { SiteLogo, profile } from '../components'
-import { BROWSE } from '../constants/routes'
+import { firebaseAuth } from '../firebase/config'
+import { updateProfile } from '@firebase/auth'
+import { PROFILE } from '../constants/routes'
 
 export default function ManageProfile() {
-  const handleClick = (id) => {
-    console.log(id)
+  const navigate = useNavigate()
+
+  const handleClick = async (id) => {
+    try {
+      await updateProfile(firebaseAuth.currentUser, {
+        photoURL: `./images/users/${id}.png`,
+      })
+      navigate(PROFILE)
+    } catch (error) {
+      console.log(error.message)
+    }
   }
 
   return (
