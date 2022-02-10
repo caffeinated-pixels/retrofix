@@ -12,6 +12,7 @@ import {
   SearchPage,
   Watch,
   PageNotFound,
+  ManageProfile,
 } from './pages'
 import { WindowWidthContextProvider } from './context/WindowWidthContext'
 import { RequireAuth, RedirectUser } from './components'
@@ -44,6 +45,7 @@ function App() {
             }
           />
           <Route path={ROUTES.PROFILE} element={<Profile />} />
+          <Route path={ROUTES.MANAGE_PROFILE} element={<ManageProfile />} />
           <Route path={`${ROUTES.GET_THE_APP}/:id`} element={<GetTheApp />} />
           <Route path={ROUTES.SEARCH} element={<SearchPage />} />
           <Route path={`${ROUTES.WATCH}/:id`} element={<Watch />} />
