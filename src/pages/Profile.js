@@ -4,7 +4,7 @@ import { useAuth } from '../context/FirebaseAuthContext'
 import { Header, Navbar } from '../parts/'
 import { SemanticHeader, PageContainer } from '../containers/'
 import { SiteLogo } from '../components'
-import { BROWSE } from '../constants/routes'
+import { BROWSE, MANAGE_PROFILE } from '../constants/routes'
 import { colors } from '../styles/style-constants'
 
 const MainContainer = styled.main`
@@ -65,6 +65,10 @@ const Avatar = styled.div`
   }
 `
 
+const ChooseAvatar = styled(Avatar)`
+  background-color: transparent;
+`
+
 const Name = styled.p`
   margin: 0.6em 0;
   text-align: center;
@@ -97,6 +101,12 @@ export default function Profile() {
             <NavLink to='#'>
               <Avatar imgUrl='./images/users/kids.jpg' />
               <Name>Children</Name>
+            </NavLink>
+          </ListItem>
+          <ListItem>
+            <NavLink to={MANAGE_PROFILE}>
+              <ChooseAvatar imgUrl='./images/users/retrofix.svg' />
+              <Name>Choose avatar</Name>
             </NavLink>
           </ListItem>
         </ProfileList>
