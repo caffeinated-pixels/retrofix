@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { Link } from 'react-router-dom'
 
 import { colors } from '../styles/style-constants'
@@ -28,9 +28,9 @@ export const ProfileList = styled.ul`
 export const ListItem = styled.li`
   list-style: none;
 `
-export const NavLink = styled(Link)`
+
+const LinkButton = css`
   color: ${colors.textLightGrey};
-  text-decoration: none;
 
   &:hover {
     color: #fff;
@@ -39,6 +39,20 @@ export const NavLink = styled(Link)`
   &:hover > div::after {
     border-color: white;
   }
+`
+
+export const NavLink = styled(Link)`
+  ${LinkButton}
+  text-decoration: none;
+`
+
+export const NavButton = styled.button`
+  ${LinkButton}
+
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  cursor: pointer;
 `
 
 export const Avatar = styled.div`
