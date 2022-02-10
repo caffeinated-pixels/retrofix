@@ -1,6 +1,6 @@
 import { useLayoutEffect, useState, createContext, useContext } from 'react'
 
-export const WindowWidthContext = createContext()
+const WindowWidthContext = createContext()
 
 export function WindowWidthContextProvider({ children }) {
   const [width, setWidth] = useState(window.innerWidth)
