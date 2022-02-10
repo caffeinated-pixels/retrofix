@@ -32,3 +32,5 @@ export { default as LargeContentModal } from './LargeContentModal'
 
 export { default as RequireAuth } from './RequireAuth'
 export { default as RedirectUser } from './RedirectUser'
+
+export * as profile from './Profile'

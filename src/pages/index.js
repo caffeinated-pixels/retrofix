@@ -14,3 +14,4 @@ export { default as SearchPage } from './SearchPage'
 export { default as Watch } from './Watch'
 
 export { default as PageNotFound } from './PageNotFound'
+export { default as ManageProfile } from './ManageProfile'
