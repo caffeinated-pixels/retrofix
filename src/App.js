@@ -13,6 +13,7 @@ import {
   Watch,
   PageNotFound,
 } from './pages'
+import { WindowWidthContextProvider } from './context/WindowWidthContext'
 import { RequireAuth, RedirectUser } from './components'
 import * as ROUTES from './constants/routes'
 
@@ -34,7 +35,14 @@ function App() {
 
         {/* Protected routes*/}
         <Route element={<RequireAuth />}>
-          <Route path={ROUTES.BROWSE} element={<Browse />} />
+          <Route
+            path={ROUTES.BROWSE}
+            element={
+              <WindowWidthContextProvider>
+                <Browse />
+              </WindowWidthContextProvider>
+            }
+          />
           <Route path={ROUTES.PROFILE} element={<Profile />} />
           <Route path={`${ROUTES.GET_THE_APP}/:id`} element={<GetTheApp />} />
           <Route path={ROUTES.SEARCH} element={<SearchPage />} />

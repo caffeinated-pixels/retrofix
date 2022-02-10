@@ -1,9 +1,10 @@
+import { memo } from 'react'
+
 import styled from 'styled-components'
 import useLargeModal from '../hooks/useLargeModal'
 import { LargeContentModal } from './'
 
 const Container = styled.div`
-  /* position: relative; */
   min-width: min(24%, 300px);
   padding: 0 0.2vw;
 
@@ -25,15 +26,17 @@ const ContentImage = styled.img`
   }
 `
 
-export default function ContentSlide({ item }) {
+function ContentSlide({ item, isSlideOnCurrentPage }) {
   const { displayModal, handleShowModal, handleKeyDown, handleCloseModal } =
     useLargeModal()
   const imgUrl = `/images/${item.category}/${item.genre}/${item.slug}/thumb.jpg`
 
+  const tabIndex = isSlideOnCurrentPage ? '0' : '-1'
+
   return (
     <Container onClick={handleShowModal} displayModal={displayModal}>
       <ContentImage
-        tabIndex='0'
+        tabIndex={tabIndex}
         src={imgUrl}
         alt={item.title}
         onKeyDown={handleKeyDown}
@@ -44,3 +47,6 @@ export default function ContentSlide({ item }) {
     </Container>
   )
 }
+
+// memoize ContentSlide to prevent unnecessary rerenders everytime window resizes (via SlideTrack)
+export default memo(ContentSlide)
