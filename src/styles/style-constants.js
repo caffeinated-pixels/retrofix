@@ -15,6 +15,10 @@ export const colors = {
   errTextRed: 'hsl(1, 62%, 45%)', // #b92d2b
   textDarkGrey: 'hsl(0, 0%, 20%)', // #333333
   accordionGrey: 'hsl(0, 0%, 19%)',
+  playButtonWhite: 'hsl(240, 10%, 92%)', // #e9e9ed
+  playButtonHover: 'hsla(0, 0%, 100%, 0.75)',
+  moreInfoButtonGrey: 'hsla(240, 0%, 43%, 0.7)',
+  moreInfoButtonHover: 'hsla(240, 0%, 43%, 0.4)',
 }
 
 // TODO: consolidate into object???
