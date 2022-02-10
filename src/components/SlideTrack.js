@@ -1,5 +1,6 @@
-import { useEffect, useLayoutEffect, useRef } from 'react'
+import { useLayoutEffect, useRef } from 'react'
 import styled from 'styled-components'
+import { useWindowWidthContext } from '../context/WindowWidthContext'
 import useSlideTracks from '../hooks/useSlideTracks'
 import { ContentSlide } from '../components'
 
@@ -62,6 +63,7 @@ const Track = styled.div`
 
 export default function SlideTrack({ content }) {
   const [state, dispatch] = useSlideTracks()
+  const windowWidth = useWindowWidthContext()
   const ref = useRef(null)
 
   useLayoutEffect(() => {
@@ -81,19 +83,7 @@ export default function SlideTrack({ content }) {
     // update trackOffset value when window resizes
     const slideWidth = ref.current.firstChild.getBoundingClientRect().width
     dispatch({ type: 'SET_TRACK_OFFSET', payload: slideWidth })
-  }, [state.currentPage, dispatch])
-
-  useEffect(() => {
-    const setTrackOffset = () => {
-      // get width of first slide
-      const slideWidth = ref.current.firstChild.getBoundingClientRect().width
-      dispatch({ type: 'SET_TRACK_OFFSET', payload: slideWidth })
-    }
-
-    // recalc offset everytime window resizes
-    window.addEventListener('resize', setTrackOffset)
-    return () => window.removeEventListener('resize', setTrackOffset)
-  }, [dispatch])
+  }, [windowWidth, state.currentPage, dispatch])
 
   const handleForward = () => {
     const totalNumPages = Math.ceil(content.length / state.pageLength)
