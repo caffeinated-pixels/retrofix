@@ -4,14 +4,6 @@ import { SemanticHeader, PageContainer } from '../containers/'
 import { SiteLogo, profile } from '../components'
 import { BROWSE } from '../constants/routes'
 
-const ProfileList = styled.ul`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding: 0 2.5em;
-  gap: 2vw;
-`
-
 export default function ManageProfile() {
   return (
     <PageContainer>
@@ -25,7 +17,7 @@ export default function ManageProfile() {
 
       <profile.MainContainer>
         <profile.Title>Choose an avatar</profile.Title>
-        <ProfileList>
+        <profile.ProfileList>
           <profile.ListItem>
             <profile.NavLink to='#'>
               <profile.Avatar imgUrl='./images/users/1.png' />
@@ -62,7 +54,7 @@ export default function ManageProfile() {
               <profile.Name>Thug</profile.Name>
             </profile.NavLink>
           </profile.ListItem>
-        </ProfileList>
+        </profile.ProfileList>
       </profile.MainContainer>
     </PageContainer>
   )

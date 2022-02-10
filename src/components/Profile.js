@@ -19,7 +19,9 @@ export const Title = styled.h1`
 
 export const ProfileList = styled.ul`
   display: flex;
-  padding: 0;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0 2.5em;
   gap: 2vw;
 `
 
