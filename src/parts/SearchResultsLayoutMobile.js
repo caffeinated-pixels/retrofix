@@ -44,7 +44,7 @@ export default function SearchResultsLayout({ searchResults }) {
           tabIndex='0'
           src={imgUrl}
           alt={show.title}
-          onClick={() => navigate(GET_THE_APP, { state: show })}
+          onClick={() => navigate(`${GET_THE_APP}/${show.id}`)}
         />
       </Container>
     )
