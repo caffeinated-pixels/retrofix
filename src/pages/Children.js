@@ -14,16 +14,16 @@ const {
 
 export default function Children() {
   return (
-    <PageBackground>
+    <PageBackground bgImage='/images/misc/child-myers.jpg'>
       <SemanticHeader>
         <RegNavbar noBorder />
       </SemanticHeader>
       <MainContainer>
         <MessageContainer>
-          <Title>No kids profiles on Retrofix</Title>
+          <Title>No kids profiles!</Title>
           <Message>
-            Kids are as evil as pineapple on a pizza, so RetroFix is a no-kids
-            zone!
+            Children are as evil as pineapple on a pizza, so RetroFix is a
+            no-kids zone!
           </Message>
           <HomeLink to={HOME}>RetroFix Home</HomeLink>
         </MessageContainer>
