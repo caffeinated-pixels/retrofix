@@ -3,7 +3,10 @@ import styled from 'styled-components'
 const SimpleContainer = styled.main`
   flex-grow: 1;
   overflow: hidden;
-  padding-bottom: 95px;
+
+  @media (max-height: 850px) {
+    padding-bottom: 95px;
+  }
 `
 
 const CenterContainer = styled.div`
