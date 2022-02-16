@@ -78,7 +78,7 @@ const BottomText = styled.p`
 
 const CreditText = styled.p`
   text-align: center;
-  margin-top: 2em;
+  margin-top: 1em;
 `
 
 const CreditLink = styled.a`
