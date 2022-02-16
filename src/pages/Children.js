@@ -12,19 +12,18 @@ const {
   Message,
 } = pageNotFound
 
-export default function PageNotFound() {
+export default function Children() {
   return (
-    <PageBackground bgImage='/images/misc/no-more-table.jpg'>
+    <PageBackground bgImage='/images/misc/child-myers.jpg'>
       <SemanticHeader>
         <RegNavbar noBorder />
       </SemanticHeader>
       <MainContainer>
         <MessageContainer>
-          <Title>
-            No more website! <br /> Where you going, pal?!
-          </Title>
+          <Title>No kids profiles!</Title>
           <Message>
-            Next time you have the chance to visit RetroFix, don't hesitate!
+            Children are as evil as pineapple on a pizza, so RetroFix is a
+            no-kids zone!
           </Message>
           <HomeLink to={HOME}>RetroFix Home</HomeLink>
         </MessageContainer>

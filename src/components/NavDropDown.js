@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { useAuth } from '../context/FirebaseAuthContext'
 import useSignOut from '../hooks/useSignOut'
 import styled from 'styled-components'
-import { PROFILE } from '../constants/routes'
+import { PROFILE, CHILDREN } from '../constants/routes'
 
 const DropDownWrapper = styled.div`
   position: relative;
@@ -22,13 +22,19 @@ const Avatar = styled.img`
 `
 
 const CalloutIcon = styled.i`
-  display: ${({ isDropDownOpen }) => (isDropDownOpen ? 'block' : 'none')};
+  display: ${({ isDropDownOpen }) => (isDropDownOpen ? 'flex' : 'none')};
   position: absolute;
-  width: 100%;
+  width: 200%;
+  height: 175%;
+  top: 0;
+  left: -50%;
 
   line-height: 1.5;
   text-align: center;
   font-size: 1.2rem;
+
+  justify-content: center;
+  align-items: flex-end;
 `
 
 const DropDownIcon = styled.i`
@@ -67,6 +73,10 @@ const SubMenuBtn = styled.button`
   display: flex;
   align-items: center;
   gap: 10px;
+
+  &:hover {
+    text-decoration: underline;
+  }
 `
 
 export default function NavDropDown() {
@@ -103,7 +113,11 @@ export default function NavDropDown() {
         <SubMenuContainer>
           <SubMenuList>
             <SubMenuItem>
-              <SubMenuBtn>
+              <SubMenuBtn
+                onClick={() => {
+                  navigate(CHILDREN)
+                }}
+              >
                 <Avatar src='./images/users/kids.jpg' />
                 Children
               </SubMenuBtn>

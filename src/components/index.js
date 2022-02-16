@@ -34,3 +34,4 @@ export { default as RequireAuth } from './RequireAuth'
 export { default as RedirectUser } from './RedirectUser'
 
 export * as profile from './Profile'
+export * as pageNotFound from './PageNotFound'

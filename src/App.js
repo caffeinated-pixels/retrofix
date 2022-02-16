@@ -13,6 +13,7 @@ import {
   Watch,
   PageNotFound,
   ManageProfile,
+  Children,
 } from './pages'
 import { WindowWidthContextProvider } from './context/WindowWidthContext'
 import { RequireAuth, RedirectUser } from './components'
@@ -22,7 +23,11 @@ function App() {
   return (
     <Router>
       <Routes>
-        {/* Public routes*/}
+        {/* Public routes no-redirect*/}
+        <Route path={ROUTES.CHILDREN} element={<Children />} />
+        <Route path='/*' element={<PageNotFound />} />
+
+        {/* Public routes redirect when signed in*/}
         <Route element={<RedirectUser />}>
           <Route path='/' element={<Home />} />
           <Route path={ROUTES.SIGN_IN} element={<Signin />} />
@@ -50,8 +55,6 @@ function App() {
           <Route path={ROUTES.SEARCH} element={<SearchPage />} />
           <Route path={`${ROUTES.WATCH}/:id`} element={<Watch />} />
         </Route>
-
-        <Route path='/*' element={<PageNotFound />} />
       </Routes>
     </Router>
   )

@@ -2,7 +2,7 @@ import { useAuth } from '../context/FirebaseAuthContext'
 import { Header, Navbar } from '../parts/'
 import { SemanticHeader, PageContainer } from '../containers/'
 import { SiteLogo, profile } from '../components'
-import { BROWSE, MANAGE_PROFILE } from '../constants/routes'
+import { BROWSE, CHILDREN, MANAGE_PROFILE } from '../constants/routes'
 
 export default function Profile() {
   const user = useAuth()
@@ -27,7 +27,7 @@ export default function Profile() {
             </profile.NavLink>
           </profile.ListItem>
           <profile.ListItem>
-            <profile.NavLink to='#'>
+            <profile.NavLink to={CHILDREN}>
               <profile.Avatar imgUrl='./images/users/kids.jpg' />
               <profile.Name>Children</profile.Name>
             </profile.NavLink>
