@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { useAuth } from '../context/FirebaseAuthContext'
 import useSignOut from '../hooks/useSignOut'
 import styled from 'styled-components'
-import { PROFILE } from '../constants/routes'
+import { PROFILE, CHILDREN } from '../constants/routes'
 
 const DropDownWrapper = styled.div`
   position: relative;
@@ -103,7 +103,11 @@ export default function NavDropDown() {
         <SubMenuContainer>
           <SubMenuList>
             <SubMenuItem>
-              <SubMenuBtn>
+              <SubMenuBtn
+                onClick={() => {
+                  navigate(CHILDREN)
+                }}
+              >
                 <Avatar src='./images/users/kids.jpg' />
                 Children
               </SubMenuBtn>
