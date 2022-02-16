@@ -67,6 +67,10 @@ const SubMenuBtn = styled.button`
   display: flex;
   align-items: center;
   gap: 10px;
+
+  &:hover {
+    text-decoration: underline;
+  }
 `
 
 export default function NavDropDown() {
