@@ -14,7 +14,7 @@ const {
 
 export default function Children() {
   return (
-    <PageBackground bgImage='/images/misc/child-myers.jpg'>
+    <PageBackground bgImage='/images/films/horror/Halloween/large.jpg'>
       <SemanticHeader>
         <RegNavbar noBorder />
       </SemanticHeader>
