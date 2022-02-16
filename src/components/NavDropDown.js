@@ -22,13 +22,19 @@ const Avatar = styled.img`
 `
 
 const CalloutIcon = styled.i`
-  display: ${({ isDropDownOpen }) => (isDropDownOpen ? 'block' : 'none')};
+  display: ${({ isDropDownOpen }) => (isDropDownOpen ? 'flex' : 'none')};
   position: absolute;
-  width: 100%;
+  width: 200%;
+  height: 175%;
+  top: 0;
+  left: -50%;
 
   line-height: 1.5;
   text-align: center;
   font-size: 1.2rem;
+
+  justify-content: center;
+  align-items: flex-end;
 `
 
 const DropDownIcon = styled.i`
