@@ -74,10 +74,13 @@ const SubMenuBtn = styled.button`
   align-items: center;
   gap: 10px;
 
-  &:hover {
+  &:hover > span {
     text-decoration: underline;
   }
 `
+const TextSpan = styled.span``
+
+const EditIcon = styled.i``
 
 export default function NavDropDown() {
   const [isDropDownOpen, setIsDropDownOpen] = useState(false)
@@ -119,7 +122,7 @@ export default function NavDropDown() {
                 }}
               >
                 <Avatar src='./images/users/kids.jpg' />
-                Children
+                <TextSpan>Children</TextSpan>
               </SubMenuBtn>
             </SubMenuItem>
             <SubMenuItem>
@@ -128,14 +131,17 @@ export default function NavDropDown() {
                   navigate(PROFILE)
                 }}
               >
-                Manage Profiles
+                <EditIcon className='fas fa-edit' />
+                <TextSpan>Manage Profiles</TextSpan>
               </SubMenuBtn>
             </SubMenuItem>
           </SubMenuList>
 
           <SubMenuList>
             <SubMenuItem>
-              <SubMenuBtn onClick={signOut}>Sign out of RetroFix</SubMenuBtn>
+              <SubMenuBtn onClick={signOut}>
+                <TextSpan>Sign out of RetroFix</TextSpan>
+              </SubMenuBtn>
             </SubMenuItem>
           </SubMenuList>
         </SubMenuContainer>
