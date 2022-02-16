@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
 export const PageBackground = styled.div`
-  background-image: url('/images/misc/no-more-table.jpg');
+  background-image: url(${({ bgImage }) => bgImage});
   background-size: cover;
   background-position: center;
   height: 100vh;

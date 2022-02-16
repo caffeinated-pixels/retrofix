@@ -14,7 +14,7 @@ const {
 
 export default function PageNotFound() {
   return (
-    <PageBackground>
+    <PageBackground bgImage='/images/misc/no-more-table.jpg'>
       <SemanticHeader>
         <RegNavbar noBorder />
       </SemanticHeader>
