@@ -17,8 +17,8 @@ RetroFix is a Reactjs-based Netflix clone and you can [see it in action over on 
 - user accounts:
   - account creation and sign in/out functionality
   - protected routes and redirection based on sign-in status
-    users can change their avatars
-  - search functionality - users can live search the content on the browse page
+  - users can change their avatars
+- search functionality - users can live search the content on the browse page
 - accessibility - users can navigate the site using the keyboard
 
 ## Aims
